@@ -41,12 +41,12 @@ sound.addEventListener('click', function () {
     if (soundFlag) {
         soundRestart(unequiptool);
         soundFlag = false;
-        sound.src = '/images/sound_off.png';
+        sound.src = 'media/images/sound_off.png';
     } else {
         soundFlag = true;
         //Is needed twice because when pressed to open there is no sound because soundFlag is false;
         soundRestart(toggle);
-        sound.src = '/images/sound_on.png';
+        sound.src = 'media/images/sound_on.png';
     }
 });
 
