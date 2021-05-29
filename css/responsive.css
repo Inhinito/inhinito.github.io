@@ -1,0 +1,77 @@
+@media screen and (max-width: 500px) {
+  header #greek{
+    display: block;
+    margin-top: 10px;
+  }
+
+  header #english{
+    display: block;
+  }
+
+  body header #toggleMusic{
+    width: 60px;
+    left: 78px;
+  }
+
+  body header #toggleSound{
+    width: 60px;
+    left: 12px;
+  }
+
+  body header #arrowPointer{
+    width: 44px;
+    height: auto;
+    margin-top: 5%;
+  }
+
+  body header #language-select {
+    right: 23px;
+  }
+
+   /* Chrome, Safari, Opera */
+  @-webkit-keyframes myfirst {
+      50%  {left: 145px; top: 0px;}
+      0%   {left: 170px; top: 0px;}
+      100%  {left: 145px; top: 0px;}
+
+    }
+  @keyframes myfirst {
+      0%   {left: 145px; top: 0px;}
+      50%  {left: 170px; top: 0px;}
+      100%  {left: 145px; top: 0px;}
+  }
+}
+
+@media screen and (max-width: 799px) {
+  header .header-8-bit {
+    font-size: 9vw;
+    text-shadow: 2.5px 2.5px 0 rgb(229, 62, 90);
+  }
+
+  header #soundboard-instructions {
+    top: 90px;
+  }
+
+  header #toggleMusic{
+    width: 66px;
+    left: 92px;
+  }
+
+  header #toggleSound{
+    width: 66px;
+    left: 22px
+  }
+
+  header #arrowPointer{
+    width: 46px;
+    height: auto;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 969px) {
+  header .header-8-bit {
+    font-size: 7vw;
+    text-shadow: 3px 2px 0 rgb(229, 62, 90);
+  }
+}

@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "IBM";
+  src: url("../media/fonts/IBM3270/IBM3270_Custom.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "PressStart";
+  src: url("../media/fonts/PressStart2P/PressStart2P-Regular.ttf")
+    format("truetype"); /* Safari, Android, iOS */
+}
+
+body {
+  background-color: rgb(55, 41, 99);
+  background-size: 100%;
+  text-align: center;
+  font: normal 17px "IBM", Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  max-width: 730px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  
+  padding: 0;
+  height: auto;
+
+  /* To make the footer stick to the bottom of the page. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  margin: 0 3% 0 3%;
+  opacity: 1;
+  transition: opacity 0.4s;
+  display: none;
+}
+
+a {
+  color: navajowhite;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.basic-link{
+  margin-right: 2px;
+  display: inline-block;
+}
+
+.inhinito-link:active {
+  transform: translateY(2.5px);
+  color: rgb(229, 62, 90);
+}
+
+.inline-link{
+  display: inline;
+  -webkit-user-select: text;
+  -moz-select: text;
+  -ms-select: text;
+  user-select: text;
+}
+
+.border-item {
+  margin-bottom: 15px;
+  border: 2px solid #ffcf4e;
+  color: orange;
+  border-radius: 4px;
+  list-style: none;
+  padding: 10px;
+}
+
+
+#trademark {
+  width: 80%;
+  min-width: 230px;
+  max-width: 700px;
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+/* Toggle sound icon*/
+#toggleSound {
+  user-select: none;
+  width: 66px;
+  top: 23px;
+  left: 32px;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
+}
+
+#toggleSound:active {
+  transform: translateY(4px);
+}
+
+#language-select {
+  position: absolute;
+  right: 35px;
+  margin-top: 1px;
+}
+
+
+
+#footer-english{
+  display: block;
+}
+#footer-greek{
+  display: none;
+}
+
+
+/* Articles */
+.article-8-bit{
+  margin-bottom: 7%;
+}
+
+.article-section {
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.article-header {
+  font: normal 20px "PressStart", Helvetica, sans-serif;
+  color: #ffcf4e;
+  text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
+  margin-bottom: 0px;
+}
+
+.article-list-item {
+  margin-left: -39px;
+}
+
+.list-header {
+  margin-top: 30px;
+  margin-bottom: 13px;
+  font: normal 15px "PressStart", Helvetica, sans-serif;
+}
+
+/* 8-bit fonts*/
+
+.text-8-bit {
+  color: orange;
+}
+
+
+
+.basic-button { 
+  font-family: "PressStart";
+  font-size: 12px;
+  position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
+  --background: rgb(55, 41, 99);
+  /* The width and the height is big enough to allow for the animeted movement of the button
+  as well as the box-shadow of the button */
+  width:145px;
+  height:40px;
+}
+
+.basic-button::after{
+  
+  border: 2px solid #ffcf4e;
+  background-color: rgb(55, 41, 99);
+  border-radius: 3px;
+
+  /* Specify the transition effect for chaning the background-color and the button-press */ 
+  -webkit-transition: 0.08s ease-in-out;
+  -moz-transition: 0.08s ease-in-out;
+  -o-transition: 0.08s ease-in-out;
+  transition: 0.08s ease-in-out;
+
+  /* Fill each button text content individually */
+  content: "";
+  line-height: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  /* Make the after element smaller so that it doesn't overflow through the original element when active */
+  width:143px;
+  height:33px;
+}
+
+.basic-button::before{
+  box-shadow: 5px 5px 0 0 #ed649a;
+  border-radius: 3px;
+  width: 147px;
+  height: 36.5px;
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+.basic-button:focus{
+  outline: none;
+}
+
+.basic-button:hover {
+  cursor:pointer;
+}
+
+.basic-button:active::after {
+  -webkit-transform: translate(5px, 5px);
+  -moz-transform: translate(5px, 5px);
+  -o-transform: translate(5px, 5px);
+  -ms-transform: translate(5px, 5px);
+  transform: translate(5px, 5px);
+}
+
+.social-icon{
+  width: 90%;
+  margin-bottom: 20px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+footer{
+  /* Make footer stick to the bottom of the page. */
+  margin-top: auto;
+  display: none;
+}
+
+.footer-link{
+  display: block;
+  margin-bottom: 5px;
+  width: fit-content;
+}
+
+#footer-details{
+  padding: 15px 3% 15px 3%;
+  background-color: #c33f7d;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  text-align: left;
+  
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+#copyright {
+  text-align: center;
+  color: #ffcf4e;
+  margin-top: 30px;
+}

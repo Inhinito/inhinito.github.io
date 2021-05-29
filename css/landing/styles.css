@@ -1,0 +1,226 @@
+#soundboard-instructions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+
+
+
+
+#start-menu-content {
+    margin: 0 3% 0 3%;
+}
+
+/* Set all the button menus to NOT be displayed so that the right menu can
+   manually load up using JavaScript */
+#start-menu-english {
+    display: none;
+}
+
+#start-menu-greek {
+    display: none;
+}
+
+#start-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#membership-form {
+    background: #c33f7d;
+    border-radius: 4px;
+    border: 2px solid #8d457e;
+    width: 100%;
+}
+
+
+
+#reload-main-menu {
+    width: 180px;
+    margin-top: 45px;
+}
+
+#reload-main-menu::after {
+    width: 176px;
+}
+
+#reload-main-menu::before {
+    width: 180px;
+}
+
+.membership {
+    text-align: center;
+}
+
+#main-menu {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+#menu-buttons {
+    opacity: 1;
+    transition: opacity 0.3s;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 7%;
+}
+
+
+#button1-english {
+    display: block;
+}
+
+#button1-greek {
+    display: none;
+}
+
+#button2-english {
+    display: none;
+}
+
+#button2-greek {
+    display: none;
+}
+
+#button3-english {
+    display: none;
+}
+
+#button3-greek {
+    display: none;
+}
+
+#button4-english {
+    display: none;
+}
+
+#button4-greek {
+    display: none;
+}
+
+/* Buttons */
+
+/*basic-button*/
+
+#reload-main-menu::after {
+    background: var(--background);
+    content: var(--content);
+}
+
+#btn1::after {
+    background: var(--background);
+    content: var(--content);
+}
+
+#btn2::after {
+    background: var(--background);
+    content: var(--content);
+}
+
+#btn3::after {
+    background: var(--background);
+    content: var(--content);
+}
+
+#btn4::after {
+    background: var(--background);
+    content: var(--content);
+}
+
+#construction-notice {
+    margin-bottom: -20px;
+    margin-top: -10px;
+}
+
+#services-list {
+    margin-left: 15px;
+}
+
+.big-link {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+
+/* Start of fancy Button */
+.fancy-button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.fancy-button .bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+
+    background-color: #ee4684;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+.fancy-button .top {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 5px;
+    padding: 24px 34px 22px 34px;
+    border: 2px solid #fbc943;
+    border-radius: 3px;
+}
+
+
+.fancy-button .top .label {
+    font-family: 'PressStart';
+    font-weight: 600;
+    color: white;
+    font-size: 13px;
+    line-height: 4px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+
+.fancy-button:active .bottom {
+    left: 0;
+    top: 0;
+    background-color: #fbc943;
+}
+
+.fancy-button:active .top .label {
+    color: rgb(55, 41, 99);
+}
+
+.fancy-button:active .top .fancy-button-border-left,
+.fancy-button:active .top .fancy-button-border-right {
+    height: calc(100% + 2px);
+}
+
+.fancy-button:active .top .fancy-button-border-top,
+.fancy-button:active .top .fancy-button-border-bottom {
+    width: calc(100% + 2px);
+}
+
+/* End of fancy Button */
