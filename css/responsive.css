@@ -1,8 +1,8 @@
 @media screen and (max-width: 500px) {
   body{
-    font: normal 19px "IBM", Helvetica, sans-serif;
+    font: normal 18px "IBM", Helvetica, sans-serif;
   }
-  
+
   header #greek{
     display: block;
     margin-top: 10px;
