@@ -78,23 +78,10 @@ a {
   min-width: 230px;
   max-width: 700px;
   margin-top: 90px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
-/* Toggle sound icon*/
-#toggleSound {
-  user-select: none;
-  width: 66px;
-  top: 23px;
-  left: 32px;
-  height: auto;
-  position: absolute;
-  cursor: pointer;
-}
 
-#toggleSound:active {
-  transform: translateY(4px);
-}
 
 #language-select {
   position: absolute;
