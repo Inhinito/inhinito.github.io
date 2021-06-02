@@ -246,3 +246,17 @@ button4.addEventListener('mousedown', function () {
   }, 300);
 });
 
+const pressStartLinks = document.getElementsByClassName('press-start-inline');
+pressStartLinks[0].addEventListener('click', scrollAndStart);
+pressStartLinks[1].addEventListener('click', scrollAndStart);
+
+function scrollAndStart(){
+  console.log('Here!!!')
+  soundRestart(toggle);
+  window.scrollTo(0,0);
+
+  // Wait half a second for the menu to fade out.
+  setTimeout(function(){
+    started();
+  }, 600);
+}

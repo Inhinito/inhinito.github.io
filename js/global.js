@@ -2,6 +2,9 @@
 // Set the language flag to english at the beginning.
 let languageFlag = 'english';
 
+// Get the go to the top link button.
+const goTop = document.getElementById('go-top');
+
 const footer = document.querySelector('footer');
 const footerDetails = document.getElementById('footer-details');
 
@@ -53,6 +56,11 @@ function footerContent(){
     }
 }
 
+goTop.addEventListener('click', function(){
+    soundRestart(toggle);
+    window.scrollTo(0,0)
+});
+  
 
 // Facebook Chat.
 // var chatbox = document.getElementById('fb-customer-chat');

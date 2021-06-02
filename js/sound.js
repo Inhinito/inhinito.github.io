@@ -12,7 +12,6 @@ back.volume = 0.3 ;
 
 //Play the sound.
 var soundFlag = true;
-var musicFlag = false;
 
 function soundRestart(audio) {
     if (soundFlag) {
@@ -24,16 +23,6 @@ function soundRestart(audio) {
     }
 }
 
-function musicRestart(audio) {
-    if (musicFlag) {
-        audio.volume = 0.2;
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.currentTime = 0;
-        }
-    }
-}
 
 // Toggle sound
 const sound = document.getElementById('toggleSound');
@@ -90,14 +79,6 @@ soundboard.addEventListener('click', function(evt){
             instructions.innerHTML = "";
             instructions.innerHTML = "Sound Effects are ON";
           }
-        }else if(evt.target.id == 'toggleMusic'){
-          if(musicFlag == true){
-            instructions.innerHTML = "";
-            instructions.innerHTML = "Now playing: s m i l e - by Electronic Ether";
-          }else{
-            instructions.innerHTML = "";
-            instructions.innerHTML = "You have paused the soundtrack";
-          }
         }
       }else if(languageFlag=='greek'){
         if(evt.target.id == 'toggleSound'){
@@ -107,14 +88,6 @@ soundboard.addEventListener('click', function(evt){
           }else{
             instructions.innerHTML = "";
             instructions.innerHTML = "Tα ηχητικά εφέ ενεργοποιήθηκαν";
-          }
-        }else{
-          if(musicFlag == true){
-            instructions.innerHTML = "";
-            instructions.innerHTML = "Αναπαραγωγή: s m i l e - από Electronic Ether";
-          }else{
-            instructions.innerHTML = "";
-            instructions.innerHTML = "Έγινε παύση του τραγουδιού";
           }
         }
       }
@@ -128,12 +101,3 @@ document.body.addEventListener('mouseover', function(evt){
       instructions.innerHTML = "";
     }
 });
-
-//Ridley roars!
-/*
-document.getElementById('ridley').addEventListener('click', function () {
-    soundRestart(ridley);
-    let articles = document.querySelector('.article-section');
-    articles.scrollIntoView({ behavior: "smooth", block: 'start' });
-});
-*/
