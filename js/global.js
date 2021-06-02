@@ -56,10 +56,11 @@ function footerContent(){
     }
 }
 
-goTop.addEventListener('click', function(){
-    soundRestart(toggle);
-    window.scrollTo(0,0);
-});
+// Scroll back to the top of the page.
+// goTop.addEventListener('click', function(){
+//     soundRestart(toggle);
+//     window.scrollTo(0,0);
+// });
   
 
 // Facebook Chat.
