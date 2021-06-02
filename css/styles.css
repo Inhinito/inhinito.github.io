@@ -217,7 +217,7 @@ a {
 
 footer{
   /* Make footer stick to the bottom of the page. */
-  margin-top: auto;
+  margin-top: 10%;
   display: none;
 }
 
