@@ -58,7 +58,7 @@ function footerContent(){
 
 goTop.addEventListener('click', function(){
     soundRestart(toggle);
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
 });
   
 
