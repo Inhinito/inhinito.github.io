@@ -29,7 +29,7 @@ english.addEventListener('click', function(e){
   soundRestart(toggle);
 
   startMenu.style.opacity = 0;
-  footerDetails.style.opacity = 0;
+  footer.style.opacity = 0;
 
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   menuButtons.style.opacity = 0;
@@ -50,7 +50,7 @@ english.addEventListener('click', function(e){
 
     // Change the language content of the footer.
     footerContent();
-    footerDetails.style.opacity = 1;
+    footer.style.opacity = 1;
   }, 200);
   
   
@@ -67,7 +67,7 @@ greek.addEventListener('click', function(e){
   soundRestart(toggle);
 
   startMenu.style.opacity = 0;
-  footerDetails.style.opacity = 0;
+  footer.style.opacity = 0;
 
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   menuButtons.style.opacity = 0;
@@ -88,7 +88,7 @@ greek.addEventListener('click', function(e){
 
     // Change the language content of the footer.
     footerContent();
-    footerDetails.style.opacity = 1;
+    footer.style.opacity = 1;
   }, 200);
 
   // Load the menu content that the user was on before changing to Greek.
@@ -100,6 +100,7 @@ greek.addEventListener('click', function(e){
 function rememberButton(){
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
+  
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
 

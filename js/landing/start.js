@@ -178,6 +178,8 @@ button1.addEventListener('mousedown', function () {
   soundRestart(buttonClick);
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
+  // Fade out the footer.
+  footer.style.opacity = 0;
 
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
@@ -186,6 +188,9 @@ button1.addEventListener('mousedown', function () {
       button1content();
       // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
       mainMenu.style.opacity = 1;
+      // Fade in the footer.
+      footer.style.opacity = 1;
+
   }, 300);
 });
 
@@ -197,6 +202,8 @@ button2.addEventListener('mousedown', function () {
   soundRestart(buttonClick);
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
+  // Fade out the footer.
+  footer.style.opacity = 0;
 
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
@@ -205,6 +212,8 @@ button2.addEventListener('mousedown', function () {
       button2content();
       // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
       mainMenu.style.opacity = 1;
+      // Fade in the footer.
+      footer.style.opacity = 1;
   }, 300);
 });
 
@@ -216,6 +225,8 @@ button3.addEventListener('mousedown', function () {
   soundRestart(buttonClick);
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
+  // Fade out the footer.
+  footer.style.opacity = 0;
 
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
@@ -224,6 +235,8 @@ button3.addEventListener('mousedown', function () {
       button3content();
       // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
       mainMenu.style.opacity = 1;
+      // Fade in the footer.
+      footer.style.opacity = 1;
   }, 300);
 });
 
@@ -235,6 +248,8 @@ button4.addEventListener('mousedown', function () {
   soundRestart(buttonClick);
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
+  // Fade out the footer.
+  footer.style.opacity = 0;
 
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
@@ -243,6 +258,8 @@ button4.addEventListener('mousedown', function () {
       button4content();
       // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
       mainMenu.style.opacity = 1;
+      // Fade in the footer.
+      footer.style.opacity = 1;
   }, 300);
 });
 
