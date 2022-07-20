@@ -51,7 +51,7 @@ body {
 main{
   margin: 0 3% 0 3%;
   opacity: 1;
-  transition: opacity 0.4s;
+  transition: opacity 0.3s;
   display: none;
   max-width: 730px;
   margin: auto;
@@ -291,6 +291,11 @@ footer{
   animation-name: star;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.constellation {
+  opacity: 1;
+  transition: opacity 0.1s;
 }
 
 .star.style1 { animation-duration: 0.5s; animation-name: star; }

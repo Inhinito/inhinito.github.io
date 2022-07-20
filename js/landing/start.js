@@ -26,10 +26,11 @@ fancyFlag = true;
 
 mainContent.style.display = 'block';
 // Show the start menu.
-fadeInMenu(mainContent, 500);
+fadeInElement(mainContent, 500);
 
 // The user has pressed the 'Start!' button.
 startButton.addEventListener('click', function () {
+
   started();
 })
 
@@ -58,6 +59,8 @@ function started(){
     fillStartMenu();
     // Stop the interval from repeating itself.
     clearInterval(startMenuInterval);
+    // Load the stars
+    loadStars();
   }, 400);
 }
 
@@ -82,7 +85,7 @@ function reloadMain(evt){
   const startMenuInterval = setInterval(function () {
     
     // Fade in the main content.
-    fadeInMenu(mainContent, 300);
+    fadeInElement(mainContent, 300);
     
     mainContent.style.display = 'block';
     // Add the main menu back to the DOM.
@@ -97,6 +100,8 @@ function reloadMain(evt){
 
     // Stop the interval from repeating itself.
     clearInterval(startMenuInterval);
+    // Load the stars
+    loadStars();
   }, 300);
 }
 
@@ -105,7 +110,7 @@ function fillStartMenu(){
   startFlag = true;
 
   // Fade in start menu.
-  fadeInMenu(startMenu, 300);
+  fadeInElement(startMenu, 300);
 
   startMenuContent();
 }
@@ -149,6 +154,7 @@ button3.style.setProperty('--content', '"Communities"');
 const menuButtons = document.getElementById('menu-buttons');
 // Main menu selected effect.
 menuButtons.addEventListener('mousedown', function(evt){
+  
     if(evt.target.nodeName=='A'){
 
       button1.style.setProperty('--background', '#00000033');
@@ -186,6 +192,7 @@ button1.addEventListener('mousedown', function () {
       // Fade in the footer.
       footer.style.opacity = 1;
 
+      loadStars();
   }, 300);
 });
 
@@ -209,6 +216,7 @@ button2.addEventListener('mousedown', function () {
       mainMenu.style.opacity = 1;
       // Fade in the footer.
       footer.style.opacity = 1;
+      loadStars();
   }, 300);
 });
 
@@ -232,6 +240,7 @@ button3.addEventListener('mousedown', function () {
       mainMenu.style.opacity = 1;
       // Fade in the footer.
       footer.style.opacity = 1;
+      loadStars();
   }, 300);
 });
 

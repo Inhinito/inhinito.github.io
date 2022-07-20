@@ -18,7 +18,7 @@ const footerYears = document.getElementsByClassName('current-year');
  * @param {*} el The menu div element.
  * @param {*} time The amount of time it takes to fade in.
  */
- function fadeInMenu(el, time) {
+ function fadeInElement(el, time) {
     el.style.opacity = 0;
 
     let last = +new Date();
@@ -40,7 +40,7 @@ footerYears[1].innerText = currentYear;
 
 
 // Fade in the footer.
-fadeInMenu(footer, 700);
+fadeInElement(footer, 700);
 footer.style.display = 'block';
 
 // Change the footer's language content.

@@ -21,6 +21,10 @@ function clearMainMenu() {
 
 english.addEventListener('click', function(e){
   e.preventDefault();
+
+  // Reload the stars in the background.
+  loadStars()
+
   // Set the language flag to English.
   languageFlag='english';
   soundRestart(toggle);
@@ -58,6 +62,9 @@ english.addEventListener('click', function(e){
 greek.addEventListener('click', function(e){
   e.preventDefault();
 
+  // Reload the stars in the background.
+  loadStars()
+
   // Set the language flag to Greek.
   languageFlag='greek';
   soundRestart(toggle);
@@ -93,6 +100,7 @@ greek.addEventListener('click', function(e){
 
 
 function rememberButton(){
+
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
   

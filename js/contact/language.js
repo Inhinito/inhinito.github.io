@@ -7,7 +7,7 @@ const contactGreek = document.getElementById('contact-greek');
 const mainContent = document.querySelector('main');
 
 mainContent.style.display = 'block';
-fadeInMenu(mainContent, 500);
+fadeInElement(mainContent, 500);
 
 english.addEventListener('click', function(e){
   e.preventDefault();

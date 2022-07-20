@@ -1,19 +1,23 @@
-function init(){
+// The styles of the stars.
+var style = ["style1", "style2", "style3", "style4"];
+var size = ["size1", "size1", "size1", "size2", "size3"];
+var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
 
-    // The styles of the stars.
-    var style = ["style1", "style2", "style3", "style4"];
-    var size = ["size1", "size1", "size1", "size2", "size3"];
-    var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
-    function getRandomArbitrary(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
+var stars = "";
+var constellation = document.querySelector(".constellation");
 
-    var stars = "";
-    var constellation = document.querySelector(".constellation");
-    
-    // A function to re-load the stars on demand.
-    function loadStars(){
+// A function to re-load the stars on demand.
+function loadStars(){
+
+    // Fade out the constellation.
+    constellation.style.opacity = 0;
+    // Wait half a second for the menu to fade out.
+    setTimeout(function(){
+
         // Clear the existing stars.
         stars = "";
         constellation.innerHTML = '';
@@ -52,7 +56,13 @@ function init(){
 
         // Add the generated stars to the DOM.
         constellation.innerHTML = stars;
-    }
+        // Fade in the stars.
+        constellation.style.opacity = 1;
+    }, 100);
+}
+
+function init(){
+
 
     // Load the stars for the first time.
     loadStars();
@@ -65,10 +75,9 @@ function init(){
             timer = setTimeout(() => { func.apply(this, args); }, timeout);
         };
     }
-    
+
     // Check if the size of the screen has changed and reload the stars for that size.
     window.addEventListener('resize', debounce(() => loadStars()));
-
 
     // A random number ().    
     var randomNumber = 1000;
@@ -92,5 +101,6 @@ function init(){
     }
 
 }
+
 
 window.onload = init;
