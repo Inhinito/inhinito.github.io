@@ -22,6 +22,7 @@ body {
   text-align: center;
   font: normal 17px "IBM", Helvetica, sans-serif;
   margin: 0;
+  transition: background 2.5s ease;
   /*
   width: 100%;
   background: -webkit-linear-gradient(top, rgb(55, 41, 99) 30%, rgb(47 20 67) 70%, rgb(20 35 66));
@@ -45,11 +46,7 @@ body {
   justify-content: center;
   /* To make the footer stick to the bottom of the page. */
 }
-html,
-body {
- height: 100%;
- position: relative;
-}
+
 
 main{
   margin: 0 3% 0 3%;
@@ -163,7 +160,7 @@ a {
 
 .basic-button { 
   font-family: "PressStart";
-  font-size: 12px;
+  font-size: 11px;
   position: relative;
   margin-left: 8px;
   margin-right: 8px;
@@ -243,7 +240,7 @@ a {
 
 footer{
   /* Make footer stick to the bottom of the page. */
-  margin-top: 10%;
+  margin-top: 70px;
   display: none;
 
   opacity: 1;
@@ -264,6 +261,8 @@ footer{
   
   opacity: 1;
   transition: opacity 0.3s;
+  max-width: 635px;
+  margin: auto;
 }
 
 #copyright {
