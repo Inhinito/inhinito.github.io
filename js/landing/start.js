@@ -2,8 +2,6 @@
 const button1 = document.getElementById('btn1');
 const button2 = document.getElementById('btn2');
 const button3 = document.getElementById('btn3');
-const button4 = document.getElementById('btn4');
-
 
 // Get the main-menu div.
 const mainContent = document.querySelector('main');
@@ -145,8 +143,8 @@ button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Intro"');
 button2.style.setProperty('--content', '"Services"'); 
-button3.style.setProperty('--content', '"Projects"'); 
-button4.style.setProperty('--content', '"Team"'); 
+button3.style.setProperty('--content', '"Communities"'); 
+
 // Get the menuButtons section.
 const menuButtons = document.getElementById('menu-buttons');
 // Main menu selected effect.
@@ -161,9 +159,6 @@ menuButtons.addEventListener('mousedown', function(evt){
 
       button3.style.setProperty('--background', '#00000033');
       button3.style.setProperty('color', 'white');
-
-      button4.style.setProperty('--background', '#00000033');
-      button4.style.setProperty('color', 'white');
 
       evt.target.style.setProperty('--background', '#fbc943');
       evt.target.style.setProperty('color', '#372963');
@@ -233,29 +228,6 @@ button3.addEventListener('mousedown', function () {
       clearMainMenu();
       // Fill the menu with content.
       button3content();
-      // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
-      mainMenu.style.opacity = 1;
-      // Fade in the footer.
-      footer.style.opacity = 1;
-  }, 300);
-});
-
-// User pressed button 4.
-button4.addEventListener('mousedown', function () {
-  // Set the button flag.
-  buttonFlag = 'button4';
-  // Button sfx.
-  soundRestart(buttonClick);
-  // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
-  mainMenu.style.opacity = 0;
-  // Fade out the footer.
-  footer.style.opacity = 0;
-
-  // Wait half a second for the menu to fade out.
-  setTimeout(function(){
-      clearMainMenu();
-      // Fill the menu with content.
-      button4content();
       // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
       mainMenu.style.opacity = 1;
       // Fade in the footer.
