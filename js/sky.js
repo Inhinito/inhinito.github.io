@@ -79,32 +79,28 @@ function loadStars(changeStars = false){
         console.log('The html height: ', htmlHeight);
         console.log('The window height: ', windowHeight);
         
-        // Check if the height of the HTML element is smaller than that of the page.
-        if(htmlHeight < windowHeight) {
-            console.log('The HTML element is shorter');
+        
+        console.log('The HTML element is shorter');
 
-            console.log('The star tops: ', starTops);
-            // Loop through all of the stars.
-            for (let i = 0; i < starTops.length; i++) {
-                // Check if the star's distance from the top of the page is 
-                // shorter than the HTML element's height.
-                if(starTops[i] < (windowHeight)) {
+        console.log('The star tops: ', starTops);
+        // Loop through all of the stars.
+        for (let i = 0; i < starTops.length; i++) {
+            // Check if the star's distance from the top of the page is 
+            // shorter than the HTML element's height.
+            if(starTops[i] < (windowHeight)) {
 
-                    // Get a single star that matches this height from the DOM.
-                    let star = document.querySelector(`[style~="top:${starTops[i]}px;"]`);
-
-
-                    // Add the star's HTML as a string to the stars.
-                    stars += starStrings[i];
+                // Add the star's HTML as a string to the stars.
+                stars += starStrings[i];
+            
                 
-                    
-                }
-
             }
+
+        }
 
             
 
-        } else {
+        // Check if the height of the HTML element is smaller than that of the page.
+        if(htmlHeight > windowHeight) {
             // If the height of the page has grown, add stars to page's new height.
             console.log('The HTML element is longer');
         }
