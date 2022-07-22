@@ -18,15 +18,18 @@ var constellation = document.querySelector(".constellation");
 // An array to hold the coordinates of all the stars;
 starTops = [];
 
+// The height of the previous page.
+previousHeight = '';
+
 // A function to re-load the stars on demand.
 function loadStars(changeStars = false){
-    // Get the current window's width and height.
+    // Get the current window's width (do not add stars to the last 30 pixels of the page).
     let windowWidth = window.innerWidth - 25;
+    // Get the height of the page.
     let scrollHeight = document.body.offsetHeight;
-    
+    // Do not add stars to the last 30 pixels of the page.
     let windowHeight = scrollHeight - 30;
 
-    
     // If the changeStars flag is on, do business as usual.
     if(changeStars) {
         // Clear the existing stars.
@@ -56,12 +59,10 @@ function loadStars(changeStars = false){
             // The distance of the star from the top of the screen.
             let top = getRandomArbitrary(0, windowHeight);
 
-            let star = "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
+            // Add the star to the rest of the stars.
+            stars += "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
             + size[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
             + getRandomArbitrary(25, windowWidth) + "px; top:" + top + "px;'></span>";
-
-            // Add the star to the rest of the stars.
-            stars += star;
 
             // Add a star to the star array.
             starTops.push(top);
@@ -73,15 +74,15 @@ function loadStars(changeStars = false){
     // In this case we will remove stars if they are overflowing over the HTML element and 
     // add them if they do not reach the end of the HTML element.
     } else {
-        // Get the height of the HTML element.
-        var htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
-        console.log('The html height: ', htmlHeight);
+        
+        console.log('The previous height: ', previousHeight);
         console.log('The scroll height: ', scrollHeight);
         
+        // TO SOLVE THE HEIGHT ISSUE JUST SAVE THE PREVIOUS HEIGHT AND COMPARE IT THE NEW ONE.
         
 
-        // Check if the height of the HTML element is smaller than that of the page.
-        if(htmlHeight > scrollHeight) {
+        // Check if the height of the new page is bigger than that of the previous page.
+        if(scrollHeight > previousHeight) {
             // If the height of the page has grown, add stars to page's new height.
             console.log('The HTML element is longer');
         } else {
@@ -91,13 +92,15 @@ function loadStars(changeStars = false){
             for (let i = 0; i < starTops.length; i++) {
                 // Check if the star's distance from the top of the page is 
                 // shorter than the HTML element's height.
-                if(starTops[i] > htmlHeight) {
+                if(starTops[i] > scrollHeight) {
 
                     // Get a single star that matches this height from the DOM.
                     let star = document.querySelector(`[style~="top:${starTops[i]}px;"]`);
                     // Remove the star from the DOM.
                     star.remove();
                     
+                    // USE SETS INSTEAD OF AN ARRAY TO STORE THE TOPS SO THAT YOU CAN REMOVE THE TOPS
+                    // THAT BELONG TO THE STARS YOU REMOVE!
                     
                 }
 
@@ -105,10 +108,10 @@ function loadStars(changeStars = false){
             
         }
 
-
     }
 
-
+    // Save the height of the previous page.
+    previousHeight = scrollHeight;
 }
 
 function init(){
