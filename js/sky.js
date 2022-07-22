@@ -17,7 +17,6 @@ var stars = "";
 var constellation = document.querySelector(".constellation");
 // An array to hold the coordinates of all the stars;
 starTops = [];
-starStrings = [];
 
 // A function to re-load the stars on demand.
 function loadStars(changeStars = false){
@@ -36,7 +35,6 @@ function loadStars(changeStars = false){
         constellation.innerHTML = '';
         // Clear the star tops array.
         starTops = [];
-        starStrings = [];
     
         console.log('the window\'s width', windowWidth);
     
@@ -67,7 +65,6 @@ function loadStars(changeStars = false){
 
             // Add a star to the star array.
             starTops.push(top);
-            starStrings.push(star);
         }
 
         // Add the generated stars to the DOM.
@@ -79,7 +76,7 @@ function loadStars(changeStars = false){
         // Get the height of the HTML element.
         var htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
         console.log('The html height: ', htmlHeight);
-        console.log('The window height: ', windowHeight);
+        console.log('The scroll height: ', scrollHeight);
         
         
 
@@ -98,13 +95,9 @@ function loadStars(changeStars = false){
 
                     // Get a single star that matches this height from the DOM.
                     let star = document.querySelector(`[style~="top:${starTops[i]}px;"]`);
-                    console.log('Remove this: ', star)
+                    // Remove the star from the DOM.
                     star.remove();
-
-
-                    // Add the star's HTML as a string to the stars.
-                    // stars += starStrings[i];
-                
+                    
                     
                 }
 
