@@ -293,10 +293,6 @@ footer{
   animation-iteration-count: infinite;
 }
 
-.constellation {
-  opacity: 1;
-  transition: opacity 0.1s;
-}
 
 .star.style1 { animation-duration: 0.5s; animation-name: star; }
 .star.style2 { animation-duration: 1s; animation-name: star; }

@@ -11,17 +11,15 @@ var stars = "";
 var constellation = document.querySelector(".constellation");
 
 // A function to re-load the stars on demand.
-function loadStars(){
+function loadStars(changeStars = false){
 
-    // Fade out the constellation.
-    constellation.style.opacity = 0;
-    // Wait half a second for the menu to fade out.
-    setTimeout(function(){
+    // If the changeStars flag is on, do business as usual.
+    if(changeStars) {
 
         // Clear the existing stars.
         stars = "";
         constellation.innerHTML = '';
-
+    
         // Get the current window's width and height.
         let windowWidth = window.innerWidth - 25;
         let scrollHeight = Math.max(
@@ -29,11 +27,11 @@ function loadStars(){
             document.body.offsetHeight, document.documentElement.offsetHeight,
             document.body.clientHeight, document.documentElement.clientHeight
         );
-
+    
         let windowHeight = scrollHeight - 30;
-
+    
         console.log('the window\'s width', windowWidth);
-
+    
         // Initialize the amount of stars.
         let amountOfStars;
         // Check the width of the screen.
@@ -46,26 +44,31 @@ function loadStars(){
         } else {
             amountOfStars = 250;
         }
-
+    
         // Generate all the stars.
         for (var i = 0; i < amountOfStars; i++) {
             stars += "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
             + size[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
             + getRandomArbitrary(25, windowWidth) + "px; top: " + getRandomArbitrary(0, windowHeight) + "px;'></span>";
         }
+    } else {
+        // If there are stars beyond the page's height, remove them.
 
-        // Add the generated stars to the DOM.
-        constellation.innerHTML = stars;
-        // Fade in the stars.
-        constellation.style.opacity = 1;
-    }, 100);
+        // If the height of the page has grown, add stars to page's new height.
+
+    }
+    
+
+    // Add the generated stars to the DOM.
+    constellation.innerHTML = stars;
+
 }
 
 function init(){
 
 
     // Load the stars for the first time.
-    loadStars();
+    loadStars(changeStars = true);
 
     // A function to debounce loading the stars every time the screen size changes.
     function debounce(func, timeout = 500){
@@ -77,7 +80,7 @@ function init(){
     }
 
     // Check if the size of the screen has changed and reload the stars for that size.
-    window.addEventListener('resize', debounce(() => loadStars()));
+    window.addEventListener('resize', debounce(() => loadStars(changeStars = true)));
 
     // A random number ().    
     var randomNumber = 1000;

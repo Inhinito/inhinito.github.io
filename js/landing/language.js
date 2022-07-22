@@ -62,9 +62,6 @@ english.addEventListener('click', function(e){
 greek.addEventListener('click', function(e){
   e.preventDefault();
 
-  // Reload the stars in the background.
-  loadStars()
-
   // Set the language flag to Greek.
   languageFlag='greek';
   soundRestart(toggle);
@@ -91,6 +88,9 @@ greek.addEventListener('click', function(e){
     // Change the language content of the footer.
     footerContent();
     footer.style.opacity = 1;
+
+    // Reload the stars in the background.
+    loadStars()
   }, 200);
 
   // Load the menu content that the user was on before changing to Greek.
@@ -107,18 +107,21 @@ function rememberButton(){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
 
-      clearMainMenu();
-    
-      // Fill the menu with content.
-      if(buttonFlag=='button1'){
-        button1content();
-      } else if(buttonFlag=='button2'){
-        button2content();
-      } else if(buttonFlag=='button3'){
-        button3content();
-      }
-      // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
-      mainMenu.style.opacity = 1;
+    clearMainMenu();
+  
+    // Fill the menu with content.
+    if(buttonFlag=='button1'){
+      button1content();
+    } else if(buttonFlag=='button2'){
+      button2content();
+    } else if(buttonFlag=='button3'){
+      button3content();
+    }
+    // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
+    mainMenu.style.opacity = 1;
+
+    // Reload the stars in the background.
+    loadStars()
   }, 200);
 }
 
