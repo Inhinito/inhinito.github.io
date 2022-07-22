@@ -30,7 +30,6 @@ function loadStars(changeStars = false){
     stars = "";
     // If the changeStars flag is on, do business as usual.
     if(changeStars) {
-        constellation.innerHTML = '';
         // Clear the star tops array.
         starTops = [];
     
@@ -46,7 +45,7 @@ function loadStars(changeStars = false){
         } else if (windowWidth >= 800 && windowWidth < 1500){
             amountOfStars = 120;
         } else {
-            amountOfStars = 250;
+            amountOfStars = 200;
         }
     
         // Generate all the stars.
@@ -57,7 +56,7 @@ function loadStars(changeStars = false){
             // Add the star to the rest of the stars.
             stars += "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
             + size[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
-            + getRandomArbitrary(25, windowWidth) + "px; top: " + top + "px;'></span>";
+            + getRandomArbitrary(25, windowWidth) + "px; top:" + top + "px;'></span>";
 
             // Add a star to the star array.
             starTops.push(top);
@@ -75,22 +74,28 @@ function loadStars(changeStars = false){
         if(htmlHeight < windowHeight) {
             console.log('The HTML element is shorter');
 
-
+            console.log('The star tops: ', starTops);
             // Loop through all of the stars.
             for (let i = 0; i < starTops.length; i++) {
                 // Check if the star's distance from the top of the page is 
                 // shorter than the HTML element's height.
-                if(starTops[i] < htmlHeight) {
-                    console.log('The star top: ', starTops[i]);
+                if(starTops[i] < (htmlHeight)) {
 
                     // Get a single star that matches this height from the DOM.
-                    let star = document.querySelector(`[style~="${starTops[i]}px;"]`);
+                    let DOMstars = document.querySelectorAll(`[style~="top:${starTops[i]}px;"]`);
 
-                    // Add the star's HTML as a string to the stars.
-                    stars += star.outerHTML;
+                    for (let j = 0; j < DOMstars.length; j++) {
+                        const DOMstar = DOMstars[j];
+                        
+                        // Add the star's HTML as a string to the stars.
+                        stars += DOMstar.outerHTML;
+                    }
+                    
                 }
 
             }
+
+            
 
         } else {
             // If the height of the page has grown, add stars to page's new height.
@@ -100,6 +105,8 @@ function loadStars(changeStars = false){
 
     }
 
+    // Clear the constellation.
+    constellation.innerHTML = '';
     // Add the generated stars to the DOM.
     constellation.innerHTML = stars;
 
