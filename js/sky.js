@@ -75,7 +75,7 @@ function loadStars(changeStars = false){
     // add them if they do not reach the end of the HTML element.
     } else {
         // Get the height of the HTML element.
-        var htmlHeight = document.getElementsByTagName('html')[0].offsetWidth;
+        var htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
         console.log('The html height: ', htmlHeight);
         console.log('The window height: ', windowHeight);
         
