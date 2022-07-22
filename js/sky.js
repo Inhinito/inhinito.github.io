@@ -15,8 +15,9 @@ function removeStarFromStars(string, stringToRemove) {
 
 var stars = "";
 var constellation = document.querySelector(".constellation");
-// An array to hold the coordinates of all the stars;
-starTops = [];
+// A set to hold the heights / tops of all the stars;
+const starHeights = new Set();
+
 
 // The height of the previous page.
 previousHeight = '';
@@ -28,7 +29,7 @@ function loadStars(changeStars = false){
     // Get the height of the page.
     let scrollHeight = document.body.offsetHeight;
     // Do not add stars to the last 30 pixels of the page.
-    let windowHeight = scrollHeight - 30;
+    let windowHeight = scrollHeight - 50;
 
     // If the changeStars flag is on, do business as usual.
     if(changeStars) {
@@ -36,8 +37,8 @@ function loadStars(changeStars = false){
         stars = "";
         // Clear the constellation.
         constellation.innerHTML = '';
-        // Clear the star tops array.
-        starTops = [];
+        // Clear the star heights.
+        starHeights.clear();
     
         console.log('the window\'s width', windowWidth);
     
@@ -58,14 +59,18 @@ function loadStars(changeStars = false){
         for (var i = 0; i < amountOfStars; i++) {
             // The distance of the star from the top of the screen.
             let top = getRandomArbitrary(0, windowHeight);
-
-            // Add the star to the rest of the stars.
-            stars += "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
-            + size[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
-            + getRandomArbitrary(25, windowWidth) + "px; top:" + top + "px;'></span>";
-
-            // Add a star to the star array.
-            starTops.push(top);
+            // Check if there is another star with this height. If we add 2 stars with the same height
+            // then only of the two will be deleted when removing stars as sets delete all instances with delete().
+            if(!starHeights.has(top)) {
+                
+                // Add a star's top to the starHeights set.
+                starHeights.add(top);
+    
+                // Add the star to the rest of the stars.
+                stars += "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
+                + size[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
+                + getRandomArbitrary(25, windowWidth) + "px; top:" + top + "px;'></span>";
+            }
         }
 
         // Add the generated stars to the DOM.
@@ -88,23 +93,27 @@ function loadStars(changeStars = false){
         } else {
             console.log('The HTML element is shorter');
 
+
+            console.log('The star heights: ', starHeights)
             // Loop through all of the stars.
-            for (let i = 0; i < starTops.length; i++) {
+            starHeights.forEach((starHeight)=> {
+
                 // Check if the star's distance from the top of the page is 
                 // shorter than the HTML element's height.
-                if(starTops[i] > scrollHeight) {
+                if(starHeight > windowHeight) {
 
                     // Get a single star that matches this height from the DOM.
-                    let star = document.querySelector(`[style~="top:${starTops[i]}px;"]`);
+                    let star = document.querySelector(`[style~="top:${starHeight}px;"]`);
+
                     // Remove the star from the DOM.
                     star.remove();
-                    
-                    // USE SETS INSTEAD OF AN ARRAY TO STORE THE TOPS SO THAT YOU CAN REMOVE THE TOPS
-                    // THAT BELONG TO THE STARS YOU REMOVE!
+                    // Remove the star from the set.
+                    starHeights.delete(starHeight);
                     
                 }
+            })
 
-            }
+            
             
         }
 
