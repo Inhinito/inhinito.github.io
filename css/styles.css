@@ -9,6 +9,12 @@
     format("truetype"); /* Safari, Android, iOS */
 }
 
+html, body {
+  min-height: 100%;
+  min-height: 100vh;
+  overflow: auto; // <- this is needed when you resize the screen
+}
+
 html {
   /* Very important if you want scrolling to the top to happen smoothly */
   scroll-behavior: smooth;

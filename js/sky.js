@@ -46,7 +46,7 @@ function loadStars(changeStars = false){
         let amountOfStars;
         // Check the width of the screen.
         if(windowWidth < 500) {
-            amountOfStars = 50;
+            amountOfStars = 60;
         } else if (windowWidth >= 500 && windowWidth <800) {
             amountOfStars = 90;
         } else if (windowWidth >= 800 && windowWidth < 1500){
@@ -79,9 +79,9 @@ function loadStars(changeStars = false){
     // In this case we will remove stars if they are overflowing over the HTML element and 
     // add them if they do not reach the end of the HTML element.
     } else {
-        
-        console.log('The previous height: ', previousHeight);
-        console.log('The scroll height: ', scrollHeight);
+
+        // console.log('\n\nThe previous height: ', previousHeight);
+        // console.log('The scroll height: ', scrollHeight);
         
         // TO SOLVE THE HEIGHT ISSUE JUST SAVE THE PREVIOUS HEIGHT AND COMPARE IT THE NEW ONE.
         
@@ -89,9 +89,50 @@ function loadStars(changeStars = false){
         // Check if the height of the new page is bigger than that of the previous page.
         if(scrollHeight > previousHeight) {
             // If the height of the page has grown, add stars to page's new height.
-            console.log('The HTML element is longer');
+            console.log('The HTML element is LONGER!');
+
+            let newHeight = scrollHeight - previousHeight;
+            console.log('The old height: ', previousHeight);
+            console.log('The new height: ', newHeight);
+
+            // Initialize the amount of filler stars.
+            let fillerStarsAmount = 0;
+
+            // Check the width of the screen.
+            if(windowWidth < 500) {
+                fillerStarsAmount = 40;
+            } else if (windowWidth >= 500 && windowWidth <800) {
+                fillerStarsAmount = 35;
+            } else if (windowWidth >= 800 && windowWidth < 1500){
+                fillerStarsAmount = 30;
+            } else {
+                fillerStarsAmount = 25;
+            }
+    
+
+            let fillerStars = "";
+            // Generate new filler stars to be placed in between the old and the new height.
+            for (var i = 0; i < fillerStarsAmount; i++) {
+                // The distance of the star from the old height.
+                let top = getRandomArbitrary(previousHeight, scrollHeight);
+                // Check if there is another star with this height. If we add 2 stars with the same height
+                // then only of the two will be deleted when removing stars as sets delete all instances with delete().
+                if(!starHeights.has(top)) {
+                    
+                    // Add a star's top to the starHeights set.
+                    starHeights.add(top);
+        
+                    // Add the star to the rest of the stars.
+                    fillerStars += "<span class='star " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
+                    + size[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
+                    + getRandomArbitrary(25, windowWidth) + "px; top:" + top + "px;'></span>";
+                }
+            }
+            // Add the generated filler stars to the DOM.
+            constellation.innerHTML += fillerStars;
+
         } else {
-            console.log('The HTML element is shorter');
+            console.log('The HTML element is SHORTER!!!');
 
 
             console.log('The star heights: ', starHeights)
