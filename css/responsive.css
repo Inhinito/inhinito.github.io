@@ -1,3 +1,4 @@
+
 @media screen and (max-width: 500px) {
   body{
     font: normal 18px "IBM", Helvetica, sans-serif;
@@ -43,6 +44,15 @@
       0%   {left: 145px; top: 0px;}
       50%  {left: 170px; top: 0px;}
       100%  {left: 145px; top: 0px;}
+  }
+
+}
+
+@media screen and (max-width: 570px) {
+  body #menu-buttons{
+    max-width: 170px;
+    margin: auto;
+    padding-bottom: 10px;
   }
 }
 

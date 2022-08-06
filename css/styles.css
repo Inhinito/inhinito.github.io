@@ -55,12 +55,12 @@ body {
 
 
 main{
-  margin: 0 3% 0 3%;
   opacity: 1;
   transition: opacity 0.3s;
   display: none;
   max-width: 730px;
   margin: auto;
+  padding: 0px 10px;
 }
 
 a {
