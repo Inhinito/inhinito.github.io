@@ -255,8 +255,9 @@ function scrollAndStart(){
   soundRestart(toggle);
   window.scrollTo(0,0);
 
+
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     started();
-  }, 600);
+  }, 500);
 }
