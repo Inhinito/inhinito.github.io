@@ -148,7 +148,7 @@ button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Intro"');
 button2.style.setProperty('--content', '"Services"'); 
-button3.style.setProperty('--content', '"Communities"'); 
+button3.style.setProperty('--content', '"Community"'); 
 
 // Get the menuButtons section.
 const menuButtons = document.getElementById('menu-buttons');
@@ -250,6 +250,7 @@ button3.addEventListener('mousedown', function () {
 const pressStartLinks = document.getElementsByClassName('press-start-inline');
 pressStartLinks[0].addEventListener('click', scrollAndStart);
 pressStartLinks[1].addEventListener('click', scrollAndStart);
+pressStartLinks[2].addEventListener('click', scrollAndStart);
 
 function scrollAndStart(){
   soundRestart(toggle);
@@ -259,5 +260,5 @@ function scrollAndStart(){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     started();
-  }, 500);
+  }, 300);
 }

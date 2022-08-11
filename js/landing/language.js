@@ -40,7 +40,7 @@ english.addEventListener('click', function(e){
     // Set button values to English.
     button1.style.setProperty('--content', '"Intro"'); 
     button2.style.setProperty('--content', '"Services"'); 
-    button3.style.setProperty('--content', '"Communities"'); 
+    button3.style.setProperty('--content', '"Community"'); 
 
     startMenuContent();
     startMenu.style.opacity = 1;
@@ -77,7 +77,7 @@ greek.addEventListener('click', function(e){
     // Set button values to English.
     button1.style.setProperty('--content', '"Εισαγωγή"'); 
     button2.style.setProperty('--content', '"Υπηρεσίες"');
-    button3.style.setProperty('--content', '"Κοινότητες"');
+    button3.style.setProperty('--content', '"Κοινότητα"');
 
     startMenuContent();
     startMenu.style.opacity = 1;
