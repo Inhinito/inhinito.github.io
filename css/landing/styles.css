@@ -44,7 +44,7 @@
     transition: opacity 0.3s;
 }
 
-#hire {
+.red-button {
     background: #ee4684;
     color: white;
     border-radius: 2px;
@@ -170,7 +170,7 @@
     left: 7px;
     top: 7px;
     width: 99%;
-    height: 99%;
+    height: 97.5%;
 
     display: block;
     -webkit-transition: all 0.1s ease-out;
