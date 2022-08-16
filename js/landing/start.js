@@ -147,8 +147,8 @@ function startMenuContent(){
 button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Intro"');
-button2.style.setProperty('--content', '"Services"'); 
-button3.style.setProperty('--content', '"Community"'); 
+button2.style.setProperty('--content', '"Portfolio"'); 
+button3.style.setProperty('--content', '"Ecosystem"'); 
 
 // Get the menuButtons section.
 const menuButtons = document.getElementById('menu-buttons');

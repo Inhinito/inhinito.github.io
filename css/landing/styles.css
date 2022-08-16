@@ -25,7 +25,9 @@
 
 
 #start-menu-content {
-    margin: 0 3% 0 3%;
+    margin: auto;
+    max-width: 730px;
+    padding: 0 10px;
 }
 
 /* Set all the button menus to NOT be displayed so that the right menu can

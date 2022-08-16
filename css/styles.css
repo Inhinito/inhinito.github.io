@@ -146,6 +146,11 @@ fieldset {
   background: linear-gradient(174deg, rgb(141 155 255 / 0%) 13%, rgb(47 35 125 / 60%) 51%, rgb(19 12 73 / 80%) 100%);
 }
 
+fieldset .text-8-bit {
+  margin: -8px 0 2px 0;
+}
+/*
+
 .fieldset-button {
   float: right;
   position: relative;
@@ -159,6 +164,7 @@ fieldset {
   padding: 6px 10px;
   cursor: pointer;
 }
+*/
 
 .article-header {
   font: normal 20px "PressStart", Helvetica, sans-serif;
@@ -186,10 +192,6 @@ fieldset .article-header {
 .text-8-bit {
   color: orange;
   font-size: 18px;
-}
-
-fieldset .text-8-bit {
-  margin: -8px 0 -15px 0;
 }
 
 .basic-button { 
