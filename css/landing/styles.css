@@ -191,7 +191,7 @@
     top: 0;
     min-width: 112px;
     height: 5px;
-    padding: 24px 12px 18px;
+    padding: 22px 12px 20px;
     border: 2px solid #fbc943;
     border-radius: 3px;
 }
@@ -204,7 +204,7 @@
     color: white;
     line-height: 4px;
     letter-spacing: 2px;
-    margin-left: 4px;
+    margin-left: 2px;
     text-align: center;
     text-transform: uppercase;
     -webkit-transition: all 0.1s ease-out;
