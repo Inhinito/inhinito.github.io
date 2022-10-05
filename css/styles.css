@@ -58,7 +58,7 @@ main{
   opacity: 1;
   transition: opacity 0.3s;
   display: none;
-  max-width: 730px;
+  max-width: 600px;
   margin: auto;
   padding: 0px 10px;
 }
@@ -105,7 +105,7 @@ a {
 #trademark {
   width: 70%;
   min-width: 230px;
-  max-width: 700px;
+  max-width: 620px;
   margin-top: 130px;
   margin-bottom: 10px;
 }
