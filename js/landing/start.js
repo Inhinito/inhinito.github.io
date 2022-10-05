@@ -16,6 +16,7 @@ const startMenu = document.getElementById('start-menu');
 
 const startButton = document.querySelector('.fancy-button');
 const reloadMainMenu = document.getElementById('reload-main-menu');
+const supportButton = document.getElementById('support-button');
 
 const startMenuEnglish = document.getElementById('start-menu-english');
 const startMenuGreek = document.getElementById('start-menu-greek');
@@ -144,6 +145,7 @@ function startMenuContent(){
 /* Main menu button functionality */
 
 // Initialize the menu buttons. 
+supportButton.innerText = 'SUPPORT';
 button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Intro"');

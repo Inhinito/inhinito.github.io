@@ -38,6 +38,7 @@ english.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
+    supportButton.innerText = 'SUPPORT';
     button1.style.setProperty('--content', '"Intro"'); 
     button2.style.setProperty('--content', '"Ecosystem"'); 
     button3.style.setProperty('--content', '"Story"'); 
@@ -75,6 +76,7 @@ greek.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
+    supportButton.innerText = 'ΥΠΟΣΤΗΡΙΞΗ';
     button1.style.setProperty('--content', '"Εισαγωγή"'); 
     button2.style.setProperty('--content', '"Οικοσύστημα"');
     button3.style.setProperty('--content', '"Ιστορικό"');
