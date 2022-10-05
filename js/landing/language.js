@@ -39,8 +39,8 @@ english.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     button1.style.setProperty('--content', '"Intro"'); 
-    button2.style.setProperty('--content', '"Portfolio"'); 
-    button3.style.setProperty('--content', '"Ecosystem"'); 
+    button2.style.setProperty('--content', '"Ecosystem"'); 
+    button3.style.setProperty('--content', '"Story"'); 
 
     startMenuContent();
     startMenu.style.opacity = 1;
@@ -76,8 +76,8 @@ greek.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     button1.style.setProperty('--content', '"Εισαγωγή"'); 
-    button2.style.setProperty('--content', '"Πορτφόλιο"');
-    button3.style.setProperty('--content', '"Οικοσύστημα"');
+    button2.style.setProperty('--content', '"Οικοσύστημα"');
+    button3.style.setProperty('--content', '"Ιστορικό"');
 
     startMenuContent();
     startMenu.style.opacity = 1;
