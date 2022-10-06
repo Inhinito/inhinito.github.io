@@ -4,6 +4,10 @@
     font: normal 18px "IBM", Helvetica, sans-serif;
   }
 
+  body .text-8-bit {
+    font-size: 16px;
+  }
+
   header #greek{
     display: block;
     margin-top: 10px;
