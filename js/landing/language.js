@@ -79,7 +79,7 @@ greek.addEventListener('click', function(e){
     supportButton.innerText = 'ΥΠΟΣΤΗΡΙΞΗ';
     button1.style.setProperty('--content', '"Εισαγωγή"'); 
     button2.style.setProperty('--content', '"Οικοσύστημα"');
-    button3.style.setProperty('--content', '"Ιστορικό"');
+    button3.style.setProperty('--content', '"Ιστορία"');
 
     startMenuContent();
     startMenu.style.opacity = 1;

@@ -122,7 +122,7 @@ function startMenuContent(){
   if(languageFlag=='english'){
     
     // Set the main menu button value.
-    reloadMainMenu.style.setProperty('--content', '"Main Menu"'); 
+    reloadMainMenu.style.setProperty('--content', '"← Home Page"'); 
     
     startMenuGreek.style.display = 'none';        
     startMenuEnglish.style.display = 'block';
@@ -130,7 +130,7 @@ function startMenuContent(){
   } else {
     
     // Set the main menu button value.
-    reloadMainMenu.style.setProperty('--content', '"Kυρίως Mενού"'); 
+    reloadMainMenu.style.setProperty('--content', '"← Αρχική Σελίδα"'); 
     
     startMenuEnglish.style.display = 'none';
     // Load the Greek menu content.// Check wether to load English or Greek menu content.
