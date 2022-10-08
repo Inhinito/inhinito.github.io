@@ -144,7 +144,7 @@ fieldset {
   border: 2px solid orange;
   border-radius: 4px;
   background: rgb(142,152,226);
-  background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 40%, rgb(19 12 73 / 80%) 82%);
+  background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 20%, rgb(19 12 73 / 80%) 100%);
 
   display:inline-block;
 }
@@ -289,6 +289,20 @@ fieldset .article-header {
   margin-bottom: 20px;
   margin-left: 2px;
   margin-right: 2px;
+}
+
+strong {
+  color: #ffd800;
+}
+
+ol {
+  padding-left: 32px;
+  padding-right: 6px;
+}
+
+ol li {
+  color: orange;
+  margin-bottom: 10px;
 }
 
 footer{
