@@ -137,6 +137,9 @@
     content: var(--content);
 }
 
+#btn3{
+    width: 139.5px;
+}
 #btn3::after {
     background: var(--background);
     content: var(--content);
