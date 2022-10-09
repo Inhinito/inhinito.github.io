@@ -137,9 +137,6 @@
     content: var(--content);
 }
 
-#btn3{
-    width: 139.5px;
-}
 #btn3::after {
     background: var(--background);
     content: var(--content);
@@ -175,7 +172,7 @@
     left: 5px;
     top: 7px;
     width: 99.5%;
-    height: 97.5%;
+    height: 97%;
 
     display: block;
     -webkit-transition: all 0.1s ease-out;
