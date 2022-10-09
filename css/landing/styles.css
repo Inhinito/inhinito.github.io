@@ -188,7 +188,7 @@
 .fancy-button .top {
     position: relative;
     left: 0;
-    top: 0.7px;
+    top: 1px;
     min-width: 113px;
     height: 5px;
     padding: 22px 12px 20px;
@@ -235,3 +235,51 @@
 }
 
 /* End of fancy Button */
+
+
+/* Form */
+
+form {
+    margin: 10px 6px 6px;
+}
+
+.form-label {
+    font-family: 'PressStart';
+    color: #ffcf4e;
+    text-shadow: 1.1px 1px 0 rgb(229 62 90);
+    font-size: clamp(13px, 4vw, 15px);
+    margin: 6px 0 6px 2px;
+    display: block;
+}
+
+.form-control {
+    font-family: 'IBM';
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 2px solid orange;
+    border-radius: 2px;
+    padding: 10px;
+    max-width: 635px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-control:focus {
+    outline: 2px solid #ffd6de;
+}
+
+input {
+    width: calc(100% - 24px);
+}
+
+select {
+    padding-left: 5px !important;
+    width: calc(100% - 19px);
+}
+
+textarea {
+    width: calc(100% - 24px);
+    display: grid;
+    resize: vertical;
+}
+

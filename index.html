@@ -48,7 +48,7 @@
 
             <!-- 8-bit Header -->
             <a href="index.html">
-                <img id="trademark" src="media/images/logo_small.png" alt="the Inhinito trademark" />
+                <img id="trademark" src="media/images/trademark.png" alt="the Inhinito trademark" />
             </a>
 
             <div id="soundboard-instructions" class="text-8-bit">
@@ -66,30 +66,46 @@
                 <!-- Render start menu content in English. -->
                 <div id="start-menu-english">
                     <section class="article-section">
+
                         <article class="article-8-bit">
-                            <h1 class="article-header">
-                                How can we help?
-                            </h1>
-                            <p class="text-8-bit">
-                                You can think of us as the help desk to every project that is 
-                                included in the <strong>Ecosystem Tab</strong> featured on our <strong>
-                                Home Page</strong>. Our goal is to provide solutions that support your 
-                                creativity and answer all of your questions. 
-                                
-                                <br><br>
-                                Please go ahead and submit your inquiry, using the form bellow &#8595;
-                            </p>
+                            <fieldset>
+                                <legend>
+                                    <h1 class="article-header">What's Inhinito?</h1>
+                                </legend>
+                                <p class="text-8-bit article-list-space">
+                                    You can think of us as the help desk to every project that is 
+                                    included in the <strong>Ecosystem Tab</strong> featured on our <strong>
+                                    Home Page</strong>. Our goal is to provide solutions that support your 
+                                    creativity and answer all of your questions. 
+                                    
+                                    <br><br>
+                                    Please go ahead and submit your inquiry, using the form bellow &#8595;
+                                </p>
+
+                                <form target="_blank" action="https://formsubmit.co/f1ee639dcddb5bdac8323bdcb56ee76f" method="POST">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+
+                                        <label for="team" class="form-label">Team</label>
+                                        <select name="team" class="form-control">
+                                            <option value="inhinito">Inhinito Management Team</option>
+                                            <option value="lofi">Lofi.gr</option>
+                                            <option value="working">Working.gr</option>
+                                            <option value="street-art">StreetArt.gr</option>
+                                        </select>
+                                          
+                                        <label for="message" class="form-label">How can we help?</label>
+                                        <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-button">Submit Form</button>
+                                </form>
+                            </fieldset>
                         </article>
 
-                        <!-- Google Form in English -->
-
-                        <div class="membership border-item">
-                            <a class="big-link"
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSe3jvWRdwg7_uGXtpq9vwUCvbZWYXkXbIPVjRnb1kZkXdTeNA/viewform?usp=sf_link">Membership
-                                Form</a>
-                            The above link will redirect you to the Inhinito Membership Google
-                            Form.
-                        </div>
                     </section>
                 </div>
 
@@ -109,13 +125,24 @@
                             </p>
                         </article>
 
-                        <!-- Google Form in Greek -->
-                        <div class="membership border-item">
-                            <a class="big-link"
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSfP6rUOhAZccVFDErrsPCiRy0F-5uSHQR_pgqMToasQxSZ0Rg/viewform?usp=sf_link">Φόρμα
-                                Αίτησης Μέλους</a>
-                            Ο παραπάνω σύνδεσμος θα σας ανακατευθύνει στη Google φόρμα αίτησης νέου μέλους Inhinito.
-                        </div>
+                        <form target="_blank" action="https://formsubmit.co/f1ee639dcddb5bdac8323bdcb56ee76f" method="POST">
+                            <div class="form-group">
+                              <div class="form-row">
+                                <div class="col">
+                                  <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="col">
+                                  <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+                        </form>
+
                     </section>
                 </div>
 
