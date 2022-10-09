@@ -247,12 +247,12 @@ button3.addEventListener('mousedown', function () {
 });
 
 
+/*
 // Upon pressing the inline link on the bottom of the first button link, 
 // scroll to the top of the page and press the start button.
 const pressStartLinks = document.getElementsByClassName('press-start-inline');
 pressStartLinks[0].addEventListener('click', scrollAndStart);
 pressStartLinks[1].addEventListener('click', scrollAndStart);
-pressStartLinks[2].addEventListener('click', scrollAndStart);
 
 function scrollAndStart(){
   soundRestart(toggle);
@@ -264,3 +264,4 @@ function scrollAndStart(){
     started();
   }, 300);
 }
+*/

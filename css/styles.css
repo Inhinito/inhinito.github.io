@@ -103,9 +103,9 @@ a {
 
 
 #trademark {
-  width: 70%;
+  width: 75%;
   min-width: 230px;
-  max-width: 620px;
+  max-width: 650px;
   margin-top: 130px;
   margin-bottom: 10px;
 }
@@ -212,7 +212,7 @@ fieldset .article-header {
   --background: rgb(55, 41, 99);
   /* The width and the height is big enough to allow for the animeted movement of the button
   as well as the box-shadow of the button */
-  width:140px;
+  width:141px;
   height:40px;
 }
 
@@ -239,7 +239,7 @@ fieldset .article-header {
   right: 0;
   position: absolute;
   /* Make the after element smaller so that it doesn't overflow through the original element when active */
-  width:136px;
+  width:137px;
   height:33px;
 }
 
