@@ -100,7 +100,7 @@ a {
   list-style: none;
   padding: 10px;
 
-  background: gray;
+  background: linear-gradient(174deg, rgb(51 59 118) 0%, rgb(47 35 125 / 80%) 20%, rgb(19 12 73 / 80%) 100%);
 }
 
 
@@ -295,11 +295,13 @@ fieldset .article-header {
 
 strong {
   color: #ffd800;
+  letter-spacing: 0.5px;
 }
 
 ol {
   padding-left: 32px;
   padding-right: 6px;
+  font-size: 18px;
 }
 
 ol li {

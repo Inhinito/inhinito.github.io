@@ -14,7 +14,7 @@ let startFlag = false;
 
 const startMenu = document.getElementById('start-menu');
 
-const startButton = document.querySelector('.fancy-button');
+const startButton = document.querySelector('#start-button');
 const reloadMainMenu = document.getElementById('reload-main-menu');
 const supportButton = document.getElementById('support-button');
 
