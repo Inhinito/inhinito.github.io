@@ -145,7 +145,7 @@ fieldset {
   border: 2px solid orange;
   border-radius: 4px;
   background: rgb(142,152,226);
-  background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 20%, rgb(19 12 73 / 80%) 100%);
+  background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 45%, rgb(19 12 73 / 80%) 100%);
 
   display:inline-block;
 }
