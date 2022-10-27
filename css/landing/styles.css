@@ -247,14 +247,15 @@ form {
     font-family: 'PressStart';
     color: #ffcf4e;
     text-shadow: 1.1px 1px 0 rgb(229 62 90);
-    font-size: clamp(13px, 4vw, 15px);
+    font-size: clamp(14px, 4vw, 15px);
     margin: 6px 0 6px 2px;
     display: block;
+    line-height: 20px;
 }
 
 .form-control {
     font-family: 'IBM';
-    font-size: 16px;
+    font-size: clamp(13px, 3vw, 16px);
     margin-bottom: 10px;
     border: 2px solid orange;
     border-radius: 2px;
@@ -262,6 +263,7 @@ form {
     max-width: 635px;
     font-weight: bold;
     letter-spacing: .8px;
+    background: #e1d3f2;
 }
 
 .form-control:focus {
