@@ -21,9 +21,20 @@ const starHeights = new Set();
 
 // The height of the previous page.
 previousHeight = '';
+// The width of the page from the previous loadStars event.
+previousWidth = '';
 
 // A function to re-load the stars on demand.
 function loadStars(changeStars = false){
+
+    // If the user is on the same page and the only thing that changed was the height, 
+    // then DON'T load new stars. This is important as some mobile browsers change height
+    // when you scroll.
+    if(previousWidth == window.innerWidth) {
+        console.log('Same width! Abort the loadStars function.');
+        return
+    }
+
     // Get the current window's width (do not add stars to the last 30 pixels of the page).
     let windowWidth = window.innerWidth - 25;
     // Get the height of the page.
@@ -80,6 +91,7 @@ function loadStars(changeStars = false){
     // add them if they do not reach the end of the HTML element.
     } else {
 
+        
         // console.log('\n\nThe previous height: ', previousHeight);
         // console.log('The scroll height: ', scrollHeight);
         
@@ -162,6 +174,8 @@ function loadStars(changeStars = false){
 
     // Save the height of the previous page.
     previousHeight = scrollHeight;
+    // Save the width of this loadStars event.
+    previousWidth = window.innerWidth;
 }
 
 function init(){
