@@ -23,16 +23,27 @@ const starHeights = new Set();
 previousHeight = '';
 // The width of the page from the previous loadStars event.
 previousWidth = '';
+// The previous page.
+var previousPage = '';
+// The previous language.
+var previousLanguage = '';
+// The previous menu.
+var previousMenu = '';
 
 // A function to re-load the stars on demand.
 function loadStars(changeStars = false){
-
-    // If the user is on the same page and the only thing that changed was the height, 
-    // then DON'T load new stars. This is important as some mobile browsers change height
-    // when you scroll.
-    if(previousWidth == window.innerWidth) {
-        console.log('Same width! Abort the loadStars function.');
+    console.log('\n\n\n\n\n');
+    console.log('the previous page: ', previousPage);
+    console.log('the previous language: ', previousLanguage);
+    console.log('the previous menu: ', previousMenu);
+    
+    // Check if the user has changed tab or page width. This is important as some mobile browsers change height
+    // when you scroll, so the stars should only re-render when the tab or the width of the page change.
+    if((previousWidth == window.innerWidth) && (previousPage == buttonFlag) && (previousLanguage == languageFlag) && (previousMenu == startFlag)) {
+        console.log('ABORT.');
         return
+    } else {
+        console.log('Load new stars!')
     }
 
     // Get the current window's width (do not add stars to the last 30 pixels of the page).
@@ -51,7 +62,7 @@ function loadStars(changeStars = false){
         // Clear the star heights.
         starHeights.clear();
     
-        console.log('the window\'s width', windowWidth);
+        // console.log('the window\'s width', windowWidth);
     
         // Initialize the amount of stars.
         let amountOfStars;
@@ -90,22 +101,16 @@ function loadStars(changeStars = false){
     // In this case we will remove stars if they are overflowing over the HTML element and 
     // add them if they do not reach the end of the HTML element.
     } else {
-
-        
-        // console.log('\n\nThe previous height: ', previousHeight);
-        // console.log('The scroll height: ', scrollHeight);
-        
-        // TO SOLVE THE HEIGHT ISSUE JUST SAVE THE PREVIOUS HEIGHT AND COMPARE IT THE NEW ONE.
         
 
         // Check if the height of the new page is bigger than that of the previous page.
         if(scrollHeight > previousHeight) {
             // If the height of the page has grown, add stars to page's new height.
-            console.log('The HTML element is LONGER!');
+            // console.log('The HTML element is LONGER!');
 
             let newHeight = scrollHeight - previousHeight;
-            console.log('The old height: ', previousHeight);
-            console.log('The new height: ', newHeight);
+            // console.log('The old height: ', previousHeight);
+            // console.log('The new height: ', newHeight);
 
             // Initialize the amount of filler stars.
             let fillerStarsAmount = 0;
@@ -176,10 +181,24 @@ function loadStars(changeStars = false){
     previousHeight = scrollHeight;
     // Save the width of this loadStars event.
     previousWidth = window.innerWidth;
+
+    // Save the previous page.
+    previousPage = buttonFlag;
+    // Save the previous language.
+    previousLanguage = languageFlag;
+    // Save the previous menu.
+    previousMenu = startFlag;
+    
+    console.log('The button flag: ', buttonFlag);
+    console.log('The language flag: ', languageFlag);
+    console.log('The menu flag: ', startFlag);
 }
 
 function init(){
-
+    // The previous flags.
+    previousPage = buttonFlag;
+    previousLanguage = languageFlag;
+    previousMenu = startFlag;
 
     // Load the stars for the first time.
     loadStars(changeStars = true);
