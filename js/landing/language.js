@@ -10,9 +10,6 @@ const button2greek = document.getElementById('button2-greek');
 const button3english = document.getElementById('button3-english');
 const button3greek = document.getElementById('button3-greek');
 
-const button4english = document.getElementById('button4-english');
-const button4greek = document.getElementById('button4-greek');
-
 // Clear the main menu's content.
 function clearMainMenu() {
   // Loop through the main menu's children.
@@ -24,6 +21,10 @@ function clearMainMenu() {
 
 english.addEventListener('click', function(e){
   e.preventDefault();
+
+  // Reload the stars in the background.
+  loadStars()
+
   // Set the language flag to English.
   languageFlag='english';
   soundRestart(toggle);
@@ -37,10 +38,10 @@ english.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
+    supportButton.innerText = 'SUPPORT';
     button1.style.setProperty('--content', '"Intro"'); 
-    button2.style.setProperty('--content', '"Services"'); 
-    button3.style.setProperty('--content', '"Projects"'); 
-    button4.style.setProperty('--content', '"Team"'); 
+    button2.style.setProperty('--content', '"Ecosystem"'); 
+    button3.style.setProperty('--content', '"Story"'); 
 
     startMenuContent();
     startMenu.style.opacity = 1;
@@ -75,10 +76,10 @@ greek.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
+    supportButton.innerText = 'ΥΠΟΣΤΗΡΙΞΗ';
     button1.style.setProperty('--content', '"Εισαγωγή"'); 
-    button2.style.setProperty('--content', '"Υπηρεσίες"');
-    button3.style.setProperty('--content', '"Δράσεις"'); 
-    button4.style.setProperty('--content', '"Ομάδα"'); 
+    button2.style.setProperty('--content', '"Οικοσύστημα"');
+    button3.style.setProperty('--content', '"Ιστορία"');
 
     startMenuContent();
     startMenu.style.opacity = 1;
@@ -89,6 +90,9 @@ greek.addEventListener('click', function(e){
     // Change the language content of the footer.
     footerContent();
     footer.style.opacity = 1;
+
+    // Reload the stars in the background.
+    loadStars()
   }, 200);
 
   // Load the menu content that the user was on before changing to Greek.
@@ -98,26 +102,28 @@ greek.addEventListener('click', function(e){
 
 
 function rememberButton(){
+
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   mainMenu.style.opacity = 0;
   
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
 
-      clearMainMenu();
-    
-      // Fill the menu with content.
-      if(buttonFlag=='button1'){
-        button1content();
-      } else if(buttonFlag=='button2'){
-        button2content();
-      } else if(buttonFlag=='button3'){
-        button3content();
-      } else if(buttonFlag=='button4'){
-        button4content();
-      }
-      // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
-      mainMenu.style.opacity = 1;
+    clearMainMenu();
+  
+    // Fill the menu with content.
+    if(buttonFlag=='button1'){
+      button1content();
+    } else if(buttonFlag=='button2'){
+      button2content();
+    } else if(buttonFlag=='button3'){
+      button3content();
+    }
+    // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
+    mainMenu.style.opacity = 1;
+
+    // Reload the stars in the background.
+    loadStars()
   }, 200);
 }
 
@@ -148,15 +154,5 @@ function button3content(){
     button3english.style.display = 'block';
   } else {
     button3greek.style.display = 'block';
-  }
-}
-
-// Button 4 was clicked.
-function button4content(){
-  // Check wether to load English or Greek menu content.
-  if(languageFlag=='english'){
-    button4english.style.display = 'block';
-  } else {
-    button4greek.style.display = 'block';
   }
 }

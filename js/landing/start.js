@@ -2,8 +2,6 @@
 const button1 = document.getElementById('btn1');
 const button2 = document.getElementById('btn2');
 const button3 = document.getElementById('btn3');
-const button4 = document.getElementById('btn4');
-
 
 // Get the main-menu div.
 const mainContent = document.querySelector('main');
@@ -16,8 +14,9 @@ let startFlag = false;
 
 const startMenu = document.getElementById('start-menu');
 
-const startButton = document.querySelector('.fancy-button');
+const startButton = document.querySelector('#start-button');
 const reloadMainMenu = document.getElementById('reload-main-menu');
+const supportButton = document.getElementById('support-button');
 
 const startMenuEnglish = document.getElementById('start-menu-english');
 const startMenuGreek = document.getElementById('start-menu-greek');
@@ -28,10 +27,11 @@ fancyFlag = true;
 
 mainContent.style.display = 'block';
 // Show the start menu.
-fadeInMenu(mainContent, 500);
+fadeInElement(mainContent, 500);
 
 // The user has pressed the 'Start!' button.
 startButton.addEventListener('click', function () {
+
   started();
 })
 
@@ -60,6 +60,8 @@ function started(){
     fillStartMenu();
     // Stop the interval from repeating itself.
     clearInterval(startMenuInterval);
+    // Load the stars
+    loadStars();
   }, 400);
 }
 
@@ -84,7 +86,7 @@ function reloadMain(evt){
   const startMenuInterval = setInterval(function () {
     
     // Fade in the main content.
-    fadeInMenu(mainContent, 300);
+    fadeInElement(mainContent, 300);
     
     mainContent.style.display = 'block';
     // Add the main menu back to the DOM.
@@ -99,6 +101,8 @@ function reloadMain(evt){
 
     // Stop the interval from repeating itself.
     clearInterval(startMenuInterval);
+    // Load the stars
+    loadStars();
   }, 300);
 }
 
@@ -107,7 +111,7 @@ function fillStartMenu(){
   startFlag = true;
 
   // Fade in start menu.
-  fadeInMenu(startMenu, 300);
+  fadeInElement(startMenu, 300);
 
   startMenuContent();
 }
@@ -118,7 +122,7 @@ function startMenuContent(){
   if(languageFlag=='english'){
     
     // Set the main menu button value.
-    reloadMainMenu.style.setProperty('--content', '"Main Menu"'); 
+    reloadMainMenu.style.setProperty('--content', '"← Home Page"'); 
     
     startMenuGreek.style.display = 'none';        
     startMenuEnglish.style.display = 'block';
@@ -126,7 +130,7 @@ function startMenuContent(){
   } else {
     
     // Set the main menu button value.
-    reloadMainMenu.style.setProperty('--content', '"Kυρίως Mενού"'); 
+    reloadMainMenu.style.setProperty('--content', '"← Αρχική Σελίδα"'); 
     
     startMenuEnglish.style.display = 'none';
     // Load the Greek menu content.// Check wether to load English or Greek menu content.
@@ -141,16 +145,18 @@ function startMenuContent(){
 /* Main menu button functionality */
 
 // Initialize the menu buttons. 
+supportButton.innerText = 'SUPPORT';
 button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Intro"');
-button2.style.setProperty('--content', '"Services"'); 
-button3.style.setProperty('--content', '"Projects"'); 
-button4.style.setProperty('--content', '"Team"'); 
+button2.style.setProperty('--content', '"Ecosystem"'); 
+button3.style.setProperty('--content', '"Story"'); 
+
 // Get the menuButtons section.
 const menuButtons = document.getElementById('menu-buttons');
 // Main menu selected effect.
 menuButtons.addEventListener('mousedown', function(evt){
+  
     if(evt.target.nodeName=='A'){
 
       button1.style.setProperty('--background', '#00000033');
@@ -161,9 +167,6 @@ menuButtons.addEventListener('mousedown', function(evt){
 
       button3.style.setProperty('--background', '#00000033');
       button3.style.setProperty('color', 'white');
-
-      button4.style.setProperty('--background', '#00000033');
-      button4.style.setProperty('color', 'white');
 
       evt.target.style.setProperty('--background', '#fbc943');
       evt.target.style.setProperty('color', '#372963');
@@ -191,6 +194,7 @@ button1.addEventListener('mousedown', function () {
       // Fade in the footer.
       footer.style.opacity = 1;
 
+      loadStars();
   }, 300);
 });
 
@@ -214,6 +218,7 @@ button2.addEventListener('mousedown', function () {
       mainMenu.style.opacity = 1;
       // Fade in the footer.
       footer.style.opacity = 1;
+      loadStars();
   }, 300);
 });
 
@@ -237,33 +242,12 @@ button3.addEventListener('mousedown', function () {
       mainMenu.style.opacity = 1;
       // Fade in the footer.
       footer.style.opacity = 1;
-  }, 300);
-});
-
-// User pressed button 4.
-button4.addEventListener('mousedown', function () {
-  // Set the button flag.
-  buttonFlag = 'button4';
-  // Button sfx.
-  soundRestart(buttonClick);
-  // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
-  mainMenu.style.opacity = 0;
-  // Fade out the footer.
-  footer.style.opacity = 0;
-
-  // Wait half a second for the menu to fade out.
-  setTimeout(function(){
-      clearMainMenu();
-      // Fill the menu with content.
-      button4content();
-      // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
-      mainMenu.style.opacity = 1;
-      // Fade in the footer.
-      footer.style.opacity = 1;
+      loadStars();
   }, 300);
 });
 
 
+/*
 // Upon pressing the inline link on the bottom of the first button link, 
 // scroll to the top of the page and press the start button.
 const pressStartLinks = document.getElementsByClassName('press-start-inline');
@@ -274,8 +258,10 @@ function scrollAndStart(){
   soundRestart(toggle);
   window.scrollTo(0,0);
 
+
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     started();
-  }, 600);
+  }, 300);
 }
+*/

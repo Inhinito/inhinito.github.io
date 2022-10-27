@@ -9,40 +9,62 @@
     format("truetype"); /* Safari, Android, iOS */
 }
 
+html, body {
+  min-height: 100%;
+  min-height: 100vh;
+  overflow: auto; // <- this is needed when you resize the screen
+}
+
 html {
   /* Very important if you want scrolling to the top to happen smoothly */
   scroll-behavior: smooth;
+  box-shadow: 0px -28px 100px -35px rgb(9 24 56) inset;
 }
 
 body {
-  background-color: rgb(55, 41, 99);
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient(top, rgb(50 29 120) 30%, rgb(70 21 107) 60%, rgb(20 35 66));
+  
+  text-align: center;
+  font: normal 17px "IBM", Helvetica, sans-serif;
+  margin: 0;
+  transition: background 2.5s ease;
+  box-shadow: 0px -100px 100px -35px rgb(2 25 75) inset;
+  /*
+  width: 100%;
+  background: -webkit-linear-gradient(top, rgb(55, 41, 99) 30%, rgb(47 20 67) 70%, rgb(20 35 66));
+
   background-size: 100%;
   text-align: center;
   font: normal 17px "IBM", Helvetica, sans-serif;
   background-repeat: no-repeat;
-  max-width: 730px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0;
+  margin: 0;
   
   padding: 0;
   height: auto;
 
-  /* To make the footer stick to the bottom of the page. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* To make the footer stick to the bottom of the page. */
 }
 
+
 main{
-  margin: 0 3% 0 3%;
   opacity: 1;
-  transition: opacity 0.4s;
+  transition: opacity 0.3s;
   display: none;
+  max-width: 635px;
+  margin: auto;
+  padding: 0px 10px;
 }
 
 a {
-  color: navajowhite;
+  color: white;
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -71,7 +93,7 @@ a {
 }
 
 .border-item {
-  margin-bottom: 15px;
+  margin-bottom: 7px;
   border: 2px solid #ffcf4e;
   color: orange;
   border-radius: 4px;
@@ -81,11 +103,11 @@ a {
 
 
 #trademark {
-  width: 80%;
+  width: 75%;
   min-width: 230px;
-  max-width: 700px;
-  margin-top: 90px;
-  margin-bottom: 0px;
+  max-width: 650px;
+  margin-top: 130px;
+  margin-bottom: 10px;
 }
 
 
@@ -108,7 +130,7 @@ a {
 
 /* Articles */
 .article-8-bit{
-  margin-bottom: 7%;
+  margin-bottom: 5%;
 }
 
 .article-section {
@@ -117,11 +139,54 @@ a {
   margin-bottom: 5%;
 }
 
+fieldset { 
+  padding: 4px;
+  border: 2px solid orange;
+  border-radius: 4px;
+  background: rgb(142,152,226);
+  background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 20%, rgb(19 12 73 / 80%) 100%);
+
+  display:inline-block;
+}
+
+fieldset .text-8-bit {
+  margin: -8px 0 5px 0;
+  padding: 0 4px 2px 6px;
+}
+
+fieldset ul {
+  margin-bottom: -5px;
+  padding: 0 2px 0px 2px;
+}
+
+/*
+
+.fieldset-button {
+  float: right;
+  position: relative;
+  top: 24px;
+  font-family: 'PressStart';
+  font-size: 10px;
+  background: #1c1052;
+  color: white;
+  border: 2px solid orange;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+*/
+
 .article-header {
-  font: normal 20px "PressStart", Helvetica, sans-serif;
+  font-family: "PressStart", Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: clamp(12px, 4vw, 20px);
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-  margin-bottom: 0px;
+}
+
+
+fieldset .article-header {
+  padding: 0 2px 0 5px;
 }
 
 .article-list-item {
@@ -130,30 +195,30 @@ a {
 
 .list-header {
   margin-top: 30px;
-  margin-bottom: 13px;
-  font: normal 15px "PressStart", Helvetica, sans-serif;
+  margin-bottom: -10px;
+  font-size: clamp(12px, 4vw, 17px);
 }
 
 /* 8-bit fonts*/
 
 .text-8-bit {
   color: orange;
+  font-size: 18px;
+  padding: 0;
 }
-
-
 
 .basic-button { 
   font-family: "PressStart";
-  font-size: 12px;
+  font-size: 11px;
   position: relative;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
   margin-bottom: 5px;
   /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
   --background: rgb(55, 41, 99);
   /* The width and the height is big enough to allow for the animeted movement of the button
   as well as the box-shadow of the button */
-  width:145px;
+  width:141px;
   height:40px;
 }
 
@@ -180,15 +245,15 @@ a {
   right: 0;
   position: absolute;
   /* Make the after element smaller so that it doesn't overflow through the original element when active */
-  width:143px;
+  width:137px;
   height:33px;
 }
 
 .basic-button::before{
   box-shadow: 5px 5px 0 0 #ed649a;
   border-radius: 3px;
-  width: 147px;
-  height: 36.5px;
+  width: 141px;
+  height: 37px;
   content: "";
   background-size: cover;
   background-repeat: no-repeat;
@@ -215,6 +280,16 @@ a {
   transform: translate(5px, 5px);
 }
 
+.active-project {
+  color: lime;
+}
+.in-development {
+  color: aqua;
+}
+.next {
+  color: yellow;
+}
+
 .social-icon{
   width: 90%;
   margin-bottom: 20px;
@@ -222,9 +297,25 @@ a {
   margin-right: 2px;
 }
 
+strong {
+  color: #ffd800;
+  letter-spacing: 0.5px;
+}
+
+ol {
+  padding-left: 32px;
+  padding-right: 6px;
+  font-size: 18px;
+}
+
+ol li {
+  color: orange;
+  margin-bottom: 10px;
+}
+
 footer{
   /* Make footer stick to the bottom of the page. */
-  margin-top: 10%;
+  margin-top: 70px;
   display: none;
 
   opacity: 1;
@@ -240,16 +331,146 @@ footer{
 #footer-details{
   padding: 15px 3% 15px 3%;
   background-color: #c33f7d;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 6px;
   text-align: left;
   
   opacity: 1;
   transition: opacity 0.3s;
+  max-width: 635px;
+  margin: auto;
 }
 
 #copyright {
   text-align: center;
   color: #ffcf4e;
   margin-top: 30px;
+}
+
+
+* {
+  box-sizing: content-box;
+}
+
+
+
+/************* Stary night sky ************/
+
+* {
+  box-sizing: content-box;
+}
+
+.star {
+  background-color: white;
+  /* border-radius: 50%; */
+  position: absolute;
+  animation-name: star;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+
+.star.style1 { animation-duration: 0.5s; animation-name: star; }
+.star.style2 { animation-duration: 1s; animation-name: star; }
+.star.style3 { animation-duration: 1.5s; animation-name: star; }
+.star.style4 { animation-duration: 2s; animation-name: starLight; }
+
+.star.size1 { width: 1px; height: 1px; }
+.star.size2 { width: 2px; height: 2px; }
+.star.size3 { width: 3px; height: 3px; }
+
+.star.opacity1 { opacity:  1; }
+.star.opacity2 { opacity: .5; }
+.star.opacity3 { opacity: .1; }
+
+.meteor {
+  position: absolute;
+  background-color: #fff;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+.meteor:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 85px solid white;
+  position: absolute;
+  left: 2px;
+  top: 0;
+}
+
+.meteor.style1 { animation-name: meteorStyle1; }
+.meteor.style2 { animation-name: meteorStyle2; }
+.meteor.style3 { animation-name: meteorStyle3; }
+.meteor.style4 { animation-name: meteorStyle4; }
+
+
+@keyframes star {
+  0% {
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@keyframes starLight {
+  0% {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+  }
+  20% {
+    background-color: #FFC4C4;
+    box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+  }
+  80% {
+    background-color: #C4CFFF;
+    box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+  }
+  100% {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes meteorStyle1 {
+  0% { opacity: 0; right: 300px; top: 100px; }
+  30% { opacity: .3; }
+  60% { opacity: .3; }
+  100% { opacity: 0; right: 1000px; top: 600px; }
+}
+
+@keyframes meteorStyle2 {
+  0% { opacity: 0; right: 700px; top: 100px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1400px; top: 600px; }
+}
+
+@keyframes meteorStyle3 {
+  0% { opacity: 0; right: 300px; top: 300px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1000px; top: 800px; }
+}
+
+@keyframes meteorStyle4 {
+  0% { opacity: 0; right: 700px; top: 300px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1400px; top: 800px; }
 }

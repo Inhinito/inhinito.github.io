@@ -1,0 +1,1 @@
+A single firework 8bit that loops once (animates a single time only when the site loads)

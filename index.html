@@ -14,7 +14,7 @@
         <meta property="og:image:secure_url" content="media/images/thumbnail.jpg" />
         <link rel="image_src" href="media/images/thumbnail.jpg" />
         <!--end of thumbnail tags-->
-        
+
         <!-- Global Styles -->
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="css/responsive.css" />
@@ -28,9 +28,15 @@
         <meta name="description" content="At Inhinito we help creators find their audience and create projects" />
         <meta name="keywords" content="Inhinito, inhinito, projects, hackerspace, creator, creators, creative, community, enterprise, creative community, network, members, member, welcome, project, team, teams, game, games, club, info, tech, art, pixelated" />
         <!-- End of Landing Page head tags-->
-
     </head>
     <body>
+        
+        <!-- Start of stary night sky 
+        -->
+            <div class="constellation"></div>
+            <div class="meteorShower"></div>
+        <!-- End of stary night sky -->
+
         <header>
             <br />
             <!-- Here go the soundboard instructions -->
@@ -42,7 +48,7 @@
 
             <!-- 8-bit Header -->
             <a href="index.html">
-                <img id="trademark" src="media/images/logo.png" alt="the Inhinito trademark" />
+                <img id="trademark" src="media/images/trademark.png" alt="the Inhinito trademark" />
             </a>
 
             <div id="soundboard-instructions" class="text-8-bit">
@@ -60,54 +66,94 @@
                 <!-- Render start menu content in English. -->
                 <div id="start-menu-english">
                     <section class="article-section">
+
                         <article class="article-8-bit">
-                            <h1 class="article-header">
-                                Join us
-                            </h1>
-                            <p class="text-8-bit">
-                                In order to join Inhinito, all you have to do is fill-out and submit
-                                the membership form. We will review your request and let you know about 
-                                the process of your application. The form must
-                                contain samples of your work. Be honest and show off your
-                                personality.
-                            </p>
+                            <fieldset>
+                                <legend>
+                                    <h1 class="article-header">How can we help?</h1>
+                                </legend>
+                                <p class="text-8-bit article-list-space">
+                                    You can think of us as the help desk to every project that is 
+                                    included in the <strong>Ecosystem Tab</strong> featured on our <strong>
+                                    Home Page</strong>. Our goal is to provide solutions that support your 
+                                    creativity and answer all of your questions. 
+                                    
+                                    <br><br>
+                                    Please go ahead and submit your inquiry using the form bellow &#8595;
+                                </p>
+
+                                <form target="_blank" action="https://formsubmit.co/f1ee639dcddb5bdac8323bdcb56ee76f" method="POST">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+
+                                        <label for="team" class="form-label">Team</label>
+                                        <select name="team" class="form-control" required>
+                                            <option value="inhinito">Inhinito Team</option>
+                                            <option value="lofi">Lofi.gr</option>
+                                            <option value="working">Working.gr</option>
+                                            <option value="street-art">StreetArt.gr</option>
+                                        </select>
+                                                                                
+                                        <label for="message" class="form-label">How can we help?</label>
+                                        <textarea placeholder="Through this field you can place an order or send us your questions." class="form-control" name="message" rows="10" required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-button">SUBMIT</button>
+                                    
+                                </form>
+                            </fieldset>
                         </article>
 
-                        <!-- Google Form in English -->
-
-                        <div class="membership border-item">
-                            <a class="big-link"
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSe3jvWRdwg7_uGXtpq9vwUCvbZWYXkXbIPVjRnb1kZkXdTeNA/viewform?usp=sf_link">Membership
-                                Form</a>
-                            The above link will redirect you to the Inhinito Membership Google
-                            Form.
-                        </div>
                     </section>
                 </div>
 
                 <!-- Render start menu content in Greek. -->
                 <div id="start-menu-greek">
                     <section class="article-section">
+
                         <article class="article-8-bit">
-                            <h1 class="article-header">
-                                Έλα μαζί μας
-                            </h1>
-                            <p class="text-8-bit">
-                                Για να γίνεις μέλος στο Inhinito, το μόνο που πρέπει να κάνεις είναι να συμπληρώσεις 
-                                και να υποβάλεις τη φόρμα μέλους. Θα εξετάσουμε το αίτημά σου και θα επικοινωνήσουμε 
-                                μαζί σου, ώστε να σε ενημερώσουμε για την πορεία του αιτήματός σου. Η φόρμα πρέπει να περιέχει
-                                δείγματα της δουλειάς σου. Να είσαι ειλικρινής και να δώσεις έμφαση στην 
-                                προσωπικότητά σου.
-                            </p>
+                            <fieldset>
+                                <legend>
+                                    <h1 class="article-header">Πώς να βοηθήσουμε?</h1>
+                                </legend>
+                                <p class="text-8-bit article-list-space">
+                                    Μπορείτε να μας θεωρήσετε ως το γραφείο εξυπηρέτησης για κάθε πρότζεκτ 
+                                    που περιλαμβάνεται στην <strong>Kαρτέλα Οικοσυστήματος</strong> της <strong>Αρχικής
+                                    μας Σελίδας</strong>. Στόχος μας είναι να παρέχουμε λύσεις που υποστηρίζουν τη 
+                                    δημιουργικότητά σας και να απαντάμε σε όλες σας τις ερωτήσεις.
+
+                                    <br><br>
+                                    Παρακαλούμε υποβάλετε το αίτημά σας χρησιμοποιώντας την παρακάτω φόρμα &#8595;
+                                </p>
+
+                                <form target="_blank" action="https://formsubmit.co/f1ee639dcddb5bdac8323bdcb56ee76f" method="POST">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Όνομα</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Ονοματεπώνυμο" required>
+
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+
+                                        <label for="team" class="form-label">Ομάδα</label>
+                                        <select name="team" class="form-control" required>
+                                            <option value="inhinito">Ομάδα Inhinito</option>
+                                            <option value="lofi">Lofi.gr</option>
+                                            <option value="working">Working.gr</option>
+                                            <option value="street-art">StreetArt.gr</option>
+                                        </select>
+                                                                                
+                                        <label for="message" class="form-label">Πώς μπορούμε να βοηθήσουμε?</label>
+                                        <textarea placeholder="Μέσα από αυτό το πεδίο μπορείτε να κάνετε μια παραγγελία ή να μας στείλετε τις ερωτήσεις σας." class="form-control" name="message" rows="10" required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-button">ΥΠΟΒΟΛΗ</button>
+                                    
+                                </form>
+                            </fieldset>
                         </article>
 
-                        <!-- Google Form in Greek -->
-                        <div class="membership border-item">
-                            <a class="big-link"
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSfP6rUOhAZccVFDErrsPCiRy0F-5uSHQR_pgqMToasQxSZ0Rg/viewform?usp=sf_link">Φόρμα
-                                Αίτησης Μέλους</a>
-                            Ο παραπάνω σύνδεσμος θα σας ανακατευθύνει στη Google φόρμα αίτησης νέου μέλους Inhinito.
-                        </div>
                     </section>
                 </div>
 
@@ -119,24 +165,19 @@
 
         <!-- Main menu -->
         <main>
-            <!-- Press start menu 
-            <button id="start-button" class="fancy-button">Apply</button>
-            -->
-
-            <br />
-            <a id="start-button" class="fancy-button">
-                <div class="bottom"></div>
-                <div class="top">
-                    <div class="label">Start!</div>
-                </div>
-            </a>
-
+            
             <div id="menu-buttons">
+                <a id="start-button" class="fancy-button">
+                    <div class="bottom"></div>
+                    <div class="top">
+                        <div id="support-button" class="label">SUPPORT</div>
+                    </div>
+                </a>
+                <br />
                 <!-- The text content is filled using the CSS ::after pseudoclass -->
                 <a id="btn1" class="basic-button basic-link"></a>
                 <a id="btn2" class="basic-button basic-link"></a>
                 <a id="btn3" class="basic-button basic-link"></a>
-                <a id="btn4" class="basic-button basic-link"></a>
             </div>
 
             <div id="main-menu" class="article-section">
@@ -144,329 +185,311 @@
                 <!-- The intro page content in English -->
                 <div id="button1-english">
                     <article class="article-8-bit">
-                        <h1 class="article-header">What is Inhinito?</h1>
-                        <p class="text-8-bit article-list-space">
-                            We develop projects and provide services that make it easier 
-                            for other people to create their own projects.
-                            We also help the creators of our community find their audience
-                            and accelerate their career development.
-                        </p>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">What's Inhinito?</h1>
+                            </legend>
+                            <p class="text-8-bit article-list-space">
+                                We support your creativity through an ecosystem of industry-specific talent agencies, physical workspaces & 
+                                software tools that make it easier for you to create projects, collaborate and reach 
+                                your target audience.
+                            </p>
+                        </fieldset>
                     </article>
                     <article class="article-8-bit">
-                        <h1 class="article-header">How Inhinito works</h1>
-                        <p class="text-8-bit article-list-space">
-                            Aside from developing projects for our clients
-                            and helping our creative members bring projects to
-                            life, we also create supportive communal projects in order to feature
-                            our members and encourage community collaboration. These community
-                            projects can stand alone, but are also puzzle pieces that come
-                            together to form the bigger picture. Though each of our
-                            sub-communities targets a specific creative field, when need be, we
-                            come together so that we can combine our skills and create projects
-                            that require multidisciplinary expertise.
-                        </p>
-                    </article>
-                    <article class="article-8-bit">
-                        <h1 class="article-header">Why Inhinito?</h1>
-                        <p class="text-8-bit">
-                            Just like no two people are the same, true innovation and identity
-                            cannot be copied or recreated. Through the unique blend of skills and
-                            personalities our members bring to the table, we stand out. We are
-                            committed to supporting our members on their creative journeys and to
-                            building authentic collaborative communities. It's about the work
-                            culture we want to promote. It's about our vision. If you're
-                            curious, honest and like getting things done by pouring your heart
-                            into them, then we'd love to hear from you. If you're interested and
-                            want to apply for membership, <a class="press-start-inline inline-link">
-                            press the Start button!</a>
-                        </p>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">Our mission</h1>
+                            </legend>
+                            <p class="text-8-bit">
+                                We believe that work should be fun and meaningful. That's why our mission is to 
+                                make working easy, fast and flexible so that you can focus on your purpose.
+                                That way, you can have a greater impact with less effort.
+                            </p>
+                        </fieldset>
                     </article>
                 </div>
 
                 <!-- The intro page content in Greek -->
                 <div id="button1-greek">
                     <article class="article-8-bit">
-                        <h1 class="article-header">Τι είναι το Inhinito;</h1>
-                        <p class="text-8-bit article-list-space">
-                            Αναπτύσσουμε projects και παρέχουμε υπηρεσίες που διευκολύνουν τον κόσμο
-                            να δημιουργήσει τα δικά του projects. Βοηθάμε επίσης τους 
-                            δημιουργούς της κοινότητάς μας να βρουν το κοινό τους και να 
-                            επιταχύνουν την επαγγελματική τους εξέλιξη.
-                            <!-- πετύχουν τους επαγγελματικούς τους στόχους. -->
-                        </p>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">Τι'ναι το Inhinito;</h1>
+                            </legend>
+                            <p class="text-8-bit article-list-space">
+                                Υποστηρίζουμε τη δημιουργικότητά σας μέσω ενός οικοσυστήματος εξειδικευμένων
+                                πρακτορείων ταλέντων, χώρων εργασίας και εργαλείων λογισμικού που διευκολύνουν 
+                                τη δημιουργία πρότζεκτ, τη συνεργασία και τη προσέγγιση του κοινού σας.
+                            </p>
+                        </fieldset>
                     </article>
                     <article class="article-8-bit">
-                        <h1 class="article-header">Πώς δουλεύει το Inhinito</h1>
-                        <p class="text-8-bit article-list-space">
-                            Eκτός από την ανάπτυξη έργων για τους πελάτες μας και τη
-                            στήριξη των δημιουργικών μελών μας για την αποτελεσματική υλοποίηση έργων, δημιουργούμε επίσης
-                            υποστηρικτικά κοινοτικά έργα. Με αυτό τον τρόπο,
-                            αναδεικνύουμε τις δεξιότητες των δημιουργών μας και προωθούμε τη συνεργασία στα πλαίσια της
-                            κοινότητάς μας. Κάθε ένα από τα συγκεκριμένα έργα είναι μεν αυτόνομο, αλλά αποτελεί δε
-                            κομμάτι ενός μεγαλύτερου παζλ, μίας δηλαδή γενικότερης εικόνας. Παρόλο που κάθε υπο-κοινότητά μας
-                            στοχεύει σε έναν συγκεκριμένο δημιουργικό κλάδο, όταν καλούμαστε να υλοποιήσουμε έργα
-                            διεπιστημονικής εξειδίκευσης συνεργαζόμαστε ως μία ενιαία ομάδα, η οποία αξιοποιεί και
-                            συνδυάζει τις διαφορετικές ικανότητες των μελών της.
-                        </p>
-                    </article>
-                    <article class="article-8-bit">
-                        <h1 class="article-header">Γιατί στο Inhinito;</h1>
-                        <p class="text-8-bit">
-                            Όπως κάθε άνθρωπος είναι μοναδικός, έτσι και
-                            η αληθινή ταυτότητα και καινοτομία δεν μπορούν να αντιγραφούν ή να αναπαραχθούν.
-                            Μέσω του μοναδικού συνδυασμού δεξιοτήτων και προσωπικοτήτων που φέρνουν τα
-                            μέλη μας στο τραπέζι, ξεχωρίζουμε. Δέσμευσή μας αποτελεί η υποστήριξη των μελών μας
-                            στα δημιουργικά τους ταξίδια και η ανάπτυξη αυθεντικών συνεργατικών κοινοτήτων.
-                            Πρόκειται για την κουλτούρα εργασίας που θέλουμε να προωθήσουμε.
-                            Πρόκειται για το όραμά μας. Αν είσαι περίεργος, ειλικρινής και σου αρέσει να κάνεις
-                            πράγματα βάζοντας την καρδιά σου σε αυτά, μη διστάσεις να επικοινωνήσεις μαζί μας.
-                            Εάν ενδιαφέρεσαι και θέλεις να υποβάλεις αίτηση συμμετοχής, <a class="press-start-inline inline-link">
-                            πάτησε το κουμπί Start!</a>
-                        </p>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">Η αποστολή μας</h1>
+                            </legend>
+                            <p class="text-8-bit">
+                                Πιστεύουμε πως η εργασία πρέπει να είναι διασκεδαστική και ουσιώδης. 
+                                Γι' αυτό η αποστολή μας είναι να την κάνουμε εύκολη, γρήγορη και ευέλικτη, 
+                                ώστε να μπορείτε να εστιάσετε στον σκοπό σας και να έχετε μεγαλύτερο αντίκτυπο
+                                με μικρότερη προσπάθεια.
+                            </p>
+                        </fieldset>
                     </article>
                 </div>
 
                 <!-- The services page content in English -->
                 <div id="button2-english">
                     <article class="article-8-bit">
-                        <h1 class="article-header">Inhinito Services List</h1>
-                        <p class="text-8-bit">
-                            We provide services that revolve around building on existing projects
-                            and creating new ones.
-                        </p>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">The Ecosystem</h1>
+                            </legend>
+                            <p class="text-8-bit article-list-space">
+                                We are continuously working on improving the existing 
+                                projects in this ecosystem and adding new ones to it. Therefore, 
+                                this list will be updated periodically.
+                            </p>
+                            <h1 class="list-header article-header">Inhinito Projects</h1>
+                            <ul>
+                                
+                                <li class="border-item">
+                                    <strong>
+                                        <a href="https://lofi.gr">LoFi.gr</a> - Greek LoFi Community <span class="active-project">(active)</span>
+                                    </strong>
+                                    <br>
+                                    <br>
+                                    LoFi.gr represents a large portion of the Greek Lo-Fi Community and promotes
+                                    Lo-Fi music in Greece through content production, events & music publishing.
+                                </li>
+                                <li class="border-item">
+                                    <strong>
+                                        <a href="https://streetart.gr">StreetArt.gr</a> - Street Art Greece <span class="in-development">(in development)</span>
+                                    </strong>
+                                    <br>
+                                    <br>
+                                    The purpose of StreetArt.gr is to support the Greek Street Art Community.
+                                </li>
+                                <li class="border-item">
+                                    <strong>
+                                        <a href="http://working.gr">Working.gr</a> - Coworking Space in Serres, Greece <span class="in-development">(in development)</span>
+                                    </strong>
+                                    <br>
+                                    <br>
+                                    Our well-equipped office provides a collborative, comfortable and flexible
+                                    environment that you can run your business from in the city of Serres. We 
+                                    offer shared & dedicated desks, meeting rooms and even host events. 
+                                </li>
+    
+                                
+                                <!--
+                                    <li class="border-item">
+                                        <strong>
+                                            Video.Photography - Video & Photography Services <span class="next">(next in line)</span>
+                                        </strong>
+                                        <br>
+                                        <br>
+                                        The purpose of Video.Photography is to provide video & photography services.
+                                    </li>
+    
+    
+                                    <li class="border-item">
+                                    <strong>
+                                        <a href="https://CooperativeDev.com">Cooperative Dev</a> - Cooperative Development Platform
+                                    </strong>
+                                    <br>
+                                    <br>                                
+                                    Offering tools that make it easy to find new coworkers for 
+                                    your project, apply for membership in existing projects that inspire you (including Inhinito project) & build your 
+                                    own web-app without writing any code.
+                                </li>
+                                <li class="article-list-item">
+                                    <h2 class="list-header article-header">
+                                        Cooperative Dev
+                                    </h2>
+                                    Our cooperative development platform offers you tools that make it easy to find new coworkers for 
+                                    your project, apply for membership in existing projects that inspire you & build your 
+                                    own web-app without writing any code.
+                                </li>
+                                -->
+                                
+                            </ul>
+                        </fieldset>
+
                     </article>
-                    <ul id="services-list" class="text-8-bit">
-                        <!--
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">
-                                Project Management & Crowdsourcing
-                            </h2>
-                            Our online platform offers easy and efficient ways to manage your
-                            projects and search for new coworkers or existing projects based on
-                            location. Discover collaborative opportunities by crowdsourcing new
-                            members for your project and applying for membership in projects that
-                            inspire you.
-                        </li>
-                        -->
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Talent Agency</h2>
-                            We actively scout for talented creators in order to grow our
-                            community. We support our members by identifying potential gigs,
-                            negotiating deals and setting-up events & platforms to help them
-                            target their audience and attract new customers.
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Coworking Space</h2>
-                            Our well-equipped coworking space provides a comfortable and flexible work
-                            environment that you can use as your own office. Our
-                            workspace offers a business postal address, meeting rooms and
-                            virtual assistant services (receptionist, mail scanning & answering
-                            phone calls).
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">
-                                Project Development
-                            </h2>
-                            You don't have to be an Inhinito member to hire professionals from our
-                            community. For every creative field that our community currently supports,
-                            we can provide a capable professional that will bring your idea to life.
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Business Consulting</h2>
-                            We conduct extensive market research and consult with the wide range
-                            of experts in our community. This way, we provide you with
-                            professional advice on issues regarding entrepreneurship, technology,
-                            art and intellectual property so that you can make informed decisions.
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Career Development</h2>
-                            Being part of a supportive and capable community can help you navigate
-                            through career obstacles and figure out what brings you closer to
-                            your ideal job, skillset and lifestyle. We foster a culture of
-                            collaboration and host entrepreneurship events so that our members can
-                            build strong work relationships and have access to mentoring /
-                            feedback from a wide spectrum of creators.
-                        </li>
-                    </ul>
                 </div>
 
                 <!-- The services page content in Greek -->
                 <div id="button2-greek">
                     <article class="article-8-bit">
-                        <h1 class="article-header">Λίστα Υπηρεσιών</h1>
-                        <p class="text-8-bit">
-                            Παρέχουμε υπηρεσίες που σχετίζονται με την ανάπτυξη υπαρχόντων έργων και τη δημιουργία νέων.
-                        </p>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">Το Οικοσύστημα</h1>
+                            </legend>
+                            <p class="text-8-bit article-list-space">
+                                Εργαζόμαστε συνεχώς για τη βελτίωση των υπάρχοντων πρότζεκτ 
+                                του οικοσυστήματός μας αλλά και για την προσθήκη νέων πρότζεκτ σε αυτό.
+                                Επομένως, η παρακάτω λίστα θα ενημερώνεται περιοδικά.
+                            </p>
+                            <h1 class="list-header article-header">Inhinito Projects</h1>
+                            <ul>
+                                
+                                <li class="border-item">
+                                    <strong>
+                                        <a href="https://lofi.gr">LoFi.gr</a> - Ελληνική LoFi Κοινότητα <span class="active-project">(active)</span>
+                                    </strong>
+                                    <br>
+                                    <br>
+                                    Το LoFi.gr αντιπροσωπεύει ένα μεγάλο μέρος της Ελληνικής Lo-Fi Κοινότητας 
+                                    και προωθεί τη Lo-Fi μουσική στην Ελλάδα μέσω παραγωγής περιεχομένου, 
+                                    εκδηλώσεων και μουσικών εκδόσεων.
+                                </li>
+                                <li class="border-item">
+                                    <strong>
+                                        <a href="https://streetart.gr">StreetArt.gr</a> - Street Art Ελλάς <span class="in-development">(in development)</span>
+                                    </strong>
+                                    <br>
+                                    <br>
+                                    Σκοπός του StreetArt.gr είναι η υποστήριξη της Ελληνικής Street Art Κοινότητας.
+                                </li>
+                                <li class="border-item">
+                                    <strong>
+                                        <a href="http://working.gr">Working.gr</a> - Χώρος Εργασίας στις Σέρρες <span class="in-development">(in development)</span>
+                                    </strong>
+                                    <br>
+                                    <br>
+                                    Το άρτια εξοπλισμένο γραφείο μας παρέχει ένα συνεργατικό, άνετο και ευέλικτο 
+                                    περιβάλλον από το οποίο μπορείτε να διευθύνετε την επιχείρησή σας στην πόλη των Σερρών. 
+                                    Προσφέρουμε κοινόχρηστα και ιδιωτικά γραφεία, αίθουσες συσκέψεων και οργανώνουμε δραστηριότητες.
+                                </li>
+    
+                                
+                                <!--
+                                    <li class="border-item">
+                                        <strong>
+                                            Video.Photography - Video & Photography Services <span class="next">(next in line)</span>
+                                        </strong>
+                                        <br>
+                                        <br>
+                                        The purpose of Video.Photography is to provide video & photography services.
+                                    </li>
+    
+    
+                                    <li class="border-item">
+                                    <strong>
+                                        <a href="https://CooperativeDev.com">Cooperative Dev</a> - Cooperative Development Platform
+                                    </strong>
+                                    <br>
+                                    <br>                                
+                                    Offering tools that make it easy to find new coworkers for 
+                                    your project, apply for membership in existing projects that inspire you (including Inhinito project) & build your 
+                                    own web-app without writing any code.
+                                </li>
+                                <li class="article-list-item">
+                                    <h2 class="list-header article-header">
+                                        Cooperative Dev
+                                    </h2>
+                                    Our cooperative development platform offers you tools that make it easy to find new coworkers for 
+                                    your project, apply for membership in existing projects that inspire you & build your 
+                                    own web-app without writing any code.
+                                </li>
+                                -->
+                                
+                            </ul>
+                        </fieldset>
+
                     </article>
-                    <ul id="services-list" class="text-8-bit">
-                        <!--
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">
-                                Διαχείριση Έργου & Crowdsourcing
-                            </h2>
-                            Η διαδικτυακή μας πλατφόρμα προσφέρει εύκολους και αποτελεσματικούς τρόπους για τη διαχείριση
-                            των έργων σου και την αναζήτηση νέων συνεργατών ή υπαρχόντων έργων με βάση την τοποθεσία.
-                            Ανακάλυψε ευκαιρίες συνεργασίας βρίσκοντας νέα μέλη για το έργο σου και υπόβαλε αίτηση
-                            για συμμετοχή σε έργα που σε εμπνέουν.
-                        </li>
-                        -->
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Πρακτορείο Δημιουργών</h2>
-                            Αναζητούμε ενεργά ταλαντούχους δημιουργούς για να μεγαλώσουμε την κοινότητά μας.
-                            Υποστηρίζουμε τα μέλη μας εντοπίζοντας πιθανές θέσεις εργασίας, διαπραγματεύοντας
-                            συμφωνίες, οργανώνοντας εκδηλώσεις και αναπτύσσοντας πλατφόρμες για να τους βοηθήσουμε 
-                            να βρουν το κοινό τους και να προσελκύσουν νέους πελάτες.
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Εργασιακός Χώρος</h2>
-                            Διαθέτουμε καλά εξοπλισμένο εργασιακό χώρο, ο οποίος αποτελεί ένα άνετο και ευέλικτο
-                            περιβάλλον εργασίας, που μπορείς να χρησιμοποιήσεις ως δικό σου γραφείο.
-                            Επιπλέον παροχές του χώρου αποτελούν η ταχυδρομική διεύθυνση επιχείρησης, οι αίθουσες
-                            συσκέψεων και οι εικονικές υπηρεσίες βοηθού (ρεσεψιονίστ, υπηρεσίες αλληλογραφίας και
-                            απάντηση τηλεφωνικών κλήσεων).
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">
-                                Ανάπτυξη Έργου
-                            </h2>
-                            Δεν χρειάζεται να είσαι μέλος στο Inhinito για να προσλάβεις επαγγελματίες από την κοινότητά μας.
-                            Για τους δημιουργικούς κλάδους στους οποίους δραστηριοποιούμαστε, είμαστε σε θέση να παρέχουμε
-                            έναν ικανό επαγγελματία για να υλοποιήσει την ιδέα σου.
-                        </li>
-                        <!--
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">
-                                Επιταχυντής Επιχειρηματικότητας
-                            </h2>
-                            Βοηθάμε τα μέλη μας να πάνε από την ιδέα στην αγορά.
-                        </li>
-                        -->
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Συμβουλευτική Επιχειρήσεων</h2>
-                            Πραγματοποιούμε εκτεταμένη έρευνα αγοράς και συμβουλευόμαστε το ευρύ 
-                            φάσμα ειδικών της κοινότητάς μας. Με αυτόν τον τρόπο, παρέχουμε 
-                            επαγγελματικές συμβουλές για θέματα που αφορούν την επιχειρηματικότητα, 
-                            την τεχνολογία, την τέχνη και την πνευματική ιδιοκτησία, ώστε να παίρνεις 
-                            υπεύθυνες αποφάσεις.
-                        </li>
-                        <li class="article-list-item">
-                            <h2 class="list-header article-header">Επαγγελματική Εξέλιξη</h2>
-                            Η συμμετοχή σε μια υποστηρικτική και ικανή κοινότητα μπορεί να 
-                            σε βοηθήσει τόσο στην αντιμετώπιση επαγγελματικών εμποδίων, όσο
-                            και στην προσέγγιση της ιδανικής για εσένα εργασίας, των επιθυμητών δεξιοτήτων
-                            και τρόπου ζωή σου. Προωθούμε τη συνεργασία και διοργανώνουμε εκδηλώσεις 
-                            επιχειρηματικότητας, έτσι ώστε τα μέλη μας να αναπτύσσουν 
-                            ισχυρές εργασιακές σχέσεις και να καθοδηγούνται
-                            από ένα ευρύ φάσμα δημιουργών.
-                        </li>
-                    </ul>
                 </div>
 
                 <!-- The projects page content in English -->
                 <div id="button3-english">
                     <article class="article-8-bit">
-                        <h1 class="article-header">Original Inhinito Projects</h1>
-                        <p class="text-8-bit">
-                            We support creators in 2 key ways. By helping them bring
-                            <strong>their own projects</strong>
-                            to life and by creating original
-                            <strong>community projects</strong>
-                            that provide opportunities for our members to collaborate with
-                            colleagues in their field. The following list features some of those
-                            Inhinito Community projects.
-                        </p>
-                    </article>
-                    <article class="article-8-bit">
-                        <h1 class="list-header article-header">Inhinito Initiatives</h1>
-                        <lu class="text-8-bit">
-                            <li class="border-item">
-                                <a href="https://lofi.gr">LoFi.gr</a>
-                                - Greek LoFi Hip-Hop Community
-                            </li>
-                            <li class="border-item">
-                                <a href="https://streetart.gr">StreetArt.gr</a>
-                                - Greek Street Art Community
-                            </li>
-                            <!--
-                            <li class="border-item">
-                                <a href="http://environmental.gr">Environmental.gr</a>
-                                - Environmental initiatives in Greece
-                            </li>
-                            -->
-                        </lu>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">Our Story</h1>
+                            </legend>
+                            <p class="text-8-bit article-list-space">
+                                Although our team members work in different industries, it has always been obvious 
+                                to all of us that if you are an independent creator working in Greece, there is almost 
+                                no institutional support when it comes to career development. When we embarked on our
+                                individual creative journeys we found ourselves with no framework for success, no
+                                professional community to rely on, and certainly no collaborative workspace. That's why
+                                we founded Inhinito.
+
+                                <br>
+                                <br>
+
+                                In the spirit of being the change we wanted to see, we decided to create the kind of 
+                                infrastructure that we'd like to have had ourselves since day one. That meant creating a
+                                service ecosystem that on one hand would be broad enough to support projects that 
+                                require a variety of skills, while on the other hand would be specific enough to 
+                                offer tailor-made solutions to clients looking for specialized services.
+                                
+                                The solution that we came up with focuses on <strong>3 main business activities:</strong>
+                                <ol>
+                                    <li>
+                                        <strong>Creating industry-specific talent agencies</strong> that enable collaboration
+                                        between creators and help them find work.
+                                    </li>
+                                    <li>
+                                        <strong>Building collaborative workspaces</strong> that our members can use to work 
+                                        from, network and create projects that require a physical space.
+                                    </li>
+                                    <li>
+                                        <strong>Developing software tools</strong> that help creators sell products 
+                                        and provide services more efficiently and with less effort. 
+                                    </li>
+                                </ol>
+                            </p>
+                        </fieldset>
+
                     </article>
                 </div>
 
                 <!-- The projects page content in Greek -->
                 <div id="button3-greek">
                     <article class="article-8-bit">
-                        <h1 class="article-header">Πρωτότυπα Έργα Inhinito</h1>
-                        <p class="text-8-bit">
-                            Υποστηρίζουμε τους δημιουργούς μας με 2 βασικούς τρόπους. 
-                            Βοηθούμε τα μέλη μας να φέρουν εις πέρας τα δικά τους έργα και δημιουργούμε πρωτότυπα 
-                            κοινοτικά έργα, τα οποία παρέχουν ευκαιρίες συνεργασίας σε εξειδικευμένους τομείς. Η  
-                            παρακάτω λίστα περιλαμβάνει κάποια από αυτά τα έργα της κοινότητας Inhinito.
-                        </p>
-                    </article>
-                    <article class="article-8-bit">
-                        <h1 class="list-header article-header">Λίστα Πρωτοβουλιών</h1>
-                        <lu class="text-8-bit">
-                            <li class="border-item">
-                                <a href="https://lofi.gr">LoFi.gr</a>
-                                - Ελληνική LoFi Hip-Hop Κοινότητα
-                            </li>
-                            <li class="border-item">
-                                <a href="https://streetart.gr">StreetArt.gr</a>
-                                - Ελληνική Street Art Κοινότητα
-                            </li>
-                            <!--
-                            <li class="border-item">
-                                <a href="http://environmental.gr">Environmental.gr</a>
-                                - Περιβαλλοντικές πρωτοβουλίες στην Ελλάδα
-                            </li>
-                            -->
-                        </lu>
-                    </article>
-                </div>
+                        <fieldset>
+                            <legend>
+                                <h1 class="article-header">Η ιστορία μας</h1>
+                            </legend>
+                            <p class="text-8-bit article-list-space">
+                                Αν και τα μέλη της ομάδας μας εργάζονται σε διαφορετικούς κλάδους, ήταν πάντα προφανές 
+                                σε όλους μας ότι αν είσαι ανεξάρτητος δημιουργός που εργάζεται στην Ελλάδα, δεν υπάρχει 
+                                σχεδόν καμία θεσμική υποστήριξη για την εξέλιξη της σταδιοδρομίας σου. Όταν ξεκινήσαμε 
+                                τα προσωπικά δημιουργικά μας ταξίδια, βρεθήκαμε χωρίς κάποια συνταγή για επιτυχία, χωρίς  
+                                επαγγελματική κοινότητα στην οποία να μπορούμε να βασιστούμε και χωρίς κάποιο χώρο για 
+                                συνεργασία. Γι' αυτό ιδρύσαμε το Inhinito.
 
-                <!-- The team page content in English -->
-                <div id="button4-english">
-                    <article class="article-8-bit">
-                        <h1 class="article-header">Who are we?</h1>
-                        <p class="text-8-bit">
-                            We are mostly people with technological and artistic backgrounds.
-                            Computer scientists, digital artists, painters, musicians,
-                            photographers, etc. We have various
-                            <a class="inline-link" href="https://instagram.com/inhinito">work
-                                samples from our members</a>, featured on our social media if you'd
-                            like to get a better idea.
-                        </p>
-                    </article>
-                    <article class="article-8-bit">
-                        <h1 class="article-header">Where are we?</h1>
-                        <p class="text-8-bit">
-                            We are based in Greece and we have a strong presence in the cities of Thessaloniki and Serres.
-                        </p>
-                    </article>
-                </div>
+                                <br>
+                                <br>
 
-                <!-- The team page content in Greek -->
-                <div id="button4-greek">
-                    <article class="article-8-bit">
-                        <h1 class="article-header">Ποιοί είμαστε;</h1>
-                        <p class="text-8-bit">
-                            Είμαστε κυρίως άνθρωποι από τον τεχνολογικό και τον καλλιτεχνικό
-                            χώρο. Επιστήμονες υπολογιστών, ζωγράφοι, μουσικοί, φωτογράφοι κλπ. 
-                            Έχουμε διάφορα <a class="inline-link" href="https://instagram.com/inhinito">
-                            δείγματα δουλειάς από τα μέλη μας</a>, τα οποία μπορείτε 
-                            να βρείτε στα κοινωνικά μας μέσα, εάν θέλετε να πάρετε μια καλύτερη ιδέα.
-                        </p>
-                    </article>
-                    <article class="article-8-bit">
-                        <h1 class="article-header">Που είμαστε?</h1>
-                        <p class="text-8-bit">
-                            Έχουμε παρουσία κυρίως στη Θεσσαλονίκη και στις Σέρρες.
-                        </p>
+                                Προκειμένου να γίνουμε η αλλαγή που θέλαμε να δούμε στην Ελλάδα, αποφασίσαμε να δημιουργήσουμε τις
+                                υποδομές που θα θέλαμε να έχουμε ξεκινώντας τις καριέρες μας. Αυτό σήμαινε τη δημιουργία 
+                                ενός οικοσυστήματος υπηρεσιών που αφενός θα ήταν αρκετά ευρύ για να υποστηρίξει 
+                                έργα που απαιτούν ποικίλες δεξιότητες, ενώ από την άλλη θα ήταν αρκετά συγκεκριμένο 
+                                ώστε να προσφέρει εξατομικευμένες λύσεις σε πελάτες που αναζητούν εξειδικευμένες υπηρεσίες. 
+                                
+                                Η λύση που δώσαμε επικεντρώνεται σε <strong>3 κύριες επιχειρηματικές δραστηριότητες</strong>:
+
+                                <ol>
+                                    <li>
+                                        <strong>Τη δημιουργία εξειδικευμένων πρακτορείων ταλέντων</strong>, τα οποία προωθούν τη συνεργασία 
+                                        μεταξύ δημιουργών και τους βοηθούν να βρουν δουλειά.
+                                    </li>
+                                    <li>
+                                        <strong>Τον σχεδιασμό συνεργατικών χώρων εργασίας</strong> που μπορούν να χρησιμοποιούν τα μέλη μας 
+                                        για να εργαστούν, να δικτυωθούν και να δημιουργήσουν έργα που απαιτούν επαγγελματικό χώρο.
+                                    </li>
+                                    <li>
+                                        <strong>Την ανάπτυξη εργαλείων λογισμικού</strong> που βοηθούν τους δημιουργούς να πωλούν προϊόντα και να 
+                                        παρέχουν υπηρεσίες πιο αποτελεσματικά και με λιγότερη τεχνογνωσία.
+                                    </li>
+                                </ol>
+                            </p>
+                        </fieldset>
+                        
                     </article>
                 </div>
             </div>
@@ -552,6 +575,7 @@
         -->
 
         <!-- Script section -->
+        <script src="js/sky.js"></script>
         <script src="js/sound.js"></script>
         <script src="js/global.js"></script>
         <script src="js/landing/start.js"></script>
