@@ -22,9 +22,6 @@ function clearMainMenu() {
 english.addEventListener('click', function(e){
   e.preventDefault();
 
-  // Reload the stars in the background.
-  loadStars()
-
   // Set the language flag to English.
   languageFlag='english';
   soundRestart(toggle);
@@ -90,9 +87,6 @@ greek.addEventListener('click', function(e){
     // Change the language content of the footer.
     footerContent();
     footer.style.opacity = 1;
-
-    // Reload the stars in the background.
-    loadStars()
   }, 200);
 
   // Load the menu content that the user was on before changing to Greek.

@@ -32,7 +32,7 @@ var previousMenu = '';
 
 // A function to re-load the stars on demand.
 function loadStars(changeStars = false){
-    console.log('\n\n\n\n\n');
+    console.log('\n\n\n');
     console.log('the previous page: ', previousPage);
     console.log('the previous language: ', previousLanguage);
     console.log('the previous menu: ', previousMenu);
