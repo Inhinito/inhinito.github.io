@@ -112,7 +112,7 @@ a {
   margin-top: 130px;
   margin-bottom: 10px;
 
-  position: absolute;
+  position: static;
 }
 
 
