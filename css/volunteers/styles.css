@@ -4,3 +4,7 @@
 #volunteers-greek{
     display: none;
 }
+
+.article-list-item {
+    margin-left: 20px;
+}
