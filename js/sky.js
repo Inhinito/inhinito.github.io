@@ -39,7 +39,7 @@ function loadStars(changeStars = false){
 
     // Check if the new width falls withing the range of the old width.
     let withinWidthRange = false;
-    if(window.innerWidth > previousWidth - 10 && window.innerWidth <= previousWidth) {
+    if(window.innerWidth > (previousWidth - 20) && window.innerWidth <= previousWidth) {
         withinWidthRange = true;
     }
     
