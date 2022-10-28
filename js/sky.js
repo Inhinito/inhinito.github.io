@@ -215,16 +215,11 @@ function init(){
     }
 
     // Check if the size of the screen has changed and reload the stars for that size.
-    window.addEventListener('resize', function(){
-        
-        // Wait half a second
-        // setTimeout(() => {
-            debounce(() => {
-                loadStars(changeStars = true);
-            })
-        // }, 1400);
-        
-    });
+    window.addEventListener('resize', 
+        debounce(() => {
+            loadStars(changeStars = true);
+        })
+    );
 
     // A random number ().    
     var randomNumber = 1000;
