@@ -53,7 +53,7 @@ function loadStars(changeStars = false){
     }
 
     // Get the current window's width (do not add stars to the last 30 pixels of the page).
-    let windowWidth = window.innerWidth - 25;
+    let windowWidth = window.innerWidth - 50;
     // Get the height of the page.
     let scrollHeight = document.body.offsetHeight;
     // Do not add stars to the last 30 pixels of the page.
