@@ -97,3 +97,9 @@
     text-shadow: 3px 2px 0 rgb(229, 62, 90);
   }
 }
+
+@media screen and (min-width: 970px) {
+  body::before {
+    background-image: linear-gradient(to bottom, rgb(42 14 62), rgb(70 21 107), rgb(43 37 167)) !important;
+  }
+}

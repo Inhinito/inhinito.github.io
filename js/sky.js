@@ -37,15 +37,10 @@ function loadStars(changeStars = false){
     console.log('the previous language: ', previousLanguage);
     console.log('the previous menu: ', previousMenu);
 
-    // Check if the new width falls withing the range of the old width.
-    let withinWidthRange = false;
-    if(window.innerWidth > (previousWidth - 20) && window.innerWidth <= previousWidth) {
-        withinWidthRange = true;
-    }
     
     // Check if the user has changed tab or page width. This is important as some mobile browsers change height
     // when you scroll, so the stars should only re-render when the tab or the width of the page change.
-    if(withinWidthRange && (previousPage == buttonFlag) && (previousLanguage == languageFlag) && (previousMenu == startFlag)) {
+    if((document.body.clientWidth == previousWidth) && (previousPage == buttonFlag) && (previousLanguage == languageFlag) && (previousMenu == startFlag)) {
         console.log('ABORT.');
         return
     } else {
@@ -186,7 +181,7 @@ function loadStars(changeStars = false){
     // Save the height of the previous page.
     previousHeight = scrollHeight;
     // Save the width of this loadStars event.
-    previousWidth = window.innerWidth;
+    previousWidth = document.body.clientWidth;
 
     // Save the previous page.
     previousPage = buttonFlag;
