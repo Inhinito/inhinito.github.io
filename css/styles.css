@@ -40,8 +40,8 @@ body::before {
   bottom: 0;
   width: 100vw;
   min-height: 100vh;
-  background-image: -webkit-linear-gradient(top, rgb(50 29 120) 30%, rgb(70 21 107) 60%, rgb(20 35 66));
-  background-image: linear-gradient(to bottom, rgb(50 29 120), rgb(70 21 107), rgb(20 35 66));
+  /* background-image: -webkit-linear-gradient(top, rgb(50 29 120) 30%, rgb(70 21 107) 60%, rgb(20 35 66)); */
+  background-image: linear-gradient(to bottom, rgb(50 29 120), rgb(70 21 107));
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
