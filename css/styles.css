@@ -31,8 +31,6 @@ body {
   font: normal 17px "IBM", Helvetica, sans-serif;
   margin: 0;
   
-  box-shadow: 0px -100px 100px -35px rgb(2 25 75) inset;
-
   /* background-repeat: no-repeat;
   background-attachment: fixed !important;
   background-size: cover !important;
@@ -81,6 +79,7 @@ body::before {
   min-height: 100vh;
   background-image: -webkit-linear-gradient(top, rgb(50 29 120) 30%, rgb(70 21 107) 60%, rgb(20 35 66));
   background-repeat: no-repeat;
+  box-shadow: 0px -100px 100px -35px rgb(2 25 75) inset;
   z-index: -1;
   transition: background 2.5s ease;
 }
