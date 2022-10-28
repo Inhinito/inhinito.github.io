@@ -219,7 +219,7 @@ function init(){
         // Wait half a second
         setTimeout(() => {
             loadStars(changeStars = true);
-        }, 700)
+        }, 800)
     }));
 
     // A random number ().    

@@ -42,7 +42,8 @@ body::before {
   width: 100vw;
   min-height: 100vh;
   /* background-image: -webkit-linear-gradient(top, rgb(50 29 120) 30%, rgb(70 21 107) 60%, rgb(20 35 66)); */
-  background: rgb(59 22 114);
+  background-image: linear-gradient(to bottom, rgb(42 14 62), rgb(70 21 107), rgb(43 37 167));
+  /* background: rgb(59 22 114); */
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
