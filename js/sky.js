@@ -54,6 +54,7 @@ function loadStars(changeStars = false){
     // Do not add stars to the last 30 pixels of the page.
     let windowHeight = scrollHeight - 50;
 
+
     // If the changeStars flag is on, do business as usual.
     if(changeStars) {
         // Clear the existing stars.
@@ -205,7 +206,7 @@ function init(){
     loadStars(changeStars = true);
 
     // A function to debounce loading the stars every time the screen size changes.
-    function debounce(func, timeout = 500){
+    function debounce(func, timeout = 400){
         let timer;
         return (...args) => {
             clearTimeout(timer);
@@ -214,7 +215,12 @@ function init(){
     }
 
     // Check if the size of the screen has changed and reload the stars for that size.
-    window.addEventListener('resize', debounce(() => loadStars(changeStars = true)));
+    window.addEventListener('resize', debounce(() => {
+        // Wait half a second
+        setTimeout(() => {
+            loadStars(changeStars = true);
+        }, 500)
+    }));
 
     // A random number ().    
     var randomNumber = 1000;
