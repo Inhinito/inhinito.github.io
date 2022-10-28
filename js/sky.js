@@ -206,7 +206,7 @@ function init(){
     loadStars(changeStars = true);
 
     // A function to debounce loading the stars every time the screen size changes.
-    function debounce(func, timeout = 200){
+    function debounce(func, timeout = 1200){
         let timer;
         return (...args) => {
             clearTimeout(timer);
@@ -215,12 +215,16 @@ function init(){
     }
 
     // Check if the size of the screen has changed and reload the stars for that size.
-    window.addEventListener('resize', debounce(() => {
+    window.addEventListener('resize', function(){
+        
         // Wait half a second
-        setTimeout(() => {
-            loadStars(changeStars = true);
-        }, 1400)
-    }));
+        // setTimeout(() => {
+            debounce(() => {
+                loadStars(changeStars = true);
+            })
+        // }, 1400);
+        
+    });
 
     // A random number ().    
     var randomNumber = 1000;
