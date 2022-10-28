@@ -32,19 +32,11 @@ var previousMenu = '';
 
 // A function to re-load the stars on demand.
 function loadStars(changeStars = false){
-    console.log('\n\n\n');
-    console.log('the previous page: ', previousPage);
-    console.log('the previous language: ', previousLanguage);
-    console.log('the previous menu: ', previousMenu);
-
     
     // Check if the user has changed tab or page width. This is important as some mobile browsers change height
     // when you scroll, so the stars should only re-render when the tab or the width of the page change.
     if((document.body.clientWidth == previousWidth) && (previousPage == buttonFlag) && (previousLanguage == languageFlag) && (previousMenu == startFlag)) {
-        console.log('ABORT.');
         return
-    } else {
-        console.log('Load new stars!')
     }
 
     // Get the current window's width (do not add stars to the last 30 pixels of the page).
@@ -151,10 +143,8 @@ function loadStars(changeStars = false){
             constellation.innerHTML += fillerStars;
 
         } else {
-            console.log('The HTML element is SHORTER!!!');
+            // console.log('The HTML element is SHORTER!!!');
 
-
-            console.log('The star heights: ', starHeights)
             // Loop through all of the stars.
             starHeights.forEach((starHeight)=> {
 
@@ -190,10 +180,6 @@ function loadStars(changeStars = false){
     previousLanguage = languageFlag;
     // Save the previous menu.
     previousMenu = startFlag;
-    
-    console.log('The button flag: ', buttonFlag);
-    console.log('The language flag: ', languageFlag);
-    console.log('The menu flag: ', startFlag);
 }
 
 function init(){
