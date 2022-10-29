@@ -404,7 +404,7 @@ footer{
 .star.opacity3 { opacity: .1; }
 
 .meteor {
-  position: absolute;
+  position: fixed;
   background-color: #fff;
   width: 2px;
   height: 2px;
@@ -425,7 +425,7 @@ footer{
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   border-left: 85px solid white;
-  position: absolute;
+  position: fixed;
   left: 2px;
   top: 0;
 }
