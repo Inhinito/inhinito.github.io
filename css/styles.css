@@ -18,8 +18,7 @@ html, body {
    */
   position: absolute;
 
-  /* -webkit-overflow-scrolling: auto; */
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: auto;
 }
 
 html {
@@ -484,26 +483,26 @@ footer{
 /* Scrollbar styles */
 
 ::-webkit-scrollbar {
-  -webkit-appearance: none;
+  width: 10px !important;
 }
 
 ::-webkit-scrollbar:vertical {
-  width: 10px;
+  width: 10px !important;
 }
 
 ::-webkit-scrollbar:horizontal {
-  height: 10px;
+  height: 10px !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(232 163 163 / 50%);
-  border-radius: 10px;
-  border: 2px solid #45156c;
+  background: rgb(232 163 163 / 50%) !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  border: 2px solid #45156c !important;
 }
 
 ::-webkit-scrollbar-track {
-
-  background: linear-gradient(to bottom, rgb(42 14 62), rgb(70 21 107), rgb(37 32 141));
+  background: linear-gradient(to bottom, rgb(42 14 62), rgb(70 21 107), rgb(37 32 141)) !important;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
