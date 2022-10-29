@@ -475,3 +475,29 @@ footer{
   60% { opacity: 1; }
   100% { opacity: 0; right: 1400px; top: 800px; }
 }
+
+
+/* Scrollbar styles */
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(232 163 163 / 50%);
+  border-radius: 10px;
+  border: 2px solid #45156c;
+}
+
+::-webkit-scrollbar-track {
+
+  background: linear-gradient(to bottom, rgb(42 14 62), rgb(70 21 107), rgb(37 32 141));
+}
