@@ -202,9 +202,6 @@ function init(){
     // Check if the size of the screen has changed and reload the stars for that size.
     window.addEventListener('resize', 
         debounce((event) => {
-            console.log('The previous width: ', previousWidth);
-            console.log('The debounce event: ', event.target.innerWidth);
-
             // Check if the difference between the current and the previous window inner width is 
             // large enough to re-render the stars. This is important for mobile screens since
             // when you scroll, the scrollbar that appears changes the innerWidth.
