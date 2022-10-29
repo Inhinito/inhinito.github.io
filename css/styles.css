@@ -382,7 +382,7 @@ footer{
 .star {
   background-color: white;
   /* border-radius: 50%; */
-  position: fixed;
+  position: fixed; // This can be absolute too, but it creates a flickering bug on mobile screens.
   animation-name: star;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
