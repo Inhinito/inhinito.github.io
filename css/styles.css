@@ -386,7 +386,7 @@ footer{
   animation-name: star;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  z-index: -1;
+  z-index: 0;
 }
 
 
