@@ -382,7 +382,7 @@ footer{
 .star {
   background-color: white;
   /* border-radius: 50%; */
-  position: absolute;
+  position: fixed;
   animation-name: star;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
