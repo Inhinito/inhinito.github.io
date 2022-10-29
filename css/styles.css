@@ -148,8 +148,6 @@ fieldset {
   border-radius: 4px;
   background: rgb(17 27 102 / 70%);
   background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 45%, rgb(19 12 73 / 80%) 100%);
-
-  position: sticky;
 }
 
 fieldset .text-8-bit {
