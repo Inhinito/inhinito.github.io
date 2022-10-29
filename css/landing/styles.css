@@ -240,7 +240,7 @@
 /* Form */
 
 form {
-    margin: 10px 6px 6px;
+    margin: 15px 0 0;
 }
 
 .form-label {
@@ -263,7 +263,7 @@ form {
     max-width: 635px;
     font-weight: bold;
     letter-spacing: .8px;
-    background: #e1d3f2;
+    background: azure;
 }
 
 .form-control:focus {

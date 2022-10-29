@@ -183,10 +183,7 @@ article ul {
   font-size: clamp(12px, 4vw, 20px);
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-  
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
+
 }
 
 
@@ -224,7 +221,7 @@ fieldset .article-header {
   filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: calc(100% - 30px);
 }
 
 .basic-button { 
@@ -315,6 +312,7 @@ fieldset .article-header {
   margin-bottom: 20px;
   margin-left: 2px;
   margin-right: 2px;
+  opacity: 0.95;
 }
 
 strong {
@@ -352,7 +350,7 @@ footer{
 
 #footer-details{
   padding: 15px 3% 15px 3%;
-  background-color: #c33f7d;
+  background-color: #c33f7d91;
   border-radius: 6px;
   text-align: left;
   
