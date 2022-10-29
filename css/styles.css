@@ -208,6 +208,18 @@ fieldset .article-header {
   padding: 0;
 }
 
+.lvl1 {
+  box-shadow: 6px 0 #352a8cbf, -6px 0 #352a8cbf, 0 -6px #352a8cbf, 0 6px #352a8cbf;
+  margin: 6px auto;
+  background: #352a8cbf;
+  padding: 10px;
+  border-radius: 1px;
+  -webkit-filter: drop-shadow(4px 4px 2px #ee4684);
+  filter        : drop-shadow(4px 4px 2px #ee4684);
+  -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
+  filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
+}
+
 .basic-button { 
   font-family: "PressStart";
   font-size: 11px;
