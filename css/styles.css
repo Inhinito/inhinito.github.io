@@ -19,7 +19,7 @@ html, body {
   position: absolute;
 
   -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
+  /* -webkit-transform-style: preserve-3d; */
 }
 
 html {
