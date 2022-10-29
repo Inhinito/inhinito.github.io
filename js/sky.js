@@ -187,7 +187,7 @@ function init(){
     previousMenu = startFlag;
 
     // Load the stars for the first time.
-    loadStars(changeStars = true);
+    loadStars(true);
 
     // A function to debounce loading the stars every time the screen size changes.
     function debounce(func, timeout = 500){
@@ -208,11 +208,11 @@ function init(){
             // Check if the difference between the current and the previous window inner width is 
             // large enough to re-render the stars. This is important for mobile screens since
             // when you scroll, the scrollbar that appears changes the innerWidth.
-            if( (event.target.innerWidth > (previousWidth - 20)) && (event.target.innerWidth < previousWidth) ) {
+            if( (event.target.innerWidth > (previousWidth - 20)) && (event.target.innerWidth <= previousWidth) ) {
                 return
             } 
             
-            loadStars(changeStars = true);
+            loadStars(true);
 
             // Save the width of this loadStars event.
             previousWidth = event.target.innerWidth;
