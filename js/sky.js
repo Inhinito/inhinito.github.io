@@ -35,7 +35,7 @@ function loadStars(changeStars = false){
     
     // Check if the user has changed tab or page width. This is important as some mobile browsers change height
     // when you scroll, so the stars should only re-render when the tab or the width of the page change.
-    if((document.documentElement.clientWidth == previousWidth) && (previousPage == buttonFlag) && (previousLanguage == languageFlag) && (previousMenu == startFlag)) {
+    if((window.innerWidth == previousWidth) && (previousPage == buttonFlag) && (previousLanguage == languageFlag) && (previousMenu == startFlag)) {
         return
     }
 
@@ -163,16 +163,14 @@ function loadStars(changeStars = false){
                 }
             })
 
-            
-            
+            // Save the width of this loadStars event.
+            previousWidth = window.innerWidth;
         }
 
     }
 
     // Save the height of the previous page.
     previousHeight = scrollHeight;
-    // Save the width of this loadStars event.
-    previousWidth = document.documentElement.clientWidth;
 
     // Save the previous page.
     previousPage = buttonFlag;
@@ -193,6 +191,7 @@ function init(){
 
     // A function to debounce loading the stars every time the screen size changes.
     function debounce(func, timeout = 500){
+
         let timer;
         return (...args) => {
             clearTimeout(timer);
@@ -202,8 +201,21 @@ function init(){
 
     // Check if the size of the screen has changed and reload the stars for that size.
     window.addEventListener('resize', 
-        debounce(() => {
+        debounce((event) => {
+            console.log('The previous width: ', previousWidth);
+            console.log('The debounce event: ', event.target.innerWidth);
+
+            // Check if the difference between the current and the previous window inner width is 
+            // large enough to re-render the stars. This is important for mobile screens since
+            // when you scroll, the scrollbar that appears changes the innerWidth.
+            if( (event.target.innerWidth > (previousWidth - 20)) && (event.target.innerWidth < previousWidth) ) {
+                return
+            } 
+            
             loadStars(changeStars = true);
+
+            // Save the width of this loadStars event.
+            previousWidth = event.target.innerWidth;
         })
     );
 

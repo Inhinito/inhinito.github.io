@@ -17,8 +17,6 @@ html, body {
   /* height: 100vh;
    */
   position: absolute;
-
-  -webkit-overflow-scrolling: visible;
 }
 
 html {
