@@ -17,6 +17,9 @@ html, body {
   /* height: 100vh;
    */
   position: absolute;
+
+  /* -webkit-overflow-scrolling: auto; */
+  -webkit-overflow-scrolling: touch;
 }
 
 html {
@@ -24,7 +27,6 @@ html {
   scroll-behavior: smooth;
   box-shadow: 0px -28px 100px -35px rgb(9 24 56) inset;
 
-  -webkit-overflow-scrolling: auto;
 }
 
 body {
