@@ -14,12 +14,10 @@ html, body {
   min-height: 100vh; 
   overflow: auto;
   min-width: 100% !important;
-  /* height: 100vh;
-   */
+  /* height: 100vh; */
   position: absolute;
 
   -webkit-backface-visibility: hidden;
-  /* -webkit-transform-style: preserve-3d; */
 }
 
 html {
@@ -33,8 +31,9 @@ body {
   margin: 0;
   text-align: center;
   font: normal 17px "IBM", Helvetica, sans-serif;
-  margin: 0;
   overflow-y: clip;
+
+  z-index:0;
 }
 
 body::before {
