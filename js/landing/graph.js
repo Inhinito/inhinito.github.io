@@ -63,29 +63,29 @@ Highcharts.chart("graph-container", {
         y: -10   // Shift the label vertically (up in this example)
       },
       data: [
-        ["Videography", "Balto-Slavic"],
-        ["Videography", "Germanic"],
-        ["Videography", "Celtic"],
-        ["Videography", "Italic"],
-        ["Videography", "Hellenic"],
-        ["Videography", "Anatolian"],
-        ["Videography", "Indo-Iranian"],
-        ["Videography", "Tocharian"],
-        ["Indo-Iranian", "Dardic"],
-        ["Indo-Iranian", "Indic"],
-        ["Indo-Iranian", "Iranian"],
+        ["Creative Agency", "Balto-Slavic"],
+        ["Creative Agency", "Germanic"],
+        ["Creative Agency", "Celtic"],
+        ["Creative Agency", "Software"],
+        ["Creative Agency", "Hellenic"],
+        ["Creative Agency", "Anatolian"],
+        ["Creative Agency", "Multimedia"],
+        ["Creative Agency", "Tocharian"],
+        ["Multimedia", "Dardic"],
+        ["Multimedia", "Indic"],
+        ["Multimedia", "Iranian"],
         ["Iranian", "Old Persian"],
         ["Old Persian", "Middle Persian"],
         ["Indic", "Sanskrit"],
-        ["Italic", "Osco-Umbrian"],
-        ["Italic", "Latino-Faliscan"],
+        ["Software", "Osco-Umbrian"],
+        ["Software", "Latino-Faliscan"],
         ["Latino-Faliscan", "Latin"],
         ["Celtic", "Brythonic"],
         ["Celtic", "Goidelic"],
       ],
       nodes: [
         {
-          id: "Indo-Iranian",
+          id: "Multimedia",
           color: yellow,
         },
         {
@@ -125,8 +125,14 @@ Highcharts.chart("graph-container", {
           color: white,
         },
         {
-          id: "Videography",
+          id: "Creative Agency",
           color: white,
+          marker: {
+            radius: 20 // larger radius for this particular node
+          },
+          dataLabels: {
+            y: -20,  // Shift the label vertically (up in this example)
+          }
         },
         {
           id: "Balto-Slavic",
@@ -149,7 +155,7 @@ Highcharts.chart("graph-container", {
           color: white,
         },
         {
-          id: "Italic",
+          id: "Software",
           color: red,
         },
         {
