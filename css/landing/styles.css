@@ -306,3 +306,11 @@ textarea {
     border-radius: 2px;
     cursor: pointer;
 }
+
+/*------ Network Graph ------*/
+#graph-container {
+    min-width: 320px;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 600px;
+}
