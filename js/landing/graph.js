@@ -1,12 +1,11 @@
-let white = "#ffffff";
-let red = "#ee4684";
-let yellow = "#fbc943";
+let white = "#ffffffd4";
+let yellow = "#ffd04d";
+let red = "#f05181";
 
 Highcharts.chart("graph-container", {
   chart: {
     type: "networkgraph",
     marginTop: 30,
-    spacingTop: 60,
     backgroundColor: "transparent",
     events: {
       render: function () {
@@ -20,7 +19,6 @@ Highcharts.chart("graph-container", {
         });
       }
     }
-
   },
 
   title: {
@@ -31,14 +29,48 @@ Highcharts.chart("graph-container", {
     text: null,
   },
 
+  // Disable tooltips globally:
+  tooltip: {
+    enabled: false
+  },
+
   plotOptions: {
+
     networkgraph: {
       keys: ["from", "to"],
       layoutAlgorithm: {
         enableSimulation: true,
         integration: "verlet",
-        linkLength: 100,
+        // Arrange nodes in a circle by default
+        initialPositions: "circle",
+        // Spread them out for less clutter
+        linkLength: 120,
       },
+      // Define hover/select states here
+      marker: {
+        symbol: "square",
+        radius: 10,
+        states: {
+          // hover: {
+          //   fillColor: "#ffffff",   // Node color on hover
+          // },
+        },
+      },
+      // Attach the event here:
+      point: {
+        events: {
+          hover: function () {
+            console.log(`Hovered node: ${this.id}`);
+            // Change the color of the node on hover
+          },
+          click: function () {
+            // `this` refers to the clicked point (node).
+            // `this.id` is the node's ID, e.g. "Inhinito", "Media", etc.
+            console.log(`Clicked node: ${this.id}`);
+            // Or call a function, pass it this.id, etc.
+          }
+        }
+      }
     },
   },
 
@@ -55,123 +87,115 @@ Highcharts.chart("graph-container", {
         style: {
           fontSize: '18px',
           fontFamily: 'IBM',
-          paddingBottom: '50px',
-          color: '#fbc943',          // or your desired text color
-          textOutline: '1px contrast #45156c'
+          color: '#fbc943',          
+          // Outline color (optional). Remove or modify as you like:
+          textOutline: '1px contrast #45156c',
         },
-        x: 0,    // Shift the label horizontally
-        y: -10   // Shift the label vertically (up in this example)
+        x: 0,
+        y: -10
       },
       data: [
-        ["Creative Agency", "Balto-Slavic"],
-        ["Creative Agency", "Germanic"],
-        ["Creative Agency", "Celtic"],
-        ["Creative Agency", "Software"],
-        ["Creative Agency", "Hellenic"],
-        ["Creative Agency", "Anatolian"],
-        ["Creative Agency", "Multimedia"],
-        ["Creative Agency", "Tocharian"],
-        ["Multimedia", "Dardic"],
-        ["Multimedia", "Indic"],
-        ["Multimedia", "Iranian"],
-        ["Iranian", "Old Persian"],
-        ["Old Persian", "Middle Persian"],
-        ["Indic", "Sanskrit"],
-        ["Software", "Osco-Umbrian"],
-        ["Software", "Latino-Faliscan"],
-        ["Latino-Faliscan", "Latin"],
-        ["Celtic", "Brythonic"],
-        ["Celtic", "Goidelic"],
+        ["Inhinito", "Marketing"],
+        ["Inhinito", "Software"],
+        ["Inhinito", "Media"],
+        ["Media", "Photography"],
+        ["Media", "Videography"],
+        ["Sound Design", "Videography"],
+        ["Media", "Sound Design"],
+        ["Media", "Graphic Design"],
+        ["Software", "Websites"],
+        ["Software", "UX Design"],
+        ["Software", "Mobile Apps"],
+        ["UX Design", "Mobile Apps"],
+        ["UX Design", "Websites"],
+        ["Marketing", "Events"],
+        ["Marketing", "Digital Ads"],
+        ["Marketing", "Influencers"]
       ],
       nodes: [
         {
-          id: "Multimedia",
-          color: yellow,
-        },
-        {
-          id: "Dardic",
-          color: yellow,
-        },
-        {
-          id: "Indic",
-          color: yellow,
-        },
-        {
-          id: "Iranian",
-          color: yellow,
-        },
-        {
-          id: "Old Persian",
-          color: yellow,
-        },
-        {
-          id: "Middle Persian",
-          color: yellow,
-        },
-        {
-          id: "Sanskrit",
-          color: yellow,
-        },
-        {
-          id: "Celtic",
-          color: white,
-        },
-        {
-          id: "Brythonic",
-          color: white,
-        },
-        {
-          id: "Goidelic",
-          color: white,
-        },
-        {
-          id: "Creative Agency",
+          id: "Media",
           color: white,
           marker: {
-            radius: 20 // larger radius for this particular node
+            radius: 18
           },
           dataLabels: {
-            y: -20,  // Shift the label vertically (up in this example)
+            y: -18
           }
         },
         {
-          id: "Balto-Slavic",
-          color: white,
+          id: "Videography",
+          color: white
         },
         {
-          id: "Germanic",
-          color: white,
+          id: "Sound Design",
+          color: white
         },
         {
-          id: "Hellenic",
-          color: white,
+          id: "Graphic Design",
+          color: white
         },
         {
-          id: "Anatolian",
-          color: white,
+          id: "Photography",
+          color: white
         },
         {
-          id: "Tocharian",
+          id: "Influencers",
+          color: white
+        },
+        {
+          id: "Marketing",
           color: white,
+          marker: {
+            radius: 18
+          },
+          dataLabels: {
+            y: -18
+          }
+        },
+        {
+          id: "Events",
+          color: white
+        },
+        {
+          id: "Digital Ads",
+          color: white
+        },
+        {
+          id: "Inhinito",
+          color: yellow,
+          marker: {
+            radius: 18,
+            lineColor: white,  // Border color
+            lineWidth: 12      // Border width
+          },
+          dataLabels: {
+            y: -24
+          }
         },
         {
           id: "Software",
-          color: red,
+          color: white,
+          marker: {
+            radius: 18
+          },
+          dataLabels: {
+            y: -18
+          }
         },
         {
-          id: "Osco-Umbrian",
-          color: red,
+          id: "Websites",
+          color: white
         },
         {
-          id: "Latino-Faliscan",
-          color: red,
+          id: "UX Design",
+          color: white
         },
         {
-          id: "Latin",
-          color: red,
-        },
-        
-      ],
-    },
-  ],
+          id: "Mobile Apps",
+          color: white
+        }
+      ]
+    }
+  ]
 });
