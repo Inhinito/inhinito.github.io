@@ -47,10 +47,16 @@ const baseConfig = {
           }
         }
       }
-    }
+    },
+    
+      
   },
   series: [
     {
+      // link: {
+      //   width:2, // This sets the line thickness
+      //   color: "#ffffff4f",
+      // },
       marker: {
         symbol: "square",
         radius: 10
@@ -67,7 +73,7 @@ const baseConfig = {
         },
         x: 0,
         y: -10
-      }
+      },
     }
   ]
 };

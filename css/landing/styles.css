@@ -1,121 +1,116 @@
 #soundboard-instructions {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 20px;
-    opacity: 1;
-    transition: opacity 0.3s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
-
 
 /* Toggle sound icon*/
 #toggleSound {
-    user-select: none;
-    width: 50px;
-    top: 20px;
-    left: 25px;
-    height: auto;
-    position: absolute;
-    cursor: pointer;
-}
-  
-#toggleSound:active {
-    transform: translateY(4px);
+  user-select: none;
+  width: 50px;
+  top: 20px;
+  left: 25px;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
 }
 
+#toggleSound:active {
+  transform: translateY(4px);
+}
 
 #start-menu-content {
-    margin: auto;
-    max-width: 635px;
-    padding: 0 12px;
+  margin: auto;
+  max-width: 635px;
+  padding: 0 12px;
 }
 
 /* Set all the button menus to NOT be displayed so that the right menu can
    manually load up using JavaScript */
 #start-menu-english {
-    display: none;
+  display: none;
 }
 
 #start-menu-greek {
-    display: none;
+  display: none;
 }
 
 #start-menu {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .red-button {
-    background: #ee4684;
-    color: white;
-    border-radius: 2px;
-    padding: 3px 2px 3px 5px;
-    font-family: 'PressStart';
-    font-size: 10px;
+  background: #ee4684;
+  color: white;
+  border-radius: 2px;
+  padding: 3px 2px 3px 5px;
+  font-family: "PressStart";
+  font-size: 10px;
 }
 
 #membership-form {
-    background: #c33f7d;
-    border-radius: 4px;
-    border: 2px solid #8d457e;
-    width: 100%;
+  background: #c33f7d;
+  border-radius: 4px;
+  border: 2px solid #8d457e;
+  width: 100%;
 }
 
-
-
 #reload-main-menu {
-    width: 180px;
-    margin-top: 30px;
+  width: 180px;
+  margin-top: 30px;
 }
 
 #reload-main-menu::after {
-    width: 176px;
+  width: 176px;
 }
 
 #reload-main-menu::before {
-    width: 180px;
+  width: 180px;
 }
 
 .membership {
-    text-align: center;
+  text-align: center;
 }
 
 #main-menu {
-    opacity: 1;
-    transition: opacity 0.3s;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 #menu-buttons {
-    opacity: 1;
-    transition: opacity 0.3s;
-    margin-bottom: 7%;
-    padding-right: 5px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  margin-bottom: 7%;
+  padding-right: 5px;
 }
 
-
 #button1-english {
-    display: block;
+  display: block;
 }
 
 #button1-greek {
-    display: none;
+  display: none;
 }
 
 #button2-english {
-    display: none;
+  display: none;
 }
 
 #button2-greek {
-    display: none;
+  display: none;
 }
 
 #button3-english {
-    display: none;
+  display: none;
 }
 
 #button3-greek {
-    display: none;
+  display: none;
 }
 
 /* Buttons */
@@ -123,194 +118,284 @@
 /*basic-button*/
 
 #reload-main-menu::after {
-    background: var(--background);
-    content: var(--content);
+  background: var(--background);
+  content: var(--content);
 }
 
 #btn1::after {
-    background: var(--background);
-    content: var(--content);
+  background: var(--background);
+  content: var(--content);
 }
 
 #btn2::after {
-    background: var(--background);
-    content: var(--content);
+  background: var(--background);
+  content: var(--content);
 }
 
 #btn3::after {
-    background: var(--background);
-    content: var(--content);
+  background: var(--background);
+  content: var(--content);
 }
 
 #construction-notice {
-    margin-bottom: -20px;
-    margin-top: -10px;
+  margin-bottom: -20px;
+  margin-top: -10px;
 }
 
 #services-list {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .big-link {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 8px;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
-
 
 /* Start of fancy Button */
 .fancy-button {
-    display: inline-block;
-    text-decoration: none;
-    position: relative;
-    margin-bottom: 35px;
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  margin-bottom: 35px;
+  cursor: pointer;
 }
 
 .fancy-button .bottom {
-    position: absolute;
-    left: 5px;
-    top: 6px;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  width: 100%;
+  height: 100%;
 
-    display: block;
-    -webkit-transition: all 0.1s ease-out;
-    -moz-transition: all 0.1s ease-out;
-    -o-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;
+  display: block;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 
-    background-color: #ee4684;
-    border-radius: 3px;
-    pointer-events: none;
+  background-color: #ee4684;
+  border-radius: 3px;
+  pointer-events: none;
 }
 
 .fancy-button .top {
-    position: relative;
-    left: 0;
-    top: 1px;
-    min-width: 113px;
-    height: 5px;
-    padding: 22px 12px 20px;
-    border: 2px solid #fbc943;
-    border-radius: 3px;
+  position: relative;
+  left: 0;
+  top: 1px;
+  min-width: 113px;
+  height: 5px;
+  padding: 22px 12px 20px;
+  border: 2px solid #fbc943;
+  border-radius: 3px;
 }
-
 
 .fancy-button .top .label {
-    font-family: 'PressStart';
-    font-weight: 600;
-    font-size: 12px;
-    color: white;
-    line-height: 4px;
-    letter-spacing: 2px;
-    margin-left: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-transition: all 0.1s ease-out;
-    -moz-transition: all 0.1s ease-out;
-    -o-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;
+  font-family: "PressStart";
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+  line-height: 4px;
+  letter-spacing: 2px;
+  margin-left: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
-
 .fancy-button:active .bottom {
-    left: 0;
-    top: 0;
-    background-color: #fbc943;
+  left: 0;
+  top: 0;
+  background-color: #fbc943;
 }
 
 .fancy-button:active .top .label {
-    color: rgb(55, 41, 99);
+  color: rgb(55, 41, 99);
 }
 
 .fancy-button:active .top .fancy-button-border-left,
 .fancy-button:active .top .fancy-button-border-right {
-    height: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 
 .fancy-button:active .top .fancy-button-border-top,
 .fancy-button:active .top .fancy-button-border-bottom {
-    width: calc(100% + 2px);
+  width: calc(100% + 2px);
 }
 
 /* End of fancy Button */
 
-
 /* Form */
 
 form {
-    margin: 15px 0 0;
+  margin: 15px 0 0;
 }
 
 .form-label {
-    font-family: 'PressStart';
-    color: #ffcf4e;
-    text-shadow: 1.1px 1px 0 rgb(229 62 90);
-    font-size: clamp(14px, 4vw, 15px);
-    margin: 6px 0 6px 2px;
-    display: block;
-    line-height: 20px;
+  font-family: "PressStart";
+  color: #ffcf4e;
+  text-shadow: 1.1px 1px 0 rgb(229 62 90);
+  font-size: clamp(14px, 4vw, 15px);
+  margin: 6px 0 6px 2px;
+  display: block;
+  line-height: 20px;
 }
 
 .form-control {
-    font-family: 'IBM';
-    font-size: clamp(13px, 3vw, 16px);
-    margin-bottom: 10px;
-    border: 2px solid orange;
-    border-radius: 2px;
-    padding: 10px;
-    max-width: 635px;
-    font-weight: bold;
-    letter-spacing: .8px;
-    background: azure;
+  font-family: "IBM";
+  font-size: clamp(13px, 3vw, 16px);
+  margin-bottom: 10px;
+  border: 2px solid orange;
+  border-radius: 2px;
+  padding: 10px;
+  max-width: 635px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  background: azure;
 }
 
 .form-control:focus {
-    outline: 2px solid #ffd6de;
+  outline: 2px solid #ffd6de;
 }
 
 input {
-    width: calc(100% - 24px);
+  width: calc(100% - 24px);
 }
 
 select {
-    padding-left: 5px !important;
-    width: calc(100% - 19px);
+  padding-left: 5px !important;
+  width: calc(100% - 19px);
 }
 
-input[type=radio] {
-    width: auto;
-    color: white;
+input[type="radio"] {
+  width: auto;
+  color: white;
 }
 
 .radio-label {
-    color: white;
-    font-weight: bold;
-    letter-spacing: 0.8px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.8px;
 }
 
 textarea {
-    width: calc(100% - 24px);
-    display: grid;
-    resize: none;
+  width: calc(100% - 24px);
+  display: grid;
+  resize: none;
 }
 
 .submit-button {
-    width: calc(100% - 16px);
-    background: #323295;
-    border: 2px solid orange;
-    color: white;
-    font-family: 'PressStart';
-    padding: 15px 6px;
-    border-radius: 2px;
-    cursor: pointer;
+  width: calc(100% - 16px);
+  background: #323295;
+  border: 2px solid orange;
+  color: white;
+  font-family: "PressStart";
+  padding: 15px 6px;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 /*------ Network Graph ------*/
 #graph-container {
-    min-width: 320px;
-    max-width: 800px;
-    margin: 0 auto;
-    height: 600px;
+  min-width: 320px;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 600px;
+}
+
+
+
+/* Stepper styles */
+:root {
+  --line-border-fill: #ffffff;
+  --line-border-empty: #ffffff99;
+  --progress-zIndex: -1;
+}
+
+.stepper-container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  max-width: 100%;
+  position: relative;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-container::before {
+  background-color: var(--line-border-empty);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: var(--progress-zIndex);
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.4s ease;
+  width: 0%;
+  z-index: var(--progress-zIndex);
+}
+
+.step {
+  align-items: center;
+  background-color: #e0e0e0;
+  border: 10px solid #e0e0e0;
+  color: black;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  transition: 0.4 ease;
+  width: 30px;
+}
+
+.step.active {
+  border-color: var(--line-border-fill);
+  background-color:var(--line-border-fill);
+}
+
+.step.active.last {
+  background-color: #ffd04d;
+}
+
+.btn {
+  background-color: blue;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  margin: 5px;
+  padding: 8px 30px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
 }
