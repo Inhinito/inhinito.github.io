@@ -333,7 +333,7 @@ textarea {
 .progress-container::before {
   background-color: var(--line-border-empty);
   content: "";
-  height: 4px;
+  height: 2px;
   left: 0;
   position: absolute;
   top: 50%;
@@ -344,7 +344,7 @@ textarea {
 
 .progress {
   background-color: var(--line-border-fill);
-  height: 4px;
+  height: 3px;
   left: 0;
   position: absolute;
   top: 50%;
@@ -356,14 +356,14 @@ textarea {
 
 .step {
   align-items: center;
-  background-color: #e0e0e0;
-  border: 10px solid #e0e0e0;
+  background-color: #b9b9c8;
+  border: 12px solid #b9b9c8;
   color: black;
   display: flex;
-  height: 30px;
   justify-content: center;
-  transition: 0.4 ease;
-  width: 30px;
+  transition: 0.4s ease;
+  height: 26px;
+  width: 26px;
 }
 
 .step.active {
@@ -373,6 +373,7 @@ textarea {
 
 .step.active.last {
   background-color: #ffd04d;
+  box-shadow: 0 0 15px -3px white;
 }
 
 .btn {
