@@ -1,4 +1,4 @@
-let white = "#ffffffd4";
+let white = "#ffffff";
 let yellow = "#ffd04d";
 let red = "#f05181";
 
@@ -53,10 +53,10 @@ const baseConfig = {
   },
   series: [
     {
-      // link: {
-      //   width:2, // This sets the line thickness
-      //   color: "#ffffff4f",
-      // },
+      link: {
+        width:1.5, // This sets the line thickness
+        color: "#ffffff4f",
+      },
       marker: {
         symbol: "square",
         radius: 10
