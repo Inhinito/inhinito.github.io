@@ -61,7 +61,7 @@ main{
   display: none;
   max-width: 635px;
   margin: auto;
-  padding: 0px 12px;
+  padding: 0px 20px 0px 15px;
 }
 
 a {
@@ -97,7 +97,7 @@ a {
   margin-bottom: 7px;
   border: 2px solid #ee4684;
   color: orange;
-  border-radius: 4px;
+  border-radius: 2px;
   list-style: none;
   padding: 10px;
   background: #341d72a8;
@@ -146,7 +146,7 @@ a {
 fieldset { 
   padding: 4px;
   border: 2px solid orange;
-  border-radius: 4px;
+  border-radius: 2px;
   background: rgb(17 27 102 / 70%);
   background: linear-gradient(174deg, rgb(141 155 255 / 0%) 0%, rgb(47 35 125 / 80%) 45%, rgb(19 12 73 / 80%) 100%);
 }
@@ -171,7 +171,7 @@ article ul {
   background: #1c1052;
   color: white;
   border: 2px solid orange;
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 6px 10px;
   cursor: pointer;
 }
@@ -215,13 +215,12 @@ fieldset .article-header {
   background: #352a8cbf;
   padding: 10px;
   border-radius: 1px;
-  -webkit-filter: drop-shadow(4px 4px 2px #ee4684);
-  filter        : drop-shadow(4px 4px 2px #ee4684);
+  -webkit-filter: drop-shadow(6px 6px 0px #ee4684);
+  filter        : drop-shadow(6px 6px 0px #ee4684);
   -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
   filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
   margin-left: auto;
   margin-right: auto;
-  width: calc(100% - 30px);
 }
 
 .basic-button { 
@@ -243,7 +242,7 @@ fieldset .article-header {
   
   border: 2px solid #ffcf4e;
   background-color: rgb(55, 41, 99);
-  border-radius: 3px;
+  border-radius: 1px;
 
   /* Specify the transition effect for chaning the background-color and the button-press */ 
   -webkit-transition: 0.08s ease-in-out;
@@ -268,7 +267,7 @@ fieldset .article-header {
 
 .basic-button::before{
   box-shadow: 5px 5px 0 0 #ed649a;
-  border-radius: 3px;
+  border-radius: 1px;
   width: 141px;
   height: 37px;
   content: "";
@@ -351,7 +350,7 @@ footer{
 #footer-details{
   padding: 15px 3% 15px 3%;
   background-color: #c33f7d91;
-  border-radius: 6px;
+  border-radius: 2px;
   text-align: left;
   
   opacity: 1;
@@ -606,8 +605,8 @@ footer{
 
 ::-webkit-scrollbar-thumb {
   background: rgb(232 163 163 / 50%) !important;
-  border-radius: 10px !important;
-  -webkit-border-radius: 10px !important;
+  border-radius: 2px !important;
+  -webkit-border-radius: 2px !important;
   border: 2px solid #45156c !important;
 }
 
