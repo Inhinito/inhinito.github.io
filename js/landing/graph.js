@@ -7,6 +7,7 @@ const baseConfig = {
   chart: {
     type: "networkgraph",
     marginTop: 30,
+    height: 600,
     backgroundColor: "transparent",
     events: {
       render: function () {
@@ -31,7 +32,7 @@ const baseConfig = {
         // Disable simulation for static positioning.
         enableSimulation: true, 
         initialPositions: 'circle',
-        linkLength: 110
+        linkLength: 130
       },
       marker: {
         symbol: "square",
@@ -66,8 +67,10 @@ const baseConfig = {
         linkFormat: "",
         allowOverlap: true,
         style: {
-          fontSize: "18px",
-          fontFamily: "IBM",
+          fontSize: "10px",
+          fontFamily: "PressStart",
+          // fontSize: "18px",
+          // fontFamily: "IBM",
           color: "#fbc943",
           textOutline: "1px contrast #45156c"
         },

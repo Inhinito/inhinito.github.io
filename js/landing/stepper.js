@@ -3,6 +3,8 @@ const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const steps = document.querySelectorAll(".step");
 
+const contents = document.querySelectorAll(".step-content");
+
 let currentActive = 1;
 
 // Next button event listener.
@@ -31,12 +33,12 @@ prev.addEventListener("click", () => {
 function update() {
   steps.forEach((step, idx) => {
 
-    step.classList.remove('active', 'last');
+    step.classList.remove('active-step', 'last');
 
     if (idx < currentActive) {
-      step.classList.add("active");
+      step.classList.add("active-step");
     } else {
-      step.classList.remove("active");
+      step.classList.remove("active-step");
     }
 
     if (idx === currentActive - 1) {
@@ -44,8 +46,18 @@ function update() {
     }
   });
 
+  // Update content visibility
+  contents.forEach((content, idx) => {
+    if (idx === currentActive - 1) {
+      content.classList.add('active-content');
+    } else {
+      content.classList.remove('active-content');
+    }
+  });
+
+
   // Update progress bar width.
-  const actives = document.querySelectorAll(".active");
+  const actives = document.querySelectorAll(".active-step");
 
   // Set progress bar width based on the number of active steps.
   progress.style.width =

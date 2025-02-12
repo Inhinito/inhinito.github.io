@@ -301,9 +301,9 @@ textarea {
 /*------ Network Graph ------*/
 #graph-container {
   min-width: 320px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  height: 600px;
+  height: 580px;
 }
 
 
@@ -356,25 +356,30 @@ textarea {
 }
 
 #step-1 {
-  height: 24px;
-  width: 24px;
-  border: 10px solid #b9b9c8;
-}
-
-#step-2 {
   height: 20px;
   width: 20px;
   border: 10px solid #b9b9c8;
 }
-#step-3 {
-  height: 24px;
-  width: 24px;
+
+#step-2 {
+  height: 25px;
+  width: 25px;
   border: 12px solid #b9b9c8;
+}
+#step-3 {
+  height: 20px;
+  width: 20px;
+  border: 10px solid #b9b9c8;
 }
 #step-4 {
   height: 23px;
   width: 23px;
   border: 11px solid #b9b9c8;
+}
+#step-5 {
+  height: 21px;
+  width: 21px;
+  border: 10px solid #b9b9c8;
 }
 
 .step {
@@ -387,12 +392,12 @@ textarea {
   box-shadow: 0 0 10px -3px white;
 }
 
-.step.active {
+.step.active-step {
   border-color: white !important;
   background-color:var(--line-border-fill);
 }
 
-.step.active.last {
+.step.active-step.last {
   background-color: #ffd04d !important;
   box-shadow: 0 0 15px -1px white;
 }
@@ -420,4 +425,35 @@ textarea {
 .btn:disabled {
   background-color: var(--line-border-empty);
   cursor: not-allowed;
+}
+
+
+.step-content {
+  display: none;
+  text-align: left;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px 0;
+  min-height: 150px;
+}
+
+.step-content.active-content {
+  display: block;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.step-content h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.step-content p {
+  color: #ffffffcc;
+  line-height: 1.6;
 }
