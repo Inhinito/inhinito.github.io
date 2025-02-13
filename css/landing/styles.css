@@ -317,6 +317,7 @@ textarea {
 
 .stepper-container {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .progress-container {
@@ -406,73 +407,54 @@ textarea {
   box-shadow: 0 0 15px -1px white;
 }
 
-.btn {
-  background-color: blue;
-  border: 0;
-  border-radius: 2px;
+/* Accordion Styles */
+.accordion {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-height: 400px;
+}
+
+.accordion h5 {
+  margin: 0px;
+}
+.accordion li {
+  /* margin-bottom: 5px; */
+}
+
+.accordion-trigger {
+  padding: 10px;
+  background-color: #352a8cbf;
+  border: 2px solid #fff;
+  box-shadow: 4px 4px 0 #fff;
   color: #fff;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 14px;
-  margin: 5px;
-  padding: 8px 30px;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn:focus {
-  outline: 0;
-}
-
-.btn:disabled {
-  background-color: var(--line-border-empty);
-  cursor: not-allowed;
-}
-
-
-.step-content {
-  display: none;
-}
-
-.step-content.active-content {
-  display: block;
-  animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.step-header {
   font-family: "PressStart", Helvetica, sans-serif;
-  font-weight: normal;
   font-size: clamp(12px, 4vw, 20px);
-  color: #fff;
-  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.step-content h3 {
-  color: #fff;
-  margin-bottom: 15px;
+.accordion-trigger:hover {
+  background-color: #4a3fb3;
 }
 
-.step-content p {
+.accordion-body {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+  background-color: #352a8cbf;
+  border: 2px solid #fff;
+  box-shadow: 4px 4px 0 #fff;
+}
+
+.accordion-body p {
+  padding: 10px;
+  margin: 0;
   color: #ffffffcc;
   font-size: 18px;
+  line-height: 1.6;
+}
 
-  text-align: left;
-  padding: 10px;
-  
-  background: #352a8cbf;
-  border-radius: 1px;
-  box-shadow: 6px 0 #352a8cbf, -6px 0 #352a8cbf, 0 -6px #352a8cbf, 0 6px #352a8cbf;
-
-  -webkit-filter: drop-shadow(4px 4px 2px white);
-  filter        : drop-shadow(4px 4px 2px white);
-  -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='white')";
-  filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='white')";
-  margin: 6px auto 20px;
+.step-content.active-content .accordion-body {
+  height: auto; /* Expand to fit content */
 }
