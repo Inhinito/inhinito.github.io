@@ -324,7 +324,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   max-width: 100%;
   position: relative;
   width: 350px;
@@ -357,30 +357,30 @@ textarea {
 }
 
 #step-1 {
-  height: 20px;
-  width: 20px;
-  border: 10px solid #b9b9c8;
+  height: 23px;
+  width: 23px;
+  border: 10px solid #b9b9c8f2;
 }
 
 #step-2 {
-  height: 25px;
-  width: 25px;
-  border: 12px solid #b9b9c8;
+  height: 28px;
+  width: 28px;
+  border: 12px solid #b9b9c8f2;
 }
 #step-3 {
-  height: 21px;
-  width: 21px;
-  border: 9px solid #b9b9c8;
+  height: 24px;
+  width: 24px;
+  border: 9px solid #b9b9c8f2;
 }
 #step-4 {
-  height: 23px;
-  width: 23px;
-  border: 11px solid #b9b9c8;
+  height: 26px;
+  width: 26px;
+  border: 11px solid #b9b9c8f2;
 }
 #step-5 {
-  height: 21px;
-  width: 21px;
-  border: 10px solid #b9b9c8;
+  height: 23px;
+  width: 23px;
+  border: 10px solid #b9b9c8f2;
 }
 
 .step {
@@ -388,8 +388,8 @@ textarea {
   padding-top: 2px;
   font-family: "PressStart", Helvetica, sans-serif;
   align-items: center;
-  background-color: #b9b9c8;
-  color: black;
+  background-color: #b9b9c8f2;
+  color: white;
   display: flex;
   justify-content: center;
   transition: 0.4s ease;
@@ -400,59 +400,75 @@ textarea {
 .step.active-step {
   border-color: white !important;
   background-color:var(--line-border-fill);
+  color: #ffbc00;
 }
 
 .step.active-step.last {
-  background-color: #ffd04d !important;
+  background-color: #ffbc00 !important;
   box-shadow: 0 0 15px -1px white;
+  color: white;
 }
 
 /* Accordion Styles */
 .accordion {
-  padding: 0;
-  margin: 0;
   list-style: none;
-  min-height: 400px;
 }
 
 .accordion h5 {
   margin: 0px;
+  font-family: "PressStart";
+  font-size: clamp(12px, 3vw, 15px);
+  font-weight: normal;
+  color: white;
+  line-height: 20px;
+  text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
 }
+
+.step-content {
+  transition: all 0.3s ease;
+}
+
+.step-content:hover {
+  background-color: #e38f10e3;
+  box-shadow: 6px 0 #e38f10e3, -6px 0 #e38f10e3, 0 -6px #e38f10e3, 0 6px #e38f10e3;
+}
+
+.step-content.active {
+  background-color: #451569;
+  box-shadow: 6px 0 #451569, -6px 0 #451569, 0 -6px #451569, 0 6px #451569;
+}
+
+/* Active header (assuming the <h5> is inside .accordion-trigger) */
+.step-content.active .accordion-trigger {
+  color: #fbc943 !important;
+}
+
+.step-content.active .accordion-body {
+  /* background-color: #451569; */
+}
+
 .accordion li {
-  /* margin-bottom: 5px; */
+  margin: 10px 5px;
+  text-align: left;
 }
 
 .accordion-trigger {
-  padding: 10px;
-  background-color: #352a8cbf;
-  border: 2px solid #fff;
-  box-shadow: 4px 4px 0 #fff;
-  color: #fff;
-  font-family: "PressStart", Helvetica, sans-serif;
-  font-size: clamp(12px, 4vw, 20px);
+  padding: 12px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.accordion-trigger:hover {
-  background-color: #4a3fb3;
 }
 
 .accordion-body {
   height: 0;
   overflow: hidden;
   transition: height 0.5s ease;
-  background-color: #352a8cbf;
-  border: 2px solid #fff;
-  box-shadow: 4px 4px 0 #fff;
 }
 
 .accordion-body p {
   padding: 10px;
   margin: 0;
-  color: #ffffffcc;
+  color: orange;
   font-size: 18px;
-  line-height: 1.6;
 }
 
 .step-content.active-content .accordion-body {

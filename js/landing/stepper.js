@@ -2,6 +2,7 @@ const progress = document.querySelector("#progress");
 const steps = document.querySelectorAll(".step");
 const accordionTriggers = document.querySelectorAll(".accordion-trigger");
 const accordionBodies = document.querySelectorAll(".accordion-body");
+const stepContents = document.querySelectorAll(".step-content");
 
 let currentActive = 1;
 let autoplayInterval;
@@ -36,10 +37,14 @@ function update() {
       // Expand the active content
       body.style.transition = "height 0.5s ease";
       body.style.height = `${body.scrollHeight}px`; // Set height to content height
+
+      stepContents[idx].classList.add("active");
     } else {
       // Collapse inactive content
       body.style.transition = "height 0.5s ease";
       body.style.height = "0"; // Set height to 0
+
+      stepContents[idx].classList.remove("active");
     }
   });
 
@@ -109,4 +114,4 @@ window.addEventListener("resize", () => {
 
 
 // Initialize autoplay
-startAutoplay();
+// startAutoplay();
