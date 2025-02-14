@@ -429,11 +429,22 @@ textarea {
 .accordion h5 {
   margin: 0px;
   font-family: "PressStart";
-  font-size: clamp(12px, 3vw, 15px);
+  font-size: clamp(12px, 2vw, 15px);
   font-weight: normal;
   color: white;
   line-height: 20px;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
+}
+
+.arrow {
+  scale: 1.5;
+  transform: rotate(90deg);
+  content: "";
+  position: absolute;
+  right: 15px;
+  width: 3px;
+  height: 3px;
+  box-shadow: 3px 3px 0 0 #fff, 6px 6px 0 0 #fff, 9px 9px 0 0 #fff, 6px 12px 0 0 #fff, 3px 15px 0 0 #fff;
 }
 
 .step-content {
