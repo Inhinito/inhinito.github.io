@@ -227,9 +227,10 @@ fieldset .article-header {
 .basic-button { 
   font-family: "PressStart";
   font-size: 11px;
+  letter-spacing: 1px;
   position: relative;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 6px;
+  margin-right: 6px;
   margin-bottom: 5px;
   /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
   --background: rgba(54, 41, 99, 0.48);

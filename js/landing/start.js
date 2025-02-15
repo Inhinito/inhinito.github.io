@@ -149,7 +149,7 @@ supportButton.innerText = 'SUPPORT';
 button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Intro"');
-button2.style.setProperty('--content', '"Ecosystem"'); 
+button2.style.setProperty('--content', '"Projects"'); 
 button3.style.setProperty('--content', '"Story"'); 
 
 // Get the menuButtons section.

@@ -37,7 +37,7 @@ english.addEventListener('click', function(e){
     // Set button values to English.
     supportButton.innerText = 'SUPPORT';
     button1.style.setProperty('--content', '"Intro"'); 
-    button2.style.setProperty('--content', '"Ecosystem"'); 
+    button2.style.setProperty('--content', '"Projects"'); 
     button3.style.setProperty('--content', '"Story"'); 
 
     startMenuContent();
@@ -75,7 +75,7 @@ greek.addEventListener('click', function(e){
     // Set button values to English.
     supportButton.innerText = 'ΥΠΟΣΤΗΡΙΞΗ';
     button1.style.setProperty('--content', '"Εισαγωγή"'); 
-    button2.style.setProperty('--content', '"Οικοσύστημα"');
+    button2.style.setProperty('--content', '"Έργα"');
     button3.style.setProperty('--content', '"Ιστορία"');
 
     startMenuContent();
