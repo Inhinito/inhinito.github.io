@@ -62,6 +62,7 @@ function goToStep(stepNumber) {
 // Add click event listeners to steps
 steps.forEach((step, idx) => {
   step.addEventListener("click", () => {
+    soundRestart(pluck);
     goToStep(idx + 1);
   });
 });
@@ -69,6 +70,7 @@ steps.forEach((step, idx) => {
 // Add click event listeners to accordion triggers
 accordionTriggers.forEach((trigger, idx) => {
   trigger.addEventListener("click", () => {
+    soundRestart(pluck);
     goToStep(idx + 1);
   });
 });
@@ -114,4 +116,4 @@ window.addEventListener("resize", () => {
 
 
 // Initialize autoplay
-// startAutoplay();
+startAutoplay();

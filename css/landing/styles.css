@@ -393,7 +393,7 @@ textarea {
   color: #44166d;
   display: flex;
   justify-content: center;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
   box-shadow: 0 0 10px -3px white;
   cursor: pointer;
 }
@@ -448,7 +448,7 @@ textarea {
 }
 
 .step-content {
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .step-content:hover {
@@ -478,7 +478,7 @@ textarea {
 .accordion-trigger {
   padding: 12px 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.25s ease;
 }
 
 .accordion-body {
