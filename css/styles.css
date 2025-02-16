@@ -137,6 +137,11 @@ a {
   margin-bottom: 5%;
 }
 
+.article-content {
+  background-color: #451569;
+  box-shadow: 6px 0 #451569, -6px 0 #451569, 0 -6px #451569, 0 6px #451569;
+}
+
 .article-section {
   text-align: left;
   margin-top: 5%;
@@ -193,7 +198,8 @@ fieldset .article-header {
 }
 
 .article-list-item {
-  margin-left: -39px;
+  margin-left: 8px !important;
+  color: orange;
 }
 
 .list-header {
@@ -222,6 +228,11 @@ fieldset .article-header {
   filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
   margin-left: auto;
   margin-right: auto;
+}
+
+.lvl2 {
+  margin-left: 4px;
+  margin-right: 10px;
 }
 
 .basic-button { 
@@ -497,9 +508,12 @@ footer{
 }
 
 .side-page {
-  padding: 0;
   padding: 0 10px;
   text-align: left;
+}
+
+.side-article {
+  padding: 0 5px 0 0;
 }
 
 /* Timeline styles */
@@ -588,16 +602,23 @@ footer{
   -moz-transition: -moz-transform 0.2s ease-in;
   -o-transition: -o-transform 0.2s ease-in;
   -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in;
+  transition: all 0.2s ease-in;
   background-color: #401361;
   outline: 10px solid white;
   display: block;
   margin: 0.5em 0.5em 0.5em -0.5em;
   position: absolute;
-  top: 1px;
+  top: 1.5px;
   left: 20px;
   width: 22px;
   height: 22px;
+}
+
+.timeline-end-icon {
+  top: auto;
+  bottom: -20px;
+  background: white !important;
+  outline: none;
 }
 
 
