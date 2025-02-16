@@ -236,7 +236,7 @@
               multimedia and marketing professionals in order to help 
               them co-create projects and reach the right audiences.
             </p>
-            <div id="english-graph" class="graph-container"></div>
+            <div id="english-network-graph" class="graph-container"></div>
           </article>
 
           <article class="article-8-bit">
@@ -321,7 +321,7 @@
               λογισμικού που διευκολύνουν τη δημιουργία πρότζεκτ, τη συνεργασία
               και τη προσέγγιση του κοινού σας.
             </p>
-            <div id="greek-graph" class="graph-container"></div>
+            <div id="greek-network-graph" class="graph-container"></div>
           </article>
 
           <article class="article-8-bit">
@@ -526,6 +526,12 @@
         <div id="button3-english">
           <article class="article-8-bit">
             <h1 class="article-header">Our Story</h1>
+
+            <figure class="highcharts-figure">
+              <div id="hierarchy-english-chart"></div>
+              
+            </figure>
+
             <div class="text-8-bit lvl1">
               Although our team members work in different industries, it has
               always been obvious to all of us that if you are an independent
@@ -717,9 +723,11 @@
         <div id="fb-customer-chat" class="fb-customerchat"></div>
         -->
 
-    <!-- Highcharts are used for the network graph with the nodes in the projects tab. -->
+    <!-- Highcharts are used for the network & organizational graphs. -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+    <script src="https://code.highcharts.com/modules/sankey.js"></script>
+    <script src="https://code.highcharts.com/modules/organization.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
     <!-- Script section -->
@@ -728,7 +736,7 @@
     <script src="js/global.js"></script>
     <script src="js/landing/start.js"></script>
     <script src="js/landing/language.js"></script>
-    <script src="js/landing/graph.js"></script>
+    <script src="js/landing/charts.js"></script>
     <script src="js/landing/stepper.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics 

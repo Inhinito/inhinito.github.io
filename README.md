@@ -1,15 +1,20 @@
 # IDEAS
 
-The form should:
+## HighCharts
+[GPT to help out with the charts](https://www.highcharts.com/chat/gpt/)
+[Present projects using Inverted Treegraph](https://www.highcharts.com/demo/highcharts/treegraph-inverted)
+[Present team using Organization chart](https://www.highcharts.com/demo/highcharts/organization-chart)
+
+## The form should:
 - Make it simple for users to place an order.
 - Ask users if they need more services as they go.
 
-- I should add a series of paralax images to the start menu that change as the user scroll down and fills out fields.
+## I should add a series of paralax images to the start menu that change as the user scroll down and fills out fields.
   1. Start out out image layers of clouds.
   2. Then add image layers of mountains.
   3. After the mountains there should be satelites pointing to the stars or people with telescopes (maybe botho) ... (it should feel like a progressing through a video game)
 
-- The music playing in the background after the user presses the `HIRE!` button should meet these criteria:
+## The music playing in the background after the user presses the `START!` button should meet these criteria:
   0. The most important thing is that the music should be consistent and coherent with the rest of the website's atmosphere.
   1. The mood of the music should be motivational and inspiring. It should make you want to dream!
   2. The tempo of the music should be slow so that users feel relaxed.
