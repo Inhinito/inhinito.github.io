@@ -1,3 +1,5 @@
+
+/* Network Graphs */
 let white = "#ffffff";
 let yellow = "#ffd04d";
 let red = "#f05181";
@@ -170,16 +172,16 @@ Highcharts.chart("greek-network-graph", {
 });
 
 
-/* Organiation Chart */
-
-Highcharts.chart('hierarchy-english-chart', {
+/* Organization Chart */
+Highcharts.chart('english-hierarchy-chart', {
   chart: {
-    height: 600,
-    inverted: true
+    height: 500,
+    inverted: true,
+    backgroundColor: 'transparent'
   },
 
   title: {
-    text: 'Highcharts Organizational Chart'
+    text: null
   },
 
   accessibility: {
@@ -192,22 +194,24 @@ Highcharts.chart('hierarchy-english-chart', {
 
   series: [{
     type: 'organization',
-    name: 'Highsoft',
+    name: 'Cooperative',
     keys: ['from', 'to'],
     data: [
-      ['Shareholders', 'Board'],
-      ['Board', 'CEO'],
-      ['CEO', 'CTO'],
-      ['CEO', 'CPO'],
-      ['CEO', 'CSO'],
-      ['CEO', 'HR'],
-      ['CTO', 'Product'],
-      ['CTO', 'Web'],
-      ['CSO', 'Sales'],
-      ['HR', 'Market'],
-      ['CSO', 'Market'],
-      ['HR', 'Market'],
-      ['CTO', 'Market']
+      ['Inhinito SCE', 'Board of Directors'],
+      ['Inhinito SCE', 'Co-op Members'],
+      ['Inhinito SCE', 'External Partners'],
+      ['Board of Directors', 'President'],
+      ['Board of Directors', 'Secretary'],
+      ['Board of Directors', 'Treasurer'],
+      ['Co-op Members', 'President'],
+      ['Co-op Members', 'Secretary'],
+      ['Co-op Members', 'Treasurer'],
+      ['Co-op Members', 'Member 4'],
+      ['Co-op Members', 'Member 5'],
+      ['Co-op Members', 'Member 6'],
+      ['Co-op Members', 'Member 7'],
+      ['External Partners', 'Creator Network'],
+      ['External Partners', 'Business Partners']
     ],
     levels: [{
       level: 0,
@@ -230,57 +234,86 @@ Highcharts.chart('hierarchy-english-chart', {
       level: 4,
       color: '#359154'
     }],
-    nodes: [{
-      id: 'Shareholders'
-    }, {
-      id: 'Board'
-    }, {
-      id: 'CEO',
-      title: 'CEO',
-      name: 'Atle Sivertsen',
-      image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2022/06/30081411/portrett-sorthvitt.jpg'
-    }, {
-      id: 'HR',
-      title: 'CFO',
-      name: 'Anne Jorunn Fjærestad',
-      color: '#007ad0',
-      image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2020/03/17131210/Highsoft_04045_.jpg'
-    }, {
-      id: 'CTO',
-      title: 'CTO',
-      name: 'Christer Vasseng',
-      image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2020/03/17131120/Highsoft_04074_.jpg'
-    }, {
-      id: 'CPO',
-      title: 'CPO',
-      name: 'Torstein Hønsi',
-      image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2020/03/17131213/Highsoft_03998_.jpg'
-    }, {
-      id: 'CSO',
-      title: 'CSO',
-      name: 'Anita Nesse',
-      image: 'https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2020/03/17131156/Highsoft_03834_.jpg'
-    }, {
-      id: 'Product',
-      name: 'Product developers'
-    }, {
-      id: 'Web',
-      name: 'Web devs, sys admin'
-    }, {
-      id: 'Sales',
-      name: 'Sales team'
-    }, {
-      id: 'Market',
-      name: 'Marketing team',
-      column: 5
-    }],
+    nodes: [
+      {
+        id: 'Cooperative Members',
+        name: 'Cooperative Members',
+        column: 0
+      },
+      {
+        id: 'Board of Directors',
+        name: 'Board of Directors',
+        column: 1
+      },
+      {
+        id: 'President',
+        title: 'President',
+        name: 'John Doe',
+        column: 2,
+      },
+      {
+        id: 'Secretary',
+        title: 'Secretary',
+        name: 'Jane Smith',
+        column: 2
+      },
+      {
+        id: 'Treasurer',
+        title: 'Treasurer',
+        name: 'Jim Brown',
+        column: 2
+      },
+      {
+        id: 'Member 4',
+        name: 'Member 4',
+        column: 3
+      },
+      {
+        id: 'Member 5',
+        name: 'Member 5',
+        column: 3
+      },
+      {
+        id: 'Member 6',
+        name: 'Member 6',
+        column: 3
+      },
+      {
+        id: 'Member 7',
+        name: 'Member 7',
+        column: 3
+      },
+      {
+        id: 'Creator Network',
+        name: 'Creator Network',
+        column: 4
+      },
+      {
+        id: 'Business Partners',
+        name: 'Business Partners',
+        column: 4
+      }
+    ],
+    /* Adjust these for spacing and rectangular appearance */
+    nodeWidth: 40,
+    nodePadding: 10,
+    borderRadius: 1,
     colorByPoint: false,
-    color: '#007ad0',
+    color: '#030404',
+    borderColor: '#fbc943',
+    borderWidth: 2,
     dataLabels: {
-      color: 'white'
-    },
-    borderColor: 'white',
-    nodeWidth: 'auto'
+      enabled: true,
+      color: 'white',
+      style: {
+        paddingTop: '1px',
+        fontFamily: 'IBM',
+        fontSize: '18px',
+        textOutline: 'none',
+        fontWeight: 'normal',
+        lineHeight: '14px'
+      }
+    }
   }],
   tooltip: {
     outside: true
@@ -290,5 +323,4 @@ Highcharts.chart('hierarchy-english-chart', {
     sourceWidth: 800,
     sourceHeight: 600
   }
-
 });
