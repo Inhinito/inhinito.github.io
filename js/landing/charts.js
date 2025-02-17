@@ -226,181 +226,25 @@ Highcharts.chart("greek-network-graph", {
 });
 
 
-/* Organization Chart */
-Highcharts.chart("english-hierarchy-chart", {
-  chart: {
-    height: 500,
-    width: null,
-    padding: 30,
-    inverted: true,
-    backgroundColor: "transparent",
-  },
+document.addEventListener('DOMContentLoaded', function() {
+  const coOpMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(2) a');
+  const boardMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(1) a');
 
-  title: {
-    text: null,
-  },
+  coOpMembersLink.addEventListener('mouseenter', () => {
+    boardMembersLink.classList.add('force-highlight');
+    // Add the force-highlight class to all the board member children
+    const boardMemberChildren = boardMembersLink.parentElement.querySelectorAll('ul li a');
+    boardMemberChildren.forEach((child) => {
+      child.classList.add('force-highlight');
+    });
+  });
 
-  accessibility: {
-    point: {
-      descriptionFormat:
-        "{add index 1}. {toNode.name}" +
-        "{#if (ne toNode.name toNode.id)}, {toNode.id}{/if}, " +
-        "reports to {fromNode.id}",
-    },
-  },
-
-  series: [
-    {
-      type: "organization",
-      name: "Cooperative",
-      keys: ["from", "to"],
-      data: [
-        ["Inhinito Cooperative", "Board of Directors"],
-        ["Inhinito Cooperative", "Co-op Members"],
-        ["Inhinito Cooperative", "External Partners"],
-        ["Board of Directors", "President"],
-        ["Board of Directors", "Secretary"],
-        ["Board of Directors", "Treasurer"],
-        ["Co-op Members", "President"],
-        ["Co-op Members", "Secretary"],
-        ["Co-op Members", "Treasurer"],
-        ["Co-op Members", "Member 4"],
-        ["Co-op Members", "Member 5"],
-        ["Co-op Members", "Member 6"],
-        ["Co-op Members", "Member 7"],
-        ["External Partners", "Creator Network"],
-        ["External Partners", "Business Partners"],
-      ],
-      levels: [
-        {
-          level: 0,
-          color: "#fbc943",
-          dataLabels: {
-            color: "black",
-          },
-          height: 25,
-        },
-        {
-          level: 1,
-          color: "#ee4684",
-          dataLabels: {
-            color: "black",
-          },
-          height: 25,
-        },
-        {
-          level: 2,
-          color: "gray",
-          dataLabels: {
-            color: "white",
-          },
-        },
-      ],
-      nodes: [
-        {
-          id: "Cooperative Members",
-          name: "Cooperative Members",
-          column: 0,
-        },
-        {
-          id: "Board of Directors",
-          name: "Board of Directors",
-          column: 1,
-        },
-        {
-          id: "President",
-          title: "President",
-          name: "John Doe",
-          column: 2,
-        },
-        {
-          id: "Secretary",
-          title: "Secretary",
-          name: "Jane Smith",
-          column: 2,
-        },
-        {
-          id: "Treasurer",
-          title: "Treasurer",
-          name: "Jim Brown",
-          column: 2,
-        },
-        {
-          id: "Member 4",
-          name: "Member 4",
-          column: 3,
-        },
-        {
-          id: "Member 5",
-          name: "Member 5",
-          column: 3,
-        },
-        {
-          id: "Member 6",
-          name: "Member 6",
-          column: 3,
-        },
-        {
-          id: "Member 7",
-          name: "Member 7",
-          column: 3,
-        },
-        {
-          id: "Creator Network",
-          name: "Creator Network",
-          column: 4,
-        },
-        {
-          id: "Business Partners",
-          name: "Business Partners",
-          column: 4,
-        },
-      ],
-
-      nodeWidth: 40,
-      // Make the nodes taller
-      height: 50,
-      borderRadius: 1,
-      colorByPoint: false,
-      color: "#030404",
-      borderColor: "#44166d",
-      borderWidth: 1,
-      dataLabels: {
-        enabled: true,
-        color: "white",
-        style: {
-          fontFamily: "IBM",
-          fontSize: "16px",
-          textOutline: "none",
-          fontWeight: "normal",
-        },
-      },
-    },
-  ],
-  responsive: {
-    rules: [
-      {
-        condition: {
-          maxWidth: 450,
-        },
-        chartOptions: {
-          series: [
-            {
-              nodeWidth: 40,
-              height: 60,
-            },
-          ],
-        },
-      },
-    ],
-  },
-  tooltip: {
-    outside: true,
-  },
-  exporting: {
-    allowHTML: true,
-    sourceWidth: 800,
-    sourceHeight: 600,
-  },
+  coOpMembersLink.addEventListener('mouseleave', () => {
+    boardMembersLink.classList.remove('force-highlight');
+    // Remove the force-highlight class from all the board member children
+    const boardMemberChildren = boardMembersLink.parentElement.querySelectorAll('ul li a');
+    boardMemberChildren.forEach((child) => {
+      child.classList.remove('force-highlight');
+    });
+  });
 });
-

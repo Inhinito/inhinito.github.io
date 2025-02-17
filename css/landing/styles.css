@@ -642,6 +642,11 @@ right connector from last child*/
   -moz-border-radius: 1px 0 0 0;
 }
 
+.tree li a.force-highlight {
+  background:rgb(213, 147, 71) !important; 
+  color: #000 !important; 
+  border: 1px solid #94a0b4 !important;
+}
 
 @media (max-width: 630px) {
   .tree {
