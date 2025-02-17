@@ -514,7 +514,6 @@ textarea {
 .tree ul {
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 20px;
   position: relative;
 
   transition: all 0.5s;
@@ -725,7 +724,7 @@ right connector from last child*/
   }
 
   .tree ul ul ul ul {
-    display: inline-block;
+    display: flex;
     padding: 0 0 0 20px;
   }
 
