@@ -552,7 +552,7 @@ any siblings*/
 
 
 /*Time to add downward connectors from parents*/
-.tree ul ul::before{
+.tree ul::before{
   position: absolute; top: 0;
   width: 0; height: 20px;
 }
@@ -588,7 +588,7 @@ any siblings*/
   border-color:  #94a0b4;
 }
 
-.tree ul ul ul ul li a {
+.tree ul ul ul li a {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -616,7 +616,7 @@ any siblings*/
   right: auto; left: 50%;
   border-left: 1px solid #ccc;
 }
-.tree ul ul ul::before {
+.tree ul ul::before {
   content: '';
   position: absolute; 
   left: 50%; 
@@ -662,20 +662,20 @@ right connector from last child*/
     align-items: flex-start;
   }
   
-  .tree ul ul ul ul li a {
+  .tree ul ul ul li a {
     writing-mode: horizontal-tb;
     text-align: center;
   }
 
-  .tree ul ul ul {
+  .tree ul ul {
     padding-top: 0;
   }
 
-  .tree ul ul ul::before {
+  .tree ul ul::before {
     left: 0;
   }
 
-  .tree > ul > li > ul > li > ul > li {
+  .tree > ul > li > ul > li {
     padding: 15px 0 0 20px;
     display: flex;
     align-items: center;
@@ -684,19 +684,19 @@ right connector from last child*/
     left: 0;
   }
 
-  .tree > ul > li > ul > li > ul > li::before {
+  .tree > ul > li > ul > li::before {
     height: 100%;
   }
 
-  .tree > ul > li > ul > li > ul > li:last-child::before {
+  .tree > ul > li > ul > li:last-child::before {
     height: 50%;
   }
 
-  .tree > ul > li > ul > li > ul > li > a {
+  .tree > ul > li > ul > li > a {
     writing-mode: vertical-rl;
   }
 
-  .tree ul ul ul li::before {
+  .tree ul ul li::before {
     width: 20px;
     height: 50%;
     left: 0;
@@ -704,7 +704,7 @@ right connector from last child*/
     border-top: none;
   }
 
-  .tree ul ul ul li:last-child::before {
+  .tree ul ul li:last-child::before {
     border-bottom: 1px solid #ccc;
     border-right: none;
     border-radius: 0 0 0 1px;
@@ -712,7 +712,7 @@ right connector from last child*/
     -moz-border-radius: 0 0 0 1px;
   }
 
-  .tree ul ul ul li::after {
+  .tree ul ul li::after {
     width: 20px;
     height: 50%;
     top: 50%;
@@ -723,12 +723,12 @@ right connector from last child*/
     -moz-border-radius: 0 !important;
   }
 
-  .tree ul ul ul ul {
+  .tree ul ul ul {
     display: flex;
     padding: 0 0 0 20px;
   }
 
-  .tree ul ul ul ul::before {
+  .tree ul ul ul::before {
     border-left: none;
     border-top: 1px solid #ccc;
     width: 20px;
@@ -736,17 +736,17 @@ right connector from last child*/
     top: 50%;
   }
 
-  .tree ul ul ul ul li {
+  .tree ul ul ul li {
     float: none;
     padding: 5px 0 5px 20px;
   }
 
-  .tree ul ul ul ul li:first-child::before,
-  .tree ul ul ul li:last-child::after {
+  .tree ul ul ul li:first-child::before,
+  .tree ul ul li:last-child::after {
     border: 0 none !important;
   }
 
-  .tree ul ul ul ul li:first-child::after {
+  .tree ul ul ul li:first-child::after {
     border-radius: 1px 0 0 0 !important;
     -webkit-border-radius: 1px 0 0 0 !important;
     -moz-border-radius: 1px 0 0 0 !important;
