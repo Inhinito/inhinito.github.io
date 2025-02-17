@@ -243,7 +243,7 @@ fieldset .article-header {
   margin-right: 6px;
   margin-bottom: 5px;
   /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
-  --background: rgba(54, 41, 99, 0.48);
+  --background: transparent;
   /* The width and the height is big enough to allow for the animeted movement of the button
   as well as the box-shadow of the button */
   width:141px;
