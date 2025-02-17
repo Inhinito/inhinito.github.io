@@ -1,4 +1,3 @@
-
 /* Network Graphs */
 let white = "#ffffff";
 let yellow = "#ffd04d";
@@ -13,15 +12,16 @@ const baseConfig = {
     backgroundColor: "transparent",
     events: {
       render: function () {
-        this.series[0].nodes.forEach(node => {
+        this.series[0].nodes.forEach((node) => {
           if (node.graphic) {
             node.graphic.attr({
-              style: 'filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.82))'
+              style:
+                "filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.82))",
             });
           }
         });
-      }
-    }
+      },
+    },
   },
   title: { text: null },
   subtitle: { text: null },
@@ -32,13 +32,13 @@ const baseConfig = {
       layoutAlgorithm: {
         integration: "verlet",
         // Disable simulation for static positioning.
-        enableSimulation: true, 
-        initialPositions: 'circle',
-        linkLength: 130
+        enableSimulation: true,
+        initialPositions: "circle",
+        linkLength: 130,
       },
       marker: {
         symbol: "square",
-        radius: 10
+        radius: 10,
       },
       point: {
         events: {
@@ -47,22 +47,20 @@ const baseConfig = {
           },
           click: function () {
             console.log(`Clicked node: ${this.id}`);
-          }
-        }
-      }
+          },
+        },
+      },
     },
-    
-      
   },
   series: [
     {
       link: {
-        width:1.5, // This sets the line thickness
+        width: 1.5, // This sets the line thickness
         color: "#ffffff4f",
       },
       marker: {
         symbol: "square",
-        radius: 10
+        radius: 10,
       },
       dataLabels: {
         enabled: true,
@@ -74,13 +72,13 @@ const baseConfig = {
           // fontSize: "18px",
           // fontFamily: "IBM",
           color: "#fbc943",
-          textOutline: "1px contrast #45156c"
+          textOutline: "1px contrast #45156c",
         },
         x: 0,
-        y: -10
+        y: -10,
       },
-    }
-  ]
+    },
+  ],
 };
 
 // English Graph
@@ -105,13 +103,41 @@ Highcharts.chart("english-network-graph", {
         ["UX Design", "Websites"],
         ["Marketing", "Events"],
         ["Marketing", "Digital Ads"],
-        ["Marketing", "Influencers"]
+        ["Marketing", "Influencers"],
       ],
       nodes: [
-        { id: "Inhinito", x: 0, y: 0, color: yellow, marker: { radius: 18, lineColor: white, lineWidth: 12 }, dataLabels: { y: -24 } },
-        { id: "Marketing", x: -100, y: 0, color: white, marker: { radius: 18 }, dataLabels: { y: -18 }},
-        { id: "Software", x: 100, y: 0, color: white, marker: { radius: 18 }, dataLabels: { y: -18 }},
-        { id: "Multimedia", x: 0, y: -100, color: white, marker: { radius: 18 }, dataLabels: { y: -18 }},
+        {
+          id: "Inhinito",
+          x: 0,
+          y: 0,
+          color: yellow,
+          marker: { radius: 18, lineColor: white, lineWidth: 12 },
+          dataLabels: { y: -24 },
+        },
+        {
+          id: "Marketing",
+          x: -100,
+          y: 0,
+          color: white,
+          marker: { radius: 18 },
+          dataLabels: { y: -18 },
+        },
+        {
+          id: "Software",
+          x: 100,
+          y: 0,
+          color: white,
+          marker: { radius: 18 },
+          dataLabels: { y: -18 },
+        },
+        {
+          id: "Multimedia",
+          x: 0,
+          y: -100,
+          color: white,
+          marker: { radius: 18 },
+          dataLabels: { y: -18 },
+        },
         { id: "Photography", x: -50, y: -200, color: white },
         { id: "Videography", x: 50, y: -200, color: white },
         { id: "Sound Design", x: 100, y: -150, color: white },
@@ -121,10 +147,10 @@ Highcharts.chart("english-network-graph", {
         { id: "Mobile Apps", x: 250, y: 100, color: white },
         { id: "Events", x: -150, y: 50, color: white },
         { id: "Digital Ads", x: -200, y: 100, color: white },
-        { id: "Influencers", x: -250, y: 50, color: white }
-      ]
-    }
-  ]
+        { id: "Influencers", x: -250, y: 50, color: white },
+      ],
+    },
+  ],
 });
 
 // Greek Graph
@@ -149,13 +175,41 @@ Highcharts.chart("greek-network-graph", {
         ["Σχεδίαση UX", "Ιστοσελίδες"],
         ["Μάρκετινγκ", "Εκδηλώσεις"],
         ["Μάρκετινγκ", "Διαφημίσεις"],
-        ["Μάρκετινγκ", "Influencers"]
+        ["Μάρκετινγκ", "Influencers"],
       ],
       nodes: [
-        { id: "Inhinito", x: 0, y: 0, color: yellow, marker: { radius: 18, lineColor: white, lineWidth: 12 }, dataLabels: { y: -24 } },
-        { id: "Μάρκετινγκ", x: -100, y: 0, color: white, marker: { radius: 18 }, dataLabels: { y: -18 }},
-        { id: "Λογισμικό", x: 100, y: 0, color: white, marker: { radius: 18 }, dataLabels: { y: -18 }},
-        { id: "Πολυμέσα", x: 0, y: -100, color: white, marker: { radius: 18 }, dataLabels: { y: -18 }},
+        {
+          id: "Inhinito",
+          x: 0,
+          y: 0,
+          color: yellow,
+          marker: { radius: 18, lineColor: white, lineWidth: 12 },
+          dataLabels: { y: -24 },
+        },
+        {
+          id: "Μάρκετινγκ",
+          x: -100,
+          y: 0,
+          color: white,
+          marker: { radius: 18 },
+          dataLabels: { y: -18 },
+        },
+        {
+          id: "Λογισμικό",
+          x: 100,
+          y: 0,
+          color: white,
+          marker: { radius: 18 },
+          dataLabels: { y: -18 },
+        },
+        {
+          id: "Πολυμέσα",
+          x: 0,
+          y: -100,
+          color: white,
+          marker: { radius: 18 },
+          dataLabels: { y: -18 },
+        },
         { id: "Φωτογραφία", x: -50, y: -200, color: white },
         { id: "Βιντεογραφία", x: 50, y: -200, color: white },
         { id: "Ηχοληψία", x: 100, y: -150, color: white },
@@ -165,162 +219,188 @@ Highcharts.chart("greek-network-graph", {
         { id: "Εφαρμογές", x: 250, y: 100, color: white },
         { id: "Εκδηλώσεις", x: -150, y: 50, color: white },
         { id: "Διαφημίσεις", x: -200, y: 100, color: white },
-        { id: "Influencers", x: -250, y: 50, color: white }
-      ]
-    }
-  ]
+        { id: "Influencers", x: -250, y: 50, color: white },
+      ],
+    },
+  ],
 });
 
 
 /* Organization Chart */
-Highcharts.chart('english-hierarchy-chart', {
+Highcharts.chart("english-hierarchy-chart", {
   chart: {
     height: 500,
+    width: null,
+    padding: 30,
     inverted: true,
-    backgroundColor: 'transparent'
+    backgroundColor: "transparent",
   },
 
   title: {
-    text: null
+    text: null,
   },
 
   accessibility: {
     point: {
-      descriptionFormat: '{add index 1}. {toNode.name}' +
-        '{#if (ne toNode.name toNode.id)}, {toNode.id}{/if}, ' +
-        'reports to {fromNode.id}'
-    }
+      descriptionFormat:
+        "{add index 1}. {toNode.name}" +
+        "{#if (ne toNode.name toNode.id)}, {toNode.id}{/if}, " +
+        "reports to {fromNode.id}",
+    },
   },
 
-  series: [{
-    type: 'organization',
-    name: 'Cooperative',
-    keys: ['from', 'to'],
-    data: [
-      ['Inhinito SCE', 'Board of Directors'],
-      ['Inhinito SCE', 'Co-op Members'],
-      ['Inhinito SCE', 'External Partners'],
-      ['Board of Directors', 'President'],
-      ['Board of Directors', 'Secretary'],
-      ['Board of Directors', 'Treasurer'],
-      ['Co-op Members', 'President'],
-      ['Co-op Members', 'Secretary'],
-      ['Co-op Members', 'Treasurer'],
-      ['Co-op Members', 'Member 4'],
-      ['Co-op Members', 'Member 5'],
-      ['Co-op Members', 'Member 6'],
-      ['Co-op Members', 'Member 7'],
-      ['External Partners', 'Creator Network'],
-      ['External Partners', 'Business Partners']
-    ],
-    levels: [{
-      level: 0,
-      color: 'silver',
+  series: [
+    {
+      type: "organization",
+      name: "Cooperative",
+      keys: ["from", "to"],
+      data: [
+        ["Inhinito Cooperative", "Board of Directors"],
+        ["Inhinito Cooperative", "Co-op Members"],
+        ["Inhinito Cooperative", "External Partners"],
+        ["Board of Directors", "President"],
+        ["Board of Directors", "Secretary"],
+        ["Board of Directors", "Treasurer"],
+        ["Co-op Members", "President"],
+        ["Co-op Members", "Secretary"],
+        ["Co-op Members", "Treasurer"],
+        ["Co-op Members", "Member 4"],
+        ["Co-op Members", "Member 5"],
+        ["Co-op Members", "Member 6"],
+        ["Co-op Members", "Member 7"],
+        ["External Partners", "Creator Network"],
+        ["External Partners", "Business Partners"],
+      ],
+      levels: [
+        {
+          level: 0,
+          color: "#fbc943",
+          dataLabels: {
+            color: "black",
+          },
+          height: 25,
+        },
+        {
+          level: 1,
+          color: "#ee4684",
+          dataLabels: {
+            color: "black",
+          },
+          height: 25,
+        },
+        {
+          level: 2,
+          color: "gray",
+          dataLabels: {
+            color: "white",
+          },
+        },
+      ],
+      nodes: [
+        {
+          id: "Cooperative Members",
+          name: "Cooperative Members",
+          column: 0,
+        },
+        {
+          id: "Board of Directors",
+          name: "Board of Directors",
+          column: 1,
+        },
+        {
+          id: "President",
+          title: "President",
+          name: "John Doe",
+          column: 2,
+        },
+        {
+          id: "Secretary",
+          title: "Secretary",
+          name: "Jane Smith",
+          column: 2,
+        },
+        {
+          id: "Treasurer",
+          title: "Treasurer",
+          name: "Jim Brown",
+          column: 2,
+        },
+        {
+          id: "Member 4",
+          name: "Member 4",
+          column: 3,
+        },
+        {
+          id: "Member 5",
+          name: "Member 5",
+          column: 3,
+        },
+        {
+          id: "Member 6",
+          name: "Member 6",
+          column: 3,
+        },
+        {
+          id: "Member 7",
+          name: "Member 7",
+          column: 3,
+        },
+        {
+          id: "Creator Network",
+          name: "Creator Network",
+          column: 4,
+        },
+        {
+          id: "Business Partners",
+          name: "Business Partners",
+          column: 4,
+        },
+      ],
+
+      nodeWidth: 40,
+      // Make the nodes taller
+      height: 50,
+      borderRadius: 1,
+      colorByPoint: false,
+      color: "#030404",
+      borderColor: "#44166d",
+      borderWidth: 1,
       dataLabels: {
-        color: 'black'
+        enabled: true,
+        color: "white",
+        style: {
+          fontFamily: "IBM",
+          fontSize: "16px",
+          textOutline: "none",
+          fontWeight: "normal",
+        },
       },
-      height: 25
-    }, {
-      level: 1,
-      color: 'silver',
-      dataLabels: {
-        color: 'black'
-      },
-      height: 25
-    }, {
-      level: 2,
-      color: '#980104'
-    }, {
-      level: 4,
-      color: '#359154'
-    }],
-    nodes: [
+    },
+  ],
+  responsive: {
+    rules: [
       {
-        id: 'Cooperative Members',
-        name: 'Cooperative Members',
-        column: 0
+        condition: {
+          maxWidth: 450,
+        },
+        chartOptions: {
+          series: [
+            {
+              nodeWidth: 40,
+              height: 60,
+            },
+          ],
+        },
       },
-      {
-        id: 'Board of Directors',
-        name: 'Board of Directors',
-        column: 1
-      },
-      {
-        id: 'President',
-        title: 'President',
-        name: 'John Doe',
-        column: 2,
-      },
-      {
-        id: 'Secretary',
-        title: 'Secretary',
-        name: 'Jane Smith',
-        column: 2
-      },
-      {
-        id: 'Treasurer',
-        title: 'Treasurer',
-        name: 'Jim Brown',
-        column: 2
-      },
-      {
-        id: 'Member 4',
-        name: 'Member 4',
-        column: 3
-      },
-      {
-        id: 'Member 5',
-        name: 'Member 5',
-        column: 3
-      },
-      {
-        id: 'Member 6',
-        name: 'Member 6',
-        column: 3
-      },
-      {
-        id: 'Member 7',
-        name: 'Member 7',
-        column: 3
-      },
-      {
-        id: 'Creator Network',
-        name: 'Creator Network',
-        column: 4
-      },
-      {
-        id: 'Business Partners',
-        name: 'Business Partners',
-        column: 4
-      }
     ],
-    /* Adjust these for spacing and rectangular appearance */
-    nodeWidth: 40,
-    nodePadding: 10,
-    borderRadius: 1,
-    colorByPoint: false,
-    color: '#030404',
-    borderColor: '#fbc943',
-    borderWidth: 2,
-    dataLabels: {
-      enabled: true,
-      color: 'white',
-      style: {
-        paddingTop: '1px',
-        fontFamily: 'IBM',
-        fontSize: '18px',
-        textOutline: 'none',
-        fontWeight: 'normal',
-        lineHeight: '14px'
-      }
-    }
-  }],
+  },
   tooltip: {
-    outside: true
+    outside: true,
   },
   exporting: {
     allowHTML: true,
     sourceWidth: 800,
-    sourceHeight: 600
-  }
+    sourceHeight: 600,
+  },
 });
+
