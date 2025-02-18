@@ -525,7 +525,7 @@ textarea {
   float: left; text-align: center;
   list-style-type: none;
   position: relative;
-  padding: 20px 5px 0 5px;
+  padding: 20px 11px 0 5px;
 
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -539,6 +539,7 @@ textarea {
   position: absolute; top: 0; right: 50%;
   border-top: 2px solid #ccc;
   width: 50%; height: 20px;
+  transition: all 0.5s;
 }
 
 /*We need to remove left-right connectors from elements without 
@@ -555,17 +556,19 @@ any siblings*/
 .tree ul::before{
   position: absolute; top: 0;
   width: 0; height: 20px;
+  transition: all 0.5s;
 }
 
 .tree li a{
   border: 2px solid #ccc;
   padding: 11px 15px 10px;
   text-decoration: none;
-  color: #666;
+  color: white;
   font-family: 'PressStart', sans-serif;
   font-size: 10px;
   display: inline-block;
-
+  z-index: 4;
+  position: relative;
   border-radius: 1px;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
@@ -578,8 +581,8 @@ any siblings*/
 /*Time for some hover effects*/
 /*We will apply the hover effect the the lineage of the element also*/
 .tree li a:hover, .tree li a:hover+ul li a {
-  background: #c8e4f8; 
-  color: #000; 
+  background: white; 
+  color: #46156b; 
   border: 2px solid white;
 }
 /*Connector styles on hover*/
@@ -597,7 +600,7 @@ any siblings*/
   left: 50%;
   transform: translateX(-50%);
   text-decoration: none;
-  color: #666;
+  color: white;
   font-family: 'PressStart', sans-serif;
   font-size: 10px;
   border: 2px solid #ccc;
@@ -612,6 +615,7 @@ any siblings*/
   max-height: 260px;
   line-height: 15px;
   padding: 15px 10px;
+  z-index: 5;
 }
 
 
@@ -619,6 +623,7 @@ any siblings*/
 .tree li::after{
   right: auto; left: 50%;
   border-left: 2px solid #ccc;
+  transition: all 0.5s;
 }
 .tree ul ul::before {
   content: '';
@@ -627,6 +632,7 @@ any siblings*/
   bottom: -20px;
   border-left: 2px solid #ccc;
   height: 20px;
+  transition: all 0.5s;
 }
 /*Remove left connector from first child and 
 right connector from last child*/
@@ -681,7 +687,7 @@ right connector from last child*/
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 700px) {
   .tree {
     position: relative;
     display: flex;
