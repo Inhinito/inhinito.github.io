@@ -653,9 +653,9 @@ right connector from last child*/
 }
 
 .tree li a.force-highlight {
-  background:rgb(213, 147, 71) !important; 
+  background: #ffcf4e !important; 
   color: #000 !important; 
-  border: 2px solid #94a0b4 !important;
+  border: 2px solid #ffcf4e !important;
 }
 
 @media (max-width: 350px) {
