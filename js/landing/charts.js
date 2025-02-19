@@ -1,8 +1,4 @@
 /* Network Graphs */
-let white = "#ffffff";
-let yellow = "#ffd04d";
-let red = "#f05181";
-
 const baseWidth = 600;
 const baseHeight = 550;
 const nodes = [
@@ -132,13 +128,11 @@ window.addEventListener('resize', () => requestAnimationFrame(updatePositions));
 
 
 
-
+/*
 // English Graph
 Highcharts.chart("english-network-graph", {
-  ...baseConfig,
   series: [
     {
-      ...baseConfig.series[0],
       data: [
         ["Inhinito", "Marketing"],
         ["Inhinito", "Software"],
@@ -158,38 +152,6 @@ Highcharts.chart("english-network-graph", {
         ["Marketing", "Influencers"],
       ],
       nodes: [
-        {
-          id: "Inhinito",
-          x: 0,
-          y: 0,
-          color: yellow,
-          marker: { radius: 18, lineColor: white, lineWidth: 12 },
-          dataLabels: { y: -24 },
-        },
-        {
-          id: "Marketing",
-          x: -100,
-          y: 0,
-          color: white,
-          marker: { radius: 18 },
-          dataLabels: { y: -18 },
-        },
-        {
-          id: "Software",
-          x: 100,
-          y: 0,
-          color: white,
-          marker: { radius: 18 },
-          dataLabels: { y: -18 },
-        },
-        {
-          id: "Multimedia",
-          x: 0,
-          y: -100,
-          color: white,
-          marker: { radius: 18 },
-          dataLabels: { y: -18 },
-        },
         { id: "Photography", x: -50, y: -200, color: white },
         { id: "Videography", x: 50, y: -200, color: white },
         { id: "Sound Design", x: 100, y: -150, color: white },
@@ -207,10 +169,8 @@ Highcharts.chart("english-network-graph", {
 
 // Greek Graph
 Highcharts.chart("greek-network-graph", {
-  ...baseConfig,
   series: [
     {
-      ...baseConfig.series[0],
       data: [
         ["Inhinito", "Μάρκετινγκ"],
         ["Inhinito", "Λογισμικό"],
@@ -230,38 +190,6 @@ Highcharts.chart("greek-network-graph", {
         ["Μάρκετινγκ", "Influencers"],
       ],
       nodes: [
-        {
-          id: "Inhinito",
-          x: 0,
-          y: 0,
-          color: yellow,
-          marker: { radius: 18, lineColor: white, lineWidth: 12 },
-          dataLabels: { y: -24 },
-        },
-        {
-          id: "Μάρκετινγκ",
-          x: -100,
-          y: 0,
-          color: white,
-          marker: { radius: 18 },
-          dataLabels: { y: -18 },
-        },
-        {
-          id: "Λογισμικό",
-          x: 100,
-          y: 0,
-          color: white,
-          marker: { radius: 18 },
-          dataLabels: { y: -18 },
-        },
-        {
-          id: "Πολυμέσα",
-          x: 0,
-          y: -100,
-          color: white,
-          marker: { radius: 18 },
-          dataLabels: { y: -18 },
-        },
         { id: "Φωτογραφία", x: -50, y: -200, color: white },
         { id: "Βιντεογραφία", x: 50, y: -200, color: white },
         { id: "Ηχοληψία", x: 100, y: -150, color: white },
@@ -276,7 +204,7 @@ Highcharts.chart("greek-network-graph", {
     },
   ],
 });
-
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
   const coOpMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(2) a');
