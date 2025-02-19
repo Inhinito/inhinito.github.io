@@ -1,7 +1,8 @@
 /* Network Graphs */
 const baseWidth = 600;
 const baseHeight = 550;
-const nodes = [
+
+const englishNodes = [
   { id: "Inhinito", x: 300, y: 300, color: "#ffd04d", size: 18 },
   { id: "Marketing", x: 200, y: 380, color: "#ffffff", size: 18 },
   { id: "Software", x: 400, y: 400, color: "#ffffff", size: 18 },
@@ -18,7 +19,7 @@ const nodes = [
   { id: "Influencers", x: 140, y: 320, color: "#ffffff" }
 ];
 
-const links = [
+const englishLinks = [
   ["Inhinito", "Marketing"],
   ["Inhinito", "Software"],
   ["Inhinito", "Multimedia"],
@@ -37,92 +38,172 @@ const links = [
   ["Marketing", "Influencers"]
 ];
 
-let currentHorizontalScale = 1;
-const svg = document.getElementById('network-graph');
-let nodeElements = [];
-let linkElements = [];
-let textElements = [];
+// Greek translations
+const greekLabels = {
+  "Inhinito": "Inhinito",
+  "Marketing": "Μάρκετινγκ",
+  "Software": "Λογισμικό",
+  "Multimedia": "Πολυμέσα",
+  "Photography": "Φωτογραφία",
+  "Videography": "Βιντεοσκόπηση",
+  "Sound Design": "Ηχοληψία",
+  "Graphic Design": "Γραφιστική",
+  "Mobile Apps": "Εφαρμογές",
+  "UX Design": "Σχεδίαση UX",
+  "Websites": "Ιστοσελίδες",
+  "Digital Ads": "Διαφημίσεις",
+  "Events": "Εκδηλώσεις",
+  "Influencers": "Influencers"
+};
 
-function updatePositions() {
-  const container = document.querySelector('.graph-container');
-  const containerWidth = container.clientWidth;
-  currentHorizontalScale = containerWidth / baseWidth;
+const greekNodes = englishNodes.map(node => ({
+  ...node,
+  id: greekLabels[node.id] || node.id
+}));
 
-  nodes.forEach((node, index) => {
-    const scaledX = node.x * currentHorizontalScale;
-    const originalY = node.y;
-    const size = node.size || 10;
-    const rect = nodeElements[index];
-    const text = textElements[index];
+// Make sure Greek links match the Greek IDs:
+const greekLinks = [
+  ["Inhinito", "Μάρκετινγκ"],
+  ["Inhinito", "Λογισμικό"],
+  ["Inhinito", "Πολυμέσα"],
+  ["Πολυμέσα", "Φωτογραφία"],
+  ["Πολυμέσα", "Βιντεοσκόπηση"],
+  ["Πολυμέσα", "Ηχοληψία"],
+  ["Πολυμέσα", "Γραφιστική"],
+  ["Ηχοληψία", "Βιντεοσκόπηση"],
+  ["Λογισμικό", "Ιστοσελίδες"],
+  ["Λογισμικό", "Σχεδίαση UX"],
+  ["Λογισμικό", "Εφαρμογές"],
+  ["Σχεδίαση UX", "Εφαρμογές"],
+  ["Σχεδίαση UX", "Ιστοσελίδες"],
+  ["Μάρκετινγκ", "Εκδηλώσεις"],
+  ["Μάρκετινγκ", "Διαφημίσεις"],
+  ["Μάρκετινγκ", "Influencers"]
+];
 
-    // Fixed stroke attributes
-    rect.setAttribute('x', scaledX - size);
-    rect.setAttribute('y', originalY - size);
-    rect.setAttribute('width', size * 2);
-    rect.setAttribute('height', size * 2);
-    rect.setAttribute('fill', node.color);
-    rect.setAttribute('stroke', node.id === "Inhinito" ? '#ffffff' : 'transparent');
-    rect.setAttribute('stroke-width', node.id === "Inhinito" ? 12 : 0);
-
-    text.setAttribute('x', scaledX);
+class GraphManager {
+  constructor(svgId, nodes, links) {
+    this.svg = document.getElementById(svgId);
+    this.container = this.svg.closest('.graph-container');
+    this.nodes = nodes;
+    this.links = links;
+    this.nodeElements = [];
+    this.linkElements = [];
+    this.textElements = [];
+    this.currentHorizontalScale = 1;
     
-    if (node.id === "Inhinito") {
-      // Special positioning for center node
-      text.setAttribute('y', originalY - 34); // 24 base offset + 10 extra
-      text.setAttribute('dy', '0.15em'); // Vertical alignment adjustment
-    } else {
-      // Standard positioning for other nodes
-      text.setAttribute('y', originalY - (node.size ? 24 : 18));
-      text.removeAttribute('dy');
-    }
-  });
+    this.init();
+  }
 
-  links.forEach(([sourceId, targetId], index) => {
-    const source = nodes.find(n => n.id === sourceId);
-    const target = nodes.find(n => n.id === targetId);
-    const line = linkElements[index];
-    
-    line.setAttribute('x1', source.x * currentHorizontalScale);
-    line.setAttribute('y1', source.y);
-    line.setAttribute('x2', target.x * currentHorizontalScale);
-    line.setAttribute('y2', target.y);
-  });
+  init() {
+    this.createGraph();
+    this.addResizeListener();
+  }
+
+  createGraph() {
+    while (this.svg.firstChild) this.svg.removeChild(this.svg.firstChild);
+
+    this.links.forEach(([sourceId, targetId]) => {
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.classList.add('link');
+      this.linkElements.push(line);
+      this.svg.appendChild(line);
+    });
+
+    this.nodes.forEach((node, index) => {
+      const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      
+      rect.classList.add('node');
+      text.classList.add('node-text');
+      text.textContent = node.id;
+      
+      this.nodeElements[index] = rect;
+      this.textElements[index] = text;
+      
+      group.appendChild(rect);
+      group.appendChild(text);
+      this.svg.appendChild(group);
+
+      group.addEventListener('mouseover', () => console.log(`Hovered node: ${node.id}`));
+      group.addEventListener('click', () => console.log(`Clicked node: ${node.id}`));
+    });
+
+    this.updatePositions();
+  }
+
+  updatePositions() {
+    const containerWidth = this.container.clientWidth;
+    this.currentHorizontalScale = containerWidth / baseWidth;
+
+    this.nodes.forEach((node, index) => {
+      const scaledX = node.x * this.currentHorizontalScale;
+      const originalY = node.y;
+      const size = node.size || 10;
+      const rect = this.nodeElements[index];
+      const text = this.textElements[index];
+
+      rect.setAttribute('x', scaledX - size);
+      rect.setAttribute('y', originalY - size);
+      rect.setAttribute('width', size * 2);
+      rect.setAttribute('height', size * 2);
+      rect.setAttribute('fill', node.color);
+      rect.setAttribute('stroke', node.id === "Inhinito" || node.id === "Inhinito" ? '#ffffff' : 'transparent');
+      rect.setAttribute('stroke-width', node.id === "Inhinito" || node.id === "Inhinito" ? 12 : 0);
+
+      text.setAttribute('x', scaledX);
+      
+      if (node.id === "Inhinito" || node.id === "Inhinito") {
+        text.setAttribute('y', originalY - 34);
+        text.setAttribute('dy', '0.15em');
+      } else {
+        text.setAttribute('y', originalY - (node.size ? 24 : 18));
+        text.removeAttribute('dy');
+      }
+    });
+
+    this.links.forEach(([sourceId, targetId], index) => {
+      const source = this.nodes.find(n => n.id === sourceId);
+      const target = this.nodes.find(n => n.id === targetId);
+      const line = this.linkElements[index];
+
+      if (!source || !target) {
+        console.error(`Link references non-existent node: sourceId=${sourceId}, targetId=${targetId}`);
+        return;
+      }
+
+      console.log('source:', source, '\ntarget:', target);
+      line.setAttribute('x1', source.x * this.currentHorizontalScale);
+      line.setAttribute('y1', source.y);
+      line.setAttribute('x2', target.x * this.currentHorizontalScale);
+      line.setAttribute('y2', target.y);
+    });
+  }
+
+  addResizeListener() {
+    const resizeObserver = new ResizeObserver(() => {
+      requestAnimationFrame(() => this.updatePositions());
+    });
+    resizeObserver.observe(this.container);
+  }
 }
 
-function createGraph() {
-  links.forEach(([sourceId, targetId]) => {
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.classList.add('link');
-    linkElements.push(line);
-    svg.appendChild(line);
-  });
+var englishGraph;
+var greekGraph;
 
-  nodes.forEach((node, index) => {
-    const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    
-    rect.classList.add('node');
-    text.classList.add('node-text');
-    text.textContent = node.id;
-    
-    nodeElements[index] = rect;
-    textElements[index] = text;
-    
-    group.appendChild(rect);
-    group.appendChild(text);
-    svg.appendChild(group);
-
-    group.addEventListener('mouseover', () => console.log(`Hovered node: ${node.id}`));
-    group.addEventListener('click', () => console.log(`Clicked node: ${node.id}`));
-  });
-
-  updatePositions();
+// Initialize graphs
+function initGraphs() {
+  try {
+    englishGraph = new GraphManager('english-network-graph', englishNodes, englishLinks);
+    greekGraph = new GraphManager('greek-network-graph', greekNodes, greekLinks);
+  } catch (error) {
+    console.error('Graph initialization failed:', error);
+  }
 }
 
-createGraph();
-window.addEventListener('resize', () => requestAnimationFrame(updatePositions));
-
+document.addEventListener('DOMContentLoaded', initGraphs);
+// ...existing code...
 
 
 

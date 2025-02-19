@@ -307,7 +307,11 @@ textarea {
   overflow: visible;
 }
 
-#network-graph {
+#english-network-graph {
+  width: 100%;
+  height: 100%;
+}
+#greek-network-graph {
   width: 100%;
   height: 100%;
 }

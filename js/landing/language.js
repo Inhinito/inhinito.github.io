@@ -113,6 +113,14 @@ function rememberButton(){
     } else if(buttonFlag=='button3'){
       button3content();
     }
+
+    // Reinitialize graph when container becomes visible
+    if(languageFlag === 'english') {
+      englishGraph.updatePositions();
+    } else {
+      greekGraph.updatePositions();
+    }
+    
     // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
     mainMenu.style.opacity = 1;
 
