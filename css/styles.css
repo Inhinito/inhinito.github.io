@@ -61,7 +61,10 @@ main{
   display: none;
   max-width: 635px;
   margin: auto;
-  padding: 0px 20px 0px 15px;
+}
+
+.page {
+  padding: 0 10px;
 }
 
 a {
@@ -225,6 +228,7 @@ fieldset .article-header {
   filter        : drop-shadow(6px 6px 0px #ee4684);
   -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
   filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#ee4684')";
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -243,7 +247,7 @@ fieldset .article-header {
   margin-right: 6px;
   margin-bottom: 5px;
   /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
-  --background: transparent;
+  --background: #00000033;
   /* The width and the height is big enough to allow for the animeted movement of the button
   as well as the box-shadow of the button */
   width:141px;
@@ -253,14 +257,14 @@ fieldset .article-header {
 .basic-button::after{
   
   border: 2px solid #ffcf4e;
-  background-color: rgb(55, 41, 99);
+  background-color: #00000033;
   border-radius: 1px;
 
   /* Specify the transition effect for chaning the background-color and the button-press */ 
-  -webkit-transition: 0.08s ease-in-out;
-  -moz-transition: 0.08s ease-in-out;
-  -o-transition: 0.08s ease-in-out;
-  transition: 0.08s ease-in-out;
+  -webkit-transition: all 0.06s ease-in-out;
+  -moz-transition: all 0.06s ease-in-out;
+  -o-transition: all 0.06s ease-in-out;
+  transition: all 0.06s ease-in-out;
 
   /* Fill each button text content individually */
   content: "";
@@ -506,11 +510,6 @@ footer{
   100% { opacity: 0; right: 1400px; top: 800px; }
 }
 
-.side-page {
-  padding: 0 10px;
-  text-align: left;
-}
-
 .side-article {
   padding: 0 5px 0 0;
 }
@@ -598,10 +597,10 @@ footer{
 }
 
 .timeline-event-icon {
-  -moz-transition: -moz-transform 0.2s ease-in;
-  -o-transition: -o-transform 0.2s ease-in;
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  -moz-transition: -moz-transform 0.1s ease-in;
+  -o-transition: -o-transform 0.1s ease-in;
+  -webkit-transition: -webkit-transform 0.1s ease-in;
+  transition: all 0.1s ease-in;
   background-color: #401361;
   outline: 10px solid white;
   display: block;

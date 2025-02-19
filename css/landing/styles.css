@@ -299,13 +299,44 @@ textarea {
 }
 
 /*------ Network Graph ------*/
-#graph-container {
-  min-width: 320px;
+.graph-container {
+  width: 100%;
   max-width: 900px;
-  margin: 0 auto;
-  height: 580px;
+  margin: 0 auto 50px;
+  height: 550px;
+  overflow: visible;
 }
 
+#network-graph {
+  width: 100%;
+  height: 100%;
+}
+
+.node {
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+.node:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.82));
+}
+
+/* text styling */
+.node-text {
+  font-family: 'PressStart', monospace;
+  font-size: 11px;
+  fill: #fbc943;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: #45156c;
+  stroke-width: 1px;
+}
+
+.link {
+  stroke: rgba(255, 255, 255, 0.31);
+  stroke-width: 1.5;
+}
 
 
 /* Stepper styles */

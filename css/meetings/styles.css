@@ -1,8 +1,10 @@
 #meetings-english{
     display: block;
+    text-align: left;
 }
 #meetings-greek{
     display: none;
+    text-align: left;
 }
 
 .article-list-item {

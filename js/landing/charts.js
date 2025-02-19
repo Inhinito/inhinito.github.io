@@ -3,83 +3,135 @@ let white = "#ffffff";
 let yellow = "#ffd04d";
 let red = "#f05181";
 
-// Shared configuration
-const baseConfig = {
-  chart: {
-    type: "networkgraph",
-    marginTop: 30,
-    height: 600,
-    backgroundColor: "transparent",
-    events: {
-      render: function () {
-        this.series[0].nodes.forEach((node) => {
-          if (node.graphic) {
-            node.graphic.attr({
-              style:
-                "filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.82))",
-            });
-          }
-        });
-      },
-    },
-  },
-  title: { text: null },
-  subtitle: { text: null },
-  tooltip: { enabled: false },
-  plotOptions: {
-    networkgraph: {
-      keys: ["from", "to"],
-      layoutAlgorithm: {
-        integration: "verlet",
-        // Disable simulation for static positioning.
-        enableSimulation: true,
-        initialPositions: "circle",
-        linkLength: 130,
-      },
-      marker: {
-        symbol: "square",
-        radius: 10,
-      },
-      point: {
-        events: {
-          hover: function () {
-            console.log(`Hovered node: ${this.id}`);
-          },
-          click: function () {
-            console.log(`Clicked node: ${this.id}`);
-          },
-        },
-      },
-    },
-  },
-  series: [
-    {
-      link: {
-        width: 1.5, // This sets the line thickness
-        color: "#ffffff4f",
-      },
-      marker: {
-        symbol: "square",
-        radius: 10,
-      },
-      dataLabels: {
-        enabled: true,
-        linkFormat: "",
-        allowOverlap: true,
-        style: {
-          fontSize: "10px",
-          fontFamily: "PressStart",
-          // fontSize: "18px",
-          // fontFamily: "IBM",
-          color: "#fbc943",
-          textOutline: "1px contrast #45156c",
-        },
-        x: 0,
-        y: -10,
-      },
-    },
-  ],
-};
+const baseWidth = 600;
+const baseHeight = 550;
+const nodes = [
+  { id: "Inhinito", x: 300, y: 300, color: "#ffd04d", size: 18 },
+  { id: "Marketing", x: 200, y: 380, color: "#ffffff", size: 18 },
+  { id: "Software", x: 400, y: 400, color: "#ffffff", size: 18 },
+  { id: "Multimedia", x: 300, y: 200, color: "#ffffff", size: 18 },
+  { id: "Photography", x: 270, y: 50, color: "#ffffff" },
+  { id: "Videography", x: 380, y: 100, color: "#ffffff" },
+  { id: "Sound Design", x: 420, y: 250, color: "#ffffff" },
+  { id: "Graphic Design", x: 200, y: 150, color: "#ffffff" },
+  { id: "Mobile Apps", x: 400, y: 530, color: "#ffffff" },
+  { id: "UX Design", x: 460, y: 460, color: "#ffffff" },
+  { id: "Websites", x: 480, y: 340, color: "#ffffff" },
+  { id: "Digital Ads", x: 200, y: 500, color: "#ffffff" },
+  { id: "Events", x: 130, y: 440, color: "#ffffff" },
+  { id: "Influencers", x: 140, y: 320, color: "#ffffff" }
+];
+
+const links = [
+  ["Inhinito", "Marketing"],
+  ["Inhinito", "Software"],
+  ["Inhinito", "Multimedia"],
+  ["Multimedia", "Photography"],
+  ["Multimedia", "Videography"],
+  ["Multimedia", "Sound Design"],
+  ["Multimedia", "Graphic Design"],
+  ["Sound Design", "Videography"],
+  ["Software", "Websites"],
+  ["Software", "UX Design"],
+  ["Software", "Mobile Apps"],
+  ["UX Design", "Mobile Apps"],
+  ["UX Design", "Websites"],
+  ["Marketing", "Events"],
+  ["Marketing", "Digital Ads"],
+  ["Marketing", "Influencers"]
+];
+
+let currentHorizontalScale = 1;
+const svg = document.getElementById('network-graph');
+let nodeElements = [];
+let linkElements = [];
+let textElements = [];
+
+function updatePositions() {
+  const container = document.querySelector('.graph-container');
+  const containerWidth = container.clientWidth;
+  currentHorizontalScale = containerWidth / baseWidth;
+
+  nodes.forEach((node, index) => {
+    const scaledX = node.x * currentHorizontalScale;
+    const originalY = node.y;
+    const size = node.size || 10;
+    const rect = nodeElements[index];
+    const text = textElements[index];
+
+    // Fixed stroke attributes
+    rect.setAttribute('x', scaledX - size);
+    rect.setAttribute('y', originalY - size);
+    rect.setAttribute('width', size * 2);
+    rect.setAttribute('height', size * 2);
+    rect.setAttribute('fill', node.color);
+    rect.setAttribute('stroke', node.id === "Inhinito" ? '#ffffff' : 'transparent');
+    rect.setAttribute('stroke-width', node.id === "Inhinito" ? 12 : 0);
+
+    text.setAttribute('x', scaledX);
+    
+    if (node.id === "Inhinito") {
+      // Special positioning for center node
+      text.setAttribute('y', originalY - 34); // 24 base offset + 10 extra
+      text.setAttribute('dy', '0.15em'); // Vertical alignment adjustment
+    } else {
+      // Standard positioning for other nodes
+      text.setAttribute('y', originalY - (node.size ? 24 : 18));
+      text.removeAttribute('dy');
+    }
+  });
+
+  links.forEach(([sourceId, targetId], index) => {
+    const source = nodes.find(n => n.id === sourceId);
+    const target = nodes.find(n => n.id === targetId);
+    const line = linkElements[index];
+    
+    line.setAttribute('x1', source.x * currentHorizontalScale);
+    line.setAttribute('y1', source.y);
+    line.setAttribute('x2', target.x * currentHorizontalScale);
+    line.setAttribute('y2', target.y);
+  });
+}
+
+function createGraph() {
+  links.forEach(([sourceId, targetId]) => {
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.classList.add('link');
+    linkElements.push(line);
+    svg.appendChild(line);
+  });
+
+  nodes.forEach((node, index) => {
+    const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    
+    rect.classList.add('node');
+    text.classList.add('node-text');
+    text.textContent = node.id;
+    
+    nodeElements[index] = rect;
+    textElements[index] = text;
+    
+    group.appendChild(rect);
+    group.appendChild(text);
+    svg.appendChild(group);
+
+    group.addEventListener('mouseover', () => console.log(`Hovered node: ${node.id}`));
+    group.addEventListener('click', () => console.log(`Clicked node: ${node.id}`));
+  });
+
+  updatePositions();
+}
+
+createGraph();
+window.addEventListener('resize', () => requestAnimationFrame(updatePositions));
+
+
+
+
+
+
 
 // English Graph
 Highcharts.chart("english-network-graph", {
@@ -101,8 +153,8 @@ Highcharts.chart("english-network-graph", {
         ["Software", "Mobile Apps"],
         ["UX Design", "Mobile Apps"],
         ["UX Design", "Websites"],
-        ["Marketing", "Events"],
         ["Marketing", "Digital Ads"],
+        ["Marketing", "Events"],
         ["Marketing", "Influencers"],
       ],
       nodes: [
@@ -142,11 +194,11 @@ Highcharts.chart("english-network-graph", {
         { id: "Videography", x: 50, y: -200, color: white },
         { id: "Sound Design", x: 100, y: -150, color: white },
         { id: "Graphic Design", x: -100, y: -150, color: white },
-        { id: "Websites", x: 150, y: 100, color: white },
+        { id: "Mobile Apps", x: 150, y: 100, color: white },
         { id: "UX Design", x: 200, y: 50, color: white },
-        { id: "Mobile Apps", x: 250, y: 100, color: white },
-        { id: "Events", x: -150, y: 50, color: white },
-        { id: "Digital Ads", x: -200, y: 100, color: white },
+        { id: "Websites", x: 250, y: 100, color: white },
+        { id: "Digital Ads", x: -150, y: 50, color: white },
+        { id: "Events", x: -200, y: 100, color: white },
         { id: "Influencers", x: -250, y: 50, color: white },
       ],
     },
