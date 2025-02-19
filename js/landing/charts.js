@@ -173,7 +173,6 @@ class GraphManager {
         return;
       }
 
-      console.log('source:', source, '\ntarget:', target);
       line.setAttribute('x1', source.x * this.currentHorizontalScale);
       line.setAttribute('y1', source.y);
       line.setAttribute('x2', target.x * this.currentHorizontalScale);

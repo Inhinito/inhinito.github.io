@@ -334,7 +334,7 @@ textarea {
   dominant-baseline: middle;
   paint-order: stroke;
   stroke: #45156c;
-  stroke-width: 1px;
+  stroke-width: 3px;
 }
 
 .link {
@@ -831,5 +831,131 @@ right connector from last child*/
     border-radius: 1px 0 0 0 !important;
     -webkit-border-radius: 1px 0 0 0 !important;
     -moz-border-radius: 1px 0 0 0 !important;
+  }
+}
+
+/* Solar system */
+#solar-system {
+  position: relative;
+  height: 100vmin;
+}
+.sun {
+  width: 14vmin;
+  height: 14vmin;
+  background-color: white;
+  border-radius: 1px;
+  box-shadow: 0 0 3em white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sun-label {
+  position: absolute;
+  top: 48vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 3vmin;
+  text-align: center;
+}
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.planet-container{
+  position: absolute;
+}
+.planet {
+  position: absolute;
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+}
+.planet-label {
+  position: absolute;
+  top: -6.5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-family: 'PressStart';
+  font-size: 2vmin;
+  text-align: center;
+  white-space: nowrap;
+}
+.venus-orbit {
+  width: 37vmin;
+  height: 37vmin;
+  animation: orbit 20s linear infinite;
+}
+.venus {
+  width: 8vmin;
+  height: 8vmin;
+  background-color: #fbc943;
+  top: 0;
+  left: 50%;
+}
+.venus-container {
+  top: 16vmin;
+  animation: counter-orbit 20s linear infinite;
+}
+.earth-orbit {
+  width: 63vmin;
+  height: 63vmin;
+  animation: orbit 25s linear infinite;
+}
+.earth {
+  width: 9vmin;
+  height: 9vmin;
+  background-color: #6630a2;
+  top: 0;
+  left: 50%;
+}
+.earth-container {
+  top: 25vmin;
+  animation: counter-orbit 25s linear infinite;
+}
+.mars-orbit {
+  width: 87vmin;
+  height: 87vmin;
+  animation: orbit 30s linear infinite;
+}
+.mars {
+  width: 8.5vmin;
+  height: 8.5vmin;
+  background-color: #ed649a;
+  top: 0;
+  left: 50%;
+}
+.mars-container {
+  top: 34vmin;
+  animation: counter-orbit 30s linear infinite;
+}
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes counter-orbit {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(-360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
