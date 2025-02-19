@@ -899,9 +899,9 @@ right connector from last child*/
   animation: counter-orbit 20s linear infinite;
 }
 .earth-orbit {
-  width: 63vmin;
-  height: 63vmin;
-  margin-top: -32vmin;
+  width: 60vmin;
+  height: 60vmin;
+  margin-top: -30vmin;
   animation: counter-orbit 25s linear infinite;
 }
 .earth {
@@ -919,8 +919,8 @@ right connector from last child*/
   animation: orbit 25s linear infinite;
 }
 .mars-orbit {
-  width: 85vmin;
-  height: 85vmin;
+  width: 83vmin;
+  height: 83vmin;
   animation: orbit 30s linear infinite;
 }
 .mars {
