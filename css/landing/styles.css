@@ -840,8 +840,8 @@ right connector from last child*/
   height: 100vmin;
 }
 .sun {
-  width: 14vmin;
-  height: 14vmin;
+  width: 11vmin;
+  height: 11vmin;
   background-color: white;
   border-radius: 1px;
   box-shadow: 0 0 3em white;
@@ -850,15 +850,8 @@ right connector from last child*/
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.sun-label {
-  position: absolute;
-  top: 48vmin;
-  left: 50%;
-  transform: translateX(-50%);
-  color: black;
-  font-family: Arial, sans-serif;
-  font-size: 3vmin;
-  text-align: center;
+#sun-label {
+  top: 41.5vmin;
 }
 .orbit {
   position: absolute;
@@ -876,16 +869,18 @@ right connector from last child*/
   border-radius: 1px;
   transform: translate(-50%, -50%);
 }
-.planet-label {
+.planetary-label {
   position: absolute;
   top: -6.5vmin;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
   font-family: 'PressStart';
-  font-size: 2vmin;
+  font-size: 2.1vmin;
   text-align: center;
   white-space: nowrap;
+  z-index: 2;
+  color: #ffcf4e;
+  text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
 }
 .venus-orbit {
   width: 37vmin;
@@ -893,8 +888,8 @@ right connector from last child*/
   animation: orbit 20s linear infinite;
 }
 .venus {
-  width: 8vmin;
-  height: 8vmin;
+  width: 7vmin;
+  height: 7vmin;
   background-color: #fbc943;
   top: 0;
   left: 50%;
@@ -906,7 +901,8 @@ right connector from last child*/
 .earth-orbit {
   width: 63vmin;
   height: 63vmin;
-  animation: orbit 25s linear infinite;
+  margin-top: -32vmin;
+  animation: counter-orbit 25s linear infinite;
 }
 .earth {
   width: 9vmin;
@@ -915,24 +911,27 @@ right connector from last child*/
   top: 0;
   left: 50%;
 }
+#earth-label {
+  top: -7.5vmin;
+}
 .earth-container {
-  top: 25vmin;
-  animation: counter-orbit 25s linear infinite;
+  top: 30vmin;
+  animation: orbit 25s linear infinite;
 }
 .mars-orbit {
-  width: 87vmin;
-  height: 87vmin;
+  width: 85vmin;
+  height: 85vmin;
   animation: orbit 30s linear infinite;
 }
 .mars {
-  width: 8.5vmin;
-  height: 8.5vmin;
+  width: 7vmin;
+  height: 7vmin;
   background-color: #ed649a;
   top: 0;
   left: 50%;
 }
 .mars-container {
-  top: 34vmin;
+  top: 45vmin;
   animation: counter-orbit 30s linear infinite;
 }
 @keyframes orbit {
