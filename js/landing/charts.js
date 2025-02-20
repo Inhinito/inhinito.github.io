@@ -11,10 +11,10 @@ const englishNodes = [
   { id: "Videography", x: 380, y: 100, color: "#ffffff" },
   { id: "Sound Design", x: 450, y: 260, color: "#ffffff" },
   { id: "Graphic Design", x: 180, y: 150, color: "#ffffff" },
-  { id: "Mobile Apps", x: 400, y: 510, color: "#ffffff" },
-  { id: "UX Design", x: 460, y: 460, color: "#ffffff" },
+  { id: "Mobile Apps", x: 380, y: 530, color: "#ffffff" },
+  { id: "UX Design", x: 460, y: 480, color: "#ffffff" },
   { id: "Websites", x: 460, y: 355, color: "#ffffff" },
-  { id: "Digital Ads", x: 200, y: 550, color: "#ffffff" },
+  { id: "Digital Ads", x: 200, y: 555, color: "#ffffff" },
   { id: "Events", x: 130, y: 490, color: "#ffffff" },
   { id: "Influencers", x: 140, y: 370, color: "#ffffff" }
 ];
@@ -155,10 +155,10 @@ class GraphManager {
       text.setAttribute('x', scaledX);
       
       if (node.id === "Inhinito" || node.id === "Inhinito") {
-        text.setAttribute('y', originalY - 34);
+        text.setAttribute('y', originalY - 36);
         text.setAttribute('dy', '0.15em');
       } else {
-        text.setAttribute('y', originalY - (node.size ? 24 : 18));
+        text.setAttribute('y', originalY - (node.size ? 28 : 20));
         text.removeAttribute('dy');
       }
     });
