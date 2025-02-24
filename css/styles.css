@@ -205,8 +205,7 @@ fieldset .article-header {
 }
 
 .list-header {
-  margin-top: 30px;
-  margin-bottom: -10px;
+  margin-bottom: 15px;
   font-size: clamp(12px, 4vw, 17px);
 }
 

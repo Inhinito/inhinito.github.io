@@ -237,7 +237,7 @@ function createProjects() {
 
     // Title
     const titleEl = document.createElement("h3");
-    titleEl.className = "pixel-title";
+    titleEl.className = "list-header article-header";
     titleEl.textContent = project.title;
 
     // Type with blinking dot
