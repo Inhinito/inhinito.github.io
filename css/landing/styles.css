@@ -991,3 +991,26 @@ right connector from last child*/
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
+/* Digital signal scrollspy */
+.signal-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.scrollspy-path {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+#path {
+  transition: stroke 0.3s ease;
+}
+
+#scrollspy-star {
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.8));
+}

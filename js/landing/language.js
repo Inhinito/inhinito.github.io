@@ -147,6 +147,10 @@ function button2content(){
   } else {
     button2greek.style.display = 'block';
   }
+
+      // Generate initial path and update star.
+      generatePath();
+      updateScrollSpy();
 }
 
 // Button 3 was clicked.
