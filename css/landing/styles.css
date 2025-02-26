@@ -1036,13 +1036,19 @@ right connector from last child*/
 .pixel-card-content {
   position: relative;
   padding: 16px;
-  background: #fed4ff3b; /* indigo-ish */
+  
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(309deg, #00000029 20%, #c3397d8a 140%);
+  background: -webkit-linear-gradient(309deg, #00000029 20%, #c3397d8a 140%);
+  background: linear-gradient(309deg, #00000029 20%, #c3397d8a 140%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#c3397d",GradientType=1);
+
   min-height: -webkit-fill-available;
-  transition: transform 200ms;
+  /* transition: transform 200ms; */
   font-family: "PressStart";
 }
 .pixel-card-container:hover .pixel-card-content {
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 .pixel-image-frame {
@@ -1064,11 +1070,11 @@ right connector from last child*/
 }
 
 .pixel-type {
-  color: #fde047;
-  font-size: 0.875rem;
-  margin-bottom: 8px;
+  color: #ffffff;
+  min-height: 35px;
+  font-size: clamp(12px, 4vw, 17px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* Blinking dot animation */
@@ -1094,8 +1100,9 @@ right connector from last child*/
 
 .pixel-button {
   margin-top: 16px;
-  padding: 8px 16px;
-  font-size: 0.875rem;
+  padding: 8px 10px 8px 12px;
+  font-family: 'PressStart';
+  font-size: 12px;
   color: #facc15;
   border: 2px solid #facc15;
   background: transparent;
@@ -1105,4 +1112,9 @@ right connector from last child*/
 .pixel-card-container:hover .pixel-button:hover {
   background: #facc15;
   color: #4b0082; /* matches your indigo-like hue */
+}
+
+.pixel-card-container:hover .pixel-button {
+  background: #facc15;
+  color: #4b0082;
 }

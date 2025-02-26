@@ -252,7 +252,7 @@ function createProjects() {
     // Button
     const buttonEl = document.createElement("button");
     buttonEl.className = "pixel-button";
-    buttonEl.textContent = "PRESS START";
+    buttonEl.textContent = "Read more";
     buttonEl.addEventListener("click", () => {
       window.open(project.link, "_blank");
     });
