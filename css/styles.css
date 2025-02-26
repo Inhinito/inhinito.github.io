@@ -191,7 +191,8 @@ article ul {
   font-size: clamp(12px, 4vw, 20px);
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-
+  z-index: 1;
+  position: relative;
 }
 
 

@@ -1037,16 +1037,38 @@ right connector from last child*/
   position: relative;
   padding: 16px;
   
-  background: rgb(0,0,0);
-  background: -moz-linear-gradient(309deg, #00000029 20%, #c3397d8a 140%);
-  background: -webkit-linear-gradient(309deg, #00000029 20%, #c3397d8a 140%);
-  background: linear-gradient(309deg, #00000029 20%, #c3397d8a 140%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#c3397d",GradientType=1);
-
+  background: #562ab3;
+  background: -moz-linear-gradient(300deg, #562ab3 0%, #c3397d8a 140%);
+  background: -webkit-linear-gradient(300deg, #562ab3 0%, #c3397d8a 140%);
+  background: linear-gradient(300deg, #562ab3 0%, #c3397d8a 140%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#562ab3",endColorstr="#c3397d",GradientType=1);
   min-height: -webkit-fill-available;
-  /* transition: transform 200ms; */
   font-family: "PressStart";
+
+  transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
 }
+.pixel-card-content:hover::after {
+  opacity: 1;
+}
+
+.pixel-card-content::after {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  background: #c3397d8a;
+  background: -moz-linear-gradient(130deg, #562ab3 0%, #c3397d8a 100%);
+  background: -webkit-linear-gradient(130deg, #562ab3 0%, #c3397d8a 100%);
+  background: linear-gradient(130deg, #562ab3 0%, #c3397d8a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c3397d",endColorstr="#562ab3",GradientType=1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+}
+
 .pixel-card-container:hover .pixel-card-content {
   /* transform: translateY(-2px); */
 }
@@ -1057,6 +1079,8 @@ right connector from last child*/
   margin-bottom: 16px;
   overflow: hidden;
   background: #2c0153; /* darker indigo */
+  position: relative;
+  z-index: 1;
 }
 .pixel-image {
   width: 100%;
@@ -1075,6 +1099,8 @@ right connector from last child*/
   font-size: clamp(12px, 4vw, 17px);
   display: flex;
   align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 /* Blinking dot animation */
@@ -1089,6 +1115,7 @@ right connector from last child*/
 }
 .pixel-blink-dot {
   display: inline-block;
+  margin-top: 3px;
   width: 8px;
   height: 8px;
   background: #facc15;
@@ -1108,6 +1135,8 @@ right connector from last child*/
   background: transparent;
   transition: background-color 0.2s, color 0.2s;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 .pixel-card-container:hover .pixel-button:hover {
   background: #facc15;
