@@ -16,7 +16,7 @@ const startMenu = document.getElementById('start-menu');
 
 const startButton = document.querySelector('#start-button');
 const reloadMainMenu = document.getElementById('reload-main-menu');
-const supportButton = document.getElementById('support-button');
+const contactButton = document.getElementById('contact-button');
 
 const startMenuEnglish = document.getElementById('start-menu-english');
 const startMenuGreek = document.getElementById('start-menu-greek');
@@ -145,12 +145,12 @@ function startMenuContent(){
 /* Main menu button functionality */
 
 // Initialize the menu buttons. 
-supportButton.innerText = 'SUPPORT';
+contactButton.innerText = 'CONTACT';
 button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
-button1.style.setProperty('--content', '"Intro"');
+button1.style.setProperty('--content', '"Mission"');
 button2.style.setProperty('--content', '"Projects"'); 
-button3.style.setProperty('--content', '"Story"'); 
+button3.style.setProperty('--content', '"Cooperative"'); 
 
 // Get the menuButtons section.
 const menuButtons = document.getElementById('menu-buttons');

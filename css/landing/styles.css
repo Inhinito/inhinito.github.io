@@ -183,7 +183,7 @@
   position: relative;
   left: 0;
   top: 1px;
-  min-width: 113px;
+  min-width: 149.5px;
   height: 5px;
   padding: 22px 12px 20px;
   border: 2px solid #fbc943;
@@ -197,7 +197,7 @@
   color: white;
   line-height: 4px;
   letter-spacing: 2px;
-  margin-left: 2px;
+  margin-left: 3px;
   text-align: center;
   text-transform: uppercase;
   -webkit-transition: all 0.1s ease-out;

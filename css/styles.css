@@ -243,19 +243,19 @@ fieldset .article-header {
   font-size: 11px;
   letter-spacing: 1px;
   position: relative;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 5px;
   /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
   --background: #00000033;
   /* The width and the height is big enough to allow for the animeted movement of the button
   as well as the box-shadow of the button */
-  width:141px;
+  width:178px;
   height:40px;
 }
 
 .basic-button::after{
-  
+  padding-left: 4px;
   border: 2px solid #ffcf4e;
   background-color: #00000033;
   border-radius: 1px;
@@ -277,14 +277,14 @@ fieldset .article-header {
   right: 0;
   position: absolute;
   /* Make the after element smaller so that it doesn't overflow through the original element when active */
-  width:137px;
+  width:170px;
   height:33px;
 }
 
 .basic-button::before{
   box-shadow: 5px 5px 0 0 #ed649a;
   border-radius: 1px;
-  width: 141px;
+  width: 178px;
   height: 37px;
   content: "";
   background-size: cover;
