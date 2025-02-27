@@ -117,6 +117,7 @@ function rememberButton(){
       } else {
         greekGraph.updatePositions();
       }
+      
     } else if(buttonFlag=='button3'){
       button3content();
     }

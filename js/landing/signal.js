@@ -120,61 +120,54 @@ const projects = [
 ];
 
 
-
 // Constants
 const numPulses = projects.length + 1;
 const pulseHeight = 400;
 
-// Initialize on page load
+// Initialize on page load - create cards only
 document.addEventListener("DOMContentLoaded", () => {
-  // Only create the project cards - no path generation yet.
   createProjects(document.getElementById("english-signal"), "english");
   createProjects(document.getElementById("greek-signal"), "greek");
   
   // Set up event listeners
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleResize);
+  window.addEventListener("scroll", () => {
+    if (buttonFlag === "button2") {
+      handleSignalScroll();
+    }
+  });
+  
+  // Enhance the window resize handler to store dimensions even if button2 is not active
+window.addEventListener("resize", () => {
+  // Reset path dimensions so they'll be recalculated next time
+  ["english", "greek"].forEach(lang => {
+    const elements = getElements(lang);
+    if (elements && elements.svg) {
+      elements.path?.removeAttribute("d");
+    }
+  });
+  
+  // If button2 is active, update paths immediately
+  if (buttonFlag === "button2") {
+    generatePath(languageFlag);
+    updateScrollSpy(languageFlag);
+  }
+});
 });
 
-// Handle scroll events
-// Modify the handleScroll function to check if paths are initialized
-function handleScroll() {
-  if (buttonFlag === "button2") {
-    const elements = getElements(languageFlag);
-    if (!elements || !elements.path || !elements.path.getAttribute("d")) {
-      // Path not initialized yet, initialize it first
-      initSignalPaths();
-    } else {
-      // Path exists, update the scrollspy
-      updateScrollSpy(languageFlag);
-    }
-  }
-}
-
-// Handle resize events
-function handleResize() {
-
+// Handle scrolling for the active language
+function handleSignalScroll() {
+  const language = languageFlag;
+  const elements = getElements(language);
   
-  if (buttonFlag === "button2") {
-    generatePath(languageFlag);
-    updateScrollSpy(languageFlag);
+  // If path doesn't exist yet, initialize it
+  if (!elements?.path?.getAttribute("d")) {
+    generatePath(language);
   }
+  
+  updateScrollSpy(language);
 }
 
-// Initialize or update signal paths - called when button2 is first clicked.
-function initSignalPaths() {
-
-  console.log('init signal paths');
-
-  try {
-    generatePath(languageFlag);
-    updateScrollSpy(languageFlag);
-  } catch (error) {
-    console.warn("Error initializing signal paths:", error);
-  }
-}
-
-// Get elements for a specific language
+// Get elements for a specific language (using optional chaining)
 function getElements(language) {
   const container = document.getElementById(`${language}-signal`);
   if (!container) return null;
@@ -195,8 +188,11 @@ function generatePath(language) {
   
   const { svg, path, progressPath } = elements;
   
-  // If container is hidden, width might be 0
-  const containerWidth = svg.clientWidth || 800; // Default width if hidden
+
+// Get the width of the parent container instead of the SVG
+  // This is more reliable for responsive layouts
+  const parentWidth = svg.parentElement.clientWidth;
+  const containerWidth = parentWidth > 0 ? parentWidth : (svg.clientWidth || 800);
   const centerX = containerWidth / 2;
   const amplitude = containerWidth / 2;
   
@@ -212,19 +208,17 @@ function generatePath(language) {
     currentY += pulseHeight;
 
     if (isLast) {
-      pathData += ` H${centerX}`;
-      pathData += ` V${currentY + pulseHeight}`;
+      pathData += ` H${centerX} V${currentY + pulseHeight}`;
       currentY += pulseHeight;
     } else {
       pathData += ` H${isLeft ? centerX - amplitude : centerX + amplitude}`;
     }
   }
 
-  // Set the path data
+  // Set path data and configure SVG
   path.setAttribute("d", pathData);
   progressPath.setAttribute("d", pathData);
-
-  // Configure SVG viewBox
+  
   const margin = 10;
   svg.setAttribute(
     "viewBox",
@@ -232,10 +226,9 @@ function generatePath(language) {
   );
   svg.style.height = currentY + margin * 2 + "px";
 
-  // Store path length as data attribute for safety
+  // Set up stroke animation properties
   try {
     const pathLength = path.getTotalLength();
-    path.dataset.length = pathLength;
     progressPath.style.strokeDasharray = pathLength;
     progressPath.style.strokeDashoffset = pathLength;
   } catch (e) {
@@ -243,7 +236,7 @@ function generatePath(language) {
   }
 }
 
-// Update the scrollspy with error handling
+// Update the scrollspy position
 function updateScrollSpy(language) {
   const elements = getElements(language);
   if (!elements) return;
@@ -251,17 +244,13 @@ function updateScrollSpy(language) {
   const { container, path, progressPath, star } = elements;
   
   try {
-    // Get stored path length or calculate it
-    let pathLength;
-    try {
-      pathLength = path.getTotalLength();
-    } catch (e) {
-      // If getTotalLength fails, regenerate the path
+    // If path is invalid, regenerate it
+    if (!path.getAttribute("d")) {
       generatePath(language);
       return;
     }
     
-    // Calculate positions
+    const pathLength = path.getTotalLength();
     const containerTop = container.offsetTop;
     const scrollY = window.scrollY;
 
@@ -275,59 +264,50 @@ function updateScrollSpy(language) {
       return;
     }
 
-    // Calculate scroll fraction
+    // Calculate scroll progress
     const containerHeight = container.offsetHeight;
     let fraction = (scrollY - containerTop) / Math.max(containerHeight - window.innerHeight, 1);
     fraction = Math.max(0, Math.min(1, fraction));
 
-    // Update star position
+    // Update star position and path progress
     const point = path.getPointAtLength(fraction * pathLength);
     star.setAttribute("x", point.x - 10);
     star.setAttribute("y", point.y - 10);
-    
-    // Update path styles
     path.setAttribute("stroke", fraction > 0 ? "white" : "gray");
     progressPath.style.strokeDashoffset = pathLength - (fraction * pathLength);
   } catch (error) {
-    console.warn(`Error updating scrollspy for ${language}:`, error);
+    console.warn(`Error in scrollspy: ${error.message}`);
   }
 }
 
 // Create project cards for a specific language
 function createProjects(container, language) {
-  const signalContainer = container.querySelector('.signal-container');
+  const signalContainer = container?.querySelector('.signal-container');
   if (!signalContainer) return;
   
-  // Clear existing cards
   signalContainer.querySelectorAll('.pixel-card-container').forEach(card => card.remove());
 
-  // Create new cards
   projects.forEach((project, i) => {
-    // Card container
+    const pulseIndex = i + 1;
+    
+    // Card container with positioning
     const cardContainer = document.createElement("div");
     cardContainer.className = "pixel-card-container";
     cardContainer.style.position = "absolute";
-    cardContainer.style.top = (i + 1) * pulseHeight + 40 + "px";
+    cardContainer.style.top = pulseIndex * pulseHeight + 40 + "px";
     cardContainer.style.height = pulseHeight - 60 + "px";
-    
-    // Position left or right
-    if ((i + 1) % 2 === 1) {
-      cardContainer.style.left = "40px";
-      cardContainer.style.width = "calc(100% - 50px)";
-    } else {
-      cardContainer.style.right = "40px";
-      cardContainer.style.width = "calc(100% - 50px)";
-    }
+    cardContainer.style[pulseIndex % 2 === 1 ? "left" : "right"] = "40px";
+    cardContainer.style.width = "calc(100% - 50px)";
 
-    // Build card content
+    // Build content structure
     const cardContent = document.createElement("div");
     cardContent.className = "pixel-card-content";
-
-    // Build card text container
     const textContainer = document.createElement("div");
     textContainer.className = "pixel-card-text-container";
+    const titleContainer = document.createElement("div");
+    titleContainer.className = "pixel-title-container";
     
-    // Image frame
+    // Image
     const imageFrame = document.createElement("div");
     imageFrame.className = "pixel-image-frame";
     const imgEl = document.createElement("img");
@@ -336,21 +316,15 @@ function createProjects(container, language) {
     imgEl.className = "pixel-image";
     imageFrame.appendChild(imgEl);
 
-    // Title container
-    const titleContainer = document.createElement("div");
-    titleContainer.className = "pixel-title-container";
-
     // Title
     const titleEl = document.createElement("h3");
     titleEl.className = "list-header article-header";
     titleEl.textContent = project.title[language];
 
-    // Type with blinking dot
+    // Type with dot
     const typeEl = document.createElement("div");
     typeEl.className = "pixel-type";
-    const dotEl = document.createElement("span");
-    dotEl.className = "pixel-blink-dot";
-    typeEl.appendChild(dotEl);
+    typeEl.appendChild(document.createElement("span")).className = "pixel-blink-dot";
     typeEl.appendChild(document.createTextNode(project.type[language]));
 
     // Button
@@ -359,14 +333,20 @@ function createProjects(container, language) {
     buttonEl.textContent = language === 'english' ? 'Show more' : 'Περισσότερα';
     buttonEl.addEventListener("click", () => window.open(project.link, "_blank"));
 
-    // Assemble and append
-    cardContent.appendChild(imageFrame);
-    titleContainer.appendChild(titleEl);
-    titleContainer.appendChild(typeEl);
-    textContainer.appendChild(titleContainer);
-    textContainer.appendChild(buttonEl);
-    cardContent.appendChild(textContainer);
+    // Assemble components
+    titleContainer.append(titleEl, typeEl);
+    textContainer.append(titleContainer, buttonEl);
+    cardContent.append(imageFrame, textContainer);
     cardContainer.appendChild(cardContent);
     signalContainer.appendChild(cardContainer);
   });
+}
+
+// Initialize paths - exposed for external use
+function initSignalPaths() {
+
+  
+  // Use active language
+  generatePath(languageFlag);
+  updateScrollSpy(languageFlag);
 }
