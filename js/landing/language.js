@@ -150,9 +150,10 @@ function button2content(){
     button2greek.style.display = 'block';
   }
 
-      // Generate initial path and update star.
-      generatePath();
-      updateScrollSpy();
+  // Initialize signal paths after content is set up.
+  if (window.initSignalPaths) {
+    window.initSignalPaths();
+  }
 }
 
 // Button 3 was clicked.

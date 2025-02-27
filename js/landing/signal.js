@@ -119,55 +119,25 @@ const projects = [
   },
 ];
 
-
 // Constants
 const numPulses = projects.length + 1;
 const pulseHeight = 400;
 
 // Initialize on page load - create cards only
 document.addEventListener("DOMContentLoaded", () => {
+  // Create project cards for both languages
   createProjects(document.getElementById("english-signal"), "english");
   createProjects(document.getElementById("greek-signal"), "greek");
   
-  // Set up event listeners
+  // Set up scroll event listener
   window.addEventListener("scroll", () => {
     if (buttonFlag === "button2") {
-      handleSignalScroll();
+      updateScrollSpy(languageFlag);
     }
   });
-  
-  // Enhance the window resize handler to store dimensions even if button2 is not active
-window.addEventListener("resize", () => {
-  // Reset path dimensions so they'll be recalculated next time
-  ["english", "greek"].forEach(lang => {
-    const elements = getElements(lang);
-    if (elements && elements.svg) {
-      elements.path?.removeAttribute("d");
-    }
-  });
-  
-  // If button2 is active, update paths immediately
-  if (buttonFlag === "button2") {
-    generatePath(languageFlag);
-    updateScrollSpy(languageFlag);
-  }
-});
 });
 
-// Handle scrolling for the active language
-function handleSignalScroll() {
-  const language = languageFlag;
-  const elements = getElements(language);
-  
-  // If path doesn't exist yet, initialize it
-  if (!elements?.path?.getAttribute("d")) {
-    generatePath(language);
-  }
-  
-  updateScrollSpy(language);
-}
-
-// Get elements for a specific language (using optional chaining)
+// Get elements for a specific language
 function getElements(language) {
   const container = document.getElementById(`${language}-signal`);
   if (!container) return null;
@@ -188,9 +158,7 @@ function generatePath(language) {
   
   const { svg, path, progressPath } = elements;
   
-
-// Get the width of the parent container instead of the SVG
-  // This is more reliable for responsive layouts
+  // Get reliable width
   const parentWidth = svg.parentElement.clientWidth;
   const containerWidth = parentWidth > 0 ? parentWidth : (svg.clientWidth || 800);
   const centerX = containerWidth / 2;
@@ -342,11 +310,52 @@ function createProjects(container, language) {
   });
 }
 
-// Initialize paths - exposed for external use
+// Initialize paths - completely refresh SVG setup
 function initSignalPaths() {
-
+  // Clear any existing observers
+  if (window.resizeObservers) {
+    window.resizeObservers.forEach(observer => observer.disconnect());
+  }
   
-  // Use active language
+  // Set up resize observers for both languages
+  window.resizeObservers = [];
+  
+  ["english", "greek"].forEach(lang => {
+    const container = document.getElementById(`${lang}-signal`);
+    if (!container) return;
+    
+    // Get elements
+    const elements = getElements(lang);
+    if (!elements || !elements.svg) return;
+    
+    // Reset SVG to initial state
+    elements.svg.style.width = "";
+    elements.svg.style.height = "";
+    elements.svg.removeAttribute("viewBox");
+    
+    // Clear paths to force regeneration
+    if (elements.path) elements.path.removeAttribute("d");
+    if (elements.progressPath) elements.progressPath.removeAttribute("d");
+    
+    // Create observer to watch for size changes
+    const observer = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        // Only update if visible
+        if (buttonFlag === "button2" && entry.contentRect.width > 0) {
+          generatePath(lang);
+          if (lang === languageFlag) {
+            updateScrollSpy(lang);
+          }
+        }
+      }
+    });
+    
+    // Observe the container
+    observer.observe(container);
+    window.resizeObservers.push(observer);
+  });
+  
+  // Initial generation for current language
   generatePath(languageFlag);
   updateScrollSpy(languageFlag);
 }
