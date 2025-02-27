@@ -182,7 +182,7 @@
 .fancy-button .top {
   position: relative;
   left: 0;
-  top: 1px;
+  top: 0;
   min-width: 149.5px;
   height: 5px;
   padding: 22px 12px 20px;
@@ -195,7 +195,7 @@
   font-weight: 600;
   font-size: 10px;
   color: white;
-  line-height: 4px;
+  line-height: 6px;
   letter-spacing: 2px;
   margin-left: 3px;
   text-align: center;
@@ -1019,11 +1019,11 @@ right connector from last child*/
   pointer-events: none;
 }
 
-#path {
+.path {
   transition: stroke 0.3s ease;
 }
 
-#scrollspy-star {
+.scrollspy-star {
   transition: transform 0.3s ease;
   filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.8));
 }
@@ -1037,10 +1037,10 @@ right connector from last child*/
   position: relative;
   padding: 16px;
   
-  background: #562ab3;
-  background: -moz-linear-gradient(300deg, #562ab3 0%, #c3397d8a 140%);
-  background: -webkit-linear-gradient(300deg, #562ab3 0%, #c3397d8a 140%);
-  background: linear-gradient(300deg, #562ab3 0%, #c3397d8a 140%);
+  background: #562ab38f;
+  background: -moz-linear-gradient(300deg, #562ab38f 0%, #c3397d8a 140%);
+  background: -webkit-linear-gradient(300deg, #562ab38f 0%, #c3397d8a 140%);
+  background: linear-gradient(300deg, #562ab38f 0%, #c3397d8a 140%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#562ab3",endColorstr="#c3397d",GradientType=1);
   min-height: -webkit-fill-available;
   font-family: "PressStart";
@@ -1060,9 +1060,9 @@ right connector from last child*/
   position: absolute;
   inset: 0; 
   background: #c3397d8a;
-  background: -moz-linear-gradient(130deg, #562ab3 0%, #c3397d8a 100%);
-  background: -webkit-linear-gradient(130deg, #562ab3 0%, #c3397d8a 100%);
-  background: linear-gradient(130deg, #562ab3 0%, #c3397d8a 100%);
+  background: -moz-linear-gradient(130deg, #562ab38f 0%, #c3397d8a 100%);
+  background: -webkit-linear-gradient(130deg, #562ab38f 0%, #c3397d8a 100%);
+  background: linear-gradient(130deg, #562ab38f 0%, #c3397d8a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c3397d",endColorstr="#562ab3",GradientType=1);
   opacity: 0;
   pointer-events: none;

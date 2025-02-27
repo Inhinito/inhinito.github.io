@@ -1,220 +1,312 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Generate initial path and update star
-  generatePath();
-  createProjects();
-  updateScrollSpy();
-
-  // Update on scroll & resize
-  window.addEventListener("scroll", updateScrollSpy);
-  window.addEventListener("resize", () => {
-    // Check if the current button is button 2.
-    if (buttonFlag === "button2") {
-      // Generate initial path and update star
-      generatePath();
-      updateScrollSpy();
-    }
-  });
-});
-
 // The array of project objects.
 const projects = [
   {
     id: 1,
-    title: "TRADER APP",
-    type: "SOFTWARE",
+    title: {
+      english: "TRADER APP",
+      greek: "ΕΦΑΡΜΟΓΗ ΣΥΝΑΛΛΑΓΩΝ"
+    },
+    type: {
+      english: "SOFTWARE",
+      greek: "ΛΟΓΙΣΜΙΚΟ"
+    },
     image: "/api/placeholder/400/300",
     link: "https://articlereader.ai/",
   },
   {
     id: 2,
-    title: "ANOTHER APP",
-    type: "SOFTWARE",
+    title: {
+      english: "ANOTHER APP",
+      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
+    },
+    type: {
+      english: "SOFTWARE",
+      greek: "ΛΟΓΙΣΜΙΚΟ"
+    },
     image: "/api/placeholder/300/200",
     link: "https://example.org/",
   },
   {
     id: 3,
-    title: "WEBSITE",
-    type: "WEB",
+    title: {
+      english: "WEBSITE",
+      greek: "ΙΣΤΟΣΕΛΙΔΑ"
+    },
+    type: {
+      english: "WEB",
+      greek: "ΙΣΤΟΣ"
+    },
     image: "/api/placeholder/200/200",
     link: "https://example.com/",
   },
   {
     id: 4,
-    title: "MOBILE APP",
-    type: "MOBILE",
+    title: {
+      english: "TRADER APP",
+      greek: "ΕΦΑΡΜΟΓΗ ΣΥΝΑΛΛΑΓΩΝ"
+    },
+    type: {
+      english: "SOFTWARE",
+      greek: "ΛΟΓΙΣΜΙΚΟ"
+    },
     image: "/api/placeholder/200/300",
     link: "https://example.net/",
   },
   {
     id: 5,
-    title: "ANOTHER WEBSITE",
-    type: "WEB",
+    title: {
+      english: "ANOTHER APP",
+      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
+    },
+    type: {
+      english: "SOFTWARE",
+      greek: "ΛΟΓΙΣΜΙΚΟ"
+    },
     image: "/api/placeholder/300/300",
     link: "https://example.io/",
   },
   {
     id: 6,
-    title: "MOBILE APP",
-    type: "MOBILE",
+    title: {
+      english: "WEBSITE",
+      greek: "ΙΣΤΟΣΕΛΙΔΑ"
+    },
+    type: {
+      english: "WEB",
+      greek: "ΙΣΤΟΣ"
+    },
     image: "/api/placeholder/400/200",
     link: "https://example.co/",
   },
   {
     id: 7,
-    title: "WEBSITE",
-    type: "WEB",
+    title: {
+      english: "ANOTHER APP",
+      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
+    },
+    type: {
+      english: "SOFTWARE",
+      greek: "ΛΟΓΙΣΜΙΚΟ"
+    },
     image: "/api/placeholder/300/200",
     link: "https://example.dev/",
   },
   {
     id: 8,
-    title: "TRADER APP",
-    type: "SOFTWARE",
+    title: {
+      english: "WEBSITE",
+      greek: "ΙΣΤΟΣΕΛΙΔΑ"
+    },
+    type: {
+      english: "WEB",
+      greek: "ΙΣΤΟΣ"
+    },
     image: "/api/placeholder/200/300",
     link: "https://example.app/",
   },
   {
     id: 9,
-    title: "Another APP",
-    type: "SOFTWARE",
+    title: {
+      english: "ANOTHER APP",
+      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
+    },
+    type: {
+      english: "SOFTWARE",
+      greek: "ΛΟΓΙΣΜΙΚΟ"
+    },
     image: "/api/placeholder/200/200",
     link: "https://example.org/",
   },
 ];
 
-const svg = document.getElementById("scrollspy-path");
-const path = document.getElementById("path");
-const progressPath = document.getElementById("progress-path");
-const star = document.getElementById("scrollspy-star");
 
-const numPulses = 10;
+
+// Constants
+const numPulses = projects.length + 1;
 const pulseHeight = 400;
 
-function generatePath() {
-  // Get the width of the svg container.
-  const containerWidth = svg.clientWidth;
-  // Calculate the center of the container.
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", () => {
+  // Only create the project cards - no path generation yet.
+  createProjects(document.getElementById("english-signal"), "english");
+  createProjects(document.getElementById("greek-signal"), "greek");
+  
+  // Set up event listeners
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleResize);
+});
+
+// Handle scroll events
+// Modify the handleScroll function to check if paths are initialized
+function handleScroll() {
+  if (buttonFlag === "button2") {
+    const elements = getElements(languageFlag);
+    if (!elements || !elements.path || !elements.path.getAttribute("d")) {
+      // Path not initialized yet, initialize it first
+      initSignalPaths();
+    } else {
+      // Path exists, update the scrollspy
+      updateScrollSpy(languageFlag);
+    }
+  }
+}
+
+// Handle resize events
+function handleResize() {
+  if (buttonFlag === "button2") {
+    generatePath(languageFlag);
+    updateScrollSpy(languageFlag);
+  }
+}
+
+// Initialize or update signal paths - called when button2 is first clicked.
+function initSignalPaths() {
+  try {
+    generatePath(languageFlag);
+    updateScrollSpy(languageFlag);
+  } catch (error) {
+    console.warn("Error initializing signal paths:", error);
+  }
+}
+
+// Get elements for a specific language
+function getElements(language) {
+  const container = document.getElementById(`${language}-signal`);
+  if (!container) return null;
+  
+  return {
+    container: container.querySelector('.signal-container'),
+    svg: container.querySelector('.scrollspy-path'),
+    path: container.querySelector('.path'),
+    progressPath: container.querySelector('.progress-path'),
+    star: container.querySelector('.scrollspy-star')
+  };
+}
+
+// Generate the path for a specific language
+function generatePath(language) {
+  const elements = getElements(language);
+  if (!elements) return;
+  
+  const { svg, path, progressPath } = elements;
+  
+  // If container is hidden, width might be 0
+  const containerWidth = svg.clientWidth || 800; // Default width if hidden
   const centerX = containerWidth / 2;
-  // Calculate the amplitude of the pulses.
   const amplitude = containerWidth / 2;
-  // Start the path at the center of the container.
-  // (M: "move to" — sets the starting point).
+  
+  // Generate path data
   let pathData = `M${centerX},0`;
-  // Set the current y position to 0.
   let currentY = 0;
 
-  // Loop through the number of pulses to create the path.
   for (let i = 0; i < numPulses; i++) {
-    // Check if this is the last pulse.
     const isLast = i === numPulses - 1;
-    // Check if this is a left pulse.
     const isLeft = i % 2 === 0;
 
-    // Move down one pulse.
-    // V: "vertical line to" — draws a vertical line to the specified y-coordinate.
     pathData += ` V${currentY + pulseHeight}`;
-    // Update the current y position.
     currentY += pulseHeight;
 
-    // Check if this is the last pulse.
     if (isLast) {
-      // If it is the last pulse, move to the center of the container.
       pathData += ` H${centerX}`;
-      // Move down one pulse.
       pathData += ` V${currentY + pulseHeight}`;
       currentY += pulseHeight;
     } else {
-      // Go left or right depending on the pulse number.
       pathData += ` H${isLeft ? centerX - amplitude : centerX + amplitude}`;
     }
   }
 
-  // Set the path data for the path and progress-path.
+  // Set the path data
   path.setAttribute("d", pathData);
   progressPath.setAttribute("d", pathData);
 
-  // Define a margin so the 20×20 white box isn’t clipped by the viewBox.
+  // Configure SVG viewBox
   const margin = 10;
-  // Set the viewBox so that it exactly covers the content plus the extra margin.
   svg.setAttribute(
     "viewBox",
-    `-${margin} -${margin} ${containerWidth + margin * 2} ${
-      currentY + margin * 2
-    }`
+    `-${margin} -${margin} ${containerWidth + margin * 2} ${currentY + margin * 2}`
   );
-  // Set the SVG's height to cover the content plus margin.
   svg.style.height = currentY + margin * 2 + "px";
 
-  // Get the total length of the path.
-  const pathLength = path.getTotalLength();
-  // Set the stroke dash array and offset to the path length.
-  progressPath.style.strokeDasharray = pathLength;
-  progressPath.style.strokeDashoffset = pathLength;
-}
-
-function updateScrollSpy() {
-  const container = document.querySelector(".signal-container");
-  // Get the top offset, height, and scroll position of the container.
-  const containerTop = container.offsetTop;
-  const containerHeight = container.offsetHeight;
-  const scrollY = window.scrollY;
-
-  // Before the container is reached, keep the star at the start.
-  if (scrollY < containerTop) {
-    const startPoint = path.getPointAtLength(0);
-    star.setAttribute("x", startPoint.x - 10);
-    star.setAttribute("y", startPoint.y - 10);
-    progressPath.style.strokeDashoffset = progressPath.getTotalLength();
-    path.setAttribute("stroke", "gray");
-    return;
+  // Store path length as data attribute for safety
+  try {
+    const pathLength = path.getTotalLength();
+    path.dataset.length = pathLength;
+    progressPath.style.strokeDasharray = pathLength;
+    progressPath.style.strokeDashoffset = pathLength;
+  } catch (e) {
+    console.warn(`Could not get path length for ${language}`);
   }
-
-  // Calculate the fraction of the scroll position within the container.
-  let fraction =
-    (scrollY - containerTop) /
-    Math.max(containerHeight - window.innerHeight, 1);
-  // Map scrollY from [containerTop, containerBottom - window.innerHeight] to fraction [0,1].
-  fraction = Math.max(0, Math.min(1, fraction));
-
-  // Get the total length of the path.
-  const pathLength = path.getTotalLength();
-  // Get the point on the path at the progress fraction.
-  const point = path.getPointAtLength(fraction * pathLength);
-
-  // Update the star position to the point on the path.
-  star.setAttribute("x", point.x - 10);
-  star.setAttribute("y", point.y - 10);
-  // Update the path color to white if the star is traversing the path.
-  path.setAttribute("stroke", fraction > 0 ? "white" : "gray");
-
-  // Update the progress path dash offset to reveal the traversed portion.
-  const revealLength = fraction * pathLength;
-  progressPath.style.strokeDashoffset = pathLength - revealLength;
 }
 
-function createProjects() {
-  const container = document.querySelector(".signal-container");
-  const numProjects = numPulses - 1;
+// Update the scrollspy with error handling
+function updateScrollSpy(language) {
+  const elements = getElements(language);
+  if (!elements) return;
+  
+  const { container, path, progressPath, star } = elements;
+  
+  try {
+    // Get stored path length or calculate it
+    let pathLength;
+    try {
+      pathLength = path.getTotalLength();
+    } catch (e) {
+      // If getTotalLength fails, regenerate the path
+      generatePath(language);
+      return;
+    }
+    
+    // Calculate positions
+    const containerTop = container.offsetTop;
+    const scrollY = window.scrollY;
 
-  for (let i = 0; i < numProjects; i++) {
-    const pulseIndex = i + 1;
-    const project = projects[i] || {
-      title: `Project #${i + 1}`,
-      type: "",
-      image: "",
-      link: "#",
-    };
+    // Before container is visible
+    if (scrollY < containerTop) {
+      const startPoint = path.getPointAtLength(0);
+      star.setAttribute("x", startPoint.x - 10);
+      star.setAttribute("y", startPoint.y - 10);
+      progressPath.style.strokeDashoffset = pathLength;
+      path.setAttribute("stroke", "gray");
+      return;
+    }
 
-    // Outer container
+    // Calculate scroll fraction
+    const containerHeight = container.offsetHeight;
+    let fraction = (scrollY - containerTop) / Math.max(containerHeight - window.innerHeight, 1);
+    fraction = Math.max(0, Math.min(1, fraction));
+
+    // Update star position
+    const point = path.getPointAtLength(fraction * pathLength);
+    star.setAttribute("x", point.x - 10);
+    star.setAttribute("y", point.y - 10);
+    
+    // Update path styles
+    path.setAttribute("stroke", fraction > 0 ? "white" : "gray");
+    progressPath.style.strokeDashoffset = pathLength - (fraction * pathLength);
+  } catch (error) {
+    console.warn(`Error updating scrollspy for ${language}:`, error);
+  }
+}
+
+// Create project cards for a specific language
+function createProjects(container, language) {
+  const signalContainer = container.querySelector('.signal-container');
+  if (!signalContainer) return;
+  
+  // Clear existing cards
+  signalContainer.querySelectorAll('.pixel-card-container').forEach(card => card.remove());
+
+  // Create new cards
+  projects.forEach((project, i) => {
+    // Card container
     const cardContainer = document.createElement("div");
     cardContainer.className = "pixel-card-container";
     cardContainer.style.position = "absolute";
-    cardContainer.style.top = pulseIndex * pulseHeight + 40 + "px";
+    cardContainer.style.top = (i + 1) * pulseHeight + 40 + "px";
     cardContainer.style.height = pulseHeight - 60 + "px";
-
-    // Even/odd horizontal placement
-    if (pulseIndex % 2 === 1) {
+    
+    // Position left or right
+    if ((i + 1) % 2 === 1) {
       cardContainer.style.left = "40px";
       cardContainer.style.width = "calc(100% - 50px)";
     } else {
@@ -222,23 +314,23 @@ function createProjects() {
       cardContainer.style.width = "calc(100% - 50px)";
     }
 
-    // Card content
+    // Build card content
     const cardContent = document.createElement("div");
     cardContent.className = "pixel-card-content";
-
+    
     // Image frame
     const imageFrame = document.createElement("div");
     imageFrame.className = "pixel-image-frame";
     const imgEl = document.createElement("img");
     imgEl.src = project.image;
-    imgEl.alt = project.title;
+    imgEl.alt = project.title[language];
     imgEl.className = "pixel-image";
     imageFrame.appendChild(imgEl);
 
     // Title
     const titleEl = document.createElement("h3");
     titleEl.className = "list-header article-header";
-    titleEl.textContent = project.title;
+    titleEl.textContent = project.title[language];
 
     // Type with blinking dot
     const typeEl = document.createElement("div");
@@ -246,24 +338,25 @@ function createProjects() {
     const dotEl = document.createElement("span");
     dotEl.className = "pixel-blink-dot";
     typeEl.appendChild(dotEl);
-    const typeText = document.createTextNode(project.type);
-    typeEl.appendChild(typeText);
+    typeEl.appendChild(document.createTextNode(project.type[language]));
 
     // Button
     const buttonEl = document.createElement("button");
     buttonEl.className = "pixel-button";
-    buttonEl.textContent = "Show more";
-    buttonEl.addEventListener("click", () => {
-      window.open(project.link, "_blank");
-    });
+    buttonEl.textContent = language === 'english' ? 'Show more' : 'Περισσότερα';
+    buttonEl.addEventListener("click", () => window.open(project.link, "_blank"));
 
+    // Assemble and append
     cardContent.appendChild(imageFrame);
     cardContent.appendChild(titleEl);
     cardContent.appendChild(typeEl);
     cardContent.appendChild(buttonEl);
-
-    // Append main content
     cardContainer.appendChild(cardContent);
-    container.appendChild(cardContainer);
-  }
+    signalContainer.appendChild(cardContainer);
+  });
+}
+
+// Update language - just reinitialize paths
+function updateProjectsLanguage() {
+  initSignalPaths();
 }
