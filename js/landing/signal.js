@@ -160,7 +160,7 @@ function generatePath(language) {
   
   // Get reliable width
   const parentWidth = svg.parentElement.clientWidth;
-  const containerWidth = parentWidth > 0 ? parentWidth : (svg.clientWidth || 800);
+  const containerWidth = parentWidth > 0 ? parentWidth : svg.clientWidth;
   const centerX = containerWidth / 2;
   const amplitude = containerWidth / 2;
   
@@ -320,6 +320,7 @@ function initSignalPaths() {
   // Set up resize observers for both languages
   window.resizeObservers = [];
   
+  // Initialize paths for both languages.
   ["english", "greek"].forEach(lang => {
     const container = document.getElementById(`${lang}-signal`);
     if (!container) return;
@@ -340,12 +341,9 @@ function initSignalPaths() {
     // Create observer to watch for size changes
     const observer = new ResizeObserver(entries => {
       for (let entry of entries) {
-        // Only update if visible
+        // Only update if visible.
         if (buttonFlag === "button2" && entry.contentRect.width > 0) {
           generatePath(lang);
-          if (lang === languageFlag) {
-            updateScrollSpy(lang);
-          }
         }
       }
     });
