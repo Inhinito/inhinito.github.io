@@ -145,7 +145,7 @@ function startMenuContent(){
 /* Main menu button functionality */
 
 // Initialize the menu buttons. 
-contactButton.innerText = 'CONTACT';
+contactButton.innerText = 'Contact';
 button1.style.setProperty('--background', '#fbc943');
 button1.style.setProperty('color', '#372963');
 button1.style.setProperty('--content', '"Mission"');

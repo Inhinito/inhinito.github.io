@@ -35,7 +35,7 @@ english.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
-    contactButton.innerText = 'CONTACT';
+    contactButton.innerText = 'Contact';
     button1.style.setProperty('--content', '"Mission"'); 
     button2.style.setProperty('--content', '"Projects"'); 
     button3.style.setProperty('--content', '"Cooperative"'); 
@@ -73,7 +73,7 @@ greek.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
-    contactButton.innerText = 'ΕΠΙΚΟΙΝΩΝΙΑ';
+    contactButton.innerText = 'Επικοινωνία';
     button1.style.setProperty('--content', '"Αποστολή"'); 
     button2.style.setProperty('--content', '"Εγχειρήματα"');
     button3.style.setProperty('--content', '"Συνεταιρισμός"');
