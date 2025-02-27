@@ -908,8 +908,8 @@ right connector from last child*/
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
 }
 .venus-orbit {
-  width: 37vmin;
-  height: 37vmin;
+  width: 35vmin;
+  height: 35vmin;
   animation: orbit 20s linear infinite;
 }
 .venus {
@@ -924,14 +924,14 @@ right connector from last child*/
   animation: counter-orbit 20s linear infinite;
 }
 .earth-orbit {
-  width: 60vmin;
-  height: 60vmin;
+  width: 57vmin;
+  height: 57vmin;
   margin-top: -30vmin;
   animation: counter-orbit 25s linear infinite;
 }
 .earth {
-  width: 9vmin;
-  height: 9vmin;
+  width: 8vmin;
+  height: 8vmin;
   background-color: #7c44ba;
   top: 0;
   left: 50%;
@@ -944,8 +944,8 @@ right connector from last child*/
   animation: orbit 25s linear infinite;
 }
 .mars-orbit {
-  width: 83vmin;
-  height: 83vmin;
+  width: 78vmin;
+  height: 78vmin;
   animation: orbit 30s linear infinite;
 }
 .mars {
