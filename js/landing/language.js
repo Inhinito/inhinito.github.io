@@ -110,9 +110,6 @@ function rememberButton(){
       button1content();
     } else if(buttonFlag=='button2'){
       button2content();
-
-      // Update the language of the projects in the scrollspy.
-      updateProjectsLanguage();
       
       // Reinitialize graph when container becomes visible
       if(languageFlag === 'english') {

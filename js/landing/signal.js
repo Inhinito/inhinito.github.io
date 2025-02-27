@@ -153,6 +153,8 @@ function handleScroll() {
 
 // Handle resize events
 function handleResize() {
+
+  
   if (buttonFlag === "button2") {
     generatePath(languageFlag);
     updateScrollSpy(languageFlag);
@@ -161,6 +163,9 @@ function handleResize() {
 
 // Initialize or update signal paths - called when button2 is first clicked.
 function initSignalPaths() {
+
+  console.log('init signal paths');
+
   try {
     generatePath(languageFlag);
     updateScrollSpy(languageFlag);
