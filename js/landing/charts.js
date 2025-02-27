@@ -3,18 +3,19 @@ const baseWidth = 600;
 const baseHeight = 600;
 
 const englishNodes = [
-  { id: "Inhinito", x: 300, y: 300, color: "#ffd04d", size: 18 },
-  { id: "Marketing", x: 180, y: 430, color: "#ffffff", size: 18 },
-  { id: "Software", x: 370, y: 410, color: "#ffffff", size: 18 },
-  { id: "Multimedia", x: 300, y: 200, color: "#ffffff", size: 18 },
-  { id: "Photography", x: 250, y: 50, color: "#ffffff" },
+  { id: "Inhinito", x: 295, y: 310, color: "#ffd04d", size: 18 },
+  { id: "Marketing", x: 170, y: 430, color: "#ffffff", size: 18 },
+  { id: "Software", x: 370, y: 415, color: "#ffffff", size: 18 },
+  { id: "Multimedia", x: 320, y: 200, color: "#ffffff", size: 18 },
+  { id: "3D Modeling", x: 230, y: 50, color: "#ffffff" },
+  { id: "Photography", x: 150, y: 145, color: "#ffffff" },
   { id: "Videography", x: 380, y: 100, color: "#ffffff" },
-  { id: "Sound Design", x: 450, y: 260, color: "#ffffff" },
-  { id: "Graphic Design", x: 180, y: 150, color: "#ffffff" },
-  { id: "Mobile Apps", x: 380, y: 530, color: "#ffffff" },
+  { id: "Sound Design", x: 445, y: 270, color: "#ffffff" },
+  { id: "Graphic Design", x: 190, y: 250, color: "#ffffff" },
+  { id: "Mobile Apps", x: 390, y: 530, color: "#ffffff" },
   { id: "UX Design", x: 460, y: 480, color: "#ffffff" },
-  { id: "Websites", x: 460, y: 355, color: "#ffffff" },
-  { id: "Digital Ads", x: 200, y: 555, color: "#ffffff" },
+  { id: "Websites", x: 460, y: 365, color: "#ffffff" },
+  { id: "Digital Ads", x: 190, y: 555, color: "#ffffff" },
   { id: "Events", x: 130, y: 490, color: "#ffffff" },
   { id: "Influencers", x: 140, y: 370, color: "#ffffff" }
 ];
@@ -26,7 +27,9 @@ const englishLinks = [
   ["Multimedia", "Photography"],
   ["Multimedia", "Videography"],
   ["Multimedia", "Sound Design"],
+  ["Multimedia", "3D Modeling"],
   ["Multimedia", "Graphic Design"],
+  ["Photography", "3D Modeling"],
   ["Sound Design", "Videography"],
   ["Software", "Websites"],
   ["Software", "UX Design"],
@@ -47,6 +50,7 @@ const greekLabels = {
   "Photography": "Φωτογραφία",
   "Videography": "Βιντεοσκόπηση",
   "Sound Design": "Ηχοληψία",
+  "3D Modeling": "3D Mοντελοποίηση",
   "Graphic Design": "Γραφιστική",
   "Mobile Apps": "Εφαρμογές",
   "UX Design": "Σχεδίαση UX",
@@ -69,7 +73,9 @@ const greekLinks = [
   ["Πολυμέσα", "Φωτογραφία"],
   ["Πολυμέσα", "Βιντεοσκόπηση"],
   ["Πολυμέσα", "Ηχοληψία"],
+  ["Πολυμέσα", "3D Mοντελοποίηση"],
   ["Πολυμέσα", "Γραφιστική"],
+  ["Φωτογραφία", "3D Mοντελοποίηση"],
   ["Ηχοληψία", "Βιντεοσκόπηση"],
   ["Λογισμικό", "Ιστοσελίδες"],
   ["Λογισμικό", "Σχεδίαση UX"],
@@ -191,102 +197,16 @@ class GraphManager {
 var englishGraph;
 var greekGraph;
 
-// Initialize graphs
-function initGraphs() {
+document.addEventListener('DOMContentLoaded', function() {
   try {
+    // Init the network graphs
     englishGraph = new GraphManager('english-network-graph', englishNodes, englishLinks);
     greekGraph = new GraphManager('greek-network-graph', greekNodes, greekLinks);
   } catch (error) {
     console.error('Graph initialization failed:', error);
   }
-}
 
-document.addEventListener('DOMContentLoaded', initGraphs);
-// ...existing code...
-
-
-
-
-
-/*
-// English Graph
-Highcharts.chart("english-network-graph", {
-  series: [
-    {
-      data: [
-        ["Inhinito", "Marketing"],
-        ["Inhinito", "Software"],
-        ["Inhinito", "Multimedia"],
-        ["Multimedia", "Photography"],
-        ["Multimedia", "Videography"],
-        ["Multimedia", "Sound Design"],
-        ["Multimedia", "Graphic Design"],
-        ["Sound Design", "Videography"],
-        ["Software", "Websites"],
-        ["Software", "UX Design"],
-        ["Software", "Mobile Apps"],
-        ["UX Design", "Mobile Apps"],
-        ["UX Design", "Websites"],
-        ["Marketing", "Digital Ads"],
-        ["Marketing", "Events"],
-        ["Marketing", "Influencers"],
-      ],
-      nodes: [
-        { id: "Photography", x: -50, y: -200, color: white },
-        { id: "Videography", x: 50, y: -200, color: white },
-        { id: "Sound Design", x: 100, y: -150, color: white },
-        { id: "Graphic Design", x: -100, y: -150, color: white },
-        { id: "Mobile Apps", x: 150, y: 100, color: white },
-        { id: "UX Design", x: 200, y: 50, color: white },
-        { id: "Websites", x: 250, y: 100, color: white },
-        { id: "Digital Ads", x: -150, y: 50, color: white },
-        { id: "Events", x: -200, y: 100, color: white },
-        { id: "Influencers", x: -250, y: 50, color: white },
-      ],
-    },
-  ],
-});
-
-// Greek Graph
-Highcharts.chart("greek-network-graph", {
-  series: [
-    {
-      data: [
-        ["Inhinito", "Μάρκετινγκ"],
-        ["Inhinito", "Λογισμικό"],
-        ["Inhinito", "Πολυμέσα"],
-        ["Πολυμέσα", "Φωτογραφία"],
-        ["Πολυμέσα", "Βιντεογραφία"],
-        ["Ηχοληψία", "Βιντεογραφία"],
-        ["Πολυμέσα", "Ηχοληψία"],
-        ["Πολυμέσα", "Γραφιστική"],
-        ["Λογισμικό", "Ιστοσελίδες"],
-        ["Λογισμικό", "Σχεδίαση UX"],
-        ["Λογισμικό", "Εφαρμογές"],
-        ["Σχεδίαση UX", "Εφαρμογές"],
-        ["Σχεδίαση UX", "Ιστοσελίδες"],
-        ["Μάρκετινγκ", "Εκδηλώσεις"],
-        ["Μάρκετινγκ", "Διαφημίσεις"],
-        ["Μάρκετινγκ", "Influencers"],
-      ],
-      nodes: [
-        { id: "Φωτογραφία", x: -50, y: -200, color: white },
-        { id: "Βιντεογραφία", x: 50, y: -200, color: white },
-        { id: "Ηχοληψία", x: 100, y: -150, color: white },
-        { id: "Γραφιστική", x: -100, y: -150, color: white },
-        { id: "Ιστοσελίδες", x: 150, y: 100, color: white },
-        { id: "Σχεδίαση UX", x: 200, y: 50, color: white },
-        { id: "Εφαρμογές", x: 250, y: 100, color: white },
-        { id: "Εκδηλώσεις", x: -150, y: 50, color: white },
-        { id: "Διαφημίσεις", x: -200, y: 100, color: white },
-        { id: "Influencers", x: -250, y: 50, color: white },
-      ],
-    },
-  ],
-});
-*/
-
-document.addEventListener('DOMContentLoaded', function() {
+  // Highlight board members when hovering over co-op members.
   const coOpMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(2) a');
   const boardMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(1) a');
 
