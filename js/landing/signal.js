@@ -320,7 +320,6 @@ function initSignalPaths() {
   // Set up resize observers for both languages
   window.resizeObservers = [];
   
-  // Initialize paths for both languages.
   ["english", "greek"].forEach(lang => {
     const container = document.getElementById(`${lang}-signal`);
     if (!container) return;
@@ -341,9 +340,13 @@ function initSignalPaths() {
     // Create observer to watch for size changes
     const observer = new ResizeObserver(entries => {
       for (let entry of entries) {
-        // Only update if visible.
+        // Only update if visible
         if (buttonFlag === "button2" && entry.contentRect.width > 0) {
           generatePath(lang);
+          // Update scrollspy position if language matches.
+          if (lang === languageFlag) {
+            updateScrollSpy(lang);
+          }
         }
       }
     });
