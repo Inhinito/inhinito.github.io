@@ -1036,7 +1036,8 @@ right connector from last child*/
 .pixel-card-content {
   position: relative;
   padding: 16px;
-  
+  display: flex;
+  flex-direction: column;
   background: #562ab38f;
   background: -moz-linear-gradient(300deg, #562ab38f 0%, #c3397d8a 140%);
   background: -webkit-linear-gradient(300deg, #562ab38f 0%, #c3397d8a 140%);
@@ -1073,10 +1074,16 @@ right connector from last child*/
   /* transform: translateY(-2px); */
 }
 
+.pixel-card-text-container {
+  padding-top: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
 .pixel-image-frame {
   min-height: 180px;
   max-height: 180px;
-  margin-bottom: 16px;
   overflow: hidden;
   background: #2c0153; /* darker indigo */
   position: relative;
@@ -1095,8 +1102,7 @@ right connector from last child*/
 
 .pixel-type {
   color: #ffffff;
-  min-height: 35px;
-  font-size: clamp(12px, 4vw, 17px);
+  font-size: clamp(12px, 3vw, 17px);
   display: flex;
   align-items: flex-start;
   position: relative;
@@ -1126,7 +1132,6 @@ right connector from last child*/
 }
 
 .pixel-button {
-  margin-top: 16px;
   padding: 8px 10px 8px 12px;
   font-family: 'PressStart';
   font-size: 12px;
@@ -1136,6 +1141,7 @@ right connector from last child*/
   transition: background-color 0.2s, color 0.2s;
   cursor: pointer;
   position: relative;
+  width: fit-content;
   z-index: 1;
 }
 .pixel-card-container:hover .pixel-button:hover {

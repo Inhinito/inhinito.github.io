@@ -4,7 +4,7 @@ const baseHeight = 600;
 
 const englishNodes = [
   { id: "Inhinito", x: 300, y: 300, color: "#ffd04d", size: 18 },
-  { id: "Marketing", x: 200, y: 430, color: "#ffffff", size: 18 },
+  { id: "Marketing", x: 180, y: 430, color: "#ffffff", size: 18 },
   { id: "Software", x: 370, y: 410, color: "#ffffff", size: 18 },
   { id: "Multimedia", x: 300, y: 200, color: "#ffffff", size: 18 },
   { id: "Photography", x: 250, y: 50, color: "#ffffff" },

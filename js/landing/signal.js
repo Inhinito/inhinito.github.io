@@ -322,6 +322,10 @@ function createProjects(container, language) {
     // Build card content
     const cardContent = document.createElement("div");
     cardContent.className = "pixel-card-content";
+
+    // Build card text container
+    const textContainer = document.createElement("div");
+    textContainer.className = "pixel-card-text-container";
     
     // Image frame
     const imageFrame = document.createElement("div");
@@ -331,6 +335,10 @@ function createProjects(container, language) {
     imgEl.alt = project.title[language];
     imgEl.className = "pixel-image";
     imageFrame.appendChild(imgEl);
+
+    // Title container
+    const titleContainer = document.createElement("div");
+    titleContainer.className = "pixel-title-container";
 
     // Title
     const titleEl = document.createElement("h3");
@@ -353,15 +361,12 @@ function createProjects(container, language) {
 
     // Assemble and append
     cardContent.appendChild(imageFrame);
-    cardContent.appendChild(titleEl);
-    cardContent.appendChild(typeEl);
-    cardContent.appendChild(buttonEl);
+    titleContainer.appendChild(titleEl);
+    titleContainer.appendChild(typeEl);
+    textContainer.appendChild(titleContainer);
+    textContainer.appendChild(buttonEl);
+    cardContent.appendChild(textContainer);
     cardContainer.appendChild(cardContent);
     signalContainer.appendChild(cardContainer);
   });
-}
-
-// Update language - just reinitialize paths
-function updateProjectsLanguage() {
-  initSignalPaths();
 }
