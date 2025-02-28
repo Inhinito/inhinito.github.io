@@ -108,6 +108,8 @@ function rememberButton(){
     // Fill the menu with content.
     if(buttonFlag=='button1'){
       button1content();
+
+      resetStepper();
     } else if(buttonFlag=='button2'){
       button2content();
       

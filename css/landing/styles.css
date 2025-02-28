@@ -390,28 +390,28 @@ textarea {
   z-index: var(--progress-zIndex);
 }
 
-#step-1 {
+.step-1 {
   height: 23px;
   width: 23px;
   border: 10px solid #d8d8d8cf;
 }
 
-#step-2 {
+.step-2 {
   height: 28px;
   width: 28px;
   border: 12px solid #d8d8d8cf;
 }
-#step-3 {
+.step-3 {
   height: 24px;
   width: 24px;
   border: 9px solid #d8d8d8cf;
 }
-#step-4 {
+.step-4 {
   height: 26px;
   width: 26px;
   border: 11px solid #d8d8d8cf;
 }
-#step-5 {
+.step-5 {
   height: 23px;
   width: 23px;
   border: 10px solid #d8d8d8cf;

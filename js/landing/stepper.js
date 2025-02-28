@@ -1,24 +1,75 @@
-const progress = document.querySelector("#progress");
-const steps = document.querySelectorAll(".step");
-const accordionTriggers = document.querySelectorAll(".accordion-trigger");
-const accordionBodies = document.querySelectorAll(".accordion-body");
-const stepContents = document.querySelectorAll(".step-content");
-
+// Stepper variables
+let progress, steps, accordionTriggers, accordionBodies, stepContents;
 let currentActive = 1;
 let autoplayInterval;
 let autoplayTimeout;
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Calculate the height of the first accordion body.
-  const firstBody = accordionBodies[0];
-  // Set the height of the first accordion body.
-  firstBody.style.height = `${firstBody.scrollHeight}px`;
-});
+// Function to initialize the stepper based on current language
+function initStepper() {
+  const stepperId = languageFlag === 'english' ? '#english-stepper' : '#greek-stepper';
+  const stepper = document.querySelector(stepperId);
+  
+  if (!stepper) return;
+  
+  progress = stepper.querySelector(".progress");
+  steps = stepper.querySelectorAll(".step");
+  accordionTriggers = stepper.querySelectorAll(".accordion-trigger");
+  accordionBodies = stepper.querySelectorAll(".accordion-body");
+  stepContents = stepper.querySelectorAll(".step-content");
+  
+  // Reset to first step when language changes
+  currentActive = 1;
+  
+  // Set up event listeners
+  setupListeners();
+  
+  // Initialize accordion
+  if (accordionBodies.length > 0) {
+    const firstBody = accordionBodies[0];
+    firstBody.style.height = `${firstBody.scrollHeight}px`;
+  }
+  
+  // Start autoplay
+  startAutoplay();
+  
+  // Update the stepper UI
+  update();
+}
 
+// Function to set up event listeners
+function setupListeners() {
+  // Clear previous listeners by cloning and replacing elements
+  if (steps) {
+    steps.forEach((step, idx) => {
+      const newStep = step.cloneNode(true);
+      newStep.addEventListener("click", () => {
+        soundRestart(pluck);
+        goToStep(idx + 1);
+      });
+      step.parentNode.replaceChild(newStep, step);
+    });
+    // Re-select the elements after replacing
+    steps = document.querySelectorAll(`#${languageFlag}-stepper .step`);
+  }
 
+  if (accordionTriggers) {
+    accordionTriggers.forEach((trigger, idx) => {
+      const newTrigger = trigger.cloneNode(true);
+      newTrigger.addEventListener("click", () => {
+        soundRestart(pluck);
+        goToStep(idx + 1);
+      });
+      trigger.parentNode.replaceChild(newTrigger, trigger);
+    });
+    // Re-select the elements after replacing
+    accordionTriggers = document.querySelectorAll(`#${languageFlag}-stepper .accordion-trigger`);
+  }
+}
 
 // Function to update the stepper
 function update() {
+  if (!steps) return;
+  
   steps.forEach((step, idx) => {
     step.classList.remove('active-step', 'last');
 
@@ -32,51 +83,41 @@ function update() {
   });
 
   // Update content visibility
-  accordionBodies.forEach((body, idx) => {
-    if (idx === currentActive - 1) {
-      // Expand the active content
-      body.style.transition = "height 0.5s ease";
-      body.style.height = `${body.scrollHeight}px`; // Set height to content height
-
-      stepContents[idx].classList.add("active");
-    } else {
-      // Collapse inactive content
-      body.style.transition = "height 0.5s ease";
-      body.style.height = "0"; // Set height to 0
-
-      stepContents[idx].classList.remove("active");
-    }
-  });
+  if (accordionBodies) {
+    accordionBodies.forEach((body, idx) => {
+      if (idx === currentActive - 1) {
+        // Expand the active content
+        body.style.transition = "height 0.5s ease";
+        body.style.height = `${body.scrollHeight}px`;
+        stepContents[idx].classList.add("active");
+        stepContents[idx].classList.add("active-content");
+      } else {
+        // Collapse inactive content
+        body.style.transition = "height 0.5s ease";
+        body.style.height = "0";
+        stepContents[idx].classList.remove("active");
+        stepContents[idx].classList.remove("active-content");
+      }
+    });
+  }
 
   // Update progress bar width
-  progress.style.width = ((currentActive - 1) / (steps.length - 1)) * 100 + "%";
+  if (progress) {
+    progress.style.width = ((currentActive - 1) / (steps.length - 1)) * 100 + "%";
+  }
 }
 
 // Function to move to a specific step
 function goToStep(stepNumber) {
   currentActive = stepNumber;
   update();
-  pauseAutoplay(); // Pause autoplay for 30 seconds
+  pauseAutoplay();
 }
-
-// Add click event listeners to steps
-steps.forEach((step, idx) => {
-  step.addEventListener("click", () => {
-    soundRestart(pluck);
-    goToStep(idx + 1);
-  });
-});
-
-// Add click event listeners to accordion triggers
-accordionTriggers.forEach((trigger, idx) => {
-  trigger.addEventListener("click", () => {
-    soundRestart(pluck);
-    goToStep(idx + 1);
-  });
-});
 
 // Autoplay functionality
 function startAutoplay() {
+  clearInterval(autoplayInterval);
+  
   autoplayInterval = setInterval(() => {
     currentActive++;
     if (currentActive > steps.length) {
@@ -88,32 +129,31 @@ function startAutoplay() {
 
 // Function to pause autoplay for 8 seconds
 function pauseAutoplay() {
-  clearInterval(autoplayInterval); // Stop the current autoplay
-  clearTimeout(autoplayTimeout); // Clear any existing timeout
+  clearInterval(autoplayInterval);
+  clearTimeout(autoplayTimeout);
 
   // Restart autoplay after 8 seconds
   autoplayTimeout = setTimeout(() => {
     startAutoplay();
-  }, 8000); // 8 seconds
+  }, 8000);
 }
 
 /* -------------------------
   Window resize listener
   ------------------------- */
 window.addEventListener("resize", () => {
-  console.log('Resizing');
-
-  // Recalculate the height of the current open accordion
+  if (!accordionBodies || currentActive > accordionBodies.length) return;
+  
   const activeBody = accordionBodies[currentActive - 1];
   if (activeBody) {
-    // Temporarily remove height to measure
     activeBody.style.height = "auto";
     const newHeight = `${activeBody.scrollHeight}px`;
-    // Set back to the measured height
     activeBody.style.height = newHeight;
   }
 });
 
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", initStepper);
 
-// Initialize autoplay
-startAutoplay();
+// Export function to be called when language changes
+window.resetStepper = initStepper;
