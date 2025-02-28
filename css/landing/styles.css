@@ -926,7 +926,7 @@ right connector from last child*/
 .earth-orbit {
   width: 57vmin;
   height: 57vmin;
-  margin-top: -30vmin;
+  margin-top: -28.5vmin;
   animation: counter-orbit 25s linear infinite;
 }
 .earth {

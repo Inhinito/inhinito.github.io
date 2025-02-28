@@ -108,8 +108,6 @@ function rememberButton(){
     // Fill the menu with content.
     if(buttonFlag=='button1'){
       button1content();
-
-      resetStepper();
     } else if(buttonFlag=='button2'){
       button2content();
       
@@ -124,6 +122,7 @@ function rememberButton(){
       button3content();
     }
 
+    resetStepper();
     
     // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
     mainMenu.style.opacity = 1;
