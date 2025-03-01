@@ -4,6 +4,8 @@ let currentActive = 1;
 let autoplayInterval;
 let autoplayTimeout;
 
+// Re-calculate the height of the accordion content so that the content under the stepper
+// doesn't jump around when the accordion expands or collapses.
 function reheightAccordion() {
   const stepperId = languageFlag === 'english' ? '#english-stepper' : '#greek-stepper';
   const accordionContainer = document.querySelector(`${stepperId} .accordion`);
