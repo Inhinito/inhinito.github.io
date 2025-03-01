@@ -4,6 +4,18 @@ let currentActive = 1;
 let autoplayInterval;
 let autoplayTimeout;
 
+function reheightAccordion() {
+  const stepperId = languageFlag === 'english' ? '#english-stepper' : '#greek-stepper';
+  const accordionContainer = document.querySelector(`${stepperId} .accordion`);
+  if (!accordionContainer) return;
+
+  // Get the scoll height of the accordion container.
+  const scrollHeight = accordionContainer.scrollHeight;
+  // Set the min-height of its parent to the scroll height + 70px so that 
+  // the content under the stepper doesn't jump around when the accordion expands.
+  accordionContainer.parentNode.style.minHeight = `${scrollHeight + 70}px`;
+}
+
 // Function to initialize the stepper based on current language
 function initStepper() {
   const stepperId = languageFlag === 'english' ? '#english-stepper' : '#greek-stepper';
@@ -19,6 +31,8 @@ function initStepper() {
   
   // Reset to first step when language changes
   currentActive = 1;
+
+  reheightAccordion();
   
   // Set up event listeners
   setupListeners();
@@ -184,7 +198,10 @@ window.addEventListener("resize", () => {
     const newHeight = `${activeBody.scrollHeight}px`;
     activeBody.style.height = newHeight;
   }
+
+  reheightAccordion();
 });
+
 
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", initStepper);
