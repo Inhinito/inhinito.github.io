@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "ΑΠΘ Walk Advertisement",
+    title: "Walk Advertisement",
     type: [
       {
         english: "Multimedia",
@@ -40,7 +40,7 @@ const projects = [
         greek: "Διαφημίσεις"
       }
     ],
-    client: "Ideas Forward",
+    client: "ΑΠΘ (AUTh)",
     image: "media/images/projects/walk.svg",
     link: "https://example.org/",
   },
@@ -355,15 +355,9 @@ function createProjects(container, language) {
     imgEl.className = "pixel-image";
     imageFrame.appendChild(imgEl);
 
-    // Title
-    const titleEl = document.createElement("h3");
-    titleEl.className = "list-header article-header";
-    titleEl.textContent = project.title;
-
     // Type with dot
     const typeEl = document.createElement("div");
-    typeEl.className = "pixel-type";
-    typeEl.appendChild(document.createElement("span")).className = "pixel-blink-dot";
+    typeEl.className = "pixel-description pixel-type";
       
     // Loop through each type.
     for (let i = 0; i < project.type.length; i++) {
@@ -378,14 +372,26 @@ function createProjects(container, language) {
       typeEl.appendChild(document.createElement("span")).textContent = project.type[i][language];
     }
 
+    // Title
+    const titleEl = document.createElement("h3");
+    titleEl.className = "list-header article-header";
+    titleEl.textContent = project.title;
+
+    // Client with dot
+    const clientEl = document.createElement("div");
+    clientEl.className = "pixel-description";
+    clientEl.appendChild(document.createElement("span")).className = "pixel-blink-dot";
+    clientEl.appendChild(document.createElement("span")).textContent = project.client;
+
+
     // Button
     const buttonEl = document.createElement("button");
     buttonEl.className = "pixel-button";
-    buttonEl.textContent = language === 'english' ? 'Show more' : 'Περισσότερα';
+    buttonEl.textContent = language === 'english' ? 'See more' : 'Περισσότερα';
     buttonEl.addEventListener("click", () => window.open(project.link, "_blank"));
 
     // Assemble components
-    titleContainer.append(titleEl, typeEl);
+    titleContainer.append(typeEl, titleEl, clientEl);
     textContainer.append(titleContainer, buttonEl);
     cardContent.append(imageFrame, textContainer);
     cardContainer.appendChild(cardContent);
