@@ -2,118 +2,178 @@
 const projects = [
   {
     id: 1,
-    title: {
-      english: "TRADER APP",
-      greek: "ΕΦΑΡΜΟΓΗ ΣΥΝΑΛΛΑΓΩΝ"
-    },
-    type: {
-      english: "SOFTWARE",
-      greek: "ΛΟΓΙΣΜΙΚΟ"
-    },
-    image: "/api/placeholder/400/300",
+    title: "Article Reader AI",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile Apps",
+        greek: "Εφαρμογές"
+      }
+    ],
+    client: "Ideas Forward",
+    image: "media/images/projects/article-reader.png",
     link: "https://articlereader.ai/",
   },
   {
     id: 2,
-    title: {
-      english: "ANOTHER APP",
-      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
-    },
-    type: {
-      english: "SOFTWARE",
-      greek: "ΛΟΓΙΣΜΙΚΟ"
-    },
-    image: "/api/placeholder/300/200",
+    title: "ΑΠΘ Walk Advertisement",
+    type: [
+      {
+        english: "Multimedia",
+        greek: "Πολυμέσα"
+      }, {
+        english: "Marketing",
+        greek: "Μάρκετινγκ"
+      }
+    ],
+    subtype: [
+      {
+        english: "Videography",
+        greek: "Βιντεοσκόπηση"
+      }, {
+        english: "Digital Ads",
+        greek: "Διαφημίσεις"
+      }
+    ],
+    client: "Ideas Forward",
+    image: "media/images/projects/walk.svg",
     link: "https://example.org/",
   },
   {
     id: 3,
-    title: {
-      english: "WEBSITE",
-      greek: "ΙΣΤΟΣΕΛΙΔΑ"
-    },
-    type: {
-      english: "WEB",
-      greek: "ΙΣΤΟΣ"
-    },
+    title: "Yet another app",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/200/200",
     link: "https://example.com/",
   },
   {
     id: 4,
-    title: {
-      english: "TRADER APP",
-      greek: "ΕΦΑΡΜΟΓΗ ΣΥΝΑΛΛΑΓΩΝ"
-    },
-    type: {
-      english: "SOFTWARE",
-      greek: "ΛΟΓΙΣΜΙΚΟ"
-    },
+    title: "TRADER APP",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/200/300",
     link: "https://example.net/",
   },
   {
     id: 5,
-    title: {
-      english: "ANOTHER APP",
-      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
-    },
-    type: {
-      english: "SOFTWARE",
-      greek: "ΛΟΓΙΣΜΙΚΟ"
-    },
+    title: "ANOTHER APP",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/300/300",
     link: "https://example.io/",
   },
   {
     id: 6,
-    title: {
-      english: "WEBSITE",
-      greek: "ΙΣΤΟΣΕΛΙΔΑ"
-    },
-    type: {
-      english: "WEB",
-      greek: "ΙΣΤΟΣ"
-    },
+    title: "Lolipop",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/400/200",
     link: "https://example.co/",
   },
   {
     id: 7,
-    title: {
-      english: "ANOTHER APP",
-      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
-    },
-    type: {
-      english: "SOFTWARE",
-      greek: "ΛΟΓΙΣΜΙΚΟ"
-    },
+    title: "ANOTHER APP",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/300/200",
     link: "https://example.dev/",
   },
   {
     id: 8,
-    title: {
-      english: "WEBSITE",
-      greek: "ΙΣΤΟΣΕΛΙΔΑ"
-    },
-    type: {
-      english: "WEB",
-      greek: "ΙΣΤΟΣ"
-    },
+    title: "Chocolate",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/200/300",
     link: "https://example.app/",
   },
   {
     id: 9,
-    title: {
-      english: "ANOTHER APP",
-      greek: "ΑΛΛΗ ΕΦΑΡΜΟΓΗ"
-    },
-    type: {
-      english: "SOFTWARE",
-      greek: "ΛΟΓΙΣΜΙΚΟ"
-    },
+    title: "ANOTHER APP",
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Mobile App",
+        greek: "Εφαρμογή"
+      }
+    ],
+    client: "Ideas Forward",
     image: "/api/placeholder/200/200",
     link: "https://example.org/",
   },
@@ -163,9 +223,13 @@ function generatePath(language) {
   const containerWidth = parentWidth > 0 ? parentWidth : svg.clientWidth;
   const centerX = containerWidth / 2;
   const amplitude = containerWidth / 2;
+
+  // Set margins for the SVG
+  const marginHorizontal = 20;
+  const marginVertical = 20;
   
   // Generate path data
-  let pathData = `M${centerX},0`;
+  let pathData = `M${centerX},${marginVertical}`;
   let currentY = 0;
 
   for (let i = 0; i < numPulses; i++) {
@@ -187,12 +251,11 @@ function generatePath(language) {
   path.setAttribute("d", pathData);
   progressPath.setAttribute("d", pathData);
   
-  const margin = 10;
   svg.setAttribute(
     "viewBox",
-    `-${margin} -${margin} ${containerWidth + margin * 2} ${currentY + margin * 2}`
+    `-${marginHorizontal} -${marginVertical} ${containerWidth + marginHorizontal * 2} ${currentY + marginVertical * 2}`
   );
-  svg.style.height = currentY + margin * 2 + "px";
+  svg.style.height = currentY + marginVertical * 2 + "px";
 
   // Set up stroke animation properties
   try {
@@ -222,11 +285,13 @@ function updateScrollSpy(language) {
     const containerTop = container.offsetTop;
     const scrollY = window.scrollY;
 
+    // Define star size for consistency
+    const starSize = 10; 
     // Before container is visible
     if (scrollY < containerTop) {
       const startPoint = path.getPointAtLength(0);
-      star.setAttribute("x", startPoint.x - 10);
-      star.setAttribute("y", startPoint.y - 10);
+      star.setAttribute("x", startPoint.x - starSize);
+      star.setAttribute("y", startPoint.y - starSize);
       progressPath.style.strokeDashoffset = pathLength;
       path.setAttribute("stroke", "gray");
       return;
@@ -239,8 +304,8 @@ function updateScrollSpy(language) {
 
     // Update star position and path progress
     const point = path.getPointAtLength(fraction * pathLength);
-    star.setAttribute("x", point.x - 10);
-    star.setAttribute("y", point.y - 10);
+    star.setAttribute("x", point.x - starSize);
+    star.setAttribute("y", point.y - starSize);
     path.setAttribute("stroke", fraction > 0 ? "white" : "gray");
     progressPath.style.strokeDashoffset = pathLength - (fraction * pathLength);
   } catch (error) {
@@ -255,6 +320,12 @@ function createProjects(container, language) {
   
   signalContainer.querySelectorAll('.pixel-card-container').forEach(card => card.remove());
 
+  // Set up card margins
+  const cardMarginTop = 43;
+  const cardMarginSide = 41;
+  const cardHeightOffset = 46;
+
+  // Loop through projects and create cards.
   projects.forEach((project, i) => {
     const pulseIndex = i + 1;
     
@@ -262,10 +333,10 @@ function createProjects(container, language) {
     const cardContainer = document.createElement("div");
     cardContainer.className = "pixel-card-container";
     cardContainer.style.position = "absolute";
-    cardContainer.style.top = pulseIndex * pulseHeight + 40 + "px";
-    cardContainer.style.height = pulseHeight - 60 + "px";
-    cardContainer.style[pulseIndex % 2 === 1 ? "left" : "right"] = "40px";
-    cardContainer.style.width = "calc(100% - 50px)";
+    cardContainer.style.top = pulseIndex * pulseHeight + cardMarginTop + "px";
+    cardContainer.style.height = pulseHeight - cardHeightOffset + "px";
+    cardContainer.style[pulseIndex % 2 === 1 ? "left" : "right"] = cardMarginSide + "px";
+    cardContainer.style.width = `calc(100% - ${cardMarginSide + 18}px)`;
 
     // Build content structure
     const cardContent = document.createElement("div");
@@ -280,20 +351,32 @@ function createProjects(container, language) {
     imageFrame.className = "pixel-image-frame";
     const imgEl = document.createElement("img");
     imgEl.src = project.image;
-    imgEl.alt = project.title[language];
+    imgEl.alt = project.title;
     imgEl.className = "pixel-image";
     imageFrame.appendChild(imgEl);
 
     // Title
     const titleEl = document.createElement("h3");
     titleEl.className = "list-header article-header";
-    titleEl.textContent = project.title[language];
+    titleEl.textContent = project.title;
 
     // Type with dot
     const typeEl = document.createElement("div");
     typeEl.className = "pixel-type";
     typeEl.appendChild(document.createElement("span")).className = "pixel-blink-dot";
-    typeEl.appendChild(document.createTextNode(project.type[language]));
+      
+    // Loop through each type.
+    for (let i = 0; i < project.type.length; i++) {
+      if(i > 0) {
+        // Add a slash between types.
+        typeEl.appendChild(document.createElement("span")).textContent = "/";
+        // Add a class to the slash.
+        typeEl.lastElementChild.className = "pixel-slash";
+      }
+
+      // Add type text.
+      typeEl.appendChild(document.createElement("span")).textContent = project.type[i][language];
+    }
 
     // Button
     const buttonEl = document.createElement("button");

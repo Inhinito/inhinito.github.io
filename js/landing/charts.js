@@ -4,20 +4,20 @@ const baseHeight = 600;
 
 const englishNodes = [
   { id: "Inhinito", x: 295, y: 310, color: "#ffd04d", size: 18 },
-  { id: "Marketing", x: 170, y: 430, color: "#ffffff", size: 18 },
-  { id: "Software", x: 370, y: 415, color: "#ffffff", size: 18 },
-  { id: "Multimedia", x: 320, y: 200, color: "#ffffff", size: 18 },
-  { id: "3D Modeling", x: 230, y: 50, color: "#ffffff" },
-  { id: "Photography", x: 150, y: 145, color: "#ffffff" },
-  { id: "Videography", x: 380, y: 100, color: "#ffffff" },
-  { id: "Sound Design", x: 445, y: 270, color: "#ffffff" },
-  { id: "Graphic Design", x: 190, y: 250, color: "#ffffff" },
-  { id: "Mobile Apps", x: 390, y: 530, color: "#ffffff" },
-  { id: "UX Design", x: 460, y: 480, color: "#ffffff" },
-  { id: "Websites", x: 460, y: 365, color: "#ffffff" },
-  { id: "Digital Ads", x: 190, y: 555, color: "#ffffff" },
-  { id: "Events", x: 130, y: 490, color: "#ffffff" },
-  { id: "Influencers", x: 140, y: 370, color: "#ffffff" }
+  { id: "Marketing", x: 170, y: 450, color: "#ffffff", size: 18 },
+  { id: "Software", x: 370, y: 430, color: "#ffffff", size: 18 },
+  { id: "Multimedia", x: 320, y: 180, color: "#ffffff", size: 18 },
+  { id: "3D Modeling", x: 230, y: 30, color: "#ffffff" },
+  { id: "Photography", x: 150, y: 120, color: "#ffffff" },
+  { id: "Videography", x: 380, y: 80, color: "#ffffff" },
+  { id: "Sound Design", x: 445, y: 260, color: "#ffffff" },
+  { id: "Graphic Design", x: 190, y: 230, color: "#ffffff" },
+  { id: "Mobile Apps", x: 390, y: 540, color: "#ffffff" },
+  { id: "UX Design", x: 460, y: 490, color: "#ffffff" },
+  { id: "Websites", x: 460, y: 370, color: "#ffffff" },
+  { id: "Digital Ads", x: 190, y:580, color: "#ffffff" },
+  { id: "Events", x: 130, y: 515, color: "#ffffff" },
+  { id: "Influencers", x: 140, y: 380, color: "#ffffff" }
 ];
 
 const englishLinks = [

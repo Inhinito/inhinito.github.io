@@ -63,7 +63,7 @@ main{
   margin: auto;
 }
 
-.page {
+.px {
   padding: 0 10px;
 }
 
@@ -235,8 +235,8 @@ fieldset .article-header {
 }
 
 .lvl2 {
-  margin-left: 4px;
-  margin-right: 10px;
+  margin-left: 6px;
+  margin-right: 12px;
 }
 
 .basic-button { 
