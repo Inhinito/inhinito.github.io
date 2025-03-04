@@ -851,10 +851,19 @@ right connector from last child*/
 }
 
 /* Solar system */
-#solar-system {
+.solar-system {
   position: relative;
   height: 100vmin;
-  overflow: hidden;
+  /* Create a containing context for absolute positioning */
+  contain: layout;
+}
+/* Add to ensure the solar system takes up space without overflow affecting layout */
+.solar-system-wrapper {
+  position: relative;
+  height: 100vmin;
+  /* This creates a fixed boundary in the document flow */
+  margin-bottom: 20px; /* Space after solar system */
+  overflow: visible;
 }
 .sun-container::before {
   content: "";
@@ -880,9 +889,10 @@ right connector from last child*/
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#sun-label {
-  top: 40vmin;
+.sun-label {
+  top: 40vmin !important;
 }
+/* Make planets and orbits use absolute positioning */
 .orbit {
   position: absolute;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -890,18 +900,36 @@ right connector from last child*/
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* Don't let planets push the boundaries */
+  pointer-events: none;
 }
+
 .planet-container {
   position: absolute;
+  /* Make sure these don't affect document flow */
+  pointer-events: none;
 }
-.planet {
+
+/* Ensure labels are visible and styled properly */
+.planetary-label {
   position: absolute;
-  border-radius: 1px;
-  transform: translate(-50%, -50%);
+  top: -3.7vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "PressStart";
+  font-size: 2.3vmin;
+  text-align: center;
+  white-space: nowrap;
+  /* Make sure labels are visible */
+  z-index: 3;
+  /* Style labels consistently */
+  color: #ffcf4e;
+  text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
+  pointer-events: none;
 }
 .planetary-label {
   position: absolute;
-  top: -7.7vmin;
+  top: -3.8vmin;
   left: 50%;
   transform: translateX(-50%);
   font-family: "PressStart";
@@ -922,7 +950,6 @@ right connector from last child*/
   height: 7vmin;
   background-color: #fbc943;
   top: 0;
-  left: 50%;
 }
 .venus-container {
   top: 16vmin;
@@ -939,10 +966,6 @@ right connector from last child*/
   height: 8vmin;
   background-color: #7c44ba;
   top: 0;
-  left: 50%;
-}
-#earth-label {
-  top: -8.8vmin;
 }
 .earth-container {
   top: 30vmin;
@@ -958,7 +981,6 @@ right connector from last child*/
   height: 7vmin;
   background-color: #ed649a;
   top: 0;
-  left: 50%;
 }
 .mars-container {
   top: 45vmin;
