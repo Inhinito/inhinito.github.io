@@ -1096,7 +1096,8 @@ right connector from last child*/
 }
 .pixel-image {
   width: 70%;
-  object-fit: cover;
+  max-height: 140px;
+  object-fit: contain;
   opacity: 0.8;
   transition: opacity 0.2s;
 }

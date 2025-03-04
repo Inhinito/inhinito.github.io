@@ -47,8 +47,8 @@ const projects = [
         english: "Cultural Center of Central Macedonia",
         greek: "Κέντρο Πολιτισμού Kεντρικής Μακεδονίας"
     },
-    image: "/api/placeholder/200/200",
-    link: "https://example.com/",
+    image: "media/images/projects/eptapyrgio-festival.png",
+    link: "https://kepo.gr/festival/",
   },
   {
     id: 3,
@@ -109,27 +109,39 @@ const projects = [
   {
     id: 5,
     title: {
-        english: "Project Title",
-        greek: "Τίτλος Έργου"
+        english: "Lofi Record Label",
+        greek: "Δισκογραφική Lofi"
     },
     type: [
-      {
-        english: "Sofware",
-        greek: "Λογισμικό"
-      }
+        {
+            english: "Sofware",
+            greek: "Λογισμικό"
+        },
+        {
+            english: "Multimedia",
+            greek: "Πολυμέσα"
+        },
+        {
+            english: "Marketing",
+            greek: "Μάρκετινγκ"
+        }
     ],
     subtype: [
       {
-        english: "Mobile App",
-        greek: "Εφαρμογή"
+        english: "Websites",
+        greek: "Ιστοσελίδες"
+      },
+      {
+        english: "Sound Design",
+        greek: "Ηχοληψία"
       }
     ],
     client: {
-        english: "Client Name",
-        greek: "Όνομα Πελάτη"
+        english: "Greek Lofi Community",
+        greek: "Ελληνική Lofi Κοινότητα"
     },
-    image: "/api/placeholder/300/300",
-    link: "https://example.io/",
+    image: "media/images/projects/lofi.png",
+    link: "https://lofi.gr/",
   },
   {
     id: 6,
