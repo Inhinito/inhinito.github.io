@@ -110,14 +110,6 @@ function rememberButton(){
       button1content();
     } else if(buttonFlag=='button2'){
       button2content();
-      
-      // Reinitialize graph when container becomes visible
-      if(languageFlag === 'english') {
-        englishGraph.updatePositions();
-      } else {
-        greekGraph.updatePositions();
-      }
-      
     } else if(buttonFlag=='button3'){
       button3content();
     }
@@ -147,8 +139,12 @@ function button2content(){
   // Check wether to load English or Greek menu content.
   if(languageFlag=='english'){
     button2english.style.display = 'block';
+    // Reinitialize english graph when container becomes visible
+    englishGraph.updatePositions();
   } else {
     button2greek.style.display = 'block';
+    // Reinitialize greek graph when container becomes visible
+    greekGraph.updatePositions();
   }
 
   // Initialize signal paths after content is set up.
