@@ -187,18 +187,70 @@ class GraphManager {
 }
 
 const setupHighlightListeners = () => {
-  const coOpMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(2) a');
-  const boardMembersLink = document.querySelector('.tree > ul > li > ul > li:nth-child(1) a');
-  const boardMemberChildren = boardMembersLink.parentElement.querySelectorAll('ul li a');
-
-  coOpMembersLink.addEventListener('mouseenter', () => {
-    boardMembersLink.classList.add('force-highlight');
-    boardMemberChildren.forEach(child => child.classList.add('force-highlight'));
-  });
-
-  coOpMembersLink.addEventListener('mouseleave', () => {
-    boardMembersLink.classList.remove('force-highlight');
-    boardMemberChildren.forEach(child => child.classList.remove('force-highlight'));
+  // Select all trees on the page
+  const trees = document.querySelectorAll('.tree');
+  console.log('Found trees:', trees.length);
+  
+  trees.forEach(tree => {
+    // More specific selectors
+    const rootUl = tree.querySelector('ul');
+    if (!rootUl) {
+      console.log('No root UL found in tree', tree);
+      return;
+    }
+    
+    // Find the direct child LI that contains the main menu
+    const mainLi = rootUl.querySelector(':scope > li');
+    if (!mainLi) {
+      console.log('No main LI found in tree', tree);
+      return;
+    }
+    
+    // Find the UL containing the menu categories
+    const categoryUl = mainLi.querySelector(':scope > ul');
+    if (!categoryUl) {
+      console.log('No category UL found in tree', tree);
+      return;
+    }
+    
+    // Now find the specific list items
+    const boardMembersLi = categoryUl.querySelector(':scope > li:nth-child(1)');
+    const coOpMembersLi = categoryUl.querySelector(':scope > li:nth-child(2)');
+    
+    if (!boardMembersLi || !coOpMembersLi) {
+      console.log('Could not find required list items', { boardMembersLi, coOpMembersLi });
+      return;
+    }
+    
+    // Get the links
+    const boardMembersLink = boardMembersLi.querySelector(':scope > a');
+    const coOpMembersLink = coOpMembersLi.querySelector(':scope > a');
+    
+    console.log('Found links:', { 
+      boardMembersLink: boardMembersLink?.textContent, 
+      coOpMembersLink: coOpMembersLink?.textContent 
+    });
+    
+    if (!boardMembersLink || !coOpMembersLink) {
+      console.log('Required links not found');
+      return;
+    }
+    
+    // Get board member children correctly
+    const boardMemberChildren = boardMembersLi.querySelectorAll('ul > li > a');
+    
+    // Add event listeners
+    coOpMembersLink.addEventListener('mouseenter', () => {
+      console.log(`Highlighting board members in response to hovering "${coOpMembersLink.textContent}"`);
+      boardMembersLink.classList.add('force-highlight');
+      boardMemberChildren.forEach(child => child.classList.add('force-highlight'));
+    });
+    
+    coOpMembersLink.addEventListener('mouseleave', () => {
+      console.log(`Removing highlight from board members after unhover from "${coOpMembersLink.textContent}"`);
+      boardMembersLink.classList.remove('force-highlight');
+      boardMemberChildren.forEach(child => child.classList.remove('force-highlight'));
+    });
   });
 };
 

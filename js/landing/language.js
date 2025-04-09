@@ -75,7 +75,7 @@ greek.addEventListener('click', function(e){
     // Set button values to English.
     contactButton.innerText = 'Επικοινωνία';
     button1.style.setProperty('--content', '"Αποστολή"'); 
-    button2.style.setProperty('--content', '"Εγχειρήματα"');
+    button2.style.setProperty('--content', '"Συνεργασίες"');
     button3.style.setProperty('--content', '"Συνεταιρισμός"');
 
     startMenuContent();

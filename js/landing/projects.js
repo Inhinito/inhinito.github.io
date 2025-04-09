@@ -109,31 +109,6 @@ const projects = [
   {
     id: 5,
     title: {
-        english: "Product Photography",
-        greek: "Φωτογράφιση Προϊόντων"
-    },
-    type: [
-      {
-        english: "Multimedia",
-        greek: "Πολυμέσα"
-      }
-    ],
-    subtype: [
-      {
-        english: "Photography",
-        greek: "Φωτογράφιση"
-      }
-    ],
-    client: {
-        english: "Arte",
-        greek: "Arte"
-    },
-    image: "media/images/projects/arte.png",
-    link: "https://www.arte.gr/",
-  },
-  {
-    id: 6,
-    title: {
         english: "Multispace Brand & Website",
         greek: "Multispace Brand & Ιστοσελίδα"
     },
@@ -173,7 +148,57 @@ const projects = [
     link: "https://multispace.gr/",
   },
   {
+    id: 6,
+    title: {
+        english: "Artist-Run Initiative Platform",
+        greek: "Πλατφόρμα για τους καλλιτέχνες"
+    },
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      }
+    ],
+    subtype: [
+      {
+        english: "Websites",
+        greek: "Ιστοσελίδες"
+      },
+    ],
+    client: {
+        english: "ArtNet",
+        greek: "ArtNet"
+    },
+    image: "media/images/projects/artnet.svg",
+    link: "https://aart.gr/",
+  },
+  {
     id: 7,
+    title: {
+        english: "Product Photography",
+        greek: "Φωτογράφιση Προϊόντων"
+    },
+    type: [
+      {
+        english: "Multimedia",
+        greek: "Πολυμέσα"
+      }
+    ],
+    subtype: [
+      {
+        english: "Photography",
+        greek: "Φωτογράφιση"
+      }
+    ],
+    client: {
+        english: "Arte",
+        greek: "Arte"
+    },
+    image: "media/images/projects/arte.png",
+    link: "https://www.arte.gr/",
+  },
+  {
+    id: 8,
     title: {
         english: "Arch of Galerius 3D Reconstruction",
         greek: "Τρισδιάστατη ανακατασκευή της Καμάρας"
@@ -202,7 +227,7 @@ const projects = [
     link: "https://project210.gr/",
   },
   {
-    id: 8,
+    id: 9,
     title: {
         english: "Lofi Record Label",
         greek: "Δισκογραφική Lofi"
@@ -239,7 +264,7 @@ const projects = [
     link: "https://lofi.gr/",
   },
   {
-    id: 9,
+    id: 10,
     title: {
         english: "Promotional Videos",
         greek: "Διαφημιστικά Βίντεο"
@@ -264,7 +289,7 @@ const projects = [
     link: "https://playwise.gr/",
   },
   {
-    id: 9,
+    id: 11,
     title: {
         english: "Event Videography",
         greek: "Βιντεοσκόπηση Εκδηλώσεων"
@@ -291,5 +316,42 @@ const projects = [
     },
     image: "media/images/projects/timing-for-sports.png",
     link: "https://timing4s.com/",
+  },
+  {
+    id: 12,
+    title: {
+        english: "Become our partner",
+        greek: "Γίνε συνεργάτης μας"
+    },
+    type: [
+      {
+        english: "Sofware",
+        greek: "Λογισμικό"
+      },
+      {
+        english: "Multimedia",
+        greek: "Πολυμέσα"
+      },
+      {
+        english: "Marketing",
+        greek: "Μάρκετινγκ"
+      },
+    ],
+    subtype: [
+      {
+        english: "Videography",
+        greek: "Βιντεοσκόπηση"
+      },
+      {
+        english: "Photography",
+        greek: "Φωτογράφιση"
+      }
+    ],
+    client: {
+        english: "You are next",
+        greek: "Είστε οι επόμενοι"
+    },
+    image: "media/images/projects/cooperate.png",
+    link: "https://inhinito.com/",
   },
 ];
