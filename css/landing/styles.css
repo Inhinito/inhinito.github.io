@@ -739,6 +739,12 @@ right connector from last child*/
 }
 
 @media (max-width: 700px) {
+  body #menu-buttons {
+    max-width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .tree {
     position: relative;
     display: flex;
