@@ -61,16 +61,16 @@
 }
 
 #reload-main-menu {
-  width: 180px;
+  width: 215px;
   margin-top: 30px;
 }
 
 #reload-main-menu::after {
-  width: 176px;
+  width: 200px;
 }
 
 #reload-main-menu::before {
-  width: 180px;
+  width: 208px;
 }
 
 .membership {
