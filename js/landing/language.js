@@ -35,10 +35,10 @@ english.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
-    supportButton.innerText = 'SUPPORT';
-    button1.style.setProperty('--content', '"Intro"'); 
-    button2.style.setProperty('--content', '"Ecosystem"'); 
-    button3.style.setProperty('--content', '"Story"'); 
+    contactButton.innerText = 'Contact';
+    button1.style.setProperty('--content', '"Mission"'); 
+    button2.style.setProperty('--content', '"Projects"'); 
+    button3.style.setProperty('--content', '"Cooperative"'); 
 
     startMenuContent();
     startMenu.style.opacity = 1;
@@ -73,10 +73,10 @@ greek.addEventListener('click', function(e){
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
     // Set button values to English.
-    supportButton.innerText = 'ΥΠΟΣΤΗΡΙΞΗ';
-    button1.style.setProperty('--content', '"Εισαγωγή"'); 
-    button2.style.setProperty('--content', '"Οικοσύστημα"');
-    button3.style.setProperty('--content', '"Ιστορία"');
+    contactButton.innerText = 'Επικοινωνία';
+    button1.style.setProperty('--content', '"Αποστολή"'); 
+    button2.style.setProperty('--content', '"Συνεργασίες"');
+    button3.style.setProperty('--content', '"Συνεταιρισμός"');
 
     startMenuContent();
     startMenu.style.opacity = 1;
@@ -113,6 +113,9 @@ function rememberButton(){
     } else if(buttonFlag=='button3'){
       button3content();
     }
+
+    resetStepper();
+    
     // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
     mainMenu.style.opacity = 1;
 
@@ -136,8 +139,17 @@ function button2content(){
   // Check wether to load English or Greek menu content.
   if(languageFlag=='english'){
     button2english.style.display = 'block';
+    // Reinitialize english graph when container becomes visible
+    englishGraph.updatePositions();
   } else {
     button2greek.style.display = 'block';
+    // Reinitialize greek graph when container becomes visible
+    greekGraph.updatePositions();
+  }
+
+  // Initialize signal paths after content is set up.
+  if (window.initSignalPaths) {
+    window.initSignalPaths();
   }
 }
 

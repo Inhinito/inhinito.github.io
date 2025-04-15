@@ -9,6 +9,8 @@ const pressStart = new Audio('media/sfx/press-start.mp3');
 pressStart.volume = 0.6;
 const back = new Audio('media/sfx/back.mp3');
 back.volume = 0.3 ;
+const pluck = new Audio('media/sfx/pluck.mp3');
+pluck.volume = 0.3 ;
 
 //Play the sound.
 var soundFlag = true;

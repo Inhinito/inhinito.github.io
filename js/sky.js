@@ -62,13 +62,13 @@ function loadStars(changeStars = false){
         let amountOfStars;
         // Check the width of the screen.
         if(windowWidth < 500) {
-            amountOfStars = 60;
+            amountOfStars = 80;
         } else if (windowWidth >= 500 && windowWidth <800) {
-            amountOfStars = 90;
-        } else if (windowWidth >= 800 && windowWidth < 1500){
             amountOfStars = 120;
+        } else if (windowWidth >= 800 && windowWidth < 1500){
+            amountOfStars = 220;
         } else {
-            amountOfStars = 200;
+            amountOfStars = 450;
         }
     
         // Generate all the stars.
