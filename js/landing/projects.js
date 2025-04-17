@@ -291,8 +291,8 @@ const projects = [
   {
     id: 11,
     title: {
-        english: "Event Videography",
-        greek: "Βιντεοσκόπηση Εκδηλώσεων"
+        english: "Marathon Videography",
+        greek: "Βιντεοσκόπηση Μαραθωνίου"
     },
     type: [
       {
@@ -314,8 +314,8 @@ const projects = [
         english: "Timing for Sports",
         greek: "Timing for Sports"
     },
-    image: "media/images/projects/timing-for-sports.png",
-    link: "https://timing4s.com/",
+    image: "media/images/projects/marathon.png",
+    link: "https://atgm.gr/",
   },
   {
     id: 12,

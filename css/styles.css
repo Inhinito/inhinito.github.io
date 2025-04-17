@@ -348,9 +348,8 @@ ol li {
   margin-bottom: 10px;
 }
 
-footer{
+footer {
   /* Make footer stick to the bottom of the page. */
-  margin-top: 70px;
   display: none;
 
   opacity: 1;
