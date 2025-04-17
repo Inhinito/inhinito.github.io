@@ -127,6 +127,13 @@ a {
 
 
 
+#client-header-english{
+  display: block;
+}
+#client-header-greek{
+  display: none;
+}
+
 #footer-english{
   display: block;
 }
@@ -375,7 +382,7 @@ footer {
   margin: auto;
 }
 
-#copyright {
+.copyright {
   text-align: center;
   color: #ffcf4e;
   margin-top: 30px;

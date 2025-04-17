@@ -8,6 +8,9 @@ const goTop = document.getElementById('go-top');
 const footer = document.querySelector('footer');
 const footerDetails = document.getElementById('footer-details');
 
+const clientHeaderEnglish = document.getElementById('client-header-english');
+const clientHeaderGreek = document.getElementById('client-header-greek');
+
 const footerEnglish = document.getElementById('footer-english');
 const footerGreek = document.getElementById('footer-greek');
 
@@ -45,12 +48,18 @@ footer.style.display = 'block';
 
 // Change the footer's language content.
 function footerContent(){
-    console.log('Gets called');
+    
     // Check wether to load English or Greek menu content.
     if(languageFlag=='english'){
+        clientHeaderEnglish.style.display = 'block';
+        clientHeaderGreek.style.display = 'none';
+
         footerEnglish.style.display = 'block';
         footerGreek.style.display = 'none';
     } else {
+        clientHeaderGreek.style.display = 'block';
+        clientHeaderEnglish.style.display = 'none';
+
         footerGreek.style.display = 'block';
         footerEnglish.style.display = 'none';
     }
