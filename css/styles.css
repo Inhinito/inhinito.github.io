@@ -126,7 +126,10 @@ a {
 }
 
 
-
+.client-headers {
+  padding-left: 25px;
+  padding-right: 25px;
+}
 #client-header-english{
   display: block;
 }
