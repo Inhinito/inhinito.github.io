@@ -36,6 +36,9 @@ english.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     contactButton.innerText = 'Contact';
+    button1.innerText = 'Mission';
+    button2.innerText = 'Projects';
+    button3.innerText = 'Cooperative';
     button1.style.setProperty('--content', '"Mission"'); 
     button2.style.setProperty('--content', '"Projects"'); 
     button3.style.setProperty('--content', '"Cooperative"'); 
@@ -74,6 +77,9 @@ greek.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     contactButton.innerText = 'Επικοινωνία';
+    button1.innerText = 'Αποστολή';
+    button2.innerText = 'Συνεργασίες';
+    button3.innerText = 'Συνεταιρισμός';
     button1.style.setProperty('--content', '"Αποστολή"'); 
     button2.style.setProperty('--content', '"Συνεργασίες"');
     button3.style.setProperty('--content', '"Συνεταιρισμός"');

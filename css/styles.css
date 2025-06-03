@@ -251,7 +251,6 @@ fieldset .article-header {
 
 .basic-button { 
   font-family: "PressStart";
-  font-size: 11px;
   letter-spacing: 1px;
   position: relative;
   margin-left: 10px;
@@ -263,6 +262,7 @@ fieldset .article-header {
   as well as the box-shadow of the button */
   width:178px;
   height:40px;
+  font-size: 0;
 }
 
 .basic-button::after{
@@ -279,6 +279,7 @@ fieldset .article-header {
 
   /* Fill each button text content individually */
   content: "";
+  font-size: 11px;
   line-height: 35px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -307,10 +308,6 @@ fieldset .article-header {
   position: absolute;
 }
 
-.basic-button:focus{
-  outline: none;
-}
-
 .basic-button:hover {
   cursor:pointer;
 }
@@ -333,9 +330,12 @@ fieldset .article-header {
   color: yellow;
 }
 
+#social {
+  margin-bottom: 20px;
+}
+
 .social-icon{
   width: 90%;
-  margin-bottom: 20px;
   margin-left: 2px;
   margin-right: 2px;
   opacity: 0.95;
@@ -627,7 +627,6 @@ footer {
   top: auto;
   bottom: -20px;
   background: white !important;
-  outline: none;
 }
 
 

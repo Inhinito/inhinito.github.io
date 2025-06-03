@@ -196,7 +196,7 @@
     <!-- Main menu -->
     <main>
       <div id="menu-buttons">
-        <a id="start-button" class="fancy-button">
+        <a id="start-button" class="fancy-button" tabindex="0">
           <div class="bottom"></div>
           <div class="top">
             <div id="contact-button" class="label">Contact</div>
@@ -204,9 +204,9 @@
         </a>
         <br />
         <!-- The text content is filled using the CSS ::after pseudoclass -->
-        <a id="btn1" class="basic-button basic-link"></a>
-        <a id="btn2" class="basic-button basic-link"></a>
-        <a id="btn3" class="basic-button basic-link"></a>
+        <a id="btn1" class="basic-button basic-link" tabindex="0">Mission</a>
+        <a id="btn2" class="basic-button basic-link" tabindex="0">Projects</a>
+        <a id="btn3" class="basic-button basic-link" tabindex="0">Cooperative</a>
       </div>
 
       <div id="main-menu" class="article-section">
@@ -626,9 +626,6 @@
         </div>
       </div>
 
-      <!--
-            <a id="go-top" class="inline-link">Go back to start</a>
-            -->
     </main>
     <!-- End of Main Menu -->
 
@@ -754,10 +751,6 @@
           <a class="footer-link" href="volunteers.html">Inhinito Volunteers</a>
           <a class="footer-link" href="meetings.html">Company Meetings</a>
 
-          <!--
-                    <a class="footer-link" href="/contact">Contact Us</a>
-                    <a class="footer-link" href="/hangouts">Community Hangouts</a>
-                    -->
           <div class="copyright">
             Copyright © 2019 - <span class="current-year"></span> Inhinito SCE.
             All rights reserved.
@@ -774,10 +767,6 @@
           <a class="footer-link" href="volunteers.html">Εθελοντές Inhinito</a>
           <a class="footer-link" href="meetings.html">Συνελεύσεις Εταιρείας</a>
 
-          <!--
-                    <a class="footer-link" href="/contact">Contact Us</a>
-                    <a class="footer-link" href="/hangouts">Community Hangouts</a>
-                    -->
           <div class="copyright">
             Πνευματικά δικαιώματα © 2019 -
             <span class="current-year"></span> Inhinito Κοιν.Σ.Επ. Με επιφύλαξη
@@ -808,15 +797,5 @@
     <script src="js/landing/stepper.js"></script>
     <script src="js/landing/language.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics 
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFWCFB3K1S"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                
-                gtag('config', 'G-NFWCFB3K1S');
-            </script>
-        -->
   </body>
 </html>
