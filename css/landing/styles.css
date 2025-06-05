@@ -182,7 +182,8 @@
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 
-  background-color: #ee4684;
+  /* background-color: #ee4684; */
+  background-color: #bc3466;
   border-radius: 1px;
 }
 
