@@ -4,15 +4,6 @@
     font: normal 18px "IBM", Helvetica, sans-serif;
   }
 
-  header #greek{
-    display: block;
-    margin-top: 10px;
-  }
-
-  header #english{
-    display: block;
-  }
-
   body header #toggleMusic{
     width: 60px;
     left: 78px;
@@ -61,7 +52,7 @@
   }
 
   header #soundboard-instructions {
-    top: 90px;
+    top: 100px;
   }
 
   header #toggleMusic{

@@ -130,8 +130,15 @@ a {
 
 #language-select {
   position: absolute;
-  right: 35px;
+  right: 20px;
   margin-top: 1px;
+  padding: 15px 20px;
+  border-radius: 2px;
+  background-color: #451569;
+}
+
+#language-select #english {
+  margin-right: 10px;
 }
 
 
@@ -303,6 +310,7 @@ fieldset .article-header {
   /* Make the after element smaller so that it doesn't overflow through the original element when active */
   width:170px;
   height:33px;
+  speak: none;
 }
 
 .basic-button::before{
@@ -318,6 +326,7 @@ fieldset .article-header {
   bottom: 0;
   right: 0;
   position: absolute;
+  speak: none;
 }
 
 .basic-button:hover {
