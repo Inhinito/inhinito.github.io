@@ -475,7 +475,7 @@ textarea {
   border: none;
 }
 
-.accordion h5 {
+.accordion h2 {
   margin: 0px;
   font-family: "PressStart";
   font-size: clamp(12px, 2vw, 15px);
@@ -483,6 +483,7 @@ textarea {
   color: white;
   line-height: 20px;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
+  text-align: left;
 }
 
 .arrow {
