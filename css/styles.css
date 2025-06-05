@@ -134,7 +134,7 @@ a {
   margin-top: 1px;
   padding: 15px 20px;
   border-radius: 2px;
-  background-color: #451569;
+  background-color:rgba(87, 46, 138, 0.6);
 }
 
 #language-select #english {
