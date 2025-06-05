@@ -29,6 +29,8 @@ english.addEventListener('click', function(e){
   startMenu.style.opacity = 0;
   footer.style.opacity = 0;
 
+  // Set the lang attribute of the menu buttons to English.
+  menuButtons.setAttribute('lang', 'en');
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   menuButtons.style.opacity = 0;
 
@@ -36,9 +38,6 @@ english.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     contactButton.innerText = 'Contact';
-    button1.innerText = 'Mission';
-    button2.innerText = 'Projects';
-    button3.innerText = 'Cooperative';
     button1.style.setProperty('--content', '"Mission"'); 
     button2.style.setProperty('--content', '"Projects"'); 
     button3.style.setProperty('--content', '"Cooperative"'); 
@@ -67,9 +66,12 @@ greek.addEventListener('click', function(e){
   languageFlag='greek';
   soundRestart(toggle);
 
+
   startMenu.style.opacity = 0;
   footer.style.opacity = 0;
 
+  // Set the lang attribute of the menu buttons to Greek.
+  menuButtons.setAttribute('lang', 'el');
   // Fade in main menu. Setting opacity to 0 is enough to fade the menu out.
   menuButtons.style.opacity = 0;
 
@@ -77,9 +79,6 @@ greek.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     contactButton.innerText = 'Επικοινωνία';
-    button1.innerText = 'Αποστολή';
-    button2.innerText = 'Συνεργασίες';
-    button3.innerText = 'Συνεταιρισμός';
     button1.style.setProperty('--content', '"Αποστολή"'); 
     button2.style.setProperty('--content', '"Συνεργασίες"');
     button3.style.setProperty('--content', '"Συνεταιρισμός"');

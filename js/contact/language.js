@@ -28,8 +28,6 @@ english.addEventListener('click', function(e){
     footerContent();
     footerDetails.style.opacity = 1;
   }, 200);
-  
-  
 })
 
 greek.addEventListener('click', function(e){
@@ -52,7 +50,5 @@ greek.addEventListener('click', function(e){
     footerContent();
     footerDetails.style.opacity = 1;
   }, 200);
-
-
 })
 

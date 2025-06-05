@@ -89,11 +89,11 @@ function setupListeners() {
     
     // Add a single event listener to the content container
     newContentContainer.addEventListener('click', (event) => {
-      // Check if an accordion header was clicked
+      // Check if an accordion header button was clicked
       const header = event.target.closest('.accordion-button');
       if (!header) return;
       
-      // Find which header was clicked by its position among siblings
+      // Find which header button was clicked by its position among siblings.
       const listItem = header.closest('.step-content');
       if (!listItem) return;
       
