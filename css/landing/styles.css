@@ -165,7 +165,7 @@
   position: relative;
   margin-bottom: 35px;
   cursor: pointer;
-  background: none;
+  background: transparent;
   border: none;
 }
 
@@ -182,8 +182,7 @@
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 
-  /* background-color: #ee4684; */
-  background-color: #bc3466;
+  background-color: #ee4684;
   border-radius: 1px;
 }
 
