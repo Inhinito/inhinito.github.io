@@ -165,7 +165,7 @@
   position: relative;
   margin-bottom: 35px;
   cursor: pointer;
-  background: transparent;
+  background:rgba(238, 70, 132, 0.1);
   border: none;
 }
 
