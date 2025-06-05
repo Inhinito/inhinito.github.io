@@ -1,5 +1,5 @@
 // Stepper variables
-let progress, steps, accordionTriggers, accordionBodies, stepContents;
+let progress, steps, accordionHeaders, accordionBodies, stepContents;
 let currentActive = 1;
 let autoplayInterval;
 let autoplayTimeout;
@@ -27,7 +27,7 @@ function initStepper() {
   
   progress = stepper.querySelector(".progress");
   steps = stepper.querySelectorAll(".step");
-  accordionTriggers = stepper.querySelectorAll(".accordion-trigger");
+  accordionHeaders = stepper.querySelectorAll(".accordion-header");
   accordionBodies = stepper.querySelectorAll(".accordion-body");
   stepContents = stepper.querySelectorAll(".step-content");
   
@@ -82,19 +82,19 @@ function setupListeners() {
     });
   }
   
-  // Set up event delegation for accordion triggers
+  // Set up event delegation for accordion headers
   if (contentContainer) {
     const newContentContainer = contentContainer.cloneNode(true);
     contentContainer.parentNode.replaceChild(newContentContainer, contentContainer);
     
     // Add a single event listener to the content container
     newContentContainer.addEventListener('click', (event) => {
-      // Check if an accordion trigger was clicked
-      const trigger = event.target.closest('.accordion-trigger');
-      if (!trigger) return;
+      // Check if an accordion header was clicked
+      const header = event.target.closest('.accordion-button');
+      if (!header) return;
       
-      // Find which trigger was clicked by its position among siblings
-      const listItem = trigger.closest('.step-content');
+      // Find which header was clicked by its position among siblings
+      const listItem = header.closest('.step-content');
       if (!listItem) return;
       
       const parent = listItem.parentNode;
@@ -110,7 +110,7 @@ function setupListeners() {
   if (stepper) {
     progress = stepper.querySelector(".progress");
     steps = stepper.querySelectorAll(".step");
-    accordionTriggers = stepper.querySelectorAll(".accordion-trigger");
+    accordionHeaders = stepper.querySelectorAll(".accordion-header");
     accordionBodies = stepper.querySelectorAll(".accordion-body");
     stepContents = stepper.querySelectorAll(".step-content");
   }

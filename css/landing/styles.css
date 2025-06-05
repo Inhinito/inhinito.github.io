@@ -165,6 +165,8 @@
   position: relative;
   margin-bottom: 35px;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .fancy-button .bottom {
@@ -182,7 +184,6 @@
 
   background-color: #ee4684;
   border-radius: 1px;
-  pointer-events: none;
 }
 
 .fancy-button .top {
@@ -469,6 +470,11 @@ textarea {
   list-style: none;
 }
 
+.accordion button {
+  background: none;
+  border: none;
+}
+
 .accordion h5 {
   margin: 0px;
   font-family: "PressStart";
@@ -506,8 +512,8 @@ textarea {
   box-shadow: 6px 0 #451569, -6px 0 #451569, 0 -6px #451569, 0 6px #451569;
 }
 
-/* Active header (assuming the <h5> is inside .accordion-trigger) */
-.step-content.active .accordion-trigger {
+/* Active header (assuming the <h5> is inside .accordion-header) */
+.step-content.active .accordion-header {
   color: #fbc943 !important;
 }
 
@@ -520,7 +526,7 @@ textarea {
   text-align: left;
 }
 
-.accordion-trigger {
+.accordion-header {
   padding: 12px 10px;
   cursor: pointer;
   transition: background-color 0.25s ease;
@@ -937,7 +943,6 @@ right connector from last child*/
   /* Style labels consistently */
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-  pointer-events: none;
 }
 .planetary-label {
   position: absolute;

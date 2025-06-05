@@ -144,18 +144,14 @@ button3.style.setProperty("--content", '"Cooperative"');
 const menuButtons = document.getElementById("menu-buttons");
 // Main menu selected effect.
 menuButtons.addEventListener("mousedown", function (evt) {
-  if (evt.target.nodeName == "A") {
-    buttonColorReset();
+  if (evt.target.nodeName == "BUTTON") {
+    buttonColorReset(evt);
   }
 });
 
 menuButtons.addEventListener("keydown", function (evt) {
   if (evt.key === "Enter" || evt.key === " ") {
-    if (evt.target.nodeName == "A") {
-      console.log("Button clicked via keyboard:", evt.target.textContent);
-      evt.preventDefault(); // Prevent default scrolling for Spacebar.
-      evt.target.click(); // Simulate a click event
-
+    if (evt.target.nodeName == "BUTTON") {
       buttonColorReset(evt);
     }
   }

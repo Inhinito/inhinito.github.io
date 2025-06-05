@@ -85,7 +85,7 @@ a {
   border: none;
   color: white;
   font-family: "IBM", Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -272,6 +272,9 @@ fieldset .article-header {
   width:178px;
   height:40px;
   font-size: 0;
+  color: white;
+  background: none;
+  border: none;
 }
 
 .basic-button::after{
@@ -381,6 +384,7 @@ footer {
   display: block;
   margin-bottom: 5px;
   width: fit-content;
+  pointer-events: auto; /* Allow interaction */
 }
 
 #footer-details{

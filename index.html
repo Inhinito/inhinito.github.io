@@ -72,7 +72,7 @@
       </div>
 
       <!-- 8-bit Header -->
-      <a href="index.html">
+      <a href="index.html" tabindex="0" id="logo-link">
         <img
           id="trademark"
           src="media/images/trademark.png"
@@ -196,17 +196,17 @@
     <!-- Main menu -->
     <main>
       <div id="menu-buttons">
-        <a id="start-button" class="fancy-button" tabindex="0">
+        <button type="button" id="start-button" class="fancy-button">
           <div class="bottom"></div>
           <div class="top">
             <div id="contact-button" class="label">Contact</div>
           </div>
-        </a>
+        </button>
         <br />
         <!-- The text content is filled using the CSS ::after pseudoclass -->
-        <a id="btn1" class="basic-button inline-button" tabindex="0">Mission</a>
-        <a id="btn2" class="basic-button inline-button" tabindex="0">Projects</a>
-        <a id="btn3" class="basic-button inline-button" tabindex="0">Cooperative</a>
+        <button type="button" id="btn1" class="basic-button inline-button">Mission</button>
+        <button type="button" id="btn2" class="basic-button inline-button">Projects</button>
+        <button type="button" id="btn3" class="basic-button inline-button">Cooperative</button>
       </div>
 
       <div id="main-menu" class="article-section">
@@ -260,41 +260,51 @@
               <div class="stepper-container">
                 <div class="progress-container">
                   <div class="progress"></div>
-                  <div class="step-1 step active-step last">1</div>
-                  <div class="step-2 step">2</div>
-                  <div class="step-3 step">3</div>
-                  <div class="step-4 step">4</div>
-                  <div class="step-5 step">5</div>
+                  <button type="button" class="step-1 step active-step last">1</button>
+                  <button type="button" class="step-2 step">2</button>
+                  <button type="button" class="step-3 step">3</button>
+                  <button type="button" class="step-4 step">4</button>
+                  <button type="button" class="step-5 step">5</button>
                 </div>
               
                 <div class="content-container">
                   <ul class="accordion lvl1 lvl2">
                     <li class="step-content active active-content">
-                      <h5 class="accordion-trigger">1. Define Goals & Deliverables</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">1. Define Goals & Deliverables</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">We start by understanding your vision and challenges. Together, we define the project’s scope, setting clear and measurable deliverables.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">2. Scouting & Team Matching</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">2. Scouting & Team Matching</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">We leverage our curated network of creators to identify ideal partners that align with your project's goals and available resources. Then, you choose one or more partners for your project.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">3. Alignment & Planning</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">3. Alignment & Planning</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">We facilitate discussions to clarify responsibilities, timelines, and expectations. This way, we ensure everyone is on the same page and ready to collaborate.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">4. Execution & Monitoring</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">4. Execution & Monitoring</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">We oversee execution, track progress against milestones and address any challenges. This lets you concentrate on your core business, while we ensure the completion of the project.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">5. Delivery & Payment</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">5. Delivery & Payment</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">Once the project is complete, we ensure all deliverables meet expectations and gather feedback from both sides to enhance the success of future projects.</p>
                       </div>
@@ -366,41 +376,51 @@
               <div class="stepper-container">
                 <div class="progress-container">
                   <div class="progress"></div>
-                  <div class="step-1 step active-step last">1</div>
-                  <div class="step-2 step">2</div>
-                  <div class="step-3 step">3</div>
-                  <div class="step-4 step">4</div>
-                  <div class="step-5 step">5</div>
+                  <button type="button" class="step-1 step active-step last">1</button>
+                  <button type="button" class="step-2 step">2</button>
+                  <button type="button" class="step-3 step">3</button>
+                  <button type="button" class="step-4 step">4</button>
+                  <button type="button" class="step-5 step">5</button>
                 </div>
               
                 <div class="content-container">
                   <ul class="accordion lvl1 lvl2">
                     <li class="step-content active active-content">
-                      <h5 class="accordion-trigger">1. Καθορίστε Στόχους & Παραδοτέα</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">1. Καθορίστε Στόχους & Παραδοτέα</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">Ξεκινάμε κατανοώντας το όραμα και τις προκλήσεις σας. Μαζί, ορίζουμε το εύρος του έργου, θέτοντας σαφή και μετρήσιμα παραδοτέα.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">2. Εντοπισμός & Επιλογή Ομάδας</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">2. Εντοπισμός & Επιλογή Ομάδας</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">Αξιοποιούμε το δίκτυο δημιουργών μας για να εντοπίσουμε ιδανικούς συνεργάτες ταιριάζουν με τους στόχους και τους διαθέσιμους πόρους του έργου σας. Στη συνέχεια, επιλέγετε έναν ή περισσότερους συνεργάτες για το έργο σας.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">3. Ευθυγράμμιση & Σχεδιασμός</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">3. Ευθυγράμμιση & Σχεδιασμός</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">Συντονίζουμε συζητήσεις για να διευκρινιστούν οι ευθύνες, το χρονοδιάγραμμα και οι προσδοκίες. Έτσι, διασφαλίζουμε ότι όλοι βρίσκονται στην ίδια σελίδα και είναι έτοιμοι να συνεργαστούν.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">4. Υλοποίηση & Παρακολούθηση</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">4. Υλοποίηση & Παρακολούθηση</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">Επιβλέπουμε την υλοποίηση, παρακολουθούμε την πρόοδο σε σχέση με τους στόχους και διαχειριζόμαστε τυχόν προκλήσεις. Έτσι, μπορείτε να εστιάσετε στις βασικές σας δραστηριότητες, ενώ εμείς διασφαλίζουμε την ολοκλήρωση του έργου.</p>
                       </div>
                     </li>
                     <li class="step-content">
-                      <h5 class="accordion-trigger">5. Παράδοση & Πληρωμή</h5>
+                      <button type="button" class="accordion-button">
+                        <h5 class="accordion-header">5. Παράδοση & Πληρωμή</h5>
+                      </button>
                       <div class="accordion-body">
                         <p class="article-8-bit">Μόλις ολοκληρωθεί το έργο, διασφαλίζουμε ότι όλα τα παραδοτέα ανταποκρίνονται στις προσδοκίες και συλλέγουμε σχόλια και από τις δύο πλευρές για να ενισχύσουμε την επιτυχία μελλοντικών έργων.</p>
                       </div>
