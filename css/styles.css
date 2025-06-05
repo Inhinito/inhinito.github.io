@@ -76,9 +76,18 @@ a {
   -o-user-select: none;
 }
 
-.basic-link{
-  margin-right: 2px;
+.inline-button{
   display: inline-block;
+}
+
+.button-link {
+  background: none;
+  border: none;
+  color: white;
+  font-family: "IBM", Helvetica, sans-serif;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .inhinito-link:active {
@@ -359,6 +368,7 @@ ol li {
 }
 
 footer {
+  margin-top: 90px;
   /* Make footer stick to the bottom of the page. */
   display: none;
 

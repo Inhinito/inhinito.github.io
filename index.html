@@ -59,11 +59,16 @@
     <!-- End of stary night sky -->
 
     <header>
+      <!-- Sound toggle -->
+      <button id="soundboard" type="button">
+        <img src="media/images/sound_on.png" alt="sound Icon" id="toggleSound" />
+      </button>
+
       <br />
       <!-- Here go the soundboard instructions -->
       <div id="language-select" class="text-8-bit">
-        <a class="inhinito-link basic-link" href="#" id="english">English</a>
-        <a class="inhinito-link basic-link" href="#" id="greek">Ελληνικά</a>
+        <button type="button" class="button-link inhinito-link inline-button" href="#" id="english">English</button>
+        <button type="button" class="button-link inhinito-link inline-button" href="#" id="greek">Ελληνικά</button>
       </div>
 
       <!-- 8-bit Header -->
@@ -78,15 +83,10 @@
       <div id="soundboard-instructions" class="text-8-bit"></div>
     </header>
 
-    <!-- Sound toggle -->
-    <div id="soundboard">
-      <img src="media/images/sound_on.png" alt="sound Icon" id="toggleSound" />
-    </div>
-
     <div id="start-menu">
       <!-- Render start menu content here depending on the language that is selected -->
       <div id="start-menu-content">
-        <a id="reload-main-menu" class="basic-button basic-link"></a>
+        <a id="reload-main-menu" class="basic-button inline-button"></a>
         <!-- Render start menu content in English. -->
         <div id="start-menu-english">
           <section class="article-section">
@@ -204,9 +204,9 @@
         </a>
         <br />
         <!-- The text content is filled using the CSS ::after pseudoclass -->
-        <a id="btn1" class="basic-button basic-link" tabindex="0">Mission</a>
-        <a id="btn2" class="basic-button basic-link" tabindex="0">Projects</a>
-        <a id="btn3" class="basic-button basic-link" tabindex="0">Cooperative</a>
+        <a id="btn1" class="basic-button inline-button" tabindex="0">Mission</a>
+        <a id="btn2" class="basic-button inline-button" tabindex="0">Projects</a>
+        <a id="btn3" class="basic-button inline-button" tabindex="0">Cooperative</a>
       </div>
 
       <div id="main-menu" class="article-section">
@@ -705,7 +705,7 @@
 
       <div id="social">
         <a
-          class="inhinito-link basic-link"
+          class="inhinito-link inline-button"
           href="https://facebook.com/inhinito"
         >
           <img
@@ -716,7 +716,7 @@
           />
         </a>
         <a
-          class="inhinito-link basic-link"
+          class="inhinito-link inline-button"
           href="https://instagram.com/inhinito"
         >
           <img
@@ -726,7 +726,7 @@
             alt="instagram"
           />
         </a>
-        <a class="inhinito-link basic-link" href="https://youtube.com/inhinito">
+        <a class="inhinito-link inline-button" href="https://youtube.com/inhinito">
           <img
             title="YouTube"
             class="social-icon"
@@ -734,7 +734,7 @@
             alt="youtube"
           />
         </a>
-        <a class="inhinito-link basic-link" href="https://twitter.com/inhinito">
+        <a class="inhinito-link inline-button" href="https://twitter.com/inhinito">
           <img
             title="Twitter"
             class="social-icon"
@@ -747,9 +747,9 @@
       <section id="footer-details">
         <!-- The footer content in English. -->
         <div id="footer-english">
-          <a class="footer-link" href="contact.html">Contact Us</a>
-          <a class="footer-link" href="volunteers.html">Inhinito Volunteers</a>
-          <a class="footer-link" href="meetings.html">Company Meetings</a>
+          <a class="button-link footer-link" href="contact.html">Contact Us</a>
+          <a class="button-link footer-link" href="volunteers.html">Inhinito Volunteers</a>
+          <a class="button-link footer-link" href="meetings.html">Company Meetings</a>
 
           <div class="copyright">
             Copyright © 2019 - <span class="current-year"></span> Inhinito SCE.
@@ -763,9 +763,9 @@
 
         <!-- The footer content in Greek. -->
         <div id="footer-greek">
-          <a class="footer-link" href="contact.html">Επικοινωνία</a>
-          <a class="footer-link" href="volunteers.html">Εθελοντές Inhinito</a>
-          <a class="footer-link" href="meetings.html">Συνελεύσεις Εταιρείας</a>
+          <a class="button-link footer-link" href="contact.html">Επικοινωνία</a>
+          <a class="button-link footer-link" href="volunteers.html">Εθελοντές Inhinito</a>
+          <a class="button-link footer-link" href="meetings.html">Συνελεύσεις Εταιρείας</a>
 
           <div class="copyright">
             Πνευματικά δικαιώματα © 2019 -

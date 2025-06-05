@@ -27,8 +27,9 @@ function soundRestart(audio) {
 
 
 // Toggle sound
+const soundboard = document.getElementById('soundboard');
 const sound = document.getElementById('toggleSound');
-sound.addEventListener('click', function () {
+soundboard.addEventListener('click', function () {
     if (soundFlag) {
         soundRestart(unequiptool);
         soundFlag = false;
@@ -41,7 +42,6 @@ sound.addEventListener('click', function () {
     }
 });
 
-const soundboard = document.getElementById('soundboard');
 const instructions = document.getElementById('soundboard-instructions');
 // Show Soundboard Instructions.
 soundboard.addEventListener('mouseover', function(evt){
