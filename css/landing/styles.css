@@ -463,6 +463,12 @@ textarea {
 .project-header {
   text-align: center;
   margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 9px;
+  width: fit-content;
+  border-radius: 3px;
+  background:rgba(63, 54, 106, 0.05);
 }
 
 /* Accordion Styles */
@@ -932,21 +938,6 @@ right connector from last child*/
 /* Ensure labels are visible and styled properly */
 .planetary-label {
   position: absolute;
-  top: -3.7vmin;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "PressStart";
-  font-size: 2.3vmin;
-  text-align: center;
-  white-space: nowrap;
-  /* Make sure labels are visible */
-  z-index: 3;
-  /* Style labels consistently */
-  color: #ffcf4e;
-  text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-}
-.planetary-label {
-  position: absolute;
   top: -3.8vmin;
   left: 50%;
   transform: translateX(-50%);
@@ -957,6 +948,7 @@ right connector from last child*/
   z-index: 2;
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
+  background:rgba(63, 54, 106, 0.05);
 }
 .venus-orbit {
   width: 35vmin;
