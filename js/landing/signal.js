@@ -192,7 +192,7 @@ function createProjects(container, language) {
     }
 
     // Title
-    const titleEl = document.createElement("h3");
+    const titleEl = document.createElement("h2");
     titleEl.className = "list-header article-header";
     titleEl.textContent = project.title[language];
 
