@@ -948,7 +948,7 @@ right connector from last child*/
   z-index: 2;
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-  background:rgba(63, 54, 106, 0.05);
+  background:rgba(63, 54, 106, 0.1);
 }
 .venus-orbit {
   width: 35vmin;
