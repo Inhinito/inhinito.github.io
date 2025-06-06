@@ -283,10 +283,9 @@ fieldset .article-header {
   --background: #00000033;
   /* The width and the height is big enough to allow for the animeted movement of the button
   as well as the box-shadow of the button */
-  width:178px;
-  height:40px;
-  font-size: 0;
-  color: white;
+  width: 178px;
+  height: 40px;
+  color: transparent; /* Make the text transparent because the actual text is in the 'content' of ::after */
   background: none;
   border: none;
 }
@@ -294,8 +293,8 @@ fieldset .article-header {
 .basic-button::after{
   padding-left: 4px;
   border: 2px solid #ffcf4e;
-  background-color: #00000033;
   border-radius: 1px;
+  color: white;
 
   /* Specify the transition effect for chaning the background-color and the button-press */ 
   -webkit-transition: all 0.06s ease-in-out;

@@ -135,9 +135,11 @@ function startMenuContent() {
 // Initialize the menu buttons.
 contactButton.innerText = "Contact";
 button1.style.setProperty("--background", "#fbc943");
-button1.style.setProperty("color", "#372963");
+button1.style.setProperty("--color", "#372963", "important");
 button1.style.setProperty("--content", '"Mission"');
+button2.style.setProperty("--color", "white", "important");
 button2.style.setProperty("--content", '"Projects"');
+button3.style.setProperty("--color", "white", "important");
 button3.style.setProperty("--content", '"Cooperative"');
 
 // Get the menuButtons section.
@@ -160,16 +162,16 @@ menuButtons.addEventListener("keydown", function (evt) {
 function buttonColorReset(evt) {
   // Set the background and text color of the buttons.
   button1.style.setProperty("--background", "#00000033");
-  button1.style.setProperty("color", "white");
+  button1.style.setProperty("--color", "white", "important");
 
   button2.style.setProperty("--background", "#00000033");
-  button2.style.setProperty("color", "white");
+  button2.style.setProperty("--color", "white", "important");
 
   button3.style.setProperty("--background", "#00000033");
-  button3.style.setProperty("color", "white");
+  button3.style.setProperty("--color", "white", "important");
 
   evt.target.style.setProperty("--background", "#fbc943");
-  evt.target.style.setProperty("color", "#372963");
+  evt.target.style.setProperty("--color", "#372963", "important");
 }
 
 // User pressed button 1.

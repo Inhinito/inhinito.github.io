@@ -131,16 +131,19 @@
 #btn1::after {
   background: var(--background);
   content: var(--content);
+  color: var(--color);
 }
 
 #btn2::after {
   background: var(--background);
   content: var(--content);
+  color: var(--color);
 }
 
 #btn3::after {
   background: var(--background);
   content: var(--content);
+  color: var(--color);
 }
 
 #construction-notice {
