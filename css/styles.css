@@ -286,7 +286,7 @@ fieldset .article-header {
   width: 178px;
   height: 40px;
   font-size: 11px;
-  padding-left: 1px;
+  padding-left: 2px;
   color: #ee4684; /* Make the text transparent because the actual text is in the 'content' of ::after */
   background:rgba(0, 0, 0, 0.01);
   border: none;
