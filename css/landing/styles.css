@@ -449,7 +449,7 @@ textarea {
 .step.active-step {
   border-color: white !important;
   background-color: var(--line-border-fill);
-  color: #ffbc00;
+  color: #44166d;
 }
 
 .step.active-step:hover {
