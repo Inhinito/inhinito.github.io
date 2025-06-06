@@ -449,7 +449,6 @@ textarea {
 .step.active-step {
   border-color: white !important;
   background-color: var(--line-border-fill);
-  color: #44166d;
 }
 
 .step.active-step:hover {
@@ -460,7 +459,6 @@ textarea {
   background-color: #fbc943 !important;
   border-color: white !important;
   box-shadow: 0 0 15px -1px white;
-  color: #44166d;
 }
 
 .project-header {
