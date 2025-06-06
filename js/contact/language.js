@@ -4,6 +4,8 @@ const greek = document.getElementById('greek');
 const contactEnglish = document.getElementById('contact-english');
 const contactGreek = document.getElementById('contact-greek');
 
+const clientHeaders = document.querySelector('.client-headers');
+
 const mainContent = document.querySelector('main');
 
 mainContent.style.display = 'block';
@@ -15,6 +17,7 @@ english.addEventListener('click', function(e){
   languageFlag='english';
   
   mainContent.style.opacity = 0;
+  clientHeaders.style.opacity = 0;
   footerDetails.style.opacity = 0;
   
   // Wait half a second for the menu to fade out.
@@ -26,6 +29,7 @@ english.addEventListener('click', function(e){
 
     // Change the language content of the footer.
     footerContent();
+    clientHeaders.style.opacity = 1;
     footerDetails.style.opacity = 1;
   }, 200);
 })
@@ -37,6 +41,7 @@ greek.addEventListener('click', function(e){
 
   mainContent.style.opacity = 0;
   footerDetails.style.opacity = 0;
+  clientHeaders.style.opacity = 0;
 
   // Wait half a second for the menu to fade out.
   setTimeout(function(){
@@ -48,6 +53,7 @@ greek.addEventListener('click', function(e){
 
     // Change the language content of the footer.
     footerContent();
+    clientHeaders.style.opacity = 1;
     footerDetails.style.opacity = 1;
   }, 200);
 })

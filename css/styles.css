@@ -148,6 +148,8 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 #client-header-english{
   display: block;
@@ -854,4 +856,55 @@ footer {
 }
 .pixel-corners::after {
   margin: -4px;
+}
+
+
+
+/* Infinite carousel slider in plain CSS */
+.slider-container {
+  align-items: center;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.slider {  
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 20);
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
+}
+
+.slide img {
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 10))}
 }

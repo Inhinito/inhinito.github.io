@@ -8,3 +8,12 @@
 .article-list-item {
     margin-left: 20px;
 }
+
+p {
+    padding: 0 10px !important;
+    margin: 10px 0 !important;
+}
+
+ul {
+    margin: 0 !important;
+}
