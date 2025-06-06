@@ -285,8 +285,10 @@ fieldset .article-header {
   as well as the box-shadow of the button */
   width: 178px;
   height: 40px;
-  color: transparent; /* Make the text transparent because the actual text is in the 'content' of ::after */
-  background: none;
+  font-size: 11px;
+  padding-left: 1px;
+  color: rgba(255, 255, 255, 0.01); /* Make the text transparent because the actual text is in the 'content' of ::after */
+  background:rgba(0, 0, 0, 0.01);
   border: none;
 }
 
