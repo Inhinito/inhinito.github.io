@@ -943,60 +943,46 @@ right connector from last child*/
   left: 50%;
   transform: translateX(-50%);
   font-family: "PressStart";
-  font-size: 2.3vmin;
+  font-size: 2.8vmin;
   text-align: center;
   white-space: nowrap;
   z-index: 2;
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-  background:rgba(63, 54, 106, 0.1);
+  background:rgba(63, 54, 106, 0.2);
 }
-.venus-orbit {
-  width: 35vmin;
-  height: 35vmin;
+.software-orbit {
+  width: 40vmin;
+  height: 40vmin;
   animation: orbit 20s linear infinite;
 }
-.venus {
+.software {
   width: 7vmin;
   height: 7vmin;
   background-color: #fbc943;
   top: 0;
 }
-.venus-container {
+.software-container {
   top: 16vmin;
   animation: counter-orbit 20s linear infinite;
 }
-.earth-orbit {
-  width: 57vmin;
-  height: 57vmin;
-  margin-top: -28.5vmin;
+.multimedia-orbit {
+  width: 65vmin;
+  height: 65vmin;
+  margin-top: -33vmin;
   animation: counter-orbit 25s linear infinite;
 }
-.earth {
+.multimedia {
   width: 8vmin;
   height: 8vmin;
-  background-color: #7c44ba;
-  top: 0;
-}
-.earth-container {
-  top: 30vmin;
-  animation: orbit 25s linear infinite;
-}
-.mars-orbit {
-  width: 78vmin;
-  height: 78vmin;
-  animation: orbit 30s linear infinite;
-}
-.mars {
-  width: 7vmin;
-  height: 7vmin;
   background-color: #ed649a;
   top: 0;
 }
-.mars-container {
-  top: 45vmin;
-  animation: counter-orbit 30s linear infinite;
+.multimedia-container {
+  top: 30vmin;
+  animation: orbit 25s linear infinite;
 }
+
 @keyframes sunBlink {
   0% {
     opacity: 1;

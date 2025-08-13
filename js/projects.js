@@ -33,7 +33,7 @@ const projects = [
     },
     type: [
       {
-        english: "Multimedia",
+        english: "Designedia",
         greek: "Πολυμέσα"
       }
     ],
@@ -60,9 +60,6 @@ const projects = [
       {
         english: "Multimedia",
         greek: "Πολυμέσα"
-      }, {
-        english: "Marketing",
-        greek: "Μάρκετινγκ"
       }
     ],
     subtype: [
@@ -240,10 +237,6 @@ const projects = [
         {
             english: "Multimedia",
             greek: "Πολυμέσα"
-        },
-        {
-            english: "Marketing",
-            greek: "Μάρκετινγκ"
         }
     ],
     subtype: [
@@ -332,10 +325,7 @@ const projects = [
         english: "Multimedia",
         greek: "Πολυμέσα"
       },
-      {
-        english: "Marketing",
-        greek: "Μάρκετινγκ"
-      },
+
     ],
     subtype: [
       {

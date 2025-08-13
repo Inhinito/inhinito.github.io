@@ -4,7 +4,6 @@ const baseHeight = 600;
 
 const englishNodes = [
   { id: "Inhinito", x: 295, y: 310, color: "#ffd04d", size: 18 },
-  { id: "Marketing", x: 170, y: 450, color: "#ffffff", size: 18 },
   { id: "Software", x: 370, y: 430, color: "#ffffff", size: 18 },
   { id: "Multimedia", x: 320, y: 180, color: "#ffffff", size: 18 },
   { id: "3D Modeling", x: 230, y: 50, color: "#ffffff" },
@@ -21,7 +20,6 @@ const englishNodes = [
 ];
 
 const englishLinks = [
-  ["Inhinito", "Marketing"],
   ["Inhinito", "Software"],
   ["Inhinito", "Multimedia"],
   ["Multimedia", "Photography"],
@@ -36,15 +34,14 @@ const englishLinks = [
   ["Software", "Mobile Apps"],
   ["UX Design", "Mobile Apps"],
   ["UX Design", "Websites"],
-  ["Marketing", "Events"],
-  ["Marketing", "Digital Ads"],
-  ["Marketing", "Influencers"]
+  ["Software", "Events"],
+  ["Software", "Digital Ads"],
+  ["Software", "Influencers"]
 ];
 
 // Greek translations
 const greekLabels = {
   "Inhinito": "Inhinito",
-  "Marketing": "Μάρκετινγκ",
   "Software": "Λογισμικό",
   "Multimedia": "Πολυμέσα",
   "Photography": "Φωτογράφιση",
@@ -67,7 +64,6 @@ const greekNodes = englishNodes.map(node => ({
 
 // Make sure Greek links match the Greek IDs:
 const greekLinks = [
-  ["Inhinito", "Μάρκετινγκ"],
   ["Inhinito", "Λογισμικό"],
   ["Inhinito", "Πολυμέσα"],
   ["Πολυμέσα", "Φωτογράφιση"],
@@ -82,9 +78,9 @@ const greekLinks = [
   ["Λογισμικό", "Εφαρμογές"],
   ["Σχεδίαση UX", "Εφαρμογές"],
   ["Σχεδίαση UX", "Ιστοσελίδες"],
-  ["Μάρκετινγκ", "Εκδηλώσεις"],
-  ["Μάρκετινγκ", "Διαφημίσεις"],
-  ["Μάρκετινγκ", "Influencers"]
+  ["Πολυμέσα", "Εκδηλώσεις"],
+  ["Πολυμέσα", "Διαφημίσεις"],
+  ["Πολυμέσα", "Influencers"]
 ];
 
 
