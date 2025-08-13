@@ -66,9 +66,6 @@ const projects = [
       {
         english: "Videography",
         greek: "Βιντεοσκόπηση"
-      }, {
-        english: "Digital Ads",
-        greek: "Διαφημίσεις"
       }
     ],
     client: {

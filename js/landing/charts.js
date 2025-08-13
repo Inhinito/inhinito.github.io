@@ -4,19 +4,17 @@ const baseHeight = 600;
 
 const englishNodes = [
   { id: "Inhinito", x: 295, y: 310, color: "#ffd04d", size: 18 },
-  { id: "Software", x: 370, y: 430, color: "#ffffff", size: 18 },
+  { id: "Software", x: 265, y: 400, color: "#ffffff", size: 18 },
   { id: "Multimedia", x: 320, y: 180, color: "#ffffff", size: 18 },
   { id: "3D Modeling", x: 230, y: 50, color: "#ffffff" },
   { id: "Photography", x: 150, y: 140, color: "#ffffff" },
   { id: "Videography", x: 380, y: 110, color: "#ffffff" },
   { id: "Sound Design", x: 445, y: 270, color: "#ffffff" },
-  { id: "Graphic Design", x: 190, y: 240, color: "#ffffff" },
-  { id: "Mobile Apps", x: 390, y: 555, color: "#ffffff" },
-  { id: "UX Design", x: 460, y: 500, color: "#ffffff" },
-  { id: "Websites", x: 460, y: 380, color: "#ffffff" },
-  { id: "Digital Ads", x: 190, y:580, color: "#ffffff" },
-  { id: "Events", x: 130, y: 515, color: "#ffffff" },
-  { id: "Influencers", x: 140, y: 380, color: "#ffffff" }
+  { id: "Graphic Design", x: 190, y: 245, color: "#ffffff" },
+  { id: "Mobile Apps", x: 160, y: 500, color: "#ffffff" },
+  { id: "UX Design", x: 330, y: 470, color: "#ffffff", size: 15 },
+  { id: "Gamification", x: 395, y: 540, color: "#ffffff" },
+  { id: "Websites", x: 420, y: 380, color: "#ffffff" },
 ];
 
 const englishLinks = [
@@ -34,9 +32,7 @@ const englishLinks = [
   ["Software", "Mobile Apps"],
   ["UX Design", "Mobile Apps"],
   ["UX Design", "Websites"],
-  ["Software", "Events"],
-  ["Software", "Digital Ads"],
-  ["Software", "Influencers"]
+  ["UX Design", "Gamification"]
 ];
 
 // Greek translations
@@ -52,9 +48,7 @@ const greekLabels = {
   "Mobile Apps": "Εφαρμογές",
   "UX Design": "Σχεδίαση UX",
   "Websites": "Ιστοσελίδες",
-  "Digital Ads": "Διαφημίσεις",
-  "Events": "Εκδηλώσεις",
-  "Influencers": "Influencers"
+  "Gamification": "Παιχνιδοποίηση"
 };
 
 const greekNodes = englishNodes.map(node => ({
@@ -78,9 +72,7 @@ const greekLinks = [
   ["Λογισμικό", "Εφαρμογές"],
   ["Σχεδίαση UX", "Εφαρμογές"],
   ["Σχεδίαση UX", "Ιστοσελίδες"],
-  ["Πολυμέσα", "Εκδηλώσεις"],
-  ["Πολυμέσα", "Διαφημίσεις"],
-  ["Πολυμέσα", "Influencers"]
+  ["Σχεδίαση UX", "Παιχνιδοποίηση"]
 ];
 
 
