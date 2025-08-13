@@ -281,7 +281,7 @@ fieldset .article-header {
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   /* Use a CSS variable in order to be able to change its value in the ::after pseudoclass through JS */
   --background: #00000033;
   /* The width and the height is big enough to allow for the animeted movement of the button
@@ -442,7 +442,7 @@ footer {
 .star {
   background-color: white;
   /* border-radius: 50%; */
-  position: fixed; // This can be absolute too, but it creates a flickering bug on mobile screens.
+  position: fixed;
   animation-name: star;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

@@ -10,8 +10,7 @@
   }
 
   body header #toggleSound{
-    width: 60px;
-    left: 12px;
+    width: 50px;
   }
 
   body header #arrowPointer{
@@ -21,7 +20,8 @@
   }
 
   body header #language-select {
-    right: 23px;
+    right: 10px;
+    padding: 10px;
   }
 
    /* Chrome, Safari, Opera */
@@ -58,11 +58,6 @@
   header #toggleMusic{
     width: 66px;
     left: 92px;
-  }
-
-  header #toggleSound{
-    width: 66px;
-    left: 22px
   }
 
   header #arrowPointer{
