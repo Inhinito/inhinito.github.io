@@ -12,6 +12,7 @@ const englishNodes = [
   { id: "Sound Design", x: 445, y: 270, color: "#ffffff" },
   { id: "Graphic Design", x: 190, y: 245, color: "#ffffff" },
   { id: "Mobile Apps", x: 160, y: 500, color: "#ffffff" },
+  { id: "IoT", x: 155, y: 345, color: "#ffffff" },
   { id: "UX Design", x: 330, y: 470, color: "#ffffff", size: 15 },
   { id: "Gamification", x: 395, y: 540, color: "#ffffff" },
   { id: "Websites", x: 420, y: 380, color: "#ffffff" },
@@ -30,6 +31,7 @@ const englishLinks = [
   ["Software", "Websites"],
   ["Software", "UX Design"],
   ["Software", "Mobile Apps"],
+  ["Software", "IoT"],
   ["UX Design", "Mobile Apps"],
   ["UX Design", "Websites"],
   ["UX Design", "Gamification"]
@@ -46,6 +48,7 @@ const greekLabels = {
   "3D Modeling": "3D Mοντελοποίηση",
   "Graphic Design": "Γραφιστική",
   "Mobile Apps": "Εφαρμογές",
+  "IoT": "IoT",
   "UX Design": "Σχεδίαση UX",
   "Websites": "Ιστοσελίδες",
   "Gamification": "Παιχνιδοποίηση"
@@ -70,6 +73,7 @@ const greekLinks = [
   ["Λογισμικό", "Ιστοσελίδες"],
   ["Λογισμικό", "Σχεδίαση UX"],
   ["Λογισμικό", "Εφαρμογές"],
+  ["Λογισμικό", "IoT"],
   ["Σχεδίαση UX", "Εφαρμογές"],
   ["Σχεδίαση UX", "Ιστοσελίδες"],
   ["Σχεδίαση UX", "Παιχνιδοποίηση"]
