@@ -889,7 +889,7 @@ right connector from last child*/
   position: relative;
   height: min(100vmin, 635px);
   /* This creates a fixed boundary in the document flow */
-  margin-bottom: 20px; /* Space after solar system */
+  margin-top: -45px; /* Reduce space before solar system */
   overflow: visible;
 }
 .sun-container::before {
