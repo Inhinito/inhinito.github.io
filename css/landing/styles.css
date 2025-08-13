@@ -964,7 +964,7 @@ right connector from last child*/
   top: 0;
 }
 .software-container {
-  top: 16%;
+  top: 35%;
   animation: counter-orbit 20s linear infinite;
 }
 .multimedia-orbit {
@@ -980,7 +980,7 @@ right connector from last child*/
   top: 0;
 }
 .multimedia-container {
-  top: 30%;
+  top: 50%;
   animation: orbit 25s linear infinite;
 }
 
