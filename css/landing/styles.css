@@ -31,7 +31,7 @@
 
 #start-menu-content {
   margin: auto;
-  max-width: 635px;
+  max-width: 645px;
   padding: 0 12px;
 }
 
@@ -261,7 +261,7 @@ form {
   border: 2px solid orange;
   border-radius: 1px;
   padding: 10px;
-  max-width: 635px;
+  max-width: 645px;
   font-weight: bold;
   letter-spacing: 0.8px;
   background: azure;
@@ -881,14 +881,14 @@ right connector from last child*/
 /* Solar system */
 .solar-system {
   position: relative;
-  height: min(100vmin, 635px);
+  height: min(100vmin, 645px);
   /* Create a containing context for absolute positioning */
   contain: layout;
 }
 /* Add to ensure the solar system takes up space without overflow affecting layout */
 .solar-system-wrapper {
   position: relative;
-  height: min(100vmin, 635px);
+  height: min(100vmin, 645px);
   /* This creates a fixed boundary in the document flow */
   margin-top: -45px; /* Reduce space before solar system */
   overflow: visible;

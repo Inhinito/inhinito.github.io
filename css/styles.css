@@ -59,7 +59,7 @@ main{
   opacity: 1;
   transition: opacity 0.3s;
   display: none;
-  max-width: 635px;
+  max-width: 645px;
   margin: auto;
 }
 
