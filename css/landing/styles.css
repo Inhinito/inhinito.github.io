@@ -481,6 +481,7 @@ textarea {
 .accordion button {
   background: none;
   border: none;
+  width: 100%;
 }
 
 .accordion h2 {
