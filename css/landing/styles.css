@@ -880,14 +880,14 @@ right connector from last child*/
 /* Solar system */
 .solar-system {
   position: relative;
-  height: 100vmin;
+  height: min(100vmin, 635px);
   /* Create a containing context for absolute positioning */
   contain: layout;
 }
 /* Add to ensure the solar system takes up space without overflow affecting layout */
 .solar-system-wrapper {
   position: relative;
-  height: 100vmin;
+  height: min(100vmin, 635px);
   /* This creates a fixed boundary in the document flow */
   margin-bottom: 20px; /* Space after solar system */
   overflow: visible;
@@ -895,20 +895,20 @@ right connector from last child*/
 .sun-container::before {
   content: "";
   position: absolute;
-  width: 11vmin;
-  height: 11vmin;
+  width: min(11vmin, 69.85px);
+  height: min(11vmin, 69.85px);
   border-radius: 20px;
-  top: 44.5vmin;
+  top: 44.5%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 9vmin 5px white;
+  box-shadow: 0 0 min(9vmin, 57.15px) 5px white;
   animation: sunBlink 8s infinite;
 }
 .sun {
-  width: 11vmin;
-  height: 11vmin;
+  width: min(11vmin, 69.85px);
+  height: min(11vmin, 69.85px);
   background-color: white;
   border-radius: 1px;
   position: absolute;
@@ -917,7 +917,7 @@ right connector from last child*/
   transform: translate(-50%, -50%);
 }
 .sun-label {
-  top: 40vmin !important;
+  top: 40% !important;
 }
 /* Make planets and orbits use absolute positioning */
 .orbit {
@@ -940,11 +940,11 @@ right connector from last child*/
 /* Ensure labels are visible and styled properly */
 .planetary-label {
   position: absolute;
-  top: -3.8vmin;
+  top: min(-3.8vmin, -24.13px);
   left: 50%;
   transform: translateX(-50%);
   font-family: "PressStart";
-  font-size: 2.6vmin;
+  font-size: min(2.6vmin, 16.51px);
   text-align: center;
   white-space: nowrap;
   z-index: 2;
@@ -953,34 +953,34 @@ right connector from last child*/
   background:rgba(63, 54, 106, 0.2);
 }
 .software-orbit {
-  width: 40vmin;
-  height: 40vmin;
+  width: min(40vmin, 254px);
+  height: min(40vmin, 254px);
   animation: orbit 20s linear infinite;
 }
 .software {
-  width: 7vmin;
-  height: 7vmin;
+  width: min(7vmin, 44.45px);
+  height: min(7vmin, 44.45px);
   background-color: #fbc943;
   top: 0;
 }
 .software-container {
-  top: 16vmin;
+  top: 16%;
   animation: counter-orbit 20s linear infinite;
 }
 .multimedia-orbit {
-  width: 65vmin;
-  height: 65vmin;
-  margin-top: -33vmin;
+  top: 17%;
+  width: min(65vmin, 412.75px);
+  height: min(65vmin, 412.75px);
   animation: counter-orbit 25s linear infinite;
 }
 .multimedia {
-  width: 8vmin;
-  height: 8vmin;
+  width: min(8vmin, 50.8px);
+  height: min(8vmin, 50.8px);
   background-color: #ed649a;
   top: 0;
 }
 .multimedia-container {
-  top: 30vmin;
+  top: 30%;
   animation: orbit 25s linear infinite;
 }
 
