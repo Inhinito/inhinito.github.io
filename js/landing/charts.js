@@ -4,24 +4,21 @@ const baseHeight = 600;
 
 const englishNodes = [
   { id: "Inhinito", x: 295, y: 310, color: "#ffd04d", size: 18 },
-  { id: "Marketing", x: 170, y: 450, color: "#ffffff", size: 18 },
-  { id: "Software", x: 370, y: 430, color: "#ffffff", size: 18 },
+  { id: "Software", x: 265, y: 400, color: "#ffffff", size: 18 },
   { id: "Multimedia", x: 320, y: 180, color: "#ffffff", size: 18 },
-  { id: "3D Modeling", x: 230, y: 50, color: "#ffffff" },
-  { id: "Photography", x: 150, y: 140, color: "#ffffff" },
-  { id: "Videography", x: 380, y: 110, color: "#ffffff" },
-  { id: "Sound Design", x: 445, y: 270, color: "#ffffff" },
-  { id: "Graphic Design", x: 190, y: 240, color: "#ffffff" },
-  { id: "Mobile Apps", x: 390, y: 555, color: "#ffffff" },
-  { id: "UX Design", x: 460, y: 500, color: "#ffffff" },
-  { id: "Websites", x: 460, y: 380, color: "#ffffff" },
-  { id: "Digital Ads", x: 190, y:580, color: "#ffffff" },
-  { id: "Events", x: 130, y: 515, color: "#ffffff" },
-  { id: "Influencers", x: 140, y: 380, color: "#ffffff" }
+  { id: "Photography", x: 230, y: 50, color: "#ffffff" },
+  { id: "Videography", x: 440, y: 110, color: "#ffffff" },
+  { id: "3D Modeling", x: 150, y: 140, color: "#ffffff" },
+  { id: "Sound Design", x: 450, y: 270, color: "#ffffff" },
+  { id: "Graphic Design", x: 190, y: 245, color: "#ffffff" },
+  { id: "Mobile Apps", x: 155, y: 500, color: "#ffffff" },
+  { id: "IoT", x: 120, y: 380, color: "#ffffff" },
+  { id: "UX Design", x: 330, y: 470, color: "#ffffff", size: 15 },
+  { id: "Gamification", x: 395, y: 540, color: "#ffffff" },
+  { id: "Websites", x: 420, y: 380, color: "#ffffff" },
 ];
 
 const englishLinks = [
-  ["Inhinito", "Marketing"],
   ["Inhinito", "Software"],
   ["Inhinito", "Multimedia"],
   ["Multimedia", "Photography"],
@@ -34,30 +31,27 @@ const englishLinks = [
   ["Software", "Websites"],
   ["Software", "UX Design"],
   ["Software", "Mobile Apps"],
+  ["Software", "IoT"],
   ["UX Design", "Mobile Apps"],
   ["UX Design", "Websites"],
-  ["Marketing", "Events"],
-  ["Marketing", "Digital Ads"],
-  ["Marketing", "Influencers"]
+  ["UX Design", "Gamification"]
 ];
 
 // Greek translations
 const greekLabels = {
   "Inhinito": "Inhinito",
-  "Marketing": "Μάρκετινγκ",
   "Software": "Λογισμικό",
   "Multimedia": "Πολυμέσα",
   "Photography": "Φωτογράφιση",
   "Videography": "Βιντεοσκόπηση",
   "Sound Design": "Ηχοληψία",
-  "3D Modeling": "3D Mοντελοποίηση",
+  "3D Modeling": "3D Mοντέλα",
   "Graphic Design": "Γραφιστική",
   "Mobile Apps": "Εφαρμογές",
+  "IoT": "IoT",
   "UX Design": "Σχεδίαση UX",
   "Websites": "Ιστοσελίδες",
-  "Digital Ads": "Διαφημίσεις",
-  "Events": "Εκδηλώσεις",
-  "Influencers": "Influencers"
+  "Gamification": "Παιχνιδοποίηση"
 };
 
 const greekNodes = englishNodes.map(node => ({
@@ -67,24 +61,22 @@ const greekNodes = englishNodes.map(node => ({
 
 // Make sure Greek links match the Greek IDs:
 const greekLinks = [
-  ["Inhinito", "Μάρκετινγκ"],
   ["Inhinito", "Λογισμικό"],
   ["Inhinito", "Πολυμέσα"],
   ["Πολυμέσα", "Φωτογράφιση"],
   ["Πολυμέσα", "Βιντεοσκόπηση"],
   ["Πολυμέσα", "Ηχοληψία"],
-  ["Πολυμέσα", "3D Mοντελοποίηση"],
+  ["Πολυμέσα", "3D Mοντέλα"],
   ["Πολυμέσα", "Γραφιστική"],
-  ["Φωτογράφιση", "3D Mοντελοποίηση"],
+  ["Φωτογράφιση", "3D Mοντέλα"],
   ["Ηχοληψία", "Βιντεοσκόπηση"],
   ["Λογισμικό", "Ιστοσελίδες"],
   ["Λογισμικό", "Σχεδίαση UX"],
   ["Λογισμικό", "Εφαρμογές"],
+  ["Λογισμικό", "IoT"],
   ["Σχεδίαση UX", "Εφαρμογές"],
   ["Σχεδίαση UX", "Ιστοσελίδες"],
-  ["Μάρκετινγκ", "Εκδηλώσεις"],
-  ["Μάρκετινγκ", "Διαφημίσεις"],
-  ["Μάρκετινγκ", "Influencers"]
+  ["Σχεδίαση UX", "Παιχνιδοποίηση"]
 ];
 
 

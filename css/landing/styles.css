@@ -17,11 +17,12 @@
 }
 
 #toggleSound {
-  width: 50px;
-  top: 20px;
-  left: 25px;
+  width: 60px;
+  top: 0;
+  left: 0;
   height: auto;
   cursor: pointer;
+  position: absolute;
 }
 
 #toggleSound:active {
@@ -30,7 +31,7 @@
 
 #start-menu-content {
   margin: auto;
-  max-width: 635px;
+  max-width: 645px;
   padding: 0 12px;
 }
 
@@ -260,7 +261,7 @@ form {
   border: 2px solid orange;
   border-radius: 1px;
   padding: 10px;
-  max-width: 635px;
+  max-width: 645px;
   font-weight: bold;
   letter-spacing: 0.8px;
   background: azure;
@@ -480,6 +481,7 @@ textarea {
 .accordion button {
   background: none;
   border: none;
+  width: 100%;
 }
 
 .accordion h2 {
@@ -879,35 +881,35 @@ right connector from last child*/
 /* Solar system */
 .solar-system {
   position: relative;
-  height: 100vmin;
+  height: min(100vmin, 645px);
   /* Create a containing context for absolute positioning */
   contain: layout;
 }
 /* Add to ensure the solar system takes up space without overflow affecting layout */
 .solar-system-wrapper {
   position: relative;
-  height: 100vmin;
+  height: min(100vmin, 645px);
   /* This creates a fixed boundary in the document flow */
-  margin-bottom: 20px; /* Space after solar system */
+  margin-top: -45px; /* Reduce space before solar system */
   overflow: visible;
 }
 .sun-container::before {
   content: "";
   position: absolute;
-  width: 11vmin;
-  height: 11vmin;
+  width: min(11vmin, 69.85px);
+  height: min(11vmin, 69.85px);
   border-radius: 20px;
-  top: 44.5vmin;
+  top: 44.5%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 9vmin 5px white;
+  box-shadow: 0 0 min(9vmin, 57.15px) 5px white;
   animation: sunBlink 8s infinite;
 }
 .sun {
-  width: 11vmin;
-  height: 11vmin;
+  width: min(11vmin, 69.85px);
+  height: min(11vmin, 69.85px);
   background-color: white;
   border-radius: 1px;
   position: absolute;
@@ -916,7 +918,7 @@ right connector from last child*/
   transform: translate(-50%, -50%);
 }
 .sun-label {
-  top: 40vmin !important;
+  top: 40% !important;
 }
 /* Make planets and orbits use absolute positioning */
 .orbit {
@@ -939,64 +941,50 @@ right connector from last child*/
 /* Ensure labels are visible and styled properly */
 .planetary-label {
   position: absolute;
-  top: -3.8vmin;
+  top: min(-3.8vmin, -24.13px);
   left: 50%;
   transform: translateX(-50%);
   font-family: "PressStart";
-  font-size: 2.3vmin;
+  font-size: min(2.6vmin, 16.51px);
   text-align: center;
   white-space: nowrap;
   z-index: 2;
   color: #ffcf4e;
   text-shadow: 1.1px 1px 0 rgb(229, 62, 90);
-  background:rgba(63, 54, 106, 0.1);
+  background:rgba(63, 54, 106, 0.2);
 }
-.venus-orbit {
-  width: 35vmin;
-  height: 35vmin;
+.software-orbit {
+  width: min(40vmin, 254px);
+  height: min(40vmin, 254px);
   animation: orbit 20s linear infinite;
 }
-.venus {
-  width: 7vmin;
-  height: 7vmin;
+.software {
+  width: min(7vmin, 44.45px);
+  height: min(7vmin, 44.45px);
   background-color: #fbc943;
   top: 0;
 }
-.venus-container {
-  top: 16vmin;
+.software-container {
+  top: 35%;
   animation: counter-orbit 20s linear infinite;
 }
-.earth-orbit {
-  width: 57vmin;
-  height: 57vmin;
-  margin-top: -28.5vmin;
+.multimedia-orbit {
+  top: 17%;
+  width: min(65vmin, 412.75px);
+  height: min(65vmin, 412.75px);
   animation: counter-orbit 25s linear infinite;
 }
-.earth {
-  width: 8vmin;
-  height: 8vmin;
-  background-color: #7c44ba;
-  top: 0;
-}
-.earth-container {
-  top: 30vmin;
-  animation: orbit 25s linear infinite;
-}
-.mars-orbit {
-  width: 78vmin;
-  height: 78vmin;
-  animation: orbit 30s linear infinite;
-}
-.mars {
-  width: 7vmin;
-  height: 7vmin;
+.multimedia {
+  width: min(8vmin, 50.8px);
+  height: min(8vmin, 50.8px);
   background-color: #ed649a;
   top: 0;
 }
-.mars-container {
-  top: 45vmin;
-  animation: counter-orbit 30s linear infinite;
+.multimedia-container {
+  top: 50%;
+  animation: orbit 25s linear infinite;
 }
+
 @keyframes sunBlink {
   0% {
     opacity: 1;

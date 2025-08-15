@@ -33,7 +33,7 @@ const projects = [
     },
     type: [
       {
-        english: "Multimedia",
+        english: "Designedia",
         greek: "Πολυμέσα"
       }
     ],
@@ -60,18 +60,12 @@ const projects = [
       {
         english: "Multimedia",
         greek: "Πολυμέσα"
-      }, {
-        english: "Marketing",
-        greek: "Μάρκετινγκ"
       }
     ],
     subtype: [
       {
         english: "Videography",
         greek: "Βιντεοσκόπηση"
-      }, {
-        english: "Digital Ads",
-        greek: "Διαφημίσεις"
       }
     ],
     client: {
@@ -240,10 +234,6 @@ const projects = [
         {
             english: "Multimedia",
             greek: "Πολυμέσα"
-        },
-        {
-            english: "Marketing",
-            greek: "Μάρκετινγκ"
         }
     ],
     subtype: [
@@ -332,10 +322,7 @@ const projects = [
         english: "Multimedia",
         greek: "Πολυμέσα"
       },
-      {
-        english: "Marketing",
-        greek: "Μάρκετινγκ"
-      },
+
     ],
     subtype: [
       {
