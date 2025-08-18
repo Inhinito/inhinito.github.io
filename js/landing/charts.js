@@ -3,19 +3,19 @@ const baseWidth = 600;
 const baseHeight = 600;
 
 const englishNodes = [
-  { id: "Inhinito", x: 295, y: 310, color: "#ffd04d", size: 18 },
-  { id: "Software", x: 265, y: 400, color: "#ffffff", size: 18 },
-  { id: "Multimedia", x: 320, y: 180, color: "#ffffff", size: 18 },
-  { id: "Photography", x: 230, y: 50, color: "#ffffff" },
-  { id: "Videography", x: 440, y: 110, color: "#ffffff" },
-  { id: "3D Modeling", x: 150, y: 140, color: "#ffffff" },
-  { id: "Sound Design", x: 450, y: 270, color: "#ffffff" },
-  { id: "Graphic Design", x: 190, y: 245, color: "#ffffff" },
-  { id: "Mobile Apps", x: 155, y: 500, color: "#ffffff" },
-  { id: "IoT", x: 120, y: 380, color: "#ffffff" },
-  { id: "UX Design", x: 330, y: 470, color: "#ffffff", size: 15 },
-  { id: "Gamification", x: 395, y: 540, color: "#ffffff" },
-  { id: "Websites", x: 420, y: 380, color: "#ffffff" },
+  { id: "Inhinito", x: 295, y: 280, color: "#ffd04d", size: 18 },
+  { id: "Software", x: 260, y: 190, color: "#ffffff", size: 18 },
+  { id: "Multimedia", x: 360, y: 415, color: "#ffffff", size: 18 },
+  { id: "Photography", x: 230, y: 540, color: "#ffffff" },
+  { id: "Videography", x: 440, y: 490, color: "#ffffff" },
+  { id: "3D Modeling", x: 155, y: 450, color: "#ffffff" },
+  { id: "Sound Design", x: 450, y: 350, color: "#ffffff" },
+  { id: "Graphic Design", x: 190, y: 370, color: "#ffffff" },
+  { id: "Mobile Apps", x: 155, y: 95, color: "#ffffff" },
+  { id: "IoT", x: 120, y: 210, color: "#ffffff" },
+  { id: "UX Design", x: 340, y: 130, color: "#ffffff", size: 15 },
+  { id: "Gamification", x: 420, y: 75, color: "#ffffff" },
+  { id: "Websites", x: 450, y: 210, color: "#ffffff" },
 ];
 
 const englishLinks = [
