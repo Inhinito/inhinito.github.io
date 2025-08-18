@@ -17,6 +17,7 @@ const startMenu = document.getElementById("start-menu");
 const startButton = document.querySelector("#start-button");
 const reloadMainMenu = document.getElementById("reload-main-menu");
 const contactButton = document.getElementById("contact-button");
+const slogan = document.getElementById("slogan");
 
 const startMenuEnglish = document.getElementById("start-menu-english");
 const startMenuGreek = document.getElementById("start-menu-greek");

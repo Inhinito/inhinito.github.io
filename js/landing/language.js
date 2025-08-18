@@ -26,6 +26,7 @@ english.addEventListener('click', function(e){
   languageFlag='english';
   soundRestart(toggle);
 
+  slogan.style.opacity = 0;
   startMenu.style.opacity = 0;
   footer.style.opacity = 0;
 
@@ -38,6 +39,7 @@ english.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     contactButton.innerText = 'Contact';
+    slogan.innerText = 'Support Your Creativity';
     button1.innerText = 'Mission';
     button2.innerText = 'Projects';
     button3.innerText = 'Cooperative';
@@ -46,6 +48,7 @@ english.addEventListener('click', function(e){
     button3.style.setProperty('--content', '"Cooperative"'); 
 
     startMenuContent();
+    slogan.style.opacity = 1;
     startMenu.style.opacity = 1;
 
     // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
@@ -70,6 +73,7 @@ greek.addEventListener('click', function(e){
   soundRestart(toggle);
 
 
+  slogan.style.opacity = 0;
   startMenu.style.opacity = 0;
   footer.style.opacity = 0;
 
@@ -82,6 +86,7 @@ greek.addEventListener('click', function(e){
   setTimeout(function(){
     // Set button values to English.
     contactButton.innerText = 'Επικοινωνία';
+    slogan.innerText = 'Υποστηρίξτε τη Δημιουργικότητά σας';
     button1.innerText = 'Αποστολή';
     button2.innerText = 'Συνεργασίες';
     button3.innerText = 'Συνεταιρισμός';
@@ -90,6 +95,7 @@ greek.addEventListener('click', function(e){
     button3.style.setProperty('--content', '"Συνεταιρισμός"');
 
     startMenuContent();
+    slogan.style.opacity = 1;
     startMenu.style.opacity = 1;
 
     // Fade in main menu. Setting opacity to 1 is enough to fade the menu in.
