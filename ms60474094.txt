@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "inhinito.com",
+  "Id": "473b083b-9dfc-4e03-8892-33350582dada"
+}
